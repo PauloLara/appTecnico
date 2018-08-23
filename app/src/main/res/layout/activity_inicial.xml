@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Inicial">
+
+    <Button
+        android:id="@+id/btngraficos"
+        android:layout_width="191dp"
+        android:layout_height="113dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/holo_red_light"
+        android:text="@string/graficos"
+        app:layout_constraintStart_toEndOf="@+id/btnequipes"
+        app:layout_constraintTop_toBottomOf="@+id/btnestatisticas" />
+
+    <Button
+        android:id="@+id/btnestatisticas"
+        android:layout_width="191dp"
+        android:layout_height="113dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="227dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/estatisticas"
+        app:layout_constraintStart_toEndOf="@+id/btnnovojogo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnsyslog"
+        android:layout_width="191dp"
+        android:layout_height="113dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent"
+        android:text="@string/sistema_log"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/btngraficos" />
+
+    <Button
+        android:id="@+id/btnequipes"
+        android:layout_width="193dp"
+        android:layout_height="113dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/design_default_color_primary"
+        android:text="@string/equipes_torneios"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnnovojogo" />
+
+    <Button
+        android:id="@+id/btnnovojogo"
+        android:layout_width="193dp"
+        android:layout_height="113dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="227dp"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="clickBtnIrPartidaConfig"
+        android:text="NOVO JOGO"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="193dp"
+        android:layout_height="113dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnequipes" />
+
+</android.support.constraint.ConstraintLayout>

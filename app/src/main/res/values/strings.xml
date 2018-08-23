@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">appTecnico</string>
+    <!-- Login -->
+    <string name="e_mail">E-mail</string>
+    <string name="senha">Senha</string>
+    <string name="entrar">Entrar</string>
+    <string name="esqueci_minha_senha">Esqueci minha senha</string>
+    <string name="ou">-------- OU -------</string>
+    <string name="cadastre_se">Cadastre-se</string>
+
+    <!-- Cadastro -->
+    <string name="nome">Nome</string>
+    <string name="e_mail2">E-mail</string>
+    <string name="senha2">Senha</string>
+    <string name="digite_novamente_a_senha">Digite novamente a senha</string>
+    <string name="voc_aceita_o_contrato_de_usu_rio">Você aceita o contrato de usuário</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="esqueci_a_senha">Esqueci a senha</string>
+    <string name="ou2">-------- OU --------</string>
+    <string name="j_sou_cadastrado">Já sou cadastrado</string>
+    <string name="digite_novamente_a_senha2">Digite novamente a senha</string>
+    <string name="textview">TextView</string>
+    <string name="graficos">gráficos</string>
+    <string name="sistema_log">sistema / log</string>
+    <string name="equipes_torneios">equipes / torneios</string>
+    <string name="novo_jogo">Novo Jogo</string>
+    <string name="estatisticas">estatísticas</string>
+
+    <!--Combobox Spinner lista de clubes da tela de config partidas -->
+    <string-array name="campeonato">
+        <item><b>ESCOLHA O TORNEIO:</b></item>
+        <item>Campeonato Brasileiro</item>
+        <item>Copa do Brasil</item>
+        <item>Campeonato Gaúcho</item>
+        <item>Libertadores da América</item>
+        <item>Copa São Paulo</item>
+        <item>Sul-Americana</item>
+        <item>Mundial de Clubes</item>
+    </string-array>
+
+
+</resources>
