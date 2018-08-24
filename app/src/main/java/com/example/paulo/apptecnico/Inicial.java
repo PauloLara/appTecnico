@@ -15,7 +15,7 @@ public class Inicial extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicial);
 
-        viewPager = (ViewPager) findViewById(R.id.carrossel);
+        viewPager = findViewById(R.id.carrossel);
 
         CarrosselAdaptor carrosselAdaptor = new CarrosselAdaptor(this);
 

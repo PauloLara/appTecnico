@@ -25,6 +25,7 @@
     <string name="equipes_torneios">equipes / torneios</string>
     <string name="novo_jogo">Novo Jogo</string>
     <string name="estatisticas">estatísticas</string>
+    <string name="button">Button</string>
 
     <!--Combobox Spinner lista de clubes da tela de config partidas -->
     <string-array name="campeonato">
