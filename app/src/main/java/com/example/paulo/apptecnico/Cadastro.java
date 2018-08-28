@@ -32,7 +32,8 @@ public class Cadastro extends AppCompatActivity {
                 String strtxtSenha = txtSenha.getText().toString();
                 String strtxtRepeteSenha = txtRepeteSenha.getText().toString();
 
-                if (strtxtNome.equals("") || strtxtEmail.equals("") || strtxtSenha.equals("") ||  strtxtRepeteSenha.equals("")) {
+               // if (strtxtNome.isEmpty() || strtxtEmail.equals("") || strtxtSenha.equals("") ||  strtxtRepeteSenha.equals("")) {
+                if (strtxtNome.isEmpty() || strtxtEmail.isEmpty() || strtxtSenha.isEmpty() ||  strtxtRepeteSenha.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Campos estão vazios!", Toast.LENGTH_SHORT).show();
                 } else {
                     if (strtxtSenha.equals(strtxtRepeteSenha)) {
