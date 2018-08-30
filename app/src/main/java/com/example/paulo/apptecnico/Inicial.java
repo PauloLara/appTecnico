@@ -27,15 +27,8 @@ public class Inicial extends AppCompatActivity {
 
 
     public void clickBtnIrPartidaConfig(View view){
-
-        novoJogo = (Button) findViewById(R.id.btnnovojogo);
-        novoJogo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it;
-                it = new Intent(Inicial.this, PartidaConfig.class);
-                startActivity(it);
-            }
-        });
+        Intent it;
+        it = new Intent(Inicial.this, PartidaConfig.class);
+        startActivity(it);
     }
 }
