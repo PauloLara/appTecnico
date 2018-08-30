@@ -429,12 +429,12 @@
 
     <Button
         android:id="@+id/goleiro1"
-        android:layout_width="114dp"
+        android:layout_width="90dp"
         android:layout_height="28dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@android:color/holo_green_dark"
+        android:background="@drawable/border_color"
         android:text="goleiro1"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -443,11 +443,11 @@
 
     <Button
         android:id="@+id/lat_direito2"
-        android:layout_width="114dp"
+        android:layout_width="90dp"
         android:layout_height="28dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@android:color/holo_green_dark"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/border_color"
         android:text="lat_direito2"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -456,11 +456,11 @@
 
     <Button
         android:id="@+id/zagueiro3"
-        android:layout_width="114dp"
+        android:layout_width="90dp"
         android:layout_height="28dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@android:color/holo_green_dark"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/border_color"
         android:text="zagueiro3"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -469,11 +469,11 @@
 
     <Button
         android:id="@+id/zagueiro4"
-        android:layout_width="114dp"
+        android:layout_width="90dp"
         android:layout_height="28dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@android:color/holo_green_dark"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/border_color"
         android:text="zagueiro4"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -482,11 +482,11 @@
 
     <Button
         android:id="@+id/cabeca_area5"
-        android:layout_width="114dp"
+        android:layout_width="90dp"
         android:layout_height="28dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@android:color/holo_green_dark"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/border_color"
         android:text="cabeca_area5"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -495,11 +495,11 @@
 
     <Button
         android:id="@+id/lat_esquerdo6"
-        android:layout_width="114dp"
+        android:layout_width="90dp"
         android:layout_height="28dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@android:color/holo_green_dark"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/border_color"
         android:text="lat_esquerdo6"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -508,11 +508,11 @@
 
     <Button
         android:id="@+id/atacante7"
-        android:layout_width="114dp"
+        android:layout_width="90dp"
         android:layout_height="28dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@android:color/holo_green_dark"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/border_color"
         android:text="atacante7"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -521,11 +521,11 @@
 
     <Button
         android:id="@+id/volante8"
-        android:layout_width="114dp"
+        android:layout_width="90dp"
         android:layout_height="28dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@android:color/holo_green_dark"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/border_color"
         android:text="volante8"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -534,11 +534,11 @@
 
     <Button
         android:id="@+id/centroavante9"
-        android:layout_width="114dp"
+        android:layout_width="90dp"
         android:layout_height="28dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@android:color/holo_green_dark"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/border_color"
         android:text="centroavante9"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -547,26 +547,209 @@
 
     <Button
         android:id="@+id/camisa10"
-        android:layout_width="114dp"
+        android:layout_width="90dp"
         android:layout_height="28dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@android:color/holo_green_dark"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/border_color"
         android:text="camisa10"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/centroavante9" />
 
     <Button
         android:id="@+id/atacante11"
-        android:layout_width="114dp"
+        android:layout_width="90dp"
         android:layout_height="28dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@android:color/holo_green_dark"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/border_color"
         android:text="atacante11"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/camisa10"
         tools:textColorHint="@color/design_default_color_primary_dark" />
+
+    <!--ADVERSARIO *****************************************************************-->
+    <Button
+        android:id="@+id/adgoleiro1"
+        android:layout_width="90dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border_color"
+        android:text="goleiro1"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/f7"
+        tools:textColorHint="@color/design_default_color_primary_dark" />
+
+    <Button
+        android:id="@+id/adlat_direito2"
+        android:layout_width="90dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/border_color"
+        android:text="lat_direito2"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adgoleiro1"
+        tools:textColorHint="@color/design_default_color_primary_dark" />
+
+    <Button
+        android:id="@+id/adzagueiro3"
+        android:layout_width="90dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/border_color"
+        android:text="zagueiro3"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adlat_direito2"
+        tools:textColorHint="@color/design_default_color_primary_dark" />
+
+    <Button
+        android:id="@+id/adzagueiro4"
+        android:layout_width="90dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/border_color"
+        android:text="zagueiro4"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adzagueiro3"
+        tools:textColorHint="@color/design_default_color_primary_dark" />
+
+    <Button
+        android:id="@+id/adcabeca_area5"
+        android:layout_width="90dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/border_color"
+        android:text="cabeca_area5"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adzagueiro4"
+        tools:textColorHint="@color/design_default_color_primary_dark" />
+
+    <Button
+        android:id="@+id/adlat_esquerdo6"
+        android:layout_width="90dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/border_color"
+        android:text="lat_esquerdo6"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adcabeca_area5"
+        tools:textColorHint="@color/design_default_color_primary_dark" />
+
+    <Button
+        android:id="@+id/adatacante7"
+        android:layout_width="90dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/border_color"
+        android:text="atacante7"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adlat_esquerdo6"
+        tools:textColorHint="@color/design_default_color_primary_dark" />
+
+    <Button
+        android:id="@+id/advolante8"
+        android:layout_width="90dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/border_color"
+        android:text="volante8"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adatacante7"
+        tools:textColorHint="@color/design_default_color_primary_dark" />
+
+    <Button
+        android:id="@+id/adcentroavante9"
+        android:layout_width="90dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/border_color"
+        android:text="centroavante9"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/advolante8"
+        tools:textColorHint="@color/design_default_color_primary_dark" />
+
+    <Button
+        android:id="@+id/adcamisa10"
+        android:layout_width="90dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="camisa10"
+        android:textSize="12sp"
+        android:background="@drawable/border_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adcentroavante9" />
+
+    <Button
+        android:id="@+id/adatacante11"
+        android:layout_width="90dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/border_color"
+        android:layout_marginRight="8dp"
+        android:text="atacante11"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adcamisa10"
+        tools:textColorHint="@color/design_default_color_primary_dark" />
+
+    <Button
+        android:id="@+id/limpar"
+        android:layout_width="59dp"
+        android:layout_height="31dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="24dp"
+        android:background="#40230d"
+        android:text="limpar"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toStartOf="@+id/salvar"
+        app:layout_constraintTop_toBottomOf="@+id/adatacante11" />
+
+    <Button
+        android:id="@+id/finalizar"
+        android:layout_width="76dp"
+        android:layout_height="31dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="finalizar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adatacante11" />
+
+    <Button
+        android:id="@+id/salvar"
+        android:layout_width="59dp"
+        android:layout_height="31dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorPrimary"
+        android:text="salvar"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toStartOf="@+id/finalizar"
+        app:layout_constraintTop_toBottomOf="@+id/adatacante11" />
 
 </android.support.constraint.ConstraintLayout>

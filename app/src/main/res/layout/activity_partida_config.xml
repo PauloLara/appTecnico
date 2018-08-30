@@ -26,7 +26,7 @@
         android:layout_marginLeft="48dp"
         android:layout_marginRight="48dp"
         android:layout_marginStart="48dp"
-        android:background="@color/colorPrimary"
+        android:background="#84a6f6"
         android:onClick="clickBtnIrAcoes"
         android:text="Iniciar Partida"
         app:layout_constraintBottom_toBottomOf="parent"
