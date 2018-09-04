@@ -51,8 +51,11 @@ public class Arquivo {
         }
     }
 
-    public void fecharArquivo() throws IOException {
+    public void flushArquivo() throws IOException {
         bfr.flush();
+    }
+
+    public void fecharArquivo() throws IOException {
         bfr.close();
     }
 }

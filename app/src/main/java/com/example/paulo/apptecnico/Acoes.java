@@ -73,73 +73,57 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
         gravarf6 = findViewById(R.id.f6);
         gravarf7 = findViewById(R.id.f7);
         gravarf8 = findViewById(R.id.f8);
-
-        /*
-        gravara5.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                switch (v.getId()) {
-
-                    case R.id.a1:
-                        int idd = gravara1.getId();
-                        String st = getResources().getResourceEntryName(idd);
-                        arquivo.escreverArquivo(st);
-                        break;
-
-                    case R.id.a2:
-                        // do your code
-                        break;
-
-                    case R.id.a3:
-                        // do your code
-                        break;
-
-                    default:
-                        break;
-                }
-
-
-            }
-        });*/
-
     }
 
-    @Override
+    public void clicka1(View v) throws IOException {
+        int idd = gravara1.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "A1!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clicka2(View v) throws IOException {
+        int idd = gravara2.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "A2!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clicka3(View v) throws IOException {
+        int idd = gravara3.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "A3!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clicka4(View v) throws IOException {
+        int idd = gravara4.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "A4!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clicka5(View v) throws IOException {
+        int idd = gravara5.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "A5!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clicka6(View v) throws IOException {
+        int idd = gravara6.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "A6!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
     public void onClick(View v) {
-        int i = 0;
-        while (i<10) {
-            switch (v.getId()) {
-                case R.id.a1:
-                    int idd1 = gravara1.getId();
-                    String st1 = getResources().getResourceEntryName(idd1);
-                    arquivo.escreverArquivo(st1);
-                    Toast.makeText(getApplicationContext(), "A1!", Toast.LENGTH_SHORT).show();
-                    break;
-
-                case R.id.a2:
-                    int idd2 = gravara2.getId();
-                    String st2 = getResources().getResourceEntryName(idd2);
-                    arquivo.escreverArquivo(st2);
-                    Toast.makeText(getApplicationContext(), "A2!", Toast.LENGTH_SHORT).show();
-                    break;
-
-                case R.id.a3:
-                    int idd3 = gravara3.getId();
-                    String st3 = getResources().getResourceEntryName(idd3);
-                    arquivo.escreverArquivo(st3);
-                    Toast.makeText(getApplicationContext(), "A3!", Toast.LENGTH_SHORT).show();
-                    break;
-
-                default:
-                    break;
-            }
-            i++;
-        }
-
-        try {
-            arquivo.fecharArquivo();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
     }
 }
