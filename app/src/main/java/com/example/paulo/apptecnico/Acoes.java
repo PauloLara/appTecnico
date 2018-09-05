@@ -75,6 +75,8 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
         gravarf8 = findViewById(R.id.f8);
     }
 
+    //BOTÕES A1 ATÉ A8
+
     public void clicka1(View v) throws IOException {
         int idd = gravara1.getId();
         String st = getResources().getResourceEntryName(idd);
@@ -120,6 +122,352 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
         String st = getResources().getResourceEntryName(idd);
         arquivo.escreverArquivo(st);
         Toast.makeText(getApplicationContext(), "A6!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clicka7(View v) throws IOException {
+        int idd = gravara7.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "A7!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clicka8(View v) throws IOException {
+        int idd = gravara8.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "A8!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    //BOTÕES B1 ATÉ B8
+
+    public void clickb1(View v) throws IOException {
+        int idd = gravarb1.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "B1!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickb2(View v) throws IOException {
+        int idd = gravarb2.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "B2!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickb3(View v) throws IOException {
+        int idd = gravarb3.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "B3!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickb4(View v) throws IOException {
+        int idd = gravarb4.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "B4!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickb5(View v) throws IOException {
+        int idd = gravarb5.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "B5!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickb6(View v) throws IOException {
+        int idd = gravarb6.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "B6!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickb7(View v) throws IOException {
+        int idd = gravarb7.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "B7!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickb8(View v) throws IOException {
+        int idd = gravarb8.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "B8!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    //BOTÕES C1 ATÉ C8
+
+    public void clickc1(View v) throws IOException {
+        int idd = gravarc1.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "c1!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickc2(View v) throws IOException {
+        int idd = gravarc2.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "c2!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickc3(View v) throws IOException {
+        int idd = gravarc3.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "c3!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickc4(View v) throws IOException {
+        int idd = gravarc4.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "c4!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickc5(View v) throws IOException {
+        int idd = gravarc5.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "c5!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickc6(View v) throws IOException {
+        int idd = gravarc6.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "c6!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickc7(View v) throws IOException {
+        int idd = gravarc7.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "c7!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickc8(View v) throws IOException {
+        int idd = gravarc8.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "c8!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    //BOTÕES D1 ATÉ D8
+
+    public void clickd1(View v) throws IOException {
+        int idd = gravard1.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "d1!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickd2(View v) throws IOException {
+        int idd = gravard2.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "d2!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickd3(View v) throws IOException {
+        int idd = gravard3.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "d3!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickd4(View v) throws IOException {
+        int idd = gravard4.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "d4!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickd5(View v) throws IOException {
+        int idd = gravard5.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "d5!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickd6(View v) throws IOException {
+        int idd = gravard6.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "d6!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickd7(View v) throws IOException {
+        int idd = gravard7.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "d7!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickd8(View v) throws IOException {
+        int idd = gravard8.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "d8!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    //BOTÕES E1 ATÉ E8
+
+    public void clicke1(View v) throws IOException {
+        int idd = gravare1.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "e1!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clicke2(View v) throws IOException {
+        int idd = gravare2.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "e2!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clicke3(View v) throws IOException {
+        int idd = gravare3.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "e3!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clicke4(View v) throws IOException {
+        int idd = gravare4.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "e4!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clicke5(View v) throws IOException {
+        int idd = gravare5.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "e5!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clicke6(View v) throws IOException {
+        int idd = gravare6.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "e6!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clicke7(View v) throws IOException {
+        int idd = gravare7.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "e7!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clicke8(View v) throws IOException {
+        int idd = gravare8.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "e8!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    //BOTÕES F1 ATÉ F8
+
+    public void clickf1(View v) throws IOException {
+        int idd = gravarf1.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "f1!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickf2(View v) throws IOException {
+        int idd = gravarf2.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "f2!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickf3(View v) throws IOException {
+        int idd = gravarf3.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "f3!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickf4(View v) throws IOException {
+        int idd = gravarf4.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "f4!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickf5(View v) throws IOException {
+        int idd = gravarf5.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "f5!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickf6(View v) throws IOException {
+        int idd = gravarf6.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "f6!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickf7(View v) throws IOException {
+        int idd = gravarf7.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "f7!", Toast.LENGTH_SHORT).show();
+        arquivo.flushArquivo();
+    }
+
+    public void clickf8(View v) throws IOException {
+        int idd = gravarf8.getId();
+        String st = getResources().getResourceEntryName(idd);
+        arquivo.escreverArquivo(st);
+        Toast.makeText(getApplicationContext(), "f8!", Toast.LENGTH_SHORT).show();
         arquivo.flushArquivo();
     }
 
