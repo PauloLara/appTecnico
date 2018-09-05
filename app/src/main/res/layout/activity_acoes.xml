@@ -7,324 +7,295 @@
     android:layout_height="match_parent"
     tools:context=".Acoes">
 
-<!--BOTÕES A1 ATÉ A8 -->
+<!--BOTÕES do campo A1 ATÉ A8 -->
     <Button
         android:id="@+id/a1"
-        android:layout_width="43dp"
-        android:layout_height="28dp"
+        android:layout_width="46dp"
+        android:layout_height="30dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/a1"
-        android:onClick="clicka1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/a2"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="29dp"
+        android:layout_height="30dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/a2"
-        android:onClick="clicka2"
         app:layout_constraintStart_toEndOf="@+id/a1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/a3"
-        android:layout_width="60dp"
-        android:layout_height="28dp"
+        android:layout_width="63dp"
+        android:layout_height="30dp"
         android:layout_marginTop="32dp"
-        android:onClick="clicka3"
         android:background="@drawable/a33"
         app:layout_constraintStart_toEndOf="@+id/a2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/a4"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="31dp"
+        android:layout_height="30dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/a4"
-        android:onClick="clicka4"
         app:layout_constraintStart_toEndOf="@+id/a3"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/a5"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="31dp"
+        android:layout_height="30dp"
         android:layout_marginTop="32dp"
-        android:onClick="clicka5"
         android:background="@drawable/a55"
         app:layout_constraintStart_toEndOf="@+id/a4"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/a6"
-        android:layout_width="60dp"
-        android:layout_height="28dp"
+        android:layout_width="63dp"
+        android:layout_height="30dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/a6"
-        android:onClick="clicka6"
         app:layout_constraintStart_toEndOf="@+id/a5"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/a7"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="29dp"
+        android:layout_height="30dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/a7"
-        android:onClick="clicka7"
         app:layout_constraintStart_toEndOf="@+id/a6"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/a8"
-        android:layout_width="43dp"
-        android:layout_height="28dp"
+        android:layout_width="46dp"
+        android:layout_height="30dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/a8"
-        android:onClick="clicka8"
         app:layout_constraintStart_toEndOf="@+id/a7"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--BOTÕES do campo B1 ATÉ B8 -->
     <Button
         android:id="@+id/b1"
-        android:layout_width="43dp"
-        android:layout_height="28dp"
+        android:layout_width="46dp"
+        android:layout_height="30dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/b1"
-        android:onClick="clickb1"
         app:layout_constraintEnd_toStartOf="@+id/b2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/a1" />
 
     <Button
         android:id="@+id/b2"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="29dp"
+        android:layout_height="30dp"
         android:background="@drawable/b2"
-        android:onClick="clickb2"
         app:layout_constraintStart_toEndOf="@+id/b1"
         app:layout_constraintTop_toBottomOf="@+id/a2" />
 
     <Button
         android:id="@+id/b3"
-        android:layout_width="60dp"
-        android:layout_height="28dp"
+        android:layout_width="63dp"
+        android:layout_height="30dp"
         android:background="@drawable/b3"
-        android:onClick="clickb3"
         app:layout_constraintStart_toEndOf="@+id/b2"
         app:layout_constraintTop_toBottomOf="@+id/a3" />
 
     <Button
         android:id="@+id/b4"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="31dp"
+        android:layout_height="30dp"
         android:background="@drawable/b4"
-        android:onClick="clickb4"
         app:layout_constraintStart_toEndOf="@+id/b3"
         app:layout_constraintTop_toBottomOf="@+id/a4" />
 
     <Button
         android:id="@+id/b5"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="31dp"
+        android:layout_height="30dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/b5"
-        android:onClick="clickb5"
         app:layout_constraintLeft_toRightOf="@+id/b4"
         app:layout_constraintStart_toEndOf="@+id/b4"
         app:layout_constraintTop_toBottomOf="@+id/a5" />
 
     <Button
         android:id="@+id/b6"
-        android:layout_width="60dp"
-        android:layout_height="28dp"
+        android:layout_width="63dp"
+        android:layout_height="30dp"
         android:background="@drawable/b6"
-        android:onClick="clickb6"
         app:layout_constraintStart_toEndOf="@+id/b5"
         app:layout_constraintTop_toBottomOf="@+id/a6" />
 
     <Button
         android:id="@+id/b7"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="29dp"
+        android:layout_height="30dp"
         android:background="@drawable/b7"
-        android:onClick="clickb7"
         app:layout_constraintStart_toEndOf="@+id/b6"
         app:layout_constraintTop_toBottomOf="@+id/a7" />
 
     <Button
         android:id="@+id/b8"
-        android:layout_width="43dp"
-        android:layout_height="28dp"
+        android:layout_width="46dp"
+        android:layout_height="30dp"
         android:background="@drawable/b8"
-        android:onClick="clickb8"
         app:layout_constraintStart_toEndOf="@+id/b7"
         app:layout_constraintTop_toBottomOf="@+id/a8" />
 
+    <!--BOTÕES do campo C1 ATÉ C8 -->
     <Button
         android:id="@+id/c1"
-        android:layout_width="43dp"
-        android:layout_height="28dp"
+        android:layout_width="46dp"
+        android:layout_height="30dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/c1"
-        android:onClick="clickc1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/b1" />
 
     <Button
         android:id="@+id/c2"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="29dp"
+        android:layout_height="30dp"
         android:background="@drawable/c2"
-        android:onClick="clickc2"
         app:layout_constraintStart_toEndOf="@+id/c1"
         app:layout_constraintTop_toBottomOf="@+id/b2" />
 
     <Button
         android:id="@+id/c3"
-        android:layout_width="60dp"
-        android:layout_height="28dp"
+        android:layout_width="63dp"
+        android:layout_height="30dp"
         android:background="@drawable/c3"
-        android:onClick="clickc3"
         app:layout_constraintStart_toEndOf="@+id/c2"
         app:layout_constraintTop_toBottomOf="@+id/b3" />
 
     <Button
         android:id="@+id/c4"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="31dp"
+        android:layout_height="30dp"
         android:background="@drawable/c4"
-        android:onClick="clickc4"
         app:layout_constraintStart_toEndOf="@+id/c3"
         app:layout_constraintTop_toBottomOf="@+id/b4" />
 
     <Button
         android:id="@+id/c5"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="31dp"
+        android:layout_height="30dp"
         android:background="@drawable/c5"
-        android:onClick="clickc5"
         app:layout_constraintStart_toEndOf="@+id/c4"
         app:layout_constraintTop_toBottomOf="@+id/b5" />
 
     <Button
         android:id="@+id/c6"
-        android:layout_width="60dp"
-        android:layout_height="28dp"
+        android:layout_width="63dp"
+        android:layout_height="30dp"
         android:background="@drawable/c6"
-        android:onClick="clickc6"
         app:layout_constraintStart_toEndOf="@+id/c5"
         app:layout_constraintTop_toBottomOf="@+id/b6" />
 
     <Button
         android:id="@+id/c7"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="29dp"
+        android:layout_height="30dp"
         android:background="@drawable/c7"
-        android:onClick="clickc7"
         app:layout_constraintStart_toEndOf="@+id/c6"
         app:layout_constraintTop_toBottomOf="@+id/b7" />
 
     <Button
         android:id="@+id/c8"
-        android:layout_width="43dp"
-        android:layout_height="28dp"
+        android:layout_width="46dp"
+        android:layout_height="30dp"
         android:background="@drawable/c8"
-        android:onClick="clickc8"
         app:layout_constraintStart_toEndOf="@+id/c7"
         app:layout_constraintTop_toBottomOf="@+id/b8" />
 
+    <!--BOTÕES do campo D1 ATÉ D8 -->
     <Button
         android:id="@+id/d1"
-        android:layout_width="43dp"
-        android:layout_height="28dp"
+        android:layout_width="46dp"
+        android:layout_height="30dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/d1"
-        android:onClick="clickd1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/c1" />
 
     <Button
         android:id="@+id/d2"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="29dp"
+        android:layout_height="30dp"
         android:background="@drawable/d2"
-        android:onClick="clickd2"
         app:layout_constraintStart_toEndOf="@+id/d1"
         app:layout_constraintTop_toBottomOf="@+id/c2" />
 
     <Button
         android:id="@+id/d3"
-        android:layout_width="60dp"
-        android:layout_height="28dp"
+        android:layout_width="63dp"
+        android:layout_height="30dp"
         android:background="@drawable/d3"
-        android:onClick="clickd3"
         app:layout_constraintStart_toEndOf="@+id/d2"
         app:layout_constraintTop_toBottomOf="@+id/c3" />
 
     <Button
         android:id="@+id/d4"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="31dp"
+        android:layout_height="30dp"
         android:background="@drawable/d4"
-        android:onClick="clickd4"
         app:layout_constraintStart_toEndOf="@+id/d3"
         app:layout_constraintTop_toBottomOf="@+id/c4" />
 
     <Button
         android:id="@+id/d5"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="31dp"
+        android:layout_height="30dp"
         android:background="@drawable/d5"
-        android:onClick="clickd5"
         app:layout_constraintStart_toEndOf="@+id/d4"
         app:layout_constraintTop_toBottomOf="@+id/c5" />
 
     <Button
         android:id="@+id/d6"
-        android:layout_width="60dp"
-        android:layout_height="28dp"
+        android:layout_width="63dp"
+        android:layout_height="30dp"
         android:background="@drawable/d6"
-        android:onClick="clickd6"
         app:layout_constraintStart_toEndOf="@+id/d5"
         app:layout_constraintTop_toBottomOf="@+id/c6" />
 
     <Button
         android:id="@+id/d7"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="29dp"
+        android:layout_height="30dp"
         android:background="@drawable/d7"
-        android:onClick="clickd7"
         app:layout_constraintStart_toEndOf="@+id/d6"
         app:layout_constraintTop_toBottomOf="@+id/c7" />
 
     <Button
         android:id="@+id/d8"
-        android:layout_width="43dp"
-        android:layout_height="28dp"
+        android:layout_width="46dp"
+        android:layout_height="30dp"
         android:background="@drawable/d8"
-        android:onClick="clickd8"
         app:layout_constraintStart_toEndOf="@+id/d7"
         app:layout_constraintTop_toBottomOf="@+id/c8" />
 
+    <!--BOTÕES do campo E1 ATÉ E8 -->
     <Button
         android:id="@+id/e1"
-        android:layout_width="43dp"
-        android:layout_height="28dp"
+        android:layout_width="46dp"
+        android:layout_height="30dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/e1"
-        android:onClick="clicke1"
         app:layout_constraintBottom_toTopOf="@+id/f1"
         app:layout_constraintEnd_toStartOf="@+id/e2"
         app:layout_constraintStart_toStartOf="parent"
@@ -333,47 +304,42 @@
 
     <Button
         android:id="@+id/e2"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="29dp"
+        android:layout_height="30dp"
         android:background="@drawable/e2"
-        android:onClick="clicke2"
         app:layout_constraintStart_toEndOf="@+id/e1"
         app:layout_constraintTop_toBottomOf="@+id/d2" />
 
     <Button
         android:id="@+id/e3"
-        android:layout_width="60dp"
-        android:layout_height="28dp"
+        android:layout_width="63dp"
+        android:layout_height="30dp"
         android:background="@drawable/e3"
-        android:onClick="clicke3"
         app:layout_constraintStart_toEndOf="@+id/e2"
         app:layout_constraintTop_toBottomOf="@+id/d3" />
 
     <Button
         android:id="@+id/e4"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="31dp"
+        android:layout_height="30dp"
         android:background="@drawable/e4"
-        android:onClick="clicke4"
         app:layout_constraintStart_toEndOf="@+id/e3"
         app:layout_constraintTop_toBottomOf="@+id/d4" />
 
     <Button
         android:id="@+id/e5"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="31dp"
+        android:layout_height="30dp"
         android:background="@drawable/e5"
-        android:onClick="clicke5"
         app:layout_constraintLeft_toLeftOf="@+id/d5"
         app:layout_constraintStart_toEndOf="@+id/e4"
         app:layout_constraintTop_toBottomOf="@+id/d5" />
 
     <Button
         android:id="@+id/e6"
-        android:layout_width="60dp"
-        android:layout_height="28dp"
+        android:layout_width="63dp"
+        android:layout_height="30dp"
         android:background="@drawable/e6"
-        android:onClick="clicke6"
         app:layout_constraintBottom_toTopOf="@+id/f6"
         app:layout_constraintEnd_toStartOf="@+id/e7"
         app:layout_constraintStart_toEndOf="@+id/e5"
@@ -381,101 +347,93 @@
 
     <Button
         android:id="@+id/e7"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="29dp"
+        android:layout_height="30dp"
         android:background="@drawable/e7"
-        android:onClick="clicke7"
         app:layout_constraintStart_toEndOf="@+id/e6"
         app:layout_constraintTop_toBottomOf="@+id/d7" />
 
     <Button
         android:id="@+id/e8"
-        android:layout_width="43dp"
-        android:layout_height="28dp"
+        android:layout_width="46dp"
+        android:layout_height="30dp"
         android:background="@drawable/e8"
-        android:onClick="clicke8"
         app:layout_constraintStart_toEndOf="@+id/e7"
         app:layout_constraintTop_toBottomOf="@+id/d8" />
 
+    <!--BOTÕES do campo F1 ATÉ F8 -->
     <Button
         android:id="@+id/f1"
-        android:layout_width="43dp"
-        android:layout_height="28dp"
+        android:layout_width="46dp"
+        android:layout_height="30dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/f1"
-        android:onClick="clickf1"
         app:layout_constraintEnd_toStartOf="@+id/f2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/e1" />
 
     <Button
         android:id="@+id/f2"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="29dp"
+        android:layout_height="30dp"
         android:background="@drawable/f2"
-        android:onClick="clickf2"
         app:layout_constraintStart_toEndOf="@+id/f1"
         app:layout_constraintTop_toBottomOf="@+id/e2" />
 
     <Button
         android:id="@+id/f3"
-        android:layout_width="60dp"
-        android:layout_height="28dp"
+        android:layout_width="63dp"
+        android:layout_height="30dp"
         android:background="@drawable/f3"
-        android:onClick="clickf3"
         app:layout_constraintLeft_toRightOf="@+id/f2"
         app:layout_constraintStart_toEndOf="@+id/f2"
         app:layout_constraintTop_toBottomOf="@+id/e3" />
 
     <Button
         android:id="@+id/f4"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="31dp"
+        android:layout_height="30dp"
         android:background="@drawable/f4"
-        android:onClick="clickf4"
         app:layout_constraintLeft_toRightOf="@+id/a3"
         app:layout_constraintStart_toEndOf="@+id/f3"
         app:layout_constraintTop_toBottomOf="@+id/e4" />
 
     <Button
         android:id="@+id/f5"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="31dp"
+        android:layout_height="30dp"
         android:background="@drawable/f5"
-        android:onClick="clickf5"
         app:layout_constraintStart_toEndOf="@+id/f4"
         app:layout_constraintTop_toBottomOf="@+id/e5" />
 
     <Button
         android:id="@+id/f6"
-        android:layout_width="60dp"
-        android:layout_height="28dp"
+        android:layout_width="63dp"
+        android:layout_height="30dp"
         android:background="@drawable/f6"
-        android:onClick="clickf6"
         app:layout_constraintEnd_toStartOf="@+id/f7"
         app:layout_constraintStart_toEndOf="@+id/f5"
         app:layout_constraintTop_toBottomOf="@+id/e6" />
 
     <Button
         android:id="@+id/f7"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="29dp"
+        android:layout_height="30dp"
         android:background="@drawable/f7"
-        android:onClick="clickf7"
         app:layout_constraintLeft_toLeftOf="@+id/c7"
         app:layout_constraintStart_toEndOf="@+id/f6"
         app:layout_constraintTop_toBottomOf="@+id/e7" />
 
     <Button
         android:id="@+id/f8"
-        android:layout_width="43dp"
-        android:layout_height="28dp"
+        android:layout_width="46dp"
+        android:layout_height="30dp"
         android:background="@drawable/f8"
-        android:onClick="clickf8"
         app:layout_constraintLeft_toRightOf="@+id/f7"
         app:layout_constraintStart_toEndOf="@+id/f7"
         app:layout_constraintTop_toBottomOf="@+id/e8" />
+
 
 
     <Button
@@ -774,6 +732,7 @@
         android:layout_marginTop="24dp"
         android:background="#40230d"
         android:text="limpar"
+        android:onClick="limpar"
         android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toStartOf="@+id/salvar"
         app:layout_constraintTop_toBottomOf="@+id/adatacante11" />
@@ -787,6 +746,7 @@
         android:layout_marginTop="24dp"
         android:background="@android:color/holo_blue_dark"
         android:text="finalizar"
+        android:onClick="finalizar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adatacante11" />
 
@@ -799,8 +759,350 @@
         android:layout_marginTop="24dp"
         android:background="@color/colorPrimary"
         android:text="salvar"
+        android:onClick="salvar"
         android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toStartOf="@+id/finalizar"
         app:layout_constraintTop_toBottomOf="@+id/adatacante11" />
+
+    <Button
+        android:id="@+id/rebote"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/holo_orange_light"
+        android:text="rebote"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/escanteio"
+        app:layout_constraintTop_toBottomOf="@+id/fraco" />
+
+    <Button
+        android:id="@+id/escanteio"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/holo_orange_light"
+        android:text="escanteio"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/gol"
+        app:layout_constraintTop_toBottomOf="@+id/delonge" />
+
+    <Button
+        android:id="@+id/gol"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/holo_orange_light"
+        android:text="gol"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/atacante7"
+        app:layout_constraintTop_toBottomOf="@+id/pfora" />
+
+    <Button
+        android:id="@+id/impedimento"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/holo_orange_light"
+        android:text="impedido"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/errado2"
+        app:layout_constraintTop_toBottomOf="@+id/recua" />
+
+    <Button
+        android:id="@+id/errado2"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:background="#9f4941"
+        android:text="errado"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/certo"
+        app:layout_constraintTop_toBottomOf="@+id/lanca" />
+
+    <Button
+        android:id="@+id/certo"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="2dp"
+        android:background="#436d50"
+        android:text="certo"
+        app:layout_constraintStart_toEndOf="@+id/lat_direito2"
+        app:layout_constraintTop_toBottomOf="@+id/passa" />
+
+    <Button
+        android:id="@+id/recua"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="26dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="recua"
+        app:layout_constraintStart_toEndOf="@+id/lanca"
+        app:layout_constraintTop_toBottomOf="@+id/f6" />
+
+    <Button
+        android:id="@+id/lanca"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="26dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="lança"
+        app:layout_constraintStart_toEndOf="@+id/passa"
+        app:layout_constraintTop_toBottomOf="@+id/f5" />
+
+    <Button
+        android:id="@+id/passa"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="26dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="passa"
+        app:layout_constraintStart_toEndOf="@+id/goleiro1"
+        app:layout_constraintTop_toBottomOf="@+id/f4" />
+
+    <Button
+        android:id="@+id/desvio"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="desvio"
+        app:layout_constraintStart_toEndOf="@+id/cabeceio"
+        app:layout_constraintTop_toBottomOf="@+id/errado2" />
+
+    <Button
+        android:id="@+id/cabeceio"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="cabeceio"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/chute"
+        app:layout_constraintTop_toBottomOf="@+id/errado2" />
+
+    <Button
+        android:id="@+id/pfora"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="2dp"
+        android:background="#9f4941"
+        android:text="p/ fora"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/lat_esquerdo6"
+        app:layout_constraintTop_toBottomOf="@+id/agol" />
+
+    <Button
+        android:id="@+id/fraco"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:background="#9f4941"
+        android:text="fraco"
+        app:layout_constraintStart_toEndOf="@+id/delonge"
+        app:layout_constraintTop_toBottomOf="@+id/forte" />
+
+    <Button
+        android:id="@+id/forte"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:background="#436d50"
+        android:text="forte"
+        app:layout_constraintStart_toEndOf="@+id/deperto"
+        app:layout_constraintTop_toBottomOf="@+id/desvio" />
+
+    <Button
+        android:id="@+id/delonge"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:background="#9f4941"
+        android:text="de longe"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/pfora"
+        app:layout_constraintTop_toBottomOf="@+id/deperto" />
+
+    <Button
+        android:id="@+id/deperto"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:background="#436d50"
+        android:text="de perto"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/agol"
+        app:layout_constraintTop_toBottomOf="@+id/cabeceio" />
+
+    <Button
+        android:id="@+id/agol"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="2dp"
+        android:background="#436d50"
+        android:text="a gol"
+        app:layout_constraintStart_toEndOf="@+id/cabeca_area5"
+        app:layout_constraintTop_toBottomOf="@+id/chute" />
+
+    <Button
+        android:id="@+id/chute"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="chute"
+        app:layout_constraintStart_toEndOf="@+id/zagueiro4"
+        app:layout_constraintTop_toBottomOf="@+id/certo" />
+
+    <Button
+        android:id="@+id/afasta"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="afasta"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/desarma"
+        app:layout_constraintTop_toBottomOf="@+id/rebote" />
+
+    <Button
+        android:id="@+id/desarma"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="desarma"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/disputa"
+        app:layout_constraintTop_toBottomOf="@+id/escanteio" />
+
+    <Button
+        android:id="@+id/cartaovermelho"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/holo_red_dark"
+        android:text="cartão vermelho"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/agarra"
+        app:layout_constraintTop_toBottomOf="@+id/afasta" />
+
+    <Button
+        android:id="@+id/agarra"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="agarra"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/espalma"
+        app:layout_constraintTop_toBottomOf="@+id/desarma" />
+
+    <Button
+        android:id="@+id/cartaoamarelo"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:background="#ffe601"
+        android:text="cartão amarelo"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/fazfalta"
+        app:layout_constraintTop_toBottomOf="@+id/cartaovermelho" />
+
+    <Button
+        android:id="@+id/fazfalta"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:background="#9f4941"
+        android:text="faz falta"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/perde"
+        app:layout_constraintTop_toBottomOf="@+id/agarra" />
+
+    <Button
+        android:id="@+id/perde"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="2dp"
+        android:background="#9f4941"
+        android:text="perde"
+        app:layout_constraintStart_toEndOf="@+id/camisa10"
+        app:layout_constraintTop_toBottomOf="@+id/espalma" />
+
+    <Button
+        android:id="@+id/espalma"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="espalma"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/centroavante9"
+        app:layout_constraintTop_toBottomOf="@+id/disputa" />
+
+    <Button
+        android:id="@+id/disputa"
+        android:layout_width="50dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="disputa"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/volante8"
+        app:layout_constraintTop_toBottomOf="@+id/gol" />
 
 </android.support.constraint.ConstraintLayout>

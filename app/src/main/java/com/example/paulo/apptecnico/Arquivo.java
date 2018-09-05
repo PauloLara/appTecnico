@@ -45,7 +45,6 @@ public class Arquivo {
     public void escreverArquivo(String st){
         try {
             bfr.write(st);
-            bfr.newLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -57,5 +56,13 @@ public class Arquivo {
 
     public void fecharArquivo() throws IOException {
         bfr.close();
+    }
+
+    public  void novaLinha() throws IOException {
+        bfr.newLine();
+    }
+
+    public  void limparArquivo() throws IOException {
+        bfr = new BufferedWriter(new FileWriter(getArquivo()));
     }
 }
