@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".Acoes">
 
-
+<!--BOTÕES A1 ATÉ A8 -->
     <Button
         android:id="@+id/a1"
         android:layout_width="43dp"
