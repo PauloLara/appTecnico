@@ -1,10 +1,17 @@
 package com.example.paulo.apptecnico;
 import android.os.Environment;
+import android.support.v4.app.LoaderManager;
 import android.widget.Toast;
+
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.security.KeyStore;
+import java.util.Scanner;
 
 public class Arquivo {
     //NOME DA PASTA DENTRO DE DOWNLOADS
@@ -65,4 +72,6 @@ public class Arquivo {
     public  void limparArquivo() throws IOException {
         bfr = new BufferedWriter(new FileWriter(getArquivo()));
     }
+
+
 }

@@ -579,7 +579,7 @@
         app:layout_constraintTop_toBottomOf="@+id/camisa10"
         tools:textColorHint="@color/design_default_color_primary_dark" />
 
-    <!--ADVERSARIO *****************************************************************-->
+    <!--ADVERSARIO *****************************************************************
     <Button
         android:id="@+id/adgoleiro1"
         android:layout_width="90dp"
@@ -723,19 +723,21 @@
         app:layout_constraintTop_toBottomOf="@+id/adcamisa10"
         tools:textColorHint="@color/design_default_color_primary_dark" />
 
+        -->
+
     <Button
         android:id="@+id/limpar"
         android:layout_width="59dp"
         android:layout_height="31dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:background="#40230d"
-        android:text="limpar"
         android:onClick="limpar"
+        android:text="limpar"
         android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toStartOf="@+id/salvar"
-        app:layout_constraintTop_toBottomOf="@+id/adatacante11" />
+        app:layout_constraintTop_toBottomOf="@+id/perde" />
 
     <Button
         android:id="@+id/finalizar"
@@ -743,12 +745,12 @@
         android:layout_height="31dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:background="@android:color/holo_blue_dark"
-        android:text="finalizar"
         android:onClick="finalizar"
+        android:text="finalizar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adatacante11" />
+        app:layout_constraintTop_toBottomOf="@+id/cartaoamarelo" />
 
     <Button
         android:id="@+id/salvar"
@@ -756,13 +758,13 @@
         android:layout_height="31dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:background="@color/colorPrimary"
-        android:text="salvar"
         android:onClick="salvar"
+        android:text="salvar"
         android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toStartOf="@+id/finalizar"
-        app:layout_constraintTop_toBottomOf="@+id/adatacante11" />
+        app:layout_constraintTop_toBottomOf="@+id/fazfalta" />
 
     <Button
         android:id="@+id/rebote"
@@ -800,6 +802,7 @@
         android:background="@android:color/holo_orange_light"
         android:text="gol"
         android:textSize="18sp"
+        android:onClick="lerArquivo"
         app:layout_constraintStart_toEndOf="@+id/atacante7"
         app:layout_constraintTop_toBottomOf="@+id/pfora" />
 
@@ -990,15 +993,15 @@
         app:layout_constraintTop_toBottomOf="@+id/certo" />
 
     <Button
-        android:id="@+id/afasta"
+        android:id="@+id/intercepta"
         android:layout_width="50dp"
         android:layout_height="28dp"
         android:layout_marginLeft="2dp"
         android:layout_marginStart="2dp"
         android:layout_marginTop="24dp"
         android:background="@color/colorPrimaryDark"
-        android:text="afasta"
-        android:textSize="12sp"
+        android:text="intercepta"
+        android:textSize="8sp"
         app:layout_constraintStart_toEndOf="@+id/desarma"
         app:layout_constraintTop_toBottomOf="@+id/rebote" />
 
@@ -1026,7 +1029,7 @@
         android:text="cartão vermelho"
         android:textSize="8sp"
         app:layout_constraintStart_toEndOf="@+id/agarra"
-        app:layout_constraintTop_toBottomOf="@+id/afasta" />
+        app:layout_constraintTop_toBottomOf="@+id/intercepta" />
 
     <Button
         android:id="@+id/agarra"

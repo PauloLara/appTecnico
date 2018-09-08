@@ -1,23 +1,38 @@
 package com.example.paulo.apptecnico;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
 
 
 public class Acoes extends AppCompatActivity implements View.OnClickListener{
     final Arquivo arquivo = new Arquivo();
 
-    public Button gravara1, gravara2, gravara3, gravara4, gravara5, gravara6, gravara7, gravara8, gravarb1,
- gravarb2, gravarb3, gravarb4, gravarb5, gravarb6, gravarb7, gravarb8, gravarc1, gravarc2, gravarc3,
- gravarc4, gravarc5, gravarc6, gravarc7, gravarc8, gravard1, gravard2, gravard3, gravard4, gravard5,
- gravard6, gravard7, gravard8, gravare1, gravare2, gravare3, gravare4, gravare5, gravare6, gravare7,
- gravare8, gravarf1, gravarf2, gravarf3, gravarf4, gravarf5, gravarf6, gravarf7, gravarf8, goleiro1,
+    public Button a1, a2, a3, a4, a5, a6, a7, a8, b1,
+ b2, b3, b4, b5, b6, b7, b8, c1, c2, c3,
+ c4, c5, c6, c7, c8, d1, d2, d3, d4, d5,
+ d6, d7, d8, e1, e2, e3, e4, e5, e6, e7,
+ e8, f1, f2, f3, f4, f5, f6, f7, f8, goleiro1,
  lateral2, zagueiro3, zagueiro4, cabArea5, lateral6, atacante7, volante8, centroavante9, camisa10, atacante11,
  salvar, finalizar, limpar;
 
@@ -52,102 +67,102 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
         atacante11 = findViewById(R.id.atacante11);
         atacante11.setOnClickListener(this);
 
-        gravara1 = findViewById(R.id.a1);
-        gravara1.setOnClickListener(this);
-        gravara2 = findViewById(R.id.a2);
-        gravara2.setOnClickListener(this);
-        gravara3 = findViewById(R.id.a3);
-        gravara3.setOnClickListener(this);
-        gravara4 = findViewById(R.id.a4);
-        gravara4.setOnClickListener(this);
-        gravara5 = findViewById(R.id.a5);
-        gravara5.setOnClickListener(this);
-        gravara6 = findViewById(R.id.a6);
-        gravara6.setOnClickListener(this);
-        gravara7 = findViewById(R.id.a7);
-        gravara7.setOnClickListener(this);
-        gravara8 = findViewById(R.id.a8);
-        gravara8.setOnClickListener(this);
-        gravarb1 = findViewById(R.id.b1);
-        gravarb1.setOnClickListener(this);
-        gravarb2 = findViewById(R.id.b2);
-        gravarb2.setOnClickListener(this);
-        gravarb3 = findViewById(R.id.b3);
-        gravarb3.setOnClickListener(this);
-        gravarb4 = findViewById(R.id.b4);
-        gravarb4.setOnClickListener(this);
-        gravarb5 = findViewById(R.id.b5);
-        gravarb5.setOnClickListener(this);
-        gravarb6 = findViewById(R.id.b6);
-        gravarb6.setOnClickListener(this);
-        gravarb7 = findViewById(R.id.b7);
-        gravarb7.setOnClickListener(this);
-        gravarb8 = findViewById(R.id.b8);
-        gravarb8.setOnClickListener(this);
-        gravarc1 = findViewById(R.id.c1);
-        gravarc1.setOnClickListener(this);
-        gravarc2 = findViewById(R.id.c2);
-        gravarc2.setOnClickListener(this);
-        gravarc3 = findViewById(R.id.c3);
-        gravarc3.setOnClickListener(this);
-        gravarc4 = findViewById(R.id.c4);
-        gravarc4.setOnClickListener(this);
-        gravarc5 = findViewById(R.id.c5);
-        gravarc5.setOnClickListener(this);
-        gravarc6 = findViewById(R.id.c6);
-        gravarc6.setOnClickListener(this);
-        gravarc7 = findViewById(R.id.c7);
-        gravarc7.setOnClickListener(this);
-        gravarc8 = findViewById(R.id.c8);
-        gravarc8.setOnClickListener(this);
-        gravard1 = findViewById(R.id.d1);
-        gravard1.setOnClickListener(this);
-        gravard2 = findViewById(R.id.d2);
-        gravard2.setOnClickListener(this);
-        gravard3 = findViewById(R.id.d3);
-        gravard3.setOnClickListener(this);
-        gravard4 = findViewById(R.id.d4);
-        gravard4.setOnClickListener(this);
-        gravard5 = findViewById(R.id.d5);
-        gravard5.setOnClickListener(this);
-        gravard6 = findViewById(R.id.d6);
-        gravard6.setOnClickListener(this);
-        gravard7 = findViewById(R.id.d7);
-        gravard7.setOnClickListener(this);
-        gravard8 = findViewById(R.id.d8);
-        gravard8.setOnClickListener(this);
-        gravare1 = findViewById(R.id.e1);
-        gravare1.setOnClickListener(this);
-        gravare2 = findViewById(R.id.e2);
-        gravare2.setOnClickListener(this);
-        gravare3 = findViewById(R.id.e3);
-        gravare3.setOnClickListener(this);
-        gravare4 = findViewById(R.id.e4);
-        gravare4.setOnClickListener(this);
-        gravare5 = findViewById(R.id.e5);
-        gravare5.setOnClickListener(this);
-        gravare6 = findViewById(R.id.e6);
-        gravare6.setOnClickListener(this);
-        gravare7 = findViewById(R.id.e7);
-        gravare7.setOnClickListener(this);
-        gravare8 = findViewById(R.id.e8);
-        gravare8.setOnClickListener(this);
-        gravarf1 = findViewById(R.id.f1);
-        gravarf1.setOnClickListener(this);
-        gravarf2 = findViewById(R.id.f2);
-        gravarf2.setOnClickListener(this);
-        gravarf3 = findViewById(R.id.f3);
-        gravarf3.setOnClickListener(this);
-        gravarf4 = findViewById(R.id.f4);
-        gravarf4.setOnClickListener(this);
-        gravarf5 = findViewById(R.id.f5);
-        gravarf5.setOnClickListener(this);
-        gravarf6 = findViewById(R.id.f6);
-        gravarf6.setOnClickListener(this);
-        gravarf7 = findViewById(R.id.f7);
-        gravarf7.setOnClickListener(this);
-        gravarf8 = findViewById(R.id.f8);
-        gravarf8.setOnClickListener(this);
+        a1 = findViewById(R.id.a1);
+        a1.setOnClickListener(this);
+        a2 = findViewById(R.id.a2);
+        a2.setOnClickListener(this);
+        a3 = findViewById(R.id.a3);
+        a3.setOnClickListener(this);
+        a4 = findViewById(R.id.a4);
+        a4.setOnClickListener(this);
+        a5 = findViewById(R.id.a5);
+        a5.setOnClickListener(this);
+        a6 = findViewById(R.id.a6);
+        a6.setOnClickListener(this);
+        a7 = findViewById(R.id.a7);
+        a7.setOnClickListener(this);
+        a8 = findViewById(R.id.a8);
+        a8.setOnClickListener(this);
+        b1 = findViewById(R.id.b1);
+        b1.setOnClickListener(this);
+        b2 = findViewById(R.id.b2);
+        b2.setOnClickListener(this);
+        b3 = findViewById(R.id.b3);
+        b3.setOnClickListener(this);
+        b4 = findViewById(R.id.b4);
+        b4.setOnClickListener(this);
+        b5 = findViewById(R.id.b5);
+        b5.setOnClickListener(this);
+        b6 = findViewById(R.id.b6);
+        b6.setOnClickListener(this);
+        b7 = findViewById(R.id.b7);
+        b7.setOnClickListener(this);
+        b8 = findViewById(R.id.b8);
+        b8.setOnClickListener(this);
+        c1 = findViewById(R.id.c1);
+        c1.setOnClickListener(this);
+        c2 = findViewById(R.id.c2);
+        c2.setOnClickListener(this);
+        c3 = findViewById(R.id.c3);
+        c3.setOnClickListener(this);
+        c4 = findViewById(R.id.c4);
+        c4.setOnClickListener(this);
+        c5 = findViewById(R.id.c5);
+        c5.setOnClickListener(this);
+        c6 = findViewById(R.id.c6);
+        c6.setOnClickListener(this);
+        c7 = findViewById(R.id.c7);
+        c7.setOnClickListener(this);
+        c8 = findViewById(R.id.c8);
+        c8.setOnClickListener(this);
+        d1 = findViewById(R.id.d1);
+        d1.setOnClickListener(this);
+        d2 = findViewById(R.id.d2);
+        d2.setOnClickListener(this);
+        d3 = findViewById(R.id.d3);
+        d3.setOnClickListener(this);
+        d4 = findViewById(R.id.d4);
+        d4.setOnClickListener(this);
+        d5 = findViewById(R.id.d5);
+        d5.setOnClickListener(this);
+        d6 = findViewById(R.id.d6);
+        d6.setOnClickListener(this);
+        d7 = findViewById(R.id.d7);
+        d7.setOnClickListener(this);
+        d8 = findViewById(R.id.d8);
+        d8.setOnClickListener(this);
+        e1 = findViewById(R.id.e1);
+        e1.setOnClickListener(this);
+        e2 = findViewById(R.id.e2);
+        e2.setOnClickListener(this);
+        e3 = findViewById(R.id.e3);
+        e3.setOnClickListener(this);
+        e4 = findViewById(R.id.e4);
+        e4.setOnClickListener(this);
+        e5 = findViewById(R.id.e5);
+        e5.setOnClickListener(this);
+        e6 = findViewById(R.id.e6);
+        e6.setOnClickListener(this);
+        e7 = findViewById(R.id.e7);
+        e7.setOnClickListener(this);
+        e8 = findViewById(R.id.e8);
+        e8.setOnClickListener(this);
+        f1 = findViewById(R.id.f1);
+        f1.setOnClickListener(this);
+        f2 = findViewById(R.id.f2);
+        f2.setOnClickListener(this);
+        f3 = findViewById(R.id.f3);
+        f3.setOnClickListener(this);
+        f4 = findViewById(R.id.f4);
+        f4.setOnClickListener(this);
+        f5 = findViewById(R.id.f5);
+        f5.setOnClickListener(this);
+        f6 = findViewById(R.id.f6);
+        f6.setOnClickListener(this);
+        f7 = findViewById(R.id.f7);
+        f7.setOnClickListener(this);
+        f8 = findViewById(R.id.f8);
+        f8.setOnClickListener(this);
 
         salvar = findViewById(R.id.salvar);
         finalizar = findViewById(R.id.finalizar);
@@ -169,7 +184,7 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
     //BOTÕES A1 ATÉ A8
 
     /*public void clicka1(View v) throws IOException {
-        int idd = gravara1.getId();
+        int idd = a1.getId();
         String st = getResources().getResourceEntryName(idd);
         arquivo.escreverArquivo(st);
         Toast.makeText(getApplicationContext(), "A1!", Toast.LENGTH_SHORT).show();
@@ -195,4 +210,22 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
         clickBtnVoltarInicial();
     }
 
+    public void lerArquivo(View v) throws IOException {
+        try {
+            String st = arquivo.getCaminho()+""+arquivo.getNomeArquivo();
+            FileReader fr = new FileReader(st);
+            BufferedReader br;
+            br = new BufferedReader(fr);
+            String digitado = br.readLine();
+            for (String linha = br.readLine(); linha != null; linha = br.readLine()) {
+                while (digitado != null) {
+                    Toast.makeText(getApplicationContext(), digitado, Toast.LENGTH_SHORT).show();
+                    //System.out.println("Texto Digitado = " + digitado);
+                    digitado = br.readLine();
+                }
+            }
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
