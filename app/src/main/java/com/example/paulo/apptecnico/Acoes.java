@@ -1,6 +1,7 @@
 package com.example.paulo.apptecnico;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -27,6 +29,7 @@ import java.util.LinkedList;
 
 public class Acoes extends AppCompatActivity implements View.OnClickListener{
     final Arquivo arquivo = new Arquivo();
+
 
     public Button a1, a2, a3, a4, a5, a6, a7, a8, b1,
  b2, b3, b4, b5, b6, b7, b8, c1, c2, c3,
@@ -212,20 +215,21 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
 
     public void lerArquivo(View v) throws IOException {
         try {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Conteúdo:");
             String st = arquivo.getCaminho()+""+arquivo.getNomeArquivo();
             FileReader fr = new FileReader(st);
             BufferedReader br;
             br = new BufferedReader(fr);
             String digitado = br.readLine();
-            for (String linha = br.readLine(); linha != null; linha = br.readLine()) {
-                while (digitado != null) {
-                    Toast.makeText(getApplicationContext(), digitado, Toast.LENGTH_SHORT).show();
-                    //System.out.println("Texto Digitado = " + digitado);
-                    digitado = br.readLine();
-                }
+            while (digitado != null) {
+                builder.setMessage(digitado).show();
+                digitado = br.readLine();
             }
         }catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
 }

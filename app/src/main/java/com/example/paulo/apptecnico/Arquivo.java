@@ -73,5 +73,4 @@ public class Arquivo {
         bfr = new BufferedWriter(new FileWriter(getArquivo()));
     }
 
-
 }
