@@ -206,7 +206,7 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
         try {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Conteúdo:");
-            String st = arquivo.getCaminho()+""+arquivo.getNomeArquivo();
+            String st = arquivo.getCaminho()+arquivo.getNomeArquivo();
             FileReader fr = new FileReader(st);
             BufferedReader br;
             br = new BufferedReader(fr);

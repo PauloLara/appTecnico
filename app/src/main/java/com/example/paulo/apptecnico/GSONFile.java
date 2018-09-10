@@ -11,8 +11,7 @@ public class GSONFile {
     Arquivo arquivo = new Arquivo();
 
     public JsonObject convertFileToJSON (String fileName){
-        String st = arquivo.getCaminho()+""+arquivo.getNomeArquivo();
-        // Read from File to String
+        String st = arquivo.getCaminho()+arquivo.getNomeArquivo();
         JsonObject jsonObject = new JsonObject();
         try {
             JsonParser parser = new JsonParser();
