@@ -1,30 +1,14 @@
 package com.example.paulo.apptecnico;
-
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.LinkedList;
 
 
 public class Acoes extends AppCompatActivity implements View.OnClickListener{
@@ -213,6 +197,11 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
         clickBtnVoltarInicial();
     }
 
+    public void gerarJson(View v) throws IOException{
+        gsonFile.convertFileToJSON (arquivo.getCaminho()+"test.json");
+    }
+
+    GSONFile gsonFile = new GSONFile();
     public void lerArquivo(View v) throws IOException {
         try {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -225,11 +214,15 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
             while (digitado != null) {
                 builder.setMessage(digitado).show();
                 digitado = br.readLine();
+                //gsonFile.convertFileToJSON (arquivo.getCaminho()+"test.json");
             }
         }catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-
 }
+
+
+
+
