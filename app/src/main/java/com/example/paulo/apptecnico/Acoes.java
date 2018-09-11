@@ -1,14 +1,27 @@
 package com.example.paulo.apptecnico;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 
 
 public class Acoes extends AppCompatActivity implements View.OnClickListener{
@@ -29,7 +42,9 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acoes);
 
-        arquivo.criarArquivo();
+        arquivo.criarTxt();
+        arquivo.criarJson();
+        arquivo.criarObjJson();
 
         goleiro1 = findViewById(R.id.goleiro1);
         goleiro1.setOnClickListener(this);
@@ -156,28 +171,6 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
         limpar = findViewById(R.id.limpar);
     }
 
-    public void onClick(View v) {
-        int idd = v.getId();
-        String st = v.getResources().getResourceEntryName(idd);
-        arquivo.escreverArquivo(st);
-        Toast.makeText(getApplicationContext(), st, Toast.LENGTH_SHORT).show();
-        try {
-            arquivo.flushArquivo();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    //BOTÕES A1 ATÉ A8
-
-    /*public void clicka1(View v) throws IOException {
-        int idd = a1.getId();
-        String st = getResources().getResourceEntryName(idd);
-        arquivo.escreverArquivo(st);
-        Toast.makeText(getApplicationContext(), "A1!", Toast.LENGTH_SHORT).show();
-        arquivo.flushArquivo();
-    }*/
-
     public void clickBtnVoltarInicial(){
         Intent it;
         it = new Intent(Acoes.this, Inicial.class);
@@ -185,29 +178,86 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
     }
 
     public void limpar(View v) throws IOException {
-        arquivo.limparArquivo();
+        arquivo.limparTxt();
+        arquivo.limparJson();
     }
 
     public void salvar(View v) throws IOException {
-        arquivo.novaLinha();
+        arquivo.novaLinhaTxt();
     }
 
     public void finalizar(View v) throws IOException {
-        arquivo.fecharArquivo();
+        arquivo.fecharTxt();
         clickBtnVoltarInicial();
     }
 
-    public void gerarJson(View v) throws IOException{
-        gsonFile.convertFileToJSON (arquivo.getCaminho()+"test.json");
+    GSONFile gsonFile = new GSONFile();
+    @SuppressLint("NewApi")
+    public void gerarJson(View v) throws IOException, JSONException {
+       // this.jsonCreate();
     }
 
-    GSONFile gsonFile = new GSONFile();
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    public void onClick(View v) {
+        int idd = v.getId();
+        String st = v.getResources().getResourceEntryName(idd);
+
+        try {
+            arquivo.escreverJson(st);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        try {
+            arquivo.novaLinhaJson();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            arquivo.flushJson();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        arquivo.escreverTxt(st);
+        try {
+            arquivo.novaLinhaTxt();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Toast.makeText(getApplicationContext(), st, Toast.LENGTH_SHORT).show();
+        try {
+            arquivo.flushTxt();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    public void jsonCreate() throws JSONException {
+        JSONObject obj = new JSONObject();
+        obj.put("Nome: ","Paulo");
+        obj.put("Endereço: ","B. Goncalves");
+        obj.put("Fone: ","51 985826397");
+
+        JSONArray listaDeContatos = new JSONArray();
+        listaDeContatos.put("Antonio");
+        listaDeContatos.put("Arnaldo");
+        listaDeContatos.put("Adroaldo");
+        obj.put("Contatos: ", listaDeContatos);
+        String str = arquivo.getCaminho()+"jsonCreate.json";
+        try(FileWriter file = new FileWriter(str)){
+            file.write(obj.toString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void lerArquivo(View v) throws IOException {
         try {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Conteúdo:");
-            String st = arquivo.getCaminho()+arquivo.getNomeArquivo();
-            FileReader fr = new FileReader(st);
+            FileReader fr = new FileReader(arquivo.getCaminho()+arquivo.getNomeTxt());
             BufferedReader br;
             br = new BufferedReader(fr);
             String digitado = br.readLine();

@@ -1,11 +1,19 @@
 package com.example.paulo.apptecnico;
 import android.os.Environment;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class Arquivo {
+
+    BufferedWriter bfrTxt = null;
+    BufferedWriter bfrJson = null;
+    FileWriter file = null;
 
     public String getNomeDiretorio() {
         return "arquivoDroid";
@@ -16,53 +24,95 @@ public class Arquivo {
     }
 
     File diretorio = new File(getCaminho());
-
     public void setDiretorio(File diretorio) {
         this.diretorio = diretorio;
         diretorio.mkdir();
     }
 
-    public String getNomeArquivo() {
-        return "temporario.txt";
+    //ARQUIVO JSON *************ARQUIVO JSON *************ARQUIVO JSON *************ARQUIVO JSON *************ARQUIVO JSON *************
+
+    public String getJson(){
+        return getCaminho()+"jsonCreate.json";
     }
 
-    public File getArquivo() {
-        return new File(getCaminho(), getNomeArquivo());
+   public void criarJson(){
+        try {
+            bfrJson = new BufferedWriter(new FileWriter(getJson()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    BufferedWriter bfr = null;
+    JSONObject obj = null;
 
-    public void criarArquivo(){
+    public void criarObjJson(){
+        obj = new JSONObject();
+    }
+
+    public void escreverJson(String st) throws JSONException {
+        obj.put("Nome: ",st);
+        try {
+            bfrJson.write(obj.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void flushJson() throws IOException {
+        bfrJson.flush();
+    }
+
+    public  void novaLinhaJson() throws IOException {
+        bfrJson.newLine();
+    }
+
+    public  void limparJson() throws IOException {
+        bfrJson = new BufferedWriter(new FileWriter(getJson()));
+    }
+
+
+
+    //ARQUIVO TXT *************ARQUIVO TXT *************ARQUIVO TXT *************ARQUIVO TXT *************ARQUIVO TXT *************
+
+    public void escreverTxt(String st){
+        try {
+            bfrTxt.write(st);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void flushTxt() throws IOException {
+        bfrTxt.flush();
+    }
+
+    public void fecharTxt() throws IOException {
+        bfrTxt.close();
+    }
+
+    public  void novaLinhaTxt() throws IOException {
+        bfrTxt.newLine();
+    }
+
+    public  void limparTxt() throws IOException {
+        bfrTxt = new BufferedWriter(new FileWriter(getTxt()));
+    }
+
+    public File getTxt() {
+        return new File(getCaminho(), getNomeTxt());
+    }
+
+    public void criarTxt(){
         this.setDiretorio(diretorio);
         try {
-            bfr = new BufferedWriter(new FileWriter(getArquivo()));
+            bfrTxt = new BufferedWriter(new FileWriter(getTxt()));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void escreverArquivo(String st){
-        try {
-            bfr.write(st);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void flushArquivo() throws IOException {
-        bfr.flush();
-    }
-
-    public void fecharArquivo() throws IOException {
-        bfr.close();
-    }
-
-    public  void novaLinha() throws IOException {
-        bfr.newLine();
-    }
-
-    public  void limparArquivo() throws IOException {
-        bfr = new BufferedWriter(new FileWriter(getArquivo()));
+    public String getNomeTxt() {
+        return "temp.txt";
     }
 
 }
