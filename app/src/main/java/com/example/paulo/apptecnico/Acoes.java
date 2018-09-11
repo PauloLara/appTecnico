@@ -42,7 +42,7 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acoes);
 
-        arquivo.criarTxt();
+        //arquivo.criarTxt();
         arquivo.criarJson();
         arquivo.criarObjJson();
 
@@ -187,7 +187,8 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
     }
 
     public void finalizar(View v) throws IOException {
-        arquivo.fecharTxt();
+        //arquivo.fecharTxt();
+        arquivo.fecharJson();
         clickBtnVoltarInicial();
     }
 
@@ -202,6 +203,7 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
         int idd = v.getId();
         String st = v.getResources().getResourceEntryName(idd);
 
+        //CRIA JSON
         try {
             arquivo.escreverJson(st);
         } catch (JSONException e) {
@@ -218,6 +220,7 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
             e.printStackTrace();
         }
 
+        /*//CRIA TXT
         arquivo.escreverTxt(st);
         try {
             arquivo.novaLinhaTxt();
@@ -229,10 +232,10 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
             arquivo.flushTxt();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    /*@RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void jsonCreate() throws JSONException {
         JSONObject obj = new JSONObject();
         obj.put("Nome: ","Paulo");
@@ -251,7 +254,7 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     public void lerArquivo(View v) throws IOException {
         try {
@@ -264,7 +267,6 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
             while (digitado != null) {
                 builder.setMessage(digitado).show();
                 digitado = br.readLine();
-                //gsonFile.convertFileToJSON (arquivo.getCaminho()+"test.json");
             }
         }catch (IOException e) {
             e.printStackTrace();

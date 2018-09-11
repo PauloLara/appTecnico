@@ -70,6 +70,10 @@ public class Arquivo {
         bfrJson = new BufferedWriter(new FileWriter(getJson()));
     }
 
+    public void fecharJson() throws IOException {
+        bfrJson.close();
+    }
+
 
 
     //ARQUIVO TXT *************ARQUIVO TXT *************ARQUIVO TXT *************ARQUIVO TXT *************ARQUIVO TXT *************
