@@ -1,5 +1,5 @@
 package com.example.paulo.apptecnico;
-import android.annotation.SuppressLint;
+
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Build;
@@ -9,19 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 
 
 public class Acoes extends AppCompatActivity implements View.OnClickListener{
@@ -42,7 +33,7 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acoes);
 
-        //arquivo.criarTxt();
+        arquivo.criarTxt();
         arquivo.criarJson();
         arquivo.criarObjJson();
 
@@ -192,12 +183,6 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
         clickBtnVoltarInicial();
     }
 
-    GSONFile gsonFile = new GSONFile();
-    @SuppressLint("NewApi")
-    public void gerarJson(View v) throws IOException, JSONException {
-       // this.jsonCreate();
-    }
-
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void onClick(View v) {
         int idd = v.getId();
@@ -220,7 +205,7 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
             e.printStackTrace();
         }
 
-        /*//CRIA TXT
+        //CRIA TXT
         arquivo.escreverTxt(st);
         try {
             arquivo.novaLinhaTxt();
@@ -232,29 +217,8 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
             arquivo.flushTxt();
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
-    }
-
-    /*@RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public void jsonCreate() throws JSONException {
-        JSONObject obj = new JSONObject();
-        obj.put("Nome: ","Paulo");
-        obj.put("Endereço: ","B. Goncalves");
-        obj.put("Fone: ","51 985826397");
-
-        JSONArray listaDeContatos = new JSONArray();
-        listaDeContatos.put("Antonio");
-        listaDeContatos.put("Arnaldo");
-        listaDeContatos.put("Adroaldo");
-        obj.put("Contatos: ", listaDeContatos);
-        String str = arquivo.getCaminho()+"jsonCreate.json";
-        try(FileWriter file = new FileWriter(str)){
-            file.write(obj.toString());
-            file.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-    }*/
+    }
 
     public void lerArquivo(View v) throws IOException {
         try {

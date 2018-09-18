@@ -38,6 +38,7 @@
         <item>Sul-Americana</item>
         <item>Mundial de Clubes</item>
     </string-array>
+    <string name="title_activity_graficos">Graficos</string>
 
 
 </resources>

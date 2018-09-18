@@ -24,11 +24,11 @@ public class Inicial extends AppCompatActivity {
 
     }
 
-
-
     public void clickBtnIrPartidaConfig(View view){
         Intent it;
         it = new Intent(Inicial.this, PartidaConfig.class);
         startActivity(it);
     }
+
+
 }

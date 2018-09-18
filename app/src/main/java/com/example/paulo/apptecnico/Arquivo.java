@@ -1,9 +1,8 @@
 package com.example.paulo.apptecnico;
-import android.os.Environment;
 
+import android.os.Environment;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;

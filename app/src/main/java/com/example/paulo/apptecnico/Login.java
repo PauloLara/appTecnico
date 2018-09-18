@@ -10,7 +10,7 @@ import android.widget.EditText;
 public class Login extends AppCompatActivity {
     EditText e1, e2;
     Button b1, b2;
-    DatabaseHelper db;
+    //DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
