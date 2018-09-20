@@ -3,8 +3,12 @@ package com.example.paulo.apptecnico;
 import android.os.Environment;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -109,8 +113,33 @@ public class Arquivo {
         this.setDiretorio(diretorio);
         try {
             bfrTxt = new BufferedWriter(new FileWriter(getTxt()));
+            bfrTxt.write("{\n");
+            bfrTxt.write("\"Jogadas\":[\n{\n");
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    BufferedReader buffReader;
+    public void removeUltimaLinha() throws IOException {
+        {
+            try {
+                buffReader = new BufferedReader(new FileReader(getTxt()));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+        String lineFromUserFile = null;
+        boolean needAddNewLine = false;
+        while ((lineFromUserFile = buffReader.readLine()) != null) {
+            String lineToRemoveFromFile = "{";
+            if (!lineFromUserFile.trim().equals(lineToRemoveFromFile)) {
+                if (needAddNewLine) {
+                    bfrTxt.newLine();
+                }
+                needAddNewLine = true;
+                bfrTxt.write(lineFromUserFile);
+            }
         }
     }
 

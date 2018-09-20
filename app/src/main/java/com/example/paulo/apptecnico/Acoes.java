@@ -19,13 +19,14 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
     final Arquivo arquivo = new Arquivo();
 
 
-    public Button a1, a2, a3, a4, a5, a6, a7, a8, b1,
- b2, b3, b4, b5, b6, b7, b8, c1, c2, c3,
- c4, c5, c6, c7, c8, d1, d2, d3, d4, d5,
- d6, d7, d8, e1, e2, e3, e4, e5, e6, e7,
- e8, f1, f2, f3, f4, f5, f6, f7, f8, goleiro1,
- lateral2, zagueiro3, zagueiro4, cabArea5, lateral6, atacante7, volante8, centroavante9, camisa10, atacante11,
- salvar, finalizar, limpar;
+    public Button a1, a2, a3, a4, a5, a6, a7, a8, b1, b2, b3, b4, b5, b6, b7, b8, c1, c2, c3,
+                  c4, c5, c6, c7, c8, d1, d2, d3, d4, d5, d6, d7, d8, e1, e2, e3, e4, e5, e6,
+                  e7, e8, f1, f2, f3, f4, f5, f6, f7, f8, goleiro1, lateral2, zagueiro3, zagueiro4,
+                  cabArea5, lateral6, atacante7, volante8, centroavante9, camisa10, atacante11,
+                  salvar, finalizar, limpar, passa, lanca, recua, certo, errado, impedido, chute,
+                  cabeceio, desvio, agol, deperto, forte, pfora, delonge, fraco, gol, escanteio,
+                  rebote, disputa, desarma, intercepta, espalma, agarra, cvermelho, camarelo,
+                  perde, fazfalta;
 
 
     @Override
@@ -59,6 +60,61 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
         camisa10.setOnClickListener(this);
         atacante11 = findViewById(R.id.atacante11);
         atacante11.setOnClickListener(this);
+
+        passa  = findViewById(R.id.passa);
+        passa.setOnClickListener(this);
+        lanca = findViewById(R.id.lanca);
+        lanca.setOnClickListener(this);
+        recua = findViewById(R.id.recua);
+        recua.setOnClickListener(this);
+        certo = findViewById(R.id.certo);
+        certo.setOnClickListener(this);
+        errado = findViewById(R.id.errado2);
+        errado.setOnClickListener(this);
+        impedido = findViewById(R.id.impedimento);
+        impedido.setOnClickListener(this);
+        chute = findViewById(R.id.chute);
+        chute.setOnClickListener(this);
+        cabeceio = findViewById(R.id.cabeceio);
+        cabeceio.setOnClickListener(this);
+        desvio = findViewById(R.id.desvio);
+        desvio.setOnClickListener(this);
+        agol = findViewById(R.id.agol);
+        agol.setOnClickListener(this);
+        deperto = findViewById(R.id.deperto);
+        deperto.setOnClickListener(this);
+        forte = findViewById(R.id.forte);
+        forte.setOnClickListener(this);
+        pfora = findViewById(R.id.pfora);
+        pfora.setOnClickListener(this);
+        delonge = findViewById(R.id.delonge);
+        delonge.setOnClickListener(this);
+        fraco = findViewById(R.id.fraco);
+        fraco.setOnClickListener(this);
+        gol = findViewById(R.id.gol);
+        gol.setOnClickListener(this);
+        escanteio = findViewById(R.id.escanteio);
+        escanteio.setOnClickListener(this);
+        rebote = findViewById(R.id.rebote);
+        rebote.setOnClickListener(this);
+        disputa = findViewById(R.id.disputa);
+        disputa.setOnClickListener(this);
+        desarma = findViewById(R.id.desarma);
+        desarma.setOnClickListener(this);
+        intercepta = findViewById(R.id.intercepta);
+        intercepta.setOnClickListener(this);
+        espalma = findViewById(R.id.espalma);
+        espalma.setOnClickListener(this);
+        agarra = findViewById(R.id.agarra);
+        agarra.setOnClickListener(this);
+        cvermelho = findViewById(R.id.cartaovermelho);
+        cvermelho.setOnClickListener(this);
+        camarelo = findViewById(R.id.cartaoamarelo);
+        camarelo.setOnClickListener(this);
+        perde = findViewById(R.id.perde);
+        perde.setOnClickListener(this);
+        fazfalta = findViewById(R.id.fazfalta);
+        fazfalta.setOnClickListener(this);
 
         a1 = findViewById(R.id.a1);
         a1.setOnClickListener(this);
@@ -174,11 +230,15 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
     }
 
     public void salvar(View v) throws IOException {
+        arquivo.escreverTxt("}");
         arquivo.novaLinhaTxt();
+        arquivo.escreverTxt("{\n");
     }
 
     public void finalizar(View v) throws IOException {
-        //arquivo.fecharTxt();
+        //arquivo.removeUltimaLinha();
+        arquivo.escreverTxt("]\n}");
+        arquivo.fecharTxt();
         arquivo.fecharJson();
         clickBtnVoltarInicial();
     }
@@ -187,6 +247,95 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View v) {
         int idd = v.getId();
         String st = v.getResources().getResourceEntryName(idd);
+
+        if(st.equalsIgnoreCase("a1")||st.equalsIgnoreCase("a2")||
+                st.equalsIgnoreCase("a3")||st.equalsIgnoreCase("a4")||
+                st.equalsIgnoreCase("a5")||st.equalsIgnoreCase("a6")||
+                st.equalsIgnoreCase("a7")||st.equalsIgnoreCase("a8")||
+                st.equalsIgnoreCase("a1")||st.equalsIgnoreCase("a2")||
+                st.equalsIgnoreCase("a3")||st.equalsIgnoreCase("a4")||
+                st.equalsIgnoreCase("a5")||st.equalsIgnoreCase("a6")||
+                st.equalsIgnoreCase("a7")||st.equalsIgnoreCase("a8")||
+                st.equalsIgnoreCase("b1")||st.equalsIgnoreCase("b2")||
+                st.equalsIgnoreCase("b3")||st.equalsIgnoreCase("b4")||
+                st.equalsIgnoreCase("b5")||st.equalsIgnoreCase("b6")||
+                st.equalsIgnoreCase("b7")||st.equalsIgnoreCase("b8")||
+                st.equalsIgnoreCase("c1")||st.equalsIgnoreCase("c2")||
+                st.equalsIgnoreCase("c3")||st.equalsIgnoreCase("c4")||
+                st.equalsIgnoreCase("c5")||st.equalsIgnoreCase("c6")||
+                st.equalsIgnoreCase("c7")||st.equalsIgnoreCase("c8")||
+                st.equalsIgnoreCase("d1")||st.equalsIgnoreCase("d2")||
+                st.equalsIgnoreCase("d3")||st.equalsIgnoreCase("d4")||
+                st.equalsIgnoreCase("d5")||st.equalsIgnoreCase("d6")||
+                st.equalsIgnoreCase("d7")||st.equalsIgnoreCase("d8")||
+                st.equalsIgnoreCase("e1")||st.equalsIgnoreCase("e2")||
+                st.equalsIgnoreCase("e3")||st.equalsIgnoreCase("e4")||
+                st.equalsIgnoreCase("e5")||st.equalsIgnoreCase("e6")||
+                st.equalsIgnoreCase("e7")||st.equalsIgnoreCase("e8")||
+                st.equalsIgnoreCase("f1")||st.equalsIgnoreCase("f2")||
+                st.equalsIgnoreCase("f3")||st.equalsIgnoreCase("f4")||
+                st.equalsIgnoreCase("f5")||st.equalsIgnoreCase("f6")||
+                st.equalsIgnoreCase("f7")||st.equalsIgnoreCase("f8"))
+        {
+            arquivo.escreverTxt("\"Área\": ");
+            arquivo.escreverTxt('"'+st+'"');
+            arquivo.escreverTxt(",");
+            try {
+                arquivo.novaLinhaTxt();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if(st.equalsIgnoreCase("goleiro1")||st.equalsIgnoreCase("lateral2")||
+                st.equalsIgnoreCase("zagueiro3")||st.equalsIgnoreCase("cabArea5")||
+                st.equalsIgnoreCase("zagueiro4")||st.equalsIgnoreCase("lateral6")||
+                st.equalsIgnoreCase("atacante7")||st.equalsIgnoreCase("volante8")||
+                st.equalsIgnoreCase("centroavante9")||st.equalsIgnoreCase("camisa10")||
+                st.equalsIgnoreCase("atacante11"))
+        {
+            arquivo.escreverTxt("\"Jogador\": ");
+            arquivo.escreverTxt('"'+st+'"');
+            arquivo.escreverTxt(",");
+            try {
+                arquivo.novaLinhaTxt();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if(st.equalsIgnoreCase("passa")||st.equalsIgnoreCase("lanca")||
+                st.equalsIgnoreCase("agol")||st.equalsIgnoreCase("recua")||
+                st.equalsIgnoreCase("impedido")||st.equalsIgnoreCase("escanteio")||
+                st.equalsIgnoreCase("chute")||st.equalsIgnoreCase("desarma")||
+                st.equalsIgnoreCase("cabeceio")||st.equalsIgnoreCase("disputa")||
+                st.equalsIgnoreCase("desvio")||st.equalsIgnoreCase("perde")||
+                st.equalsIgnoreCase("rebote")||st.equalsIgnoreCase("gol")||
+                st.equalsIgnoreCase("intercepta")||st.equalsIgnoreCase("espalma")||
+                st.equalsIgnoreCase("agarra")||st.equalsIgnoreCase("camarelo")||
+                st.equalsIgnoreCase("cvermelho")||st.equalsIgnoreCase("fazfalta"))
+        {
+            arquivo.escreverTxt("\"Ação\": ");
+            arquivo.escreverTxt('"'+st+'"');
+            arquivo.escreverTxt(",");
+            try {
+                arquivo.novaLinhaTxt();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if(st.equalsIgnoreCase("deperto")||st.equalsIgnoreCase("agol")||
+                st.equalsIgnoreCase("forte")||st.equalsIgnoreCase("fraco")||
+                st.equalsIgnoreCase("certo")||st.equalsIgnoreCase("delonge")||
+                st.equalsIgnoreCase("errado")||st.equalsIgnoreCase("pfora"))
+        {
+            arquivo.escreverTxt("\"Detalhe\": ");
+            arquivo.escreverTxt('"'+st+'"');
+            arquivo.escreverTxt(",");
+            try {
+                arquivo.novaLinhaTxt();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         //CRIA JSON
         try {
@@ -206,12 +355,12 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
         }
 
         //CRIA TXT
-        arquivo.escreverTxt(st);
+        /*arquivo.escreverTxt(st);
         try {
             arquivo.novaLinhaTxt();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
         Toast.makeText(getApplicationContext(), st, Toast.LENGTH_SHORT).show();
         try {
             arquivo.flushTxt();
