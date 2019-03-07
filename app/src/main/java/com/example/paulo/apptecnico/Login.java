@@ -5,19 +5,16 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,13 +30,14 @@ public class Login extends AppCompatActivity {
     RequestQueue requestQueue;
 
     // Create string variable to hold the EditText Value.
-    String EmailHolder, PasswordHolder;
+    String email_Text, senha_Text;
 
     // Creating Progress dialog.
     ProgressDialog progressDialog;
 
     // Storing server url into String variable.
     String HttpUrl = "http://192.168.15.17/user_login.php";
+    //String HttpUrl = "http://192.168.15.17/busca.php";
 
     Boolean CheckEditText;
 
@@ -104,17 +102,17 @@ public class Login extends AppCompatActivity {
                         if(ServerResponse.equalsIgnoreCase("Dados encontrados")) {
 
                             // If response matched then show the toast.
-                            Toast.makeText(Login.this, "Logged In Successfully", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Login.this, "Logado com sucesso!", Toast.LENGTH_LONG).show();
 
                             // Finish the current Login activity.
                             finish();
 
                             // Opening the user profile activity using intent.
                             Intent intent;
-                            intent = new Intent(Login.this, ProfileActivity.class);
+                            intent = new Intent(Login.this, Inicial.class);
 
                             // Sending User Email to another activity using intent.
-                            intent.putExtra("UserEmailTAG", EmailHolder);
+                            intent.putExtra("UserEmailTAG", email_Text);
 
                             startActivity(intent);
                         }
@@ -147,8 +145,8 @@ public class Login extends AppCompatActivity {
 
                 // Adding All values to Params.
                 // The firs argument should be same sa your MySQL database table columns.
-                params.put("email", EmailHolder);
-                params.put("senha", PasswordHolder);
+                params.put("email", email_Text);
+                params.put("senha", senha_Text);
 
                 return params;
             }
@@ -167,11 +165,11 @@ public class Login extends AppCompatActivity {
     public void CheckEditTextIsEmptyOrNot() {
 
         // Getting values from EditText.
-        EmailHolder = Email.getText().toString().trim();
-        PasswordHolder = Password.getText().toString().trim();
+        email_Text = Email.getText().toString().trim();
+        senha_Text = Password.getText().toString().trim();
 
         // Checking whether EditText value is empty or not.
-        if (TextUtils.isEmpty(EmailHolder) || TextUtils.isEmpty(PasswordHolder)) {
+        if (TextUtils.isEmpty(email_Text) || TextUtils.isEmpty(senha_Text)) {
 
             // If any of EditText is empty then set variable value as False.
             CheckEditText = false;
@@ -181,5 +179,11 @@ public class Login extends AppCompatActivity {
             // If any of EditText is filled then set variable value as True.
             CheckEditText = true;
         }
+    }
+
+    public void clickBtnIrCadastrar(View view){
+        Intent it;
+        it = new Intent(Login.this, Cadastro.class);
+        startActivity(it);
     }
 }
