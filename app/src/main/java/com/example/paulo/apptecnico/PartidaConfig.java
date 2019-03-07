@@ -28,6 +28,4 @@ public class PartidaConfig extends AppCompatActivity{
     }
 
 
-
-
 }

@@ -1,112 +1,95 @@
 package com.example.paulo.apptecnico;
 
-import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Cadastro extends AppCompatActivity
 {
     EditText txtNome, txtEmail, txtSenha, txtRepeteSenha;
     Button btnCadastrar;
     ProgressBar progressBar;
-    ConnectionClass connectionClass;
+    //ConnectionClass connectionClass;
+
+
+    AlertDialog.Builder alertDialog;
 
     @Override
     protected void onCreate (Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
-        connectionClass = new ConnectionClass();
+        //connectionClass = new ConnectionClass();
         txtNome = findViewById(R.id.name);
-        txtEmail = findViewById(R.id.email);
-        txtSenha = findViewById(R.id.senha);
+        txtEmail = findViewById(R.id.mail);
+        txtSenha = findViewById(R.id.key);
         txtRepeteSenha = findViewById(R.id.key_again);
         btnCadastrar = findViewById(R.id.cadastrar);
         progressBar = findViewById(R.id.progressBar);
 
-        btnCadastrar.setOnClickListener(new View.OnClickListener(){
+        btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick (View v){
-                CheckLogin checkLogin = new CheckLogin();
-                checkLogin.execute("");
+            public void onClick(View v) {
+                final String nome, email, senha;
+                nome = txtNome.getText().toString();
+                email = txtEmail.getText().toString();
+                senha = txtSenha.getText().toString();
+                RequestQueue queue = Volley.newRequestQueue(Cadastro.this);
+
+                String url = "http://192.168.15.17/cadastro.php";
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                alertDialog = new AlertDialog.Builder(Cadastro.this);
+                                //alertDialog.setTitle("Resposta do servidor:");
+                                alertDialog.setMessage("Resposta: " + response);
+                                alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        txtNome.setText("");
+                                        txtEmail.setText("");
+                                        txtSenha.setText("");
+                                    }
+                                });
+                                AlertDialog alertDialog2 = alertDialog.create();
+                                alertDialog2.show();
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(Cadastro.this, "Erro!", Toast.LENGTH_SHORT).show();
+                                error.printStackTrace();
+                            }
+                        }){
+                    @Override
+                    protected Map<String, String> getParams() {
+                        Map<String, String> params = new HashMap<String, String>();
+                        params.put("nome", nome);
+                        params.put("email", email);
+                        params.put("senha", senha);
+                        return params;
+                    }
+                };
+                queue.add(stringRequest);
             }
         });
-    }
-
-   @SuppressLint("StaticFieldLeak")
-    public class CheckLogin extends AsyncTask<String,String,String>
-    {
-        String message = "";
-        Boolean isSuccess = false;
-        String nome = txtNome.getText().toString();
-        String email = txtEmail.getText().toString();
-        String senha = txtSenha.getText().toString();
-
-        protected void onPreExecute(){
-            progressBar.setVisibility(View.VISIBLE);
-        }
-
-        @Override
-        protected void onPostExecute(String r) {
-            progressBar.setVisibility(View.GONE);
-            if(isSuccess) {
-                Toast.makeText(getApplicationContext(),"sucesso",Toast.LENGTH_SHORT).show();
-            }else{
-                Toast.makeText(getApplicationContext(),"erro",Toast.LENGTH_SHORT).show();
-            }
-        }
-
-        @Override
-        protected String doInBackground(String... params)
-        {
-            if(email.trim().equals("")|| senha.trim().equals(""))
-                message = "Insira email e/ou senha";
-            else
-            {
-                try
-                {
-                    Connection con = connectionClass.CONN();
-                    if (con == null)
-                    {
-                        message = "Verifique a conexão com a internet";
-                    }
-                    else
-                    {
-                        String query = "'INSERT INTO Usuario(email, nome, senha) VALUES("+ email +", "+ nome +", "+ senha +")'";
-                        Statement stmt = con.createStatement();
-                        ResultSet rs = stmt.executeQuery(query);
-                        if(rs.next())
-                        {
-                            message = "Logado";
-                            isSuccess=true;
-                            con.close();
-                        }
-                        else
-                        {
-                            message = "Credenciais inválidas";
-                            isSuccess = false;
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Toast.makeText(getApplicationContext(),"insucesso",Toast.LENGTH_SHORT).show();
-                    isSuccess = false;
-                    message = ex.getMessage();
-                }
-            }
-            return message;
-        }
     }
 
     //MÉTODO BOTÃO JÁ SOU CADASTRADO
