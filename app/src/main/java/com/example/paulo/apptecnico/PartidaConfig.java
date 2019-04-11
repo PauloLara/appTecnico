@@ -18,7 +18,6 @@ public class PartidaConfig extends AppCompatActivity{
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.campeonato, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-
     }
 
     public void clickBtnIrAcoes(View view){
@@ -26,6 +25,4 @@ public class PartidaConfig extends AppCompatActivity{
         it = new Intent(PartidaConfig.this, Acoes.class);
         startActivity(it);
     }
-
-
 }

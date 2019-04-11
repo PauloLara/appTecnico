@@ -27,6 +27,14 @@
         <activity android:name=".Inicial" />
         <activity android:name=".Acoes" />
         <activity android:name=".PartidaConfig" />
+        <activity android:name=".TorneioCadastro"/>
+        <activity android:name=".PartidaConfiguracao"/>
+        <activity android:name=".EscolheModalidade"/>
+        <activity android:name=".AcoesFutsal"/>
+        <activity android:name=".EquipeConfig"/>
+        <activity android:name=".EquipeFutsalConfig"/>
+
+
     </application>
 
 </manifest>

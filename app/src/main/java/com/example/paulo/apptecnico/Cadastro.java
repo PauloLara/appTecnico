@@ -25,17 +25,12 @@ public class Cadastro extends AppCompatActivity
     EditText txtNome, txtEmail, txtSenha, txtRepeteSenha;
     Button btnCadastrar;
     ProgressBar progressBar;
-    //ConnectionClass connectionClass;
-
-
     AlertDialog.Builder alertDialog;
 
     @Override
-    protected void onCreate (Bundle savedInstanceState)
-    {
+    protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
-        //connectionClass = new ConnectionClass();
         txtNome = findViewById(R.id.name);
         txtEmail = findViewById(R.id.mail);
         txtSenha = findViewById(R.id.key);
@@ -58,7 +53,7 @@ public class Cadastro extends AppCompatActivity
                             public void onResponse(String response) {
                                 alertDialog = new AlertDialog.Builder(Cadastro.this);
                                 //alertDialog.setTitle("Resposta do servidor:");
-                                alertDialog.setMessage("Resposta: " + response);
+                                alertDialog.setMessage("Sucesso: " + response);
                                 alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {

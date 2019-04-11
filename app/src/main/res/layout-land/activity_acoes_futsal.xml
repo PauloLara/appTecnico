@@ -1,0 +1,1094 @@
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:shrinkColumns="*"
+        android:gravity="top">
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Atleta"
+                android:layout_margin="1dp"
+                android:layout_column="0"
+                android:background="#FFFFFF"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="13dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="PASSE ERR"
+                android:layout_margin="1dp"
+                android:layout_column="1"
+                android:background="#ff9999"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="11dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="CH A GOL"
+                android:layout_margin="1dp"
+                android:background="#009900"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_column="2"
+                android:textSize="11dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="SUBST"
+                android:layout_margin="1dp"
+                android:background="#3366ff"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_column="2"
+                android:textSize="11dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="INTERCEPT"
+                android:layout_margin="1dp"
+                android:background="#009900"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_column="2"
+                android:textSize="11dp"           />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            android:background="#009900">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:text=" Bagé "
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="25dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="25dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="55dp"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="25dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="25dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+        </TableRow>
+
+
+
+        <TableRow
+            android:background="#009900"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text=" M. Tobias "
+                android:layout_margin="1dp"
+                android:layout_column="0"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textSize="13dp"
+                />
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="25dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+        </TableRow>
+
+        <TableRow
+            android:background="#009900"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text=" Fininho "
+                android:layout_margin="1dp"
+                android:layout_column="0"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textSize="13dp"
+                />
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+        </TableRow>
+
+        <TableRow
+            android:background="#009900"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text=" Danilo "
+                android:layout_margin="1dp"
+                android:layout_column="0"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textSize="13dp"
+                />
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="55dp"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+        </TableRow>
+
+        <TableRow
+            android:background="#009900"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text=" Chocco "
+                android:layout_margin="1dp"
+                android:layout_column="0"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textSize="13dp"
+                />
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+            <TableRow
+                android:background="#000000"
+                android:layout_width="55dp"
+                android:layout_height="50dp"
+                android:layout_margin="1dp"
+                >
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1"
+                    android:background="#c6ecd9"
+                    android:text=" + "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+                <Button
+                    android:id="@+id/cadastre"
+                    android:layout_margin="1dp"
+                    android:layout_width="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#f5f5f0"
+                    android:text=" - "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+            </TableRow>
+
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text=" Reserva "
+                android:layout_margin="1dp"
+                android:layout_column="0"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textSize="13dp"
+                />
+
+            <Button
+                android:id="@+id/cadastre"
+                android:layout_margin="1dp"
+                android:layout_width="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#f5f5f0"
+                android:text="@string/mais"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/cadastre"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/cadastre"
+                android:layout_margin="1dp"
+                android:layout_width="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#f5f5f0"
+                android:text=" + "
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/cadastre"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+        </TableRow>
+
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text=" Reserva "
+                android:layout_margin="1dp"
+                android:layout_column="0"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textSize="13dp"
+                />
+
+            <Button
+                android:id="@+id/cadastre"
+                android:layout_margin="1dp"
+                android:layout_width="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#f5f5f0"
+                android:text="@string/mais"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/cadastre"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/cadastre"
+                android:layout_margin="1dp"
+                android:layout_width="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#f5f5f0"
+                android:text=" + "
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/cadastre"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text=" Reserva "
+                android:layout_margin="1dp"
+                android:layout_column="0"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textSize="13dp"
+                />
+
+            <Button
+                android:id="@+id/cadastre"
+                android:layout_margin="1dp"
+                android:layout_width="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#f5f5f0"
+                android:text="@string/mais"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/cadastre"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/cadastre"
+                android:layout_margin="1dp"
+                android:layout_width="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#f5f5f0"
+                android:text=" + "
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/cadastre"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+        </TableRow>
+
+    </TableLayout>
+</ScrollView>
+

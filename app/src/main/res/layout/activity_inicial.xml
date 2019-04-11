@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Inicial">
+    tools:context=".TorneioCadastro">
+
 
     <Button
         android:id="@+id/btngraficos"
@@ -36,9 +38,11 @@
         android:layout_marginStart="1dp"
         android:background="@color/colorPrimary"
         android:text="@string/estatisticas"
+        android:onClick="clickBtnIrPartidaConfiguracao"
         app:layout_constraintBottom_toTopOf="@+id/btngraficos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnnovojogo" />
+        app:layout_constraintStart_toEndOf="@+id/btnnovojogo"
+        tools:ignore="OnClick" />
 
     <Button
         android:id="@+id/btnsyslog"
@@ -69,10 +73,12 @@
         android:layout_marginRight="1dp"
         android:layout_marginStart="1dp"
         android:background="#5d6cbd"
-        android:text="@string/equipes_torneios"
+        android:text="@string/torneios"
+        android:onClick="clickBtnIrTorneioCadastro"
         app:layout_constraintBottom_toTopOf="@+id/configuracoes"
         app:layout_constraintEnd_toStartOf="@+id/btngraficos"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="OnClick" />
 
     <Button
         android:id="@+id/btnnovojogo"
@@ -90,7 +96,8 @@
         android:onClick="clickBtnIrPartidaConfig"
         app:layout_constraintBottom_toTopOf="@+id/btnequipes"
         app:layout_constraintEnd_toStartOf="@+id/btnestatisticas"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="OnClick" />
 
     <Button
         android:id="@+id/configuracoes"
@@ -104,7 +111,8 @@
         android:layout_marginRight="1dp"
         android:layout_marginStart="1dp"
         android:background="@color/colorAccent"
-        android:text="Configurações"
+        android:text="@string/equipe_config"
+        android:onClick="clickBtnIrEquipeConfig"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnsyslog"
         app:layout_constraintStart_toStartOf="parent" />
@@ -113,8 +121,39 @@
         android:id="@+id/carrossel"
         android:layout_width="match_parent"
         android:layout_height="230dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintTop_toTopOf="parent">
-    </android.support.v4.view.ViewPager>
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toTopOf="parent"></android.support.v4.view.ViewPager>
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/logout"
+        android:onClick="clickBtnLogout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="OnClick" />
+
+    <TextView
+        android:id="@+id/TextViewUserEmail"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/carrossel"
+        app:layout_constraintEnd_toStartOf="@+id/logout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
