@@ -15,4 +15,12 @@
         android:id="@+id/spinnerTorneio"
         />
 
+    <Button
+        android:id="@+id/btnIniciarFutsal"
+        android:layout_marginTop="150dp"
+        android:onClick="clickBtnIrEquipeFustsalConfig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/iniciar" />
+
 </LinearLayout>

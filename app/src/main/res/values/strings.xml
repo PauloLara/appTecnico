@@ -48,6 +48,7 @@
     <string name="menos">-</string>
     <string name="mais">+</string>
     <string name="campo">Campo</string>
+    <string name="iniciar">Iniciar</string>
 
 
 </resources>

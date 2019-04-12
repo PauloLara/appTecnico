@@ -2,98 +2,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".AcoesFutsal"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
+
 <TableLayout
 
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:shrinkColumns="*"
-    android:gravity="top">
+    android:gravity="center">
 
-    <TableRow
-        android:layout_width="fill_parent"
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
         android:layout_height="wrap_content"
+        android:id="@+id/spinnerTorneio"/>
+    <Button
+        android:id="@+id/btnVerificaEquipe"
         android:layout_margin="1dp"
-        android:background="#FFFFFF">
+        android:layout_width="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#f5f5f0"
+        android:text=" Verificar Equipe "
+        android:textColor="@color/colorPrimary"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        tools:ignore="DuplicateIds" />
 
-        <TextView
-            android:id="@+id/TextViewUserLogin"
-            android:background="#FFFFFF"
-            android:layout_width="240dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/carrossel"
-            app:layout_constraintEnd_toStartOf="@+id/logout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <TextView
-            android:id="@+id/qq"
-            android:background="#FFFFFF"
-            android:layout_width="240dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/carrossel"
-            app:layout_constraintEnd_toStartOf="@+id/logout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <TextView
-            android:id="@+id/ww"
-            android:background="#FFFFFF"
-            android:layout_width="240dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/carrossel"
-            app:layout_constraintEnd_toStartOf="@+id/logout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <TextView
-            android:id="@+id/ee"
-            android:background="#FFFFFF"
-            android:layout_width="240dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/carrossel"
-            app:layout_constraintEnd_toStartOf="@+id/logout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        <TextView
-            android:id="@+id/rr"
-            android:background="#FFFFFF"
-            android:layout_width="240dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginRight="2dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/carrossel"
-            app:layout_constraintEnd_toStartOf="@+id/logout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-    </TableRow>
 
     <TableRow
         android:background="#000000"
@@ -169,6 +106,7 @@
         android:background="#009900">
 
         <TextView
+            android:id="@+id/fieldGoleiro"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_column="0"
@@ -182,7 +120,7 @@
         <TableRow
             android:background="#000000"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -216,7 +154,7 @@
         <TableRow
             android:background="#000000"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -250,7 +188,7 @@
         <TableRow
             android:background="#000000"
             android:layout_width="55dp"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -284,7 +222,7 @@
         <TableRow
             android:background="#000000"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -327,21 +265,21 @@
         >
 
         <TextView
+            android:id="@+id/fieldFixo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=" M. Tobias "
-            android:layout_margin="1dp"
             android:layout_column="0"
+            android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:textSize="13dp"
-            />
+            android:text="Manoel Tobias"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
 
         <TableRow
             android:background="#000000"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -375,7 +313,7 @@
         <TableRow
             android:background="#000000"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -409,7 +347,7 @@
         <TableRow
             android:background="#000000"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -443,7 +381,7 @@
         <TableRow
             android:background="#000000"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -484,21 +422,21 @@
         >
 
         <TextView
+            android:id="@+id/fieldAlaEsq"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=" Fininho "
-            android:layout_margin="1dp"
             android:layout_column="0"
+            android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:textSize="13dp"
-            />
+            android:text=" Fininho "
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
 
         <TableRow
             android:background="#000000"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -532,7 +470,7 @@
         <TableRow
             android:background="#000000"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -566,7 +504,7 @@
         <TableRow
             android:background="#000000"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -600,7 +538,7 @@
         <TableRow
             android:background="#000000"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -641,21 +579,21 @@
         >
 
         <TextView
+            android:id="@+id/fieldAlaDir"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=" Danilo "
-            android:layout_margin="1dp"
             android:layout_column="0"
+            android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:textSize="13dp"
-            />
+            android:text=" Danilo "
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
 
         <TableRow
             android:background="#000000"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -689,7 +627,7 @@
         <TableRow
             android:background="#000000"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -723,7 +661,7 @@
         <TableRow
             android:background="#000000"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -757,7 +695,7 @@
         <TableRow
             android:background="#000000"
             android:layout_width="55dp"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -798,21 +736,21 @@
         >
 
         <TextView
+            android:id="@+id/fieldPivo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=" Chocco "
-            android:layout_margin="1dp"
             android:layout_column="0"
+            android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:textSize="13dp"
-            />
+            android:text=" Chocco "
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
 
         <TableRow
             android:background="#000000"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -846,7 +784,7 @@
         <TableRow
             android:background="#000000"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -880,7 +818,7 @@
         <TableRow
             android:background="#000000"
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -914,7 +852,7 @@
         <TableRow
             android:background="#000000"
             android:layout_width="55dp"
-            android:layout_height="50dp"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
             >
             <Button
@@ -955,16 +893,16 @@
         >
 
         <TextView
+            android:id="@+id/fieldGoleiroRes"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=" Reserva "
-            android:layout_margin="1dp"
             android:layout_column="0"
+            android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:textSize="13dp"
-            />
+            android:text=" Reserva "
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
 
         <Button
             android:id="@+id/cadastre"
@@ -1031,16 +969,16 @@
         >
 
         <TextView
+            android:id="@+id/fieldFixoRes"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=" Reserva "
-            android:layout_margin="1dp"
             android:layout_column="0"
+            android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:textSize="13dp"
-            />
+            android:text=" Reserva "
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
 
         <Button
             android:id="@+id/cadastre"
@@ -1106,16 +1044,16 @@
         >
 
         <TextView
+            android:id="@+id/fieldAlaEsqRes"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=" Reserva "
-            android:layout_margin="1dp"
             android:layout_column="0"
+            android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:textSize="13dp"
-            />
+            android:text=" Reserva "
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
 
         <Button
             android:id="@+id/cadastre"
@@ -1181,16 +1119,16 @@
         >
 
         <TextView
+            android:id="@+id/fieldAlaDirRes"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=" Reserva "
-            android:layout_margin="1dp"
             android:layout_column="0"
+            android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:textSize="13dp"
-            />
+            android:text=" Reserva "
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
 
         <Button
             android:id="@+id/cadastre"
@@ -1256,16 +1194,16 @@
         >
 
         <TextView
+            android:id="@+id/fieldPivoRes"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=" Reserva "
-            android:layout_margin="1dp"
             android:layout_column="0"
+            android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:textSize="13dp"
-            />
+            android:text=" Reserva "
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
 
         <Button
             android:id="@+id/cadastre"
@@ -1331,16 +1269,16 @@
         >
 
         <TextView
+            android:id="@+id/fieldGoleiroResRes"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=" Reserva "
-            android:layout_margin="1dp"
             android:layout_column="0"
+            android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:textSize="13dp"
-            />
+            android:text=" Reserva "
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
 
         <Button
             android:id="@+id/cadastre"
@@ -1406,16 +1344,16 @@
         >
 
         <TextView
+            android:id="@+id/fieldJogadorExtra"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=" Reserva "
-            android:layout_margin="1dp"
             android:layout_column="0"
+            android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:textSize="13dp"
-            />
+            android:text=" Reserva "
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
 
         <Button
             android:id="@+id/cadastre"
