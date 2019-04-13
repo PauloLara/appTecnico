@@ -113,7 +113,6 @@
             android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:text=" Bagé "
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
@@ -132,10 +131,11 @@
                 android:layout_weight="1"
                 android:background="#c6ecd9"
                 android:text=" + "
+                android:onClick="maisPasserGoleiro"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18dp"
                 android:textStyle="bold"
-                tools:ignore="DuplicateIds" />
+                tools:ignore="DuplicateIds,OnClick" />
 
             <Button
                 android:id="@+id/menos11"
@@ -145,10 +145,11 @@
                 android:layout_centerHorizontal="true"
                 android:background="#f5f5f0"
                 android:text=" - "
+                android:onClick="menosPasserGoleiro"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18dp"
                 android:textStyle="bold"
-                tools:ignore="DuplicateIds" />
+                tools:ignore="DuplicateIds,OnClick" />
          </TableRow>
 
         <TableRow
@@ -272,7 +273,6 @@
             android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:text="Manoel Tobias"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
@@ -291,6 +291,7 @@
                 android:layout_weight="1"
                 android:background="#c6ecd9"
                 android:text=" + "
+                android:onClick="maisPasserFixo"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18dp"
                 android:textStyle="bold"
@@ -304,6 +305,7 @@
                 android:layout_centerHorizontal="true"
                 android:background="#f5f5f0"
                 android:text=" - "
+                android:onClick="menosPasserFixo"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18dp"
                 android:textStyle="bold"
@@ -429,7 +431,6 @@
             android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:text=" Fininho "
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
@@ -586,7 +587,6 @@
             android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:text=" Danilo "
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
@@ -743,7 +743,6 @@
             android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:text=" Chocco "
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
@@ -900,7 +899,6 @@
             android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:text=" Reserva "
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
@@ -976,7 +974,6 @@
             android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:text=" Reserva "
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
@@ -1051,7 +1048,6 @@
             android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:text=" Reserva "
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
@@ -1126,7 +1122,6 @@
             android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:text=" Reserva "
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
@@ -1201,7 +1196,6 @@
             android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:text=" Reserva "
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
@@ -1276,7 +1270,6 @@
             android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:text=" Reserva "
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
@@ -1351,7 +1344,6 @@
             android:layout_margin="1dp"
             android:background="#FFFFFF"
             android:gravity="center"
-            android:text=" Reserva "
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
@@ -1425,6 +1417,304 @@
         android:textSize="18dp"
         android:textStyle="bold"
         tools:ignore="DuplicateIds" />
+
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/mostra_atleta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Atl "
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/mostra_passer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pass Err"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/mostra_chutegol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chut Gol"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/mostra_perdida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perdidas"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/mostra_intercept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Intercepts"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/atleta_goleiro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/passer_goleiro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chuteg_goleiro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/perdida_goleiro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/intercep_goleiro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/atleta_fixo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/passer_fixo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chuteg_fixo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/perdida_fixo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/intercep_fixo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/atleta_alaesq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/passer_alaesq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chuteg_alaesq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/perdida_alaesq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/intercep_alaesq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/atleta_aladir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/passer_aladir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chuteg_aladir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/perdida_aladir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/intercep_aladir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/atleta_pivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/passer_pivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chuteg_pivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/perdida_pivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/intercep_pivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+
+
+
 
 </TableLayout>
 </ScrollView>

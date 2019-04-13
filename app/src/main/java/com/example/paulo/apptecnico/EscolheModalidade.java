@@ -24,5 +24,11 @@ public class EscolheModalidade extends AppCompatActivity {
         startActivity(it);
     }
 
+    public void clickBtnTesteFutsal(View view) {
+        Intent it;
+        it = new Intent(EscolheModalidade.this, TesteAcoesFutsal.class);
+        startActivity(it);
+    }
+
 
 }

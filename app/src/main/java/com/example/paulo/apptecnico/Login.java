@@ -58,8 +58,8 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onResponse(String ServerResponse) {
                         progressDialog.dismiss();
-                        if(ServerResponse.equalsIgnoreCase("Dados encontrados")) {
-                            Toast.makeText(Login.this, "Logado com sucesso!", Toast.LENGTH_LONG).show();
+                        if(ServerResponse.equalsIgnoreCase("ok")) {
+                            //Toast.makeText(Login.this, "Logado com sucesso!", Toast.LENGTH_LONG).show();
                             finish();
                             Intent intent;
                             intent = new Intent(Login.this, Inicial.class);
