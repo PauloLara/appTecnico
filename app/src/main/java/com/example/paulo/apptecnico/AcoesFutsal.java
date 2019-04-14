@@ -5,11 +5,13 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.android.volley.Request;
@@ -36,7 +38,6 @@ public class AcoesFutsal extends Activity {
     String URLev = "http://192.168.15.17/insere_eventos.php";
     TextView tvGoleiro, tvFixo, tvAlaEsq, tvAlaDir, tvPivo, tvGoleiroRes, tvFixoRes, tvAlaEsqRes, tvAlaDirRes, tvPivoRes, tvGoleiroResRes, tvJogadorExtra;
     Button btnFinalizar;
-    int contador;
     TextView textViewGoleiroAtleta, textAtletaGoleiro, textViewGoleiroPasseErrado, textViewGoleiroChuteAgol, textViewGoleiroPerdida, textViewGoleiroInterceptacao;
     TextView textViewFixoAtleta, textViewFixoPasseErrado, textViewFixoChuteAgol, textViewFixoPerdida, textViewFixoInterceptacao;
     TextView textViewAlaEsqAtleta, textViewAlaEsqPasseErrado, textViewAlaEsqChuteAgol, textViewAlaEsqPerdida, textViewAlaEsqInterceptacao;
@@ -123,7 +124,7 @@ public class AcoesFutsal extends Activity {
                 final String strGoleiroPerdida = (String) textViewGoleiroPerdida.getText();
                 final String strGoleiroInterceptacao = (String) textViewGoleiroInterceptacao.getText();
 
-                /*final String strFixoAtleta= (String) textViewFixoAtleta.getText();
+                final String strFixoAtleta= (String) textViewFixoAtleta.getText();
                 final String strFixoPasseErrado = (String) textViewFixoPasseErrado.getText();
                 final String strFixoChuteAgol = (String) textViewFixoChuteAgol.getText();
                 final String strFixoPerdida = (String) textViewFixoPerdida.getText();
@@ -145,7 +146,7 @@ public class AcoesFutsal extends Activity {
                 final String strPivoPasseErrado = (String) textViewPivoPasseErrado.getText();
                 final String strPivoChuteAgol = (String) textViewPivoChuteAgol.getText();
                 final String strPivoPerdida = (String) textViewPivoPerdida.getText();
-                final String strPivoInterceptacao = (String) textViewPivoInterceptacao.getText();*/
+                final String strPivoInterceptacao = (String) textViewPivoInterceptacao.getText();
 
                 Toast.makeText(getApplicationContext(), strGoleiroPasseErrado, Toast.LENGTH_LONG).show();
                 RequestQueue queue = Volley.newRequestQueue(AcoesFutsal.this);
@@ -174,11 +175,35 @@ public class AcoesFutsal extends Activity {
                     @Override
                     protected Map<String, String> getParams() {
                         Map<String, String> params = new HashMap<String, String>();
-                        params.put("atleta", strGoleiroAtleta);
-                        params.put("passeErrado", strGoleiroPasseErrado);
-                        params.put("chuteAgol", strGoleiroChuteAgol);
-                        params.put("perdida", strGoleiroPerdida);
-                        params.put("interceptacao", strGoleiroInterceptacao);
+                        params.put("atleta1", strGoleiroAtleta);
+                        params.put("passeErrado1", strGoleiroPasseErrado);
+                        params.put("chuteAgol1", strGoleiroChuteAgol);
+                        params.put("perdida1", strGoleiroPerdida);
+                        params.put("interceptacao1", strGoleiroInterceptacao);
+
+                        params.put("atleta2", strFixoAtleta);
+                        params.put("passeErrado2", strFixoPasseErrado);
+                        params.put("chuteAgol2", strFixoChuteAgol);
+                        params.put("perdida2", strFixoPerdida);
+                        params.put("interceptacao2", strFixoInterceptacao);
+
+                        params.put("atleta3", strAlaEsqAtleta);
+                        params.put("passeErrado3", strAlaEsqPasseErrado);
+                        params.put("chuteAgol3", strAlaEsqChuteAgol);
+                        params.put("perdida3", strAlaEsqPerdida);
+                        params.put("interceptacao3", strAlaEsqInterceptacao);
+
+                        params.put("atleta4", strAlaDirAtleta);
+                        params.put("passeErrado4", strAlaDirPasseErrado);
+                        params.put("chuteAgol4", strAlaDirChuteAgol);
+                        params.put("perdida4", strAlaDirPerdida);
+                        params.put("interceptacao4", strAlaDirInterceptacao);
+
+                        params.put("atleta5", strPivoAtleta);
+                        params.put("passeErrado5", strPivoPasseErrado);
+                        params.put("chuteAgol5", strPivoChuteAgol);
+                        params.put("perdida5", strPivoPerdida);
+                        params.put("interceptacao5", strPivoInterceptacao);
                         return params;
                     }
                 };
@@ -223,7 +248,6 @@ public class AcoesFutsal extends Activity {
         btnVerificaEquipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 final String stnomeTorneio = (String) spinner.getSelectedItem();
                 Toast.makeText(getApplicationContext(), stnomeTorneio, Toast.LENGTH_LONG).show();
                 RequestQueue queue = Volley.newRequestQueue(AcoesFutsal.this);
@@ -287,54 +311,519 @@ public class AcoesFutsal extends Activity {
             }
         });
     }
-
     // INÍCIO CONTAGEM DE CLICKS  COMEÇA AQUI   *******************************************************************
-    int passesErr = 0;
-    int chutesAgol = 0;
-    int perdidas = 0;
-    int intercepts = 0;
+    int passErrGoleiro = 0;
+    int chutGoleiro = 0;
+    int perdidasGoleiro = 0;
+    int interceptGoleiro = 0;
 
+    //*****************************GOLEIRO*******************************************
+    //GOLEIRO PASSES ERRADOS
     public void maisPasserGoleiro(View view) {
-        passesErr = passesErr + 1;
-        totalPasserGoleiro(passesErr);
+        passErrGoleiro = passErrGoleiro + 1;
+        totalPasserGoleiro(passErrGoleiro);
+        Toast.makeText(getApplicationContext(), "Goleiro: +1 pass err: tot: "+passErrGoleiro, Toast.LENGTH_SHORT).show();
     }
 
     public void menosPasserGoleiro(View view){
         do{ //faça
-            passesErr = passesErr - 1; //pede numero
-            if(passesErr < 0){
-                passesErr = 0; //lança exceção
+            passErrGoleiro = passErrGoleiro - 1; //pede numero
+            if(passErrGoleiro < 0){
+                passErrGoleiro = 0; //lança exceção
             }
-        } while(passesErr < 0);
-        totalPasserGoleiro(passesErr);
+        } while(passErrGoleiro < 0);
+        totalPasserGoleiro(passErrGoleiro);
+        Toast.makeText(getApplicationContext(), "Goleiro: - pass err: tot: "+passErrGoleiro, Toast.LENGTH_SHORT).show();
     }
 
     private void totalPasserGoleiro(int number) {
         TextView displayInteger = (TextView) findViewById(R.id.passer_goleiro);
         displayInteger.setText("" + number);
-        contador = number;
     }
 
+    //GOLEIRO CHUTE A GOL
+    public void maisChutesGoleiro(View view) {
+        chutGoleiro = chutGoleiro + 1;
+        totalChutesGoleiro(chutGoleiro);
+        Toast.makeText(getApplicationContext(), "Goleiro: +1 chut a gol: tot: "+chutGoleiro, Toast.LENGTH_SHORT).show();
+    }
+
+    public void menosChutesGoleiro(View view){
+        do{ //faça
+            chutGoleiro = chutGoleiro - 1; //pede numero
+            if(chutGoleiro < 0){
+                chutGoleiro = 0; //lança exceção
+            }
+        } while(chutGoleiro < 0);
+        totalPasserGoleiro(chutGoleiro);
+        Toast.makeText(getApplicationContext(), "Goleiro: -1 chut a gol: tot: "+chutGoleiro, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalChutesGoleiro(int number) {
+        TextView displayInteger = (TextView) findViewById(R.id.chuteg_goleiro);
+        displayInteger.setText("" + number);
+    }
+
+    //GOLEIRO PERDIDAS
+    public void maisPerdidasGoleiro(View view) {
+        perdidasGoleiro = perdidasGoleiro + 1;
+        totalPerdidasGoleiro(perdidasGoleiro);
+        Toast.makeText(getApplicationContext(), "Goleiro: +1 perdida: tot: "+perdidasGoleiro, Toast.LENGTH_SHORT).show();
+    }
+
+    public void menosPerdidasGoleiro(View view){
+        do{
+            perdidasGoleiro = perdidasGoleiro - 1;
+            if(perdidasGoleiro < 0){
+                perdidasGoleiro = 0;
+            }
+        } while(perdidasGoleiro < 0);
+        totalPerdidasGoleiro(perdidasGoleiro);
+        Toast.makeText(getApplicationContext(), "Goleiro: -1 perdida: tot: "+perdidasGoleiro, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalPerdidasGoleiro(int number) {
+        TextView displayInteger = findViewById(R.id.perdida_goleiro);
+        displayInteger.setText("" + number);
+    }
+
+    //GOLEIRO INTERCEPTACOES
+    public void maisInterceptGoleiro(View view) {
+        interceptGoleiro = interceptGoleiro + 1;
+        totalInterceptGoleiro(interceptGoleiro);
+        Toast.makeText(getApplicationContext(), "Goleiro: +1 interceptada: tot: "+interceptGoleiro, Toast.LENGTH_SHORT).show();
+    }
+
+    public void menosInterceptGoleiro(View view){
+        do{
+            interceptGoleiro = interceptGoleiro - 1;
+            if(interceptGoleiro < 0){
+                interceptGoleiro = 0;
+            }
+        } while(interceptGoleiro < 0);
+        totalInterceptGoleiro(interceptGoleiro);
+        Toast.makeText(getApplicationContext(), "Goleiro: -1 interceptada: tot: "+interceptGoleiro, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalInterceptGoleiro(int number) {
+        TextView displayInteger = (TextView) findViewById(R.id.intercep_goleiro);
+        displayInteger.setText("" + number);
+    }
+
+
+    //*****************************fixo*******************************************
+    int passErrFixo = 0;
+    int chutFixo = 0;
+    int perdidasFixo = 0;
+    int interceptFixo = 0;
+    //fixo PASSES ERRADOS
     public void maisPasserFixo(View view) {
-        passesErr = passesErr + 1;
-        totalPasserFixo(passesErr);
+        passErrFixo = passErrFixo + 1;
+        totalPasserFixo(passErrFixo);
+        Toast.makeText(getApplicationContext(), "Fixo: +1 pass err: tot: "+passErrFixo, Toast.LENGTH_LONG).show();
     }
 
     public void menosPasserFixo(View view){
         do{ //faça
-            passesErr = passesErr - 1; //pede numero
-            if(passesErr < 0){
-                passesErr = 0; //lança exceção
+            passErrFixo = passErrFixo - 1; //pede numero
+            if(passErrFixo < 0){
+                passErrFixo = 0; //lança exceção
             }
-        } while(passesErr < 0);
-        totalPasserFixo(passesErr);
+        } while(passErrFixo < 0);
+        totalPasserFixo(passErrFixo);
+        Toast.makeText(getApplicationContext(), "Fixo: -1 pass err: tot: "+passErrFixo, Toast.LENGTH_SHORT).show();
     }
 
     private void totalPasserFixo(int number) {
         TextView displayInteger = (TextView) findViewById(R.id.passer_fixo);
         displayInteger.setText("" + number);
-        contador = number;
     }
+
+    //fixo CHUTE A GOL
+    public void maisChutesFixo(View view) {
+        chutFixo = chutFixo + 1;
+        totalChutesFixo(chutFixo);
+        Toast.makeText(getApplicationContext(), "Fixo: +1 chut a gol: tot: "+chutFixo, Toast.LENGTH_SHORT).show();
+    }
+
+    public void menosChutesFixo(View view){
+        do{ //faça
+            chutFixo = chutFixo - 1; //pede numero
+            if(chutFixo < 0){
+                chutFixo = 0; //lança exceção
+            }
+        } while(chutFixo < 0);
+        totalPasserFixo(chutFixo);
+        Toast.makeText(getApplicationContext(), "Fixo: -1 chut a gol: tot: "+chutFixo, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalChutesFixo(int number) {
+        TextView displayInteger = (TextView) findViewById(R.id.chuteg_fixo);
+        displayInteger.setText("" + number);
+    }
+
+    //Fixo PERDIDAS
+    public void maisPerdidasFixo(View view) {
+        perdidasFixo = perdidasFixo + 1;
+        totalPerdidasFixo(perdidasFixo);
+        Toast.makeText(getApplicationContext(), "Fixo: +1 perdidas: tot: "+perdidasFixo, Toast.LENGTH_SHORT).show();
+    }
+
+    public void menosPerdidasFixo(View view){
+        do{ //faça
+            perdidasFixo = perdidasFixo - 1; //pede numero
+            if(perdidasFixo < 0){
+                perdidasFixo = 0; //lança exceção
+            }
+        } while(perdidasFixo < 0);
+        totalPerdidasFixo(perdidasFixo);
+        Toast.makeText(getApplicationContext(), "Fixo: -1 perdidas: tot: "+perdidasFixo, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalPerdidasFixo(int number) {
+        TextView displayInteger = (TextView) findViewById(R.id.perdida_fixo);
+        displayInteger.setText("" + number);
+    }
+
+    //Fixo intercepatadas
+    public void maisInterceptFixo(View view) {
+        interceptFixo = interceptFixo + 1;
+        totalInterceptFixo(interceptFixo);
+        Toast.makeText(getApplicationContext(), "Fixo: +1 interceptada: tot: "+interceptFixo, Toast.LENGTH_SHORT).show();
+    }
+
+    public void menosInterceptFixo(View view){
+        do{
+            interceptFixo = interceptFixo - 1;
+            if(interceptFixo < 0){
+                interceptFixo = 0;
+            }
+        } while(interceptFixo < 0);
+        totalInterceptFixo(interceptFixo);
+        Toast.makeText(getApplicationContext(), "Fixo: -1 interceptada: tot: "+interceptFixo, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalInterceptFixo(int number) {
+        TextView displayInteger = (TextView) findViewById(R.id.intercep_fixo);
+        displayInteger.setText("" + number);
+    }
+
+
+
+
+
+
+
+    //*****************************ALA ESQUERDO*******************************************
+    int passAlaEsq = 0;
+    int chutAlaEsq = 0;
+    int perdidasAlaEsq = 0;
+    int interceptAlaEsq = 0;
+    //fixo PASSES ERRADOS
+    public void maisPasserAlaEsq(View view) {
+        passAlaEsq = passAlaEsq + 1;
+        totalPasserAlaEsq(passAlaEsq);
+        Toast.makeText(getApplicationContext(), "Ala Esq: +1 pass err: tot: "+passAlaEsq, Toast.LENGTH_LONG).show();
+    }
+
+    public void menosPasserAlaEsq(View view){
+        do{ //faça
+            passAlaEsq = passAlaEsq - 1; //pede numero
+            if(passAlaEsq < 0){
+                passAlaEsq = 0; //lança exceção
+            }
+        } while(passAlaEsq < 0);
+        totalPasserAlaEsq(passAlaEsq);
+        Toast.makeText(getApplicationContext(), "Ala Esq: -1 pass err: tot: "+passAlaEsq, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalPasserAlaEsq(int number) {
+        TextView displayInteger = (TextView) findViewById(R.id.passer_alaesq);
+        displayInteger.setText("" + number);
+    }
+
+    //fixo CHUTE A GOL
+    public void maisChutesAlaEsq(View view) {
+        chutAlaEsq = chutAlaEsq + 1;
+        totalChutesAlaEsq(chutAlaEsq);
+        Toast.makeText(getApplicationContext(), "Ala Esq: +1 chut a gol: tot: "+chutAlaEsq, Toast.LENGTH_SHORT).show();
+    }
+
+    public void menosChutesAlaEsq(View view){
+        do{ //faça
+            chutAlaEsq = chutAlaEsq - 1; //pede numero
+            if(chutAlaEsq < 0){
+                chutAlaEsq = 0; //lança exceção
+            }
+        } while(chutAlaEsq < 0);
+        totalChutesAlaEsq(chutAlaEsq);
+        Toast.makeText(getApplicationContext(), "Ala Esq: -1 chut a gol: tot: "+chutAlaEsq, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalChutesAlaEsq(int number) {
+        TextView displayInteger = (TextView) findViewById(R.id.chuteg_alaesq);
+        displayInteger.setText("" + number);
+    }
+
+    //Fixo PERDIDAS
+    public void maisPerdidasAlaEsq(View view) {
+        perdidasAlaEsq = perdidasAlaEsq + 1;
+        totalPerdidasAlaEsq(perdidasAlaEsq);
+        Toast.makeText(getApplicationContext(), "Ala Esq: +1 perdidas: tot: "+perdidasAlaEsq, Toast.LENGTH_SHORT).show();
+    }
+
+    public void menosPerdidasAlaEsq(View view){
+        do{ //faça
+            perdidasAlaEsq = perdidasAlaEsq - 1; //pede numero
+            if(perdidasAlaEsq < 0){
+                perdidasAlaEsq = 0; //lança exceção
+            }
+        } while(perdidasFixo < 0);
+        totalPerdidasAlaEsq(perdidasAlaEsq);
+        Toast.makeText(getApplicationContext(), "Ala Esq: -1 perdidas: tot: "+perdidasAlaEsq, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalPerdidasAlaEsq(int number) {
+        TextView displayInteger = (TextView) findViewById(R.id.perdida_alaesq);
+        displayInteger.setText("" + number);
+    }
+
+    //Fixo intercepatadas
+    public void maisInterceptAlaEsq(View view) {
+        interceptAlaEsq = interceptAlaEsq + 1;
+        totalInterceptAlaEsq(interceptAlaEsq);
+        Toast.makeText(getApplicationContext(), "Ala Esq: +1 interceptada: tot: "+interceptAlaEsq, Toast.LENGTH_SHORT).show();
+    }
+
+    public void menosInterceptAlaEsq(View view){
+        do{
+            interceptAlaEsq = interceptAlaEsq - 1;
+            if(interceptAlaEsq < 0){
+                interceptAlaEsq = 0;
+            }
+        } while(interceptAlaEsq < 0);
+        totalInterceptAlaEsq(interceptAlaEsq);
+        Toast.makeText(getApplicationContext(), "Ala Esq: -1 interceptada: tot: "+interceptAlaEsq, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalInterceptAlaEsq(int number) {
+        TextView displayInteger = (TextView) findViewById(R.id.intercep_alaesq);
+        displayInteger.setText("" + number);
+    }
+
+
+
+
+    //*****************************ALA DIREITO*******************************************
+    int passAlaDir = 0;
+    int chutAlaDir = 0;
+    int perdidasAlaDir = 0;
+    int interceptAlaDir = 0;
+    //fixo PASSES ERRADOS
+    public void maisPasserAlaDir(View view) {
+        passAlaDir = passAlaDir + 1;
+        totalPasserAlaDir(passAlaDir);
+        Toast.makeText(getApplicationContext(), "Ala Dir: +1 pass err: tot: "+passAlaDir, Toast.LENGTH_LONG).show();
+    }
+
+    public void menosPasserAlaDir(View view){
+        do{ //faça
+            passAlaDir = passAlaDir - 1; //pede numero
+            if(passAlaDir < 0){
+                passAlaDir = 0; //lança exceção
+            }
+        } while(passAlaDir < 0);
+        totalPasserAlaDir(passAlaDir);
+        Toast.makeText(getApplicationContext(), "Ala Dir: -1 pass err: tot: "+passAlaDir, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalPasserAlaDir(int number) {
+        TextView displayInteger = (TextView) findViewById(R.id.passer_aladir);
+        displayInteger.setText("" + number);
+    }
+
+    //fixo CHUTE A GOL
+    public void maisChutesAlaDir(View view) {
+        chutAlaDir = chutAlaDir + 1;
+        totalChutesAlaDir(chutAlaDir);
+        Toast.makeText(getApplicationContext(), "Ala Dir: +1 chut a gol: tot: "+chutAlaDir, Toast.LENGTH_SHORT).show();
+    }
+
+    public void menosChutesAlaDir(View view){
+        do{ //faça
+            chutAlaDir = chutAlaDir - 1; //pede numero
+            if(chutAlaDir < 0){
+                chutAlaDir = 0; //lança exceção
+            }
+        } while(chutAlaDir < 0);
+        totalChutesAlaDir(chutAlaDir);
+        Toast.makeText(getApplicationContext(), "Ala Dir: -1 chut a gol: tot: "+chutAlaDir, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalChutesAlaDir(int number) {
+        TextView displayInteger = (TextView) findViewById(R.id.chuteg_aladir);
+        displayInteger.setText("" + number);
+    }
+
+    //Fixo PERDIDAS
+    public void maisPerdidasAlaDir(View view) {
+        perdidasAlaDir = perdidasAlaDir + 1;
+        totalPerdidasAlaDir(perdidasAlaDir);
+        Toast.makeText(getApplicationContext(), "Ala Dir: +1 perdidas: tot: "+perdidasAlaDir, Toast.LENGTH_SHORT).show();
+    }
+
+    public void menosPerdidasAlaDir(View view){
+        do{ //faça
+            perdidasAlaDir = perdidasAlaDir - 1; //pede numero
+            if(perdidasAlaDir < 0){
+                perdidasAlaDir = 0; //lança exceção
+            }
+        } while(perdidasFixo < 0);
+        totalPerdidasAlaDir(perdidasAlaDir);
+        Toast.makeText(getApplicationContext(), "Ala Dir: -1 perdidas: tot: "+perdidasAlaDir, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalPerdidasAlaDir(int number) {
+        TextView displayInteger = (TextView) findViewById(R.id.perdida_aladir);
+        displayInteger.setText("" + number);
+    }
+
+    //Fixo intercepatadas
+    public void maisInterceptAlaDir(View view) {
+        interceptAlaDir = interceptAlaDir + 1;
+        totalInterceptAlaDir(interceptAlaDir);
+        Toast.makeText(getApplicationContext(), "Ala Dir: +1 interceptada: tot: "+interceptAlaDir, Toast.LENGTH_SHORT).show();
+    }
+
+    public void menosInterceptAlaDir(View view){
+        do{
+            interceptAlaDir = interceptAlaDir - 1;
+            if(interceptAlaDir < 0){
+                interceptAlaDir = 0;
+            }
+        } while(interceptAlaDir < 0);
+        totalInterceptAlaDir(interceptAlaDir);
+        Toast.makeText(getApplicationContext(), "Ala Dir: -1 interceptada: tot: "+interceptAlaDir, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalInterceptAlaDir(int number) {
+        TextView displayInteger = (TextView) findViewById(R.id.intercep_aladir);
+        displayInteger.setText("" + number);
+    }
+
+
+
+    //*****************************PIVO*******************************************
+    int passPivo = 0;
+    int chutPivo = 0;
+    int perdidasPivo = 0;
+    int interceptPivo = 0;
+    //fixo PASSES ERRADOS
+    public void maisPasserPivo(View view) {
+        passPivo = passPivo + 1;
+        totalPasserPivo(passPivo);
+        Toast.makeText(getApplicationContext(), "Ala Dir: +1 pass err: tot: "+passPivo, Toast.LENGTH_LONG).show();
+    }
+
+    public void menosPasserPivo(View view){
+        do{ //faça
+            passPivo = passPivo - 1; //pede numero
+            if(passPivo < 0){
+                passPivo = 0; //lança exceção
+            }
+        } while(passPivo < 0);
+        totalPasserPivo(passPivo);
+        Toast.makeText(getApplicationContext(), "Ala Dir: -1 pass err: tot: "+passPivo, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalPasserPivo(int number) {
+        TextView displayInteger = (TextView) findViewById(R.id.passer_pivo);
+        displayInteger.setText("" + number);
+    }
+
+    //fixo CHUTE A GOL
+    public void maisChutesPivo(View view) {
+        chutPivo = chutPivo + 1;
+        totalChutesPivo(chutPivo);
+        Toast.makeText(getApplicationContext(), "Ala Dir: +1 chut a gol: tot: "+chutPivo, Toast.LENGTH_SHORT).show();
+    }
+
+    public void menosChutesPivo(View view){
+        do{ //faça
+            chutPivo = chutPivo - 1; //pede numero
+            if(chutPivo < 0){
+                chutPivo = 0; //lança exceção
+            }
+        } while(chutPivo < 0);
+        totalChutesPivo(chutPivo);
+        Toast.makeText(getApplicationContext(), "Ala Dir: -1 chut a gol: tot: "+chutPivo, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalChutesPivo(int number) {
+        TextView displayInteger = (TextView) findViewById(R.id.chuteg_pivo);
+        displayInteger.setText("" + number);
+    }
+
+    //Fixo PERDIDAS
+    public void maisPerdidasPivo(View view) {
+        perdidasPivo = perdidasPivo + 1;
+        totalPerdidasPivo(perdidasPivo);
+        Toast.makeText(getApplicationContext(), "Ala Dir: +1 perdidas: tot: "+perdidasPivo, Toast.LENGTH_SHORT).show();
+    }
+
+    public void menosPerdidasPivo(View view){
+        do{ //faça
+            perdidasPivo = perdidasPivo - 1; //pede numero
+            if(perdidasPivo < 0){
+                perdidasPivo = 0; //lança exceção
+            }
+        } while(perdidasFixo < 0);
+        totalPerdidasPivo(perdidasPivo);
+        Toast.makeText(getApplicationContext(), "Ala Dir: -1 perdidas: tot: "+perdidasPivo, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalPerdidasPivo(int number) {
+        TextView displayInteger = (TextView) findViewById(R.id.perdida_pivo);
+        displayInteger.setText("" + number);
+    }
+
+    //Fixo intercepatadas
+    public void maisInterceptPivo(View view) {
+        interceptPivo = interceptPivo + 1;
+        totalInterceptPivo(interceptPivo);
+        Toast.makeText(getApplicationContext(), "Ala Dir: +1 interceptada: tot: "+interceptPivo, Toast.LENGTH_SHORT).show();
+    }
+
+    public void menosInterceptPivo(View view){
+        do{
+            interceptPivo = interceptPivo - 1;
+            if(interceptPivo < 0){
+                interceptPivo = 0;
+            }
+        } while(interceptPivo < 0);
+        totalInterceptPivo(interceptPivo);
+        Toast.makeText(getApplicationContext(), "Ala Dir: -1 interceptada: tot: "+interceptPivo, Toast.LENGTH_SHORT).show();
+    }
+
+    private void totalInterceptPivo(int number) {
+        TextView displayInteger = (TextView) findViewById(R.id.intercep_pivo);
+        displayInteger.setText("" + number);
+    }
+
     //FIM CONTAGEM DE CLICKS TERMINA AQUI! *******************************************************************
+
+   /* public void clear(ViewGroup group) {
+
+        int count = group.getChildCount();
+        for (int i = 0; i < count; i++) {
+            View view = group.getChildAt(i);
+            if (view instanceof TextView) {
+                ((TextView)view).setText("");
+            }
+        }
+     }
+
+     clear((ViewGroup)findViewById(R.id.parent));
+    */
 }
 
