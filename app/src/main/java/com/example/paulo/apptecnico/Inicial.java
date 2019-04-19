@@ -40,12 +40,6 @@ public class Inicial extends AppCompatActivity {
         startActivity(it);
     }
 
-    public void clickBtnIrPartidaConfiguracao(View view){
-        Intent it;
-        it = new Intent(Inicial.this, PartidaConfiguracao.class);
-        startActivity(it);
-    }
-
     public  void clickBtnLogout(View view){
         Toast.makeText(Inicial.this, "Desconectado", Toast.LENGTH_LONG).show();
         finish();

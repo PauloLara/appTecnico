@@ -32,7 +32,6 @@
         <activity android:name=".EscolheModalidade"/>
         <activity android:name=".AcoesFutsal"/>
         <activity android:name=".EquipeConfig"/>
-        <activity android:name=".TesteAcoesFutsal"/>
         <activity android:name=".EquipeFutsalConfig"/>
 
 

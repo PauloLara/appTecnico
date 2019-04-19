@@ -23,7 +23,7 @@
         android:text="@string/graficos"
         app:layout_constraintBottom_toTopOf="@+id/btnsyslog"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnequipes" />
+        app:layout_constraintStart_toEndOf="@+id/btntorneios" />
 
     <Button
         android:id="@+id/btnestatisticas"
@@ -38,7 +38,6 @@
         android:layout_marginStart="1dp"
         android:background="@color/colorPrimary"
         android:text="@string/estatisticas"
-        android:onClick="clickBtnIrPartidaConfiguracao"
         app:layout_constraintBottom_toTopOf="@+id/btngraficos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnnovojogo"
@@ -59,10 +58,10 @@
         android:text="@string/sistema_log"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/configuracoes" />
+        app:layout_constraintStart_toEndOf="@+id/btnequipes" />
 
     <Button
-        android:id="@+id/btnequipes"
+        android:id="@+id/btntorneios"
         android:layout_width="190dp"
         android:layout_height="110dp"
         android:layout_alignParentBottom="true"
@@ -75,7 +74,7 @@
         android:background="#5d6cbd"
         android:text="@string/torneios"
         android:onClick="clickBtnIrTorneioCadastro"
-        app:layout_constraintBottom_toTopOf="@+id/configuracoes"
+        app:layout_constraintBottom_toTopOf="@+id/btnequipes"
         app:layout_constraintEnd_toStartOf="@+id/btngraficos"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="OnClick" />
@@ -94,25 +93,25 @@
         android:background="#b8d8ba"
         android:text="@string/novo_jogo"
         android:onClick="clickBtnIrPartidaConfig"
-        app:layout_constraintBottom_toTopOf="@+id/btnequipes"
+        app:layout_constraintBottom_toTopOf="@+id/btntorneios"
         app:layout_constraintEnd_toStartOf="@+id/btnestatisticas"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="OnClick" />
 
     <Button
-        android:id="@+id/configuracoes"
+        android:id="@+id/btnequipes"
         android:layout_width="190dp"
         android:layout_height="110dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginRight="1dp"
         android:layout_marginStart="1dp"
-        android:background="@color/colorAccent"
-        android:text="@string/equipe_config"
+        android:layout_marginLeft="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/colorPrimaryDark"
         android:onClick="clickBtnIrEquipeConfig"
+        android:text="@string/equipe_config"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnsyslog"
         app:layout_constraintStart_toStartOf="parent" />
@@ -126,8 +125,10 @@
 
     <Button
         android:id="@+id/logout"
-        android:layout_width="100dp"
+        android:layout_width="80dp"
         android:layout_height="25dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="6dp"
         android:layout_marginRight="6dp"
@@ -148,8 +149,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/carrossel"
         app:layout_constraintEnd_toStartOf="@+id/logout"

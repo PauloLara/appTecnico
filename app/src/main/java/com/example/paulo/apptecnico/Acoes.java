@@ -23,10 +23,9 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
                   c4, c5, c6, c7, c8, d1, d2, d3, d4, d5, d6, d7, d8, e1, e2, e3, e4, e5, e6,
                   e7, e8, f1, f2, f3, f4, f5, f6, f7, f8, goleiro1, lateral2, zagueiro3, zagueiro4,
                   cabArea5, lateral6, atacante7, volante8, centroavante9, camisa10, atacante11,
-                  salvar, finalizar, limpar, passa, lanca, recua, certo, errado, impedido, chute,
-                  cabeceio, desvio, agol, deperto, forte, pfora, delonge, fraco, gol, escanteio,
-                  rebote, disputa, desarma, intercepta, espalma, agarra, cvermelho, camarelo,
-                  perde, fazfalta;
+                  salvar, finalizar, limpar, passa, passeerrado, impedido, chutegol, chutefora,
+                  cabeceio, golnosso, goldeles, escanteiocontra, escanteio, rebote, desarma, intercepta,
+                  defende, fazfalta;
 
 
     @Override
@@ -63,56 +62,31 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
 
         passa  = findViewById(R.id.passa);
         passa.setOnClickListener(this);
-        lanca = findViewById(R.id.lanca);
-        lanca.setOnClickListener(this);
-        recua = findViewById(R.id.recua);
-        recua.setOnClickListener(this);
-        certo = findViewById(R.id.certo);
-        certo.setOnClickListener(this);
-        errado = findViewById(R.id.errado2);
-        errado.setOnClickListener(this);
+        passeerrado = findViewById(R.id.passeerrado);
         impedido = findViewById(R.id.impedimento);
         impedido.setOnClickListener(this);
-        chute = findViewById(R.id.chute);
-        chute.setOnClickListener(this);
+        chutegol = findViewById(R.id.chutegol);
+        chutegol.setOnClickListener(this);
+        chutefora = findViewById(R.id.chutefora);
+        chutefora.setOnClickListener(this);
         cabeceio = findViewById(R.id.cabeceio);
         cabeceio.setOnClickListener(this);
-        desvio = findViewById(R.id.desvio);
-        desvio.setOnClickListener(this);
-        agol = findViewById(R.id.agol);
-        agol.setOnClickListener(this);
-        deperto = findViewById(R.id.deperto);
-        deperto.setOnClickListener(this);
-        forte = findViewById(R.id.forte);
-        forte.setOnClickListener(this);
-        pfora = findViewById(R.id.pfora);
-        pfora.setOnClickListener(this);
-        delonge = findViewById(R.id.delonge);
-        delonge.setOnClickListener(this);
-        fraco = findViewById(R.id.fraco);
-        fraco.setOnClickListener(this);
-        gol = findViewById(R.id.gol);
-        gol.setOnClickListener(this);
+        golnosso = findViewById(R.id.golnosso);
+        golnosso.setOnClickListener(this);
+        goldeles = findViewById(R.id.goldeles);
+        goldeles.setOnClickListener(this);
+        escanteiocontra = findViewById(R.id.escanteiocontra);
+        escanteiocontra.setOnClickListener(this);
         escanteio = findViewById(R.id.escanteio);
         escanteio.setOnClickListener(this);
         rebote = findViewById(R.id.rebote);
         rebote.setOnClickListener(this);
-        disputa = findViewById(R.id.disputa);
-        disputa.setOnClickListener(this);
         desarma = findViewById(R.id.desarma);
         desarma.setOnClickListener(this);
         intercepta = findViewById(R.id.intercepta);
         intercepta.setOnClickListener(this);
-        espalma = findViewById(R.id.espalma);
-        espalma.setOnClickListener(this);
-        agarra = findViewById(R.id.agarra);
-        agarra.setOnClickListener(this);
-        cvermelho = findViewById(R.id.cartaovermelho);
-        cvermelho.setOnClickListener(this);
-        camarelo = findViewById(R.id.cartaoamarelo);
-        camarelo.setOnClickListener(this);
-        perde = findViewById(R.id.perde);
-        perde.setOnClickListener(this);
+        defende = findViewById(R.id.defende);
+        defende.setOnClickListener(this);
         fazfalta = findViewById(R.id.fazfalta);
         fazfalta.setOnClickListener(this);
 
@@ -236,7 +210,6 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
     }
 
     public void finalizar(View v) throws IOException {
-        //arquivo.removeUltimaLinha();
         arquivo.escreverTxt("]\n}");
         arquivo.fecharTxt();
         arquivo.fecharJson();
@@ -302,32 +275,17 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
                 e.printStackTrace();
             }
         }
-        else if(st.equalsIgnoreCase("passa")||st.equalsIgnoreCase("lanca")||
-                st.equalsIgnoreCase("agol")||st.equalsIgnoreCase("recua")||
+        else if(
+                st.equalsIgnoreCase("escanteiocontra")||
                 st.equalsIgnoreCase("impedido")||st.equalsIgnoreCase("escanteio")||
-                st.equalsIgnoreCase("chute")||st.equalsIgnoreCase("desarma")||
-                st.equalsIgnoreCase("cabeceio")||st.equalsIgnoreCase("disputa")||
-                st.equalsIgnoreCase("desvio")||st.equalsIgnoreCase("perde")||
-                st.equalsIgnoreCase("rebote")||st.equalsIgnoreCase("gol")||
-                st.equalsIgnoreCase("intercepta")||st.equalsIgnoreCase("espalma")||
-                st.equalsIgnoreCase("agarra")||st.equalsIgnoreCase("camarelo")||
+                st.equalsIgnoreCase("chutegol")||st.equalsIgnoreCase("desarma")||
+                st.equalsIgnoreCase("rebote")||st.equalsIgnoreCase("golnosso")||
+                st.equalsIgnoreCase("rebotefora")||st.equalsIgnoreCase("goldeles")||
+                st.equalsIgnoreCase("intercepta")||
+                st.equalsIgnoreCase("defende")||st.equalsIgnoreCase("camarelo")||
                 st.equalsIgnoreCase("cvermelho")||st.equalsIgnoreCase("fazfalta"))
         {
             arquivo.escreverTxt("\"Ação\": ");
-            arquivo.escreverTxt('"'+st+'"');
-            arquivo.escreverTxt(",");
-            try {
-                arquivo.novaLinhaTxt();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        else if(st.equalsIgnoreCase("deperto")||st.equalsIgnoreCase("agol")||
-                st.equalsIgnoreCase("forte")||st.equalsIgnoreCase("fraco")||
-                st.equalsIgnoreCase("certo")||st.equalsIgnoreCase("delonge")||
-                st.equalsIgnoreCase("errado")||st.equalsIgnoreCase("pfora"))
-        {
-            arquivo.escreverTxt("\"Detalhe\": ");
             arquivo.escreverTxt('"'+st+'"');
             arquivo.escreverTxt(",");
             try {
@@ -354,13 +312,6 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
             e.printStackTrace();
         }
 
-        //CRIA TXT
-        /*arquivo.escreverTxt(st);
-        try {
-            arquivo.novaLinhaTxt();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
         Toast.makeText(getApplicationContext(), st, Toast.LENGTH_SHORT).show();
         try {
             arquivo.flushTxt();
@@ -369,7 +320,7 @@ public class Acoes extends AppCompatActivity implements View.OnClickListener{
         }
     }
 
-    public void lerArquivo(View v) throws IOException {
+    public void lerArquivo(View v) {
         try {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Conteúdo:");

@@ -41,10 +41,11 @@ public class Cadastro extends AppCompatActivity
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String nome, email, senha;
+                final String nome, email, senha, repeteSenha;
                 nome = txtNome.getText().toString();
                 email = txtEmail.getText().toString();
                 senha = txtSenha.getText().toString();
+                repeteSenha = txtRepeteSenha.getText().toString();
                 RequestQueue queue = Volley.newRequestQueue(Cadastro.this);
 
                 String url = "http://192.168.15.17/cadastro.php";
@@ -83,6 +84,10 @@ public class Cadastro extends AppCompatActivity
                     }
                 };
                 queue.add(stringRequest);
+                txtRepeteSenha.setText(null);
+                txtNome.setText(null);
+                txtEmail.setText(null);
+                txtSenha.setText(null);
             }
         });
     }

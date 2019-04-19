@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent">
+<android.support.constraint.ConstraintLayout
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -435,13 +438,12 @@
         app:layout_constraintTop_toBottomOf="@+id/e8" />
 
 
-
     <Button
         android:id="@+id/goleiro1"
         android:layout_width="90dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="8dp"
+        android:layout_height="34dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/border_color"
         android:text="goleiro1"
@@ -453,9 +455,9 @@
     <Button
         android:id="@+id/lat_direito2"
         android:layout_width="90dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="8dp"
+        android:layout_height="34dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:background="@drawable/border_color"
         android:text="lat_direito2"
         android:textSize="12sp"
@@ -466,9 +468,9 @@
     <Button
         android:id="@+id/zagueiro3"
         android:layout_width="90dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="8dp"
+        android:layout_height="34dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:background="@drawable/border_color"
         android:text="zagueiro3"
         android:textSize="12sp"
@@ -479,9 +481,9 @@
     <Button
         android:id="@+id/zagueiro4"
         android:layout_width="90dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="8dp"
+        android:layout_height="34dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:background="@drawable/border_color"
         android:text="zagueiro4"
         android:textSize="12sp"
@@ -492,9 +494,9 @@
     <Button
         android:id="@+id/cabeca_area5"
         android:layout_width="90dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="8dp"
+        android:layout_height="34dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:background="@drawable/border_color"
         android:text="cabeca_area5"
         android:textSize="12sp"
@@ -505,9 +507,9 @@
     <Button
         android:id="@+id/lat_esquerdo6"
         android:layout_width="90dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="8dp"
+        android:layout_height="34dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:background="@drawable/border_color"
         android:text="lat_esquerdo6"
         android:textSize="12sp"
@@ -518,9 +520,9 @@
     <Button
         android:id="@+id/atacante7"
         android:layout_width="90dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="8dp"
+        android:layout_height="34dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:background="@drawable/border_color"
         android:text="atacante7"
         android:textSize="12sp"
@@ -531,9 +533,9 @@
     <Button
         android:id="@+id/volante8"
         android:layout_width="90dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="8dp"
+        android:layout_height="34dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:background="@drawable/border_color"
         android:text="volante8"
         android:textSize="12sp"
@@ -544,9 +546,9 @@
     <Button
         android:id="@+id/centroavante9"
         android:layout_width="90dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="8dp"
+        android:layout_height="34dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:background="@drawable/border_color"
         android:text="centroavante9"
         android:textSize="12sp"
@@ -557,9 +559,9 @@
     <Button
         android:id="@+id/camisa10"
         android:layout_width="90dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="8dp"
+        android:layout_height="34dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:background="@drawable/border_color"
         android:text="camisa10"
         android:textSize="12sp"
@@ -569,9 +571,9 @@
     <Button
         android:id="@+id/atacante11"
         android:layout_width="90dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="8dp"
+        android:layout_height="34dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:background="@drawable/border_color"
         android:text="atacante11"
         android:textSize="12sp"
@@ -583,7 +585,7 @@
     <Button
         android:id="@+id/adgoleiro1"
         android:layout_width="90dp"
-        android:layout_height="28dp"
+        android:layout_height="34dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
@@ -597,7 +599,7 @@
     <Button
         android:id="@+id/adlat_direito2"
         android:layout_width="90dp"
-        android:layout_height="28dp"
+        android:layout_height="34dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/border_color"
@@ -610,7 +612,7 @@
     <Button
         android:id="@+id/adzagueiro3"
         android:layout_width="90dp"
-        android:layout_height="28dp"
+        android:layout_height="34dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/border_color"
@@ -623,7 +625,7 @@
     <Button
         android:id="@+id/adzagueiro4"
         android:layout_width="90dp"
-        android:layout_height="28dp"
+        android:layout_height="34dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/border_color"
@@ -636,7 +638,7 @@
     <Button
         android:id="@+id/adcabeca_area5"
         android:layout_width="90dp"
-        android:layout_height="28dp"
+        android:layout_height="34dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/border_color"
@@ -649,7 +651,7 @@
     <Button
         android:id="@+id/adlat_esquerdo6"
         android:layout_width="90dp"
-        android:layout_height="28dp"
+        android:layout_height="34dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/border_color"
@@ -662,7 +664,7 @@
     <Button
         android:id="@+id/adatacante7"
         android:layout_width="90dp"
-        android:layout_height="28dp"
+        android:layout_height="34dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/border_color"
@@ -675,7 +677,7 @@
     <Button
         android:id="@+id/advolante8"
         android:layout_width="90dp"
-        android:layout_height="28dp"
+        android:layout_height="34dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/border_color"
@@ -688,7 +690,7 @@
     <Button
         android:id="@+id/adcentroavante9"
         android:layout_width="90dp"
-        android:layout_height="28dp"
+        android:layout_height="34dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/border_color"
@@ -701,7 +703,7 @@
     <Button
         android:id="@+id/adcamisa10"
         android:layout_width="90dp"
-        android:layout_height="28dp"
+        android:layout_height="34dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="camisa10"
@@ -713,7 +715,7 @@
     <Button
         android:id="@+id/adatacante11"
         android:layout_width="90dp"
-        android:layout_height="28dp"
+        android:layout_height="34dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/border_color"
         android:layout_marginRight="8dp"
@@ -727,385 +729,266 @@
 
     <Button
         android:id="@+id/limpar"
-        android:layout_width="59dp"
-        android:layout_height="31dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        android:background="#40230d"
+        android:layout_width="100dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/background_light"
         android:onClick="limpar"
-        android:text="limpar"
-        android:textColor="@android:color/background_light"
-        app:layout_constraintEnd_toStartOf="@+id/salvar"
-        app:layout_constraintTop_toBottomOf="@+id/perde" />
+        android:text="limpar registros"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/finalizar" />
 
     <Button
         android:id="@+id/finalizar"
-        android:layout_width="76dp"
-        android:layout_height="31dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/holo_blue_dark"
+        android:layout_width="300dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:background="@color/colorPrimaryDark"
         android:onClick="finalizar"
-        android:text="finalizar"
+        android:text="finalizar jogo"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cartaoamarelo" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salvar" />
 
     <Button
         android:id="@+id/salvar"
-        android:layout_width="59dp"
-        android:layout_height="31dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_width="300dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
         android:background="@color/colorPrimary"
         android:onClick="salvar"
-        android:text="salvar"
+        android:text="salvar jogada"
         android:textColor="@android:color/background_light"
-        app:layout_constraintEnd_toStartOf="@+id/finalizar"
-        app:layout_constraintTop_toBottomOf="@+id/fazfalta" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/atacante11" />
 
     <Button
         android:id="@+id/rebote"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
+        android:layout_width="70dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="8dp"
         android:background="@android:color/holo_orange_light"
-        android:text="rebote"
+        android:text="pega rebote"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/fazfalta"
+        app:layout_constraintTop_toBottomOf="@+id/goldeles" />
+
+    <Button
+        android:id="@+id/escanteiocontra"
+        android:layout_width="70dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="4dp"
+        android:background="#9f4941"
+        android:text="cede escanteio"
         android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/escanteio"
-        app:layout_constraintTop_toBottomOf="@+id/fraco" />
+        app:layout_constraintStart_toEndOf="@+id/defende"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
 
     <Button
         android:id="@+id/escanteio"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
-        android:background="@android:color/holo_orange_light"
-        android:text="escanteio"
-        android:textSize="8sp"
-        app:layout_constraintStart_toEndOf="@+id/gol"
-        app:layout_constraintTop_toBottomOf="@+id/delonge" />
-
-    <Button
-        android:id="@+id/gol"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="2dp"
-        android:background="@android:color/holo_orange_light"
-        android:text="gol"
-        android:textSize="18sp"
-        android:onClick="lerArquivo"
-        app:layout_constraintStart_toEndOf="@+id/atacante7"
-        app:layout_constraintTop_toBottomOf="@+id/pfora" />
-
-    <Button
-        android:id="@+id/impedimento"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
-        android:background="@android:color/holo_orange_light"
-        android:text="impedido"
+        android:layout_width="70dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="+ escanteio"
         android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/errado2"
-        app:layout_constraintTop_toBottomOf="@+id/recua" />
-
-    <Button
-        android:id="@+id/errado2"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
-        android:background="#9f4941"
-        android:text="errado"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/certo"
-        app:layout_constraintTop_toBottomOf="@+id/lanca" />
-
-    <Button
-        android:id="@+id/certo"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="2dp"
-        android:background="#436d50"
-        android:text="certo"
-        app:layout_constraintStart_toEndOf="@+id/lat_direito2"
-        app:layout_constraintTop_toBottomOf="@+id/passa" />
-
-    <Button
-        android:id="@+id/recua"
-        android:layout_width="50dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="26dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="recua"
-        app:layout_constraintStart_toEndOf="@+id/lanca"
-        app:layout_constraintTop_toBottomOf="@+id/f6" />
-
-    <Button
-        android:id="@+id/lanca"
-        android:layout_width="50dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="26dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="lança"
-        app:layout_constraintStart_toEndOf="@+id/passa"
-        app:layout_constraintTop_toBottomOf="@+id/f5" />
-
-    <Button
-        android:id="@+id/passa"
-        android:layout_width="50dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="26dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="passa"
-        app:layout_constraintStart_toEndOf="@+id/goleiro1"
-        app:layout_constraintTop_toBottomOf="@+id/f4" />
-
-    <Button
-        android:id="@+id/desvio"
-        android:layout_width="50dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="desvio"
-        app:layout_constraintStart_toEndOf="@+id/cabeceio"
-        app:layout_constraintTop_toBottomOf="@+id/errado2" />
-
-    <Button
-        android:id="@+id/cabeceio"
-        android:layout_width="50dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="cabeceio"
-        android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/chute"
-        app:layout_constraintTop_toBottomOf="@+id/errado2" />
-
-    <Button
-        android:id="@+id/pfora"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="2dp"
-        android:background="#9f4941"
-        android:text="p/ fora"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/lat_esquerdo6"
-        app:layout_constraintTop_toBottomOf="@+id/agol" />
-
-    <Button
-        android:id="@+id/fraco"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
-        android:background="#9f4941"
-        android:text="fraco"
-        app:layout_constraintStart_toEndOf="@+id/delonge"
-        app:layout_constraintTop_toBottomOf="@+id/forte" />
-
-    <Button
-        android:id="@+id/forte"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
-        android:background="#436d50"
-        android:text="forte"
-        app:layout_constraintStart_toEndOf="@+id/deperto"
-        app:layout_constraintTop_toBottomOf="@+id/desvio" />
-
-    <Button
-        android:id="@+id/delonge"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
-        android:background="#9f4941"
-        android:text="de longe"
-        android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/pfora"
-        app:layout_constraintTop_toBottomOf="@+id/deperto" />
-
-    <Button
-        android:id="@+id/deperto"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
-        android:background="#436d50"
-        android:text="de perto"
-        android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/agol"
-        app:layout_constraintTop_toBottomOf="@+id/cabeceio" />
-
-    <Button
-        android:id="@+id/agol"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="2dp"
-        android:background="#436d50"
-        android:text="a gol"
-        app:layout_constraintStart_toEndOf="@+id/cabeca_area5"
-        app:layout_constraintTop_toBottomOf="@+id/chute" />
-
-    <Button
-        android:id="@+id/chute"
-        android:layout_width="50dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="chute"
-        app:layout_constraintStart_toEndOf="@+id/zagueiro4"
-        app:layout_constraintTop_toBottomOf="@+id/certo" />
-
-    <Button
-        android:id="@+id/intercepta"
-        android:layout_width="50dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="intercepta"
-        android:textSize="8sp"
-        app:layout_constraintStart_toEndOf="@+id/desarma"
+        app:layout_constraintStart_toEndOf="@+id/passeerrado"
         app:layout_constraintTop_toBottomOf="@+id/rebote" />
 
     <Button
-        android:id="@+id/desarma"
-        android:layout_width="50dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="24dp"
+        android:id="@+id/golnosso"
+        android:layout_width="70dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@color/colorPrimaryDark"
-        android:text="desarma"
-        android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/disputa"
-        app:layout_constraintTop_toBottomOf="@+id/escanteio" />
+        android:onClick="lerArquivo"
+        android:text="+ gol"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/salvar"
+        app:layout_constraintStart_toEndOf="@+id/chutefora"
+        app:layout_constraintTop_toBottomOf="@+id/impedimento" />
 
     <Button
-        android:id="@+id/cartaovermelho"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
+        android:id="@+id/goldeles"
+        android:layout_width="70dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="8dp"
         android:background="@android:color/holo_red_dark"
-        android:text="cartão vermelho"
-        android:textSize="8sp"
-        app:layout_constraintStart_toEndOf="@+id/agarra"
+        android:onClick="lerArquivo"
+        android:text="- gol"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/escanteiocontra"
+        app:layout_constraintTop_toBottomOf="@+id/f7" />
+
+    <Button
+        android:id="@+id/impedimento"
+        android:layout_width="70dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="8dp"
+        android:background="#9f4941"
+        android:text="impedido"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/passa"
+        app:layout_constraintTop_toBottomOf="@+id/passeerrado" />
+
+    <Button
+        android:id="@+id/passeerrado"
+        android:layout_width="70dp"
+        android:layout_height="68dp"
+        android:background="#9f4941"
+        android:text="passe errado"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="193dp"
+        tools:layout_editor_absoluteY="373dp" />
+
+    <Button
+        android:id="@+id/passa"
+        android:layout_width="70dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="passa"
+        app:layout_constraintStart_toEndOf="@+id/volante8"
         app:layout_constraintTop_toBottomOf="@+id/intercepta" />
 
     <Button
-        android:id="@+id/agarra"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
+        android:id="@+id/cabeceio"
+        android:layout_width="70dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="8dp"
         android:background="@color/colorPrimaryDark"
-        android:text="agarra"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/espalma"
-        app:layout_constraintTop_toBottomOf="@+id/desarma" />
+        android:text="cabeceio"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/impedimento"
+        app:layout_constraintTop_toBottomOf="@+id/escanteio" />
 
     <Button
-        android:id="@+id/cartaoamarelo"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
-        android:background="#ffe601"
-        android:text="cartão amarelo"
-        android:textSize="8sp"
-        app:layout_constraintStart_toEndOf="@+id/fazfalta"
-        app:layout_constraintTop_toBottomOf="@+id/cartaovermelho" />
+        android:id="@+id/chutegol"
+        android:layout_width="70dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="chute a gol"
+        app:layout_constraintStart_toEndOf="@+id/camisa10"
+        app:layout_constraintTop_toBottomOf="@+id/passa" />
+
+    <Button
+        android:id="@+id/chutefora"
+        android:layout_width="70dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:background="#9f4941"
+        android:text="chute p fora"
+        app:layout_constraintStart_toEndOf="@+id/chutegol"
+        tools:layout_editor_absoluteY="525dp" />
+
+    <Button
+        android:id="@+id/intercepta"
+        android:layout_width="70dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="intercepta"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/lat_esquerdo6"
+        tools:layout_editor_absoluteY="373dp" />
+
+    <Button
+        android:id="@+id/desarma"
+        android:layout_width="70dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="desarma rouba"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/zagueiro3"
+        app:layout_constraintTop_toBottomOf="@+id/defende" />
 
     <Button
         android:id="@+id/fazfalta"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
+        android:layout_width="70dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="8dp"
         android:background="#9f4941"
         android:text="faz falta"
-        android:textSize="8sp"
-        app:layout_constraintStart_toEndOf="@+id/perde"
-        app:layout_constraintTop_toBottomOf="@+id/agarra" />
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/desarma"
+        app:layout_constraintTop_toBottomOf="@+id/escanteiocontra" />
 
     <Button
-        android:id="@+id/perde"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="2dp"
-        android:background="#9f4941"
-        android:text="perde"
-        app:layout_constraintStart_toEndOf="@+id/camisa10"
-        app:layout_constraintTop_toBottomOf="@+id/espalma" />
-
-    <Button
-        android:id="@+id/espalma"
-        android:layout_width="50dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="2dp"
+        android:id="@+id/defende"
+        android:layout_width="70dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
         android:background="@color/colorPrimaryDark"
-        android:text="espalma"
+        android:text="defende"
         android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/centroavante9"
-        app:layout_constraintTop_toBottomOf="@+id/disputa" />
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/goleiro1"
+        app:layout_constraintTop_toBottomOf="@+id/f3" />
 
-    <Button
-        android:id="@+id/disputa"
-        android:layout_width="50dp"
-        android:layout_height="28dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="disputa"
-        android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/volante8"
-        app:layout_constraintTop_toBottomOf="@+id/gol" />
+    <View
+        android:id="@+id/divider"
+        android:layout_width="395dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="3dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/goleiro1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/f1" />
 
 </android.support.constraint.ConstraintLayout>
+</ScrollView>

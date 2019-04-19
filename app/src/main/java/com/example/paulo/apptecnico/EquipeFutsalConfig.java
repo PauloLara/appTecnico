@@ -28,24 +28,15 @@ import java.util.Map;
 
 public class EquipeFutsalConfig extends AppCompatActivity {
 
-    EditText editTextGoleiro;
-    EditText editTextFixo;
-    EditText editTextAlaEsq;
-    EditText editTextAlaDir;
-    EditText editTextPivo;
-    EditText editTextGoleiroRes;
-    EditText editTextFixoRes;
-    EditText editTextAlaEsqRes;
-    EditText editTextAlaDirRes;
-    EditText editTextPivoRes;
-    EditText editTextGoleiroResRes;
-    EditText editTextJogadorExtra;
+    EditText editTextGoleiro, editTextFixo, editTextAlaEsq, editTextAlaDir, editTextPivo, editTextGoleiroRes,
+             editTextFixoRes, editTextAlaEsqRes, editTextAlaDirRes, editTextPivoRes, editTextGoleiroResRes, editTextJogadorExtra;
     Button buttonCadastrarEquipe;
     AlertDialog.Builder alertDialog;
 
     Spinner spinner;
     String URL = "http://192.168.15.17/busca_torneios.php";
-    ArrayList<String> CountryName;
+    ArrayList<String> TorneioName;
+    ArrayList<String> TorneioID;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,8 +55,9 @@ public class EquipeFutsalConfig extends AppCompatActivity {
         editTextJogadorExtra = findViewById(R.id.txtJogadorExtra);
         buttonCadastrarEquipe = findViewById(R.id.btnCadEquipeFutsal);
 
-        CountryName = new ArrayList<>();
-        spinner = (Spinner) findViewById(R.id.spinnerTorneio);
+        TorneioName = new ArrayList<>();
+        TorneioID = new ArrayList<String>();
+        spinner = findViewById(R.id.spinnerTorneio);
         loadSpinnerData(URL);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -83,21 +75,13 @@ public class EquipeFutsalConfig extends AppCompatActivity {
         buttonCadastrarEquipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                final String stnomeTorneio = (String) spinner.getSelectedItem();
-                Toast.makeText(getApplicationContext(), stnomeTorneio, Toast.LENGTH_LONG).show();
-                final String stnomeGoleiro;
-                final String stnomeFixo;
-                final String stnomeAlaEsq;
-                final String stnomeAlaDir;
-                final String stnomePivo;
-                final String stnomeGoleiroRes;
-                final String stnomeFixoRes;
-                final String stnomeAlaEsqRes;
-                final String stnomeAlaDirRes;
-                final String stnomePivoRes;
-                final String stnomeGoleiroResRes;
-                final String stnomeJogadorExtra;
+                final String stIDnomeTorneio = (String) spinner.getSelectedItem();
+                final String[] separaNomeTorneio = stIDnomeTorneio.split("-");
+                final String stNomeTorneio = separaNomeTorneio[1];
+                final String stIDTorneio =  String.valueOf(somenteDigitos(stIDnomeTorneio));
+                Toast.makeText(getApplicationContext(), "Cadastrado: "+stNomeTorneio, Toast.LENGTH_LONG).show();
+                final String stnomeGoleiro, stnomeFixo, stnomeAlaEsq, stnomeAlaDir, stnomePivo, stnomeGoleiroRes,
+                      stnomeFixoRes, stnomeAlaEsqRes, stnomeAlaDirRes, stnomePivoRes, stnomeGoleiroResRes, stnomeJogadorExtra;
 
                 stnomeGoleiro = editTextGoleiro.getText().toString();
                 stnomeFixo = editTextFixo.getText().toString();
@@ -151,7 +135,8 @@ public class EquipeFutsalConfig extends AppCompatActivity {
                     @Override
                     protected Map<String, String> getParams() {
                         Map<String, String> params = new HashMap<String, String>();
-                        params.put("nomeTorneio", stnomeTorneio);
+                        params.put("nomeTorneio", stNomeTorneio);
+                        params.put("IDtorneio", stIDTorneio);
                         params.put("nomeGoleiro", stnomeGoleiro);
                         params.put("nomeFixo", stnomeFixo);
                         params.put("nomeAlaEsq", stnomeAlaEsq);
@@ -171,8 +156,10 @@ public class EquipeFutsalConfig extends AppCompatActivity {
             }
         });
     }
-
+    int idTorneio;
+    String nomeTorneio;
     private void loadSpinnerData(String url) {
+        final ArrayList<String> listaTorneios = new ArrayList<>();
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
@@ -182,10 +169,14 @@ public class EquipeFutsalConfig extends AppCompatActivity {
                     JSONArray jsonArray = jsonObject.getJSONArray("torneios");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                        String country = jsonObject1.getString("nomeTorneio");
-                        CountryName.add(country);
+                        idTorneio = jsonObject1.getInt("ID_torneio");
+                        nomeTorneio = jsonObject1.getString("nomeTorneio");
+                        //TorneioName.add(nomeTorneio);
+                        String var = String.valueOf(idTorneio);
+                        listaTorneios.add(var+"-"+nomeTorneio);
+                        //TorneioID.add();
                     }
-                    spinner.setAdapter(new ArrayAdapter<String>(EquipeFutsalConfig.this, android.R.layout.simple_spinner_dropdown_item, CountryName));
+                    spinner.setAdapter(new ArrayAdapter<String>(EquipeFutsalConfig.this, android.R.layout.simple_spinner_dropdown_item, listaTorneios));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -197,5 +188,16 @@ public class EquipeFutsalConfig extends AppCompatActivity {
             }
         });
         requestQueue.add(stringRequest);
+    }
+
+    private int somenteDigitos(String palavra) {
+        String digitos = "";
+        char[] letras  = palavra.toCharArray();
+        for (char letra : letras) {
+            if(Character.isDigit(letra)) {
+                digitos += letra;
+            }
+        }
+        return Integer.parseInt(digitos);
     }
 }

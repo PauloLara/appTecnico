@@ -2,6 +2,7 @@ package com.example.paulo.apptecnico;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
@@ -9,9 +10,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TableLayout;
+import java.util.Calendar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.android.volley.Request;
@@ -43,13 +45,17 @@ public class AcoesFutsal extends Activity {
     TextView textViewAlaEsqAtleta, textViewAlaEsqPasseErrado, textViewAlaEsqChuteAgol, textViewAlaEsqPerdida, textViewAlaEsqInterceptacao;
     TextView textViewAlaDirAtleta, textViewAlaDirPasseErrado, textViewAlaDirChuteAgol, textViewAlaDirPerdida, textViewAlaDirInterceptacao;
     TextView textViewPivoAtleta, textViewPivoPasseErrado, textViewPivoChuteAgol, textViewPivoPerdida, textViewPivoInterceptacao;
+    EditText editTextDate;
     ArrayList<String> torneioName;
-
+    int idTorneio;
+    EditText date;
+    DatePickerDialog datePickerDialog;
 
 
 
     //INÍCIO - AQUI POPULA O SPINNER COM DADOS DO BANCO *******************************************************************
     private void loadSpinnerData(String urlSpin) {
+        final ArrayList<String> listaTorneios = new ArrayList<>();
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         StringRequest stringRequest = new StringRequest(Request.Method.GET, urlSpin, new Response.Listener<String>() {
             @Override
@@ -57,12 +63,16 @@ public class AcoesFutsal extends Activity {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray jsonArray = jsonObject.getJSONArray("torneios");
+                    listaTorneios.add("Selecione o torneio:");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                        String torneios = jsonObject1.getString("nomeTorneio");
-                        torneioName.add(torneios);
+                        idTorneio = jsonObject1.getInt("ID_torneio");
+                        String nomeTorneio = jsonObject1.getString("nomeTorneio");
+                        String var = String.valueOf(idTorneio);
+                        listaTorneios.add(var+" "+nomeTorneio);
                     }
-                    spinner.setAdapter(new ArrayAdapter<String>(AcoesFutsal.this, android.R.layout.simple_spinner_dropdown_item, torneioName));
+                    spinner.setAdapter(new ArrayAdapter<String>(AcoesFutsal.this, android.R.layout.simple_spinner_dropdown_item, listaTorneios));
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -75,11 +85,43 @@ public class AcoesFutsal extends Activity {
         });
         requestQueue.add(stringRequest);
     }
+
+    // Função que separa os números de dentro de uma String
+    private int somenteDigitos(String palavra) {
+        String digitos = "";
+        char[] letras  = palavra.toCharArray();
+        for (char letra : letras) {
+            if(Character.isDigit(letra)) {
+                digitos += letra;
+            }
+        }
+        return Integer.parseInt(digitos);
+    }
     // FIM - AQUI POPULA O SPINNER COM DADOS DO BANCO    *******************************************************************
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acoes_futsal);
+
+        date = (EditText) findViewById(R.id.date);
+
+        date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar c = Calendar.getInstance();
+                int mYear = c.get(Calendar.YEAR);
+                int mMonth = c.get(Calendar.MONTH);
+                int mDay = c.get(Calendar.DAY_OF_MONTH);
+
+                datePickerDialog = new DatePickerDialog(AcoesFutsal.this, new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                              date.setText(year + "-"+ (monthOfYear + 1) + "-" + dayOfMonth);
+                     }
+                }, mYear, mMonth, mDay);
+                datePickerDialog.show();
+            }
+        });
 
         btnFinalizar = findViewById(R.id.finalizar);
         textViewGoleiroAtleta = findViewById(R.id.fieldGoleiro);
@@ -113,11 +155,18 @@ public class AcoesFutsal extends Activity {
         textViewPivoChuteAgol = findViewById(R.id.chuteg_pivo);
         textViewPivoPerdida = findViewById(R.id.perdida_pivo);
         textViewPivoInterceptacao = findViewById(R.id.intercep_pivo);
-
+        editTextDate = findViewById(R.id.date);
 
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final String strDataJogo = String.valueOf(editTextDate.getText());
+                final String  strDataJogo1 = strDataJogo;
+                final String  strDataJogo2 = strDataJogo;
+                final String  strDataJogo3 = strDataJogo;
+                final String  strDataJogo4 = strDataJogo;
+                final String  strDataJogo5 = strDataJogo;
+
                 final String strGoleiroAtleta= (String) textViewGoleiroAtleta.getText();
                 final String strGoleiroPasseErrado = (String) textViewGoleiroPasseErrado.getText();
                 final String strGoleiroChuteAgol = (String) textViewGoleiroChuteAgol.getText();
@@ -175,30 +224,35 @@ public class AcoesFutsal extends Activity {
                     @Override
                     protected Map<String, String> getParams() {
                         Map<String, String> params = new HashMap<String, String>();
+                        params.put("dataJogo1", strDataJogo1);
                         params.put("atleta1", strGoleiroAtleta);
                         params.put("passeErrado1", strGoleiroPasseErrado);
                         params.put("chuteAgol1", strGoleiroChuteAgol);
                         params.put("perdida1", strGoleiroPerdida);
                         params.put("interceptacao1", strGoleiroInterceptacao);
 
+                        params.put("dataJogo2", strDataJogo2);
                         params.put("atleta2", strFixoAtleta);
                         params.put("passeErrado2", strFixoPasseErrado);
                         params.put("chuteAgol2", strFixoChuteAgol);
                         params.put("perdida2", strFixoPerdida);
                         params.put("interceptacao2", strFixoInterceptacao);
 
+                        params.put("dataJogo3", strDataJogo3);
                         params.put("atleta3", strAlaEsqAtleta);
                         params.put("passeErrado3", strAlaEsqPasseErrado);
                         params.put("chuteAgol3", strAlaEsqChuteAgol);
                         params.put("perdida3", strAlaEsqPerdida);
                         params.put("interceptacao3", strAlaEsqInterceptacao);
 
+                        params.put("dataJogo4", strDataJogo4);
                         params.put("atleta4", strAlaDirAtleta);
                         params.put("passeErrado4", strAlaDirPasseErrado);
                         params.put("chuteAgol4", strAlaDirChuteAgol);
                         params.put("perdida4", strAlaDirPerdida);
                         params.put("interceptacao4", strAlaDirInterceptacao);
 
+                        params.put("dataJogo5", strDataJogo5);
                         params.put("atleta5", strPivoAtleta);
                         params.put("passeErrado5", strPivoPasseErrado);
                         params.put("chuteAgol5", strPivoChuteAgol);
@@ -208,6 +262,50 @@ public class AcoesFutsal extends Activity {
                     }
                 };
                 queue.add(stringRequest);
+
+                tvGoleiro.setText(null);
+                tvFixo.setText(null);
+                tvAlaEsq.setText(null);
+                tvAlaDir.setText(null);
+                tvPivo.setText(null);
+                tvGoleiroRes.setText(null);
+                tvFixoRes.setText(null);
+                tvAlaEsqRes.setText(null);
+                tvAlaDirRes.setText(null);
+                tvPivoRes.setText(null);
+                tvGoleiroResRes.setText(null);
+                tvJogadorExtra.setText(null);
+
+                textAtletaGoleiro.setText(null);
+                textViewGoleiroPasseErrado.setText(null);
+                textViewGoleiroChuteAgol.setText(null);
+                textViewGoleiroPerdida.setText(null);
+                textViewGoleiroInterceptacao.setText(null);
+
+                textViewFixoAtleta.setText(null);
+                textViewFixoPasseErrado.setText(null);
+                textViewFixoChuteAgol.setText(null);
+                textViewFixoPerdida.setText(null);
+                textViewFixoInterceptacao.setText(null);
+
+                textViewAlaEsqAtleta.setText(null);
+                textViewAlaEsqPasseErrado.setText(null);
+                textViewAlaEsqChuteAgol.setText(null);
+                textViewAlaEsqPerdida.setText(null);
+                textViewAlaEsqInterceptacao.setText(null);
+
+                textViewAlaDirAtleta.setText(null);
+                textViewAlaDirPasseErrado.setText(null);
+                textViewAlaDirChuteAgol.setText(null);
+                textViewAlaDirPerdida.setText(null);
+                textViewAlaDirInterceptacao.setText(null);
+
+                textViewPivoAtleta.setText(null);
+                textViewPivoPasseErrado.setText(null);
+                textViewPivoChuteAgol.setText(null);
+                textViewPivoPerdida.setText(null);
+                textViewPivoInterceptacao.setText(null);
+                editTextDate.setText(null);
             }
         });
 
@@ -230,8 +328,11 @@ public class AcoesFutsal extends Activity {
         tvGoleiroResRes = findViewById(R.id.fieldGoleiroResRes);
         tvJogadorExtra = findViewById(R.id.fieldJogadorExtra);
 
-        loadSpinnerData(URLsp);
 
+
+
+
+        loadSpinnerData(URLsp);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -248,8 +349,10 @@ public class AcoesFutsal extends Activity {
         btnVerificaEquipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String stnomeTorneio = (String) spinner.getSelectedItem();
-                Toast.makeText(getApplicationContext(), stnomeTorneio, Toast.LENGTH_LONG).show();
+
+                final String stIDnomeTorneio = (String) spinner.getSelectedItem();
+                final String stIDTorneio =  String.valueOf(somenteDigitos(stIDnomeTorneio));
+                Toast.makeText(getApplicationContext(), stIDnomeTorneio, Toast.LENGTH_LONG).show();
                 RequestQueue queue = Volley.newRequestQueue(AcoesFutsal.this);
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, URLtv, new Response.Listener<String>() {
                     @Override
@@ -303,7 +406,7 @@ public class AcoesFutsal extends Activity {
                     @Override
                     protected Map<String, String> getParams() {
                         Map<String, String> params = new HashMap<String, String>();
-                        params.put("nomeTorneio", stnomeTorneio);
+                        params.put("IDtorneio", stIDTorneio);
                         return params;
                     }
                 };
