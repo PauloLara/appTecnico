@@ -449,7 +449,7 @@
         android:text="goleiro1"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/f2"
+        app:layout_constraintTop_toBottomOf="@+id/f1"
         tools:textColorHint="@color/design_default_color_primary_dark" />
 
     <Button
@@ -789,7 +789,7 @@
         android:layout_marginStart="13dp"
         android:layout_marginLeft="13dp"
         android:layout_marginTop="8dp"
-        android:background="@android:color/holo_orange_light"
+        android:background="@color/colorPrimaryDark"
         android:text="pega rebote"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/fazfalta"
@@ -801,12 +801,12 @@
         android:layout_height="68dp"
         android:layout_marginStart="13dp"
         android:layout_marginLeft="13dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:background="#9f4941"
         android:text="cede escanteio"
         android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/defende"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
+        app:layout_constraintTop_toBottomOf="@+id/f5" />
 
     <Button
         android:id="@+id/escanteio"
@@ -828,14 +828,12 @@
         android:layout_marginStart="13dp"
         android:layout_marginLeft="13dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
         android:background="@color/colorPrimaryDark"
         android:onClick="lerArquivo"
         android:text="+ gol"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/salvar"
         app:layout_constraintStart_toEndOf="@+id/chutefora"
-        app:layout_constraintTop_toBottomOf="@+id/impedimento" />
+        app:layout_constraintTop_toBottomOf="@+id/cabeceio" />
 
     <Button
         android:id="@+id/goldeles"
@@ -868,11 +866,14 @@
         android:id="@+id/passeerrado"
         android:layout_width="70dp"
         android:layout_height="68dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="8dp"
         android:background="#9f4941"
         android:text="passe errado"
         android:textSize="12sp"
-        tools:layout_editor_absoluteX="193dp"
-        tools:layout_editor_absoluteY="373dp" />
+        app:layout_constraintStart_toEndOf="@+id/intercepta"
+        app:layout_constraintTop_toBottomOf="@+id/fazfalta" />
 
     <Button
         android:id="@+id/passa"
@@ -917,10 +918,11 @@
         android:layout_height="68dp"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
         android:background="#9f4941"
         android:text="chute p fora"
         app:layout_constraintStart_toEndOf="@+id/chutegol"
-        tools:layout_editor_absoluteY="525dp" />
+        app:layout_constraintTop_toBottomOf="@+id/impedimento" />
 
     <Button
         android:id="@+id/intercepta"
@@ -928,11 +930,12 @@
         android:layout_height="68dp"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
         android:background="@color/colorPrimaryDark"
         android:text="intercepta"
         android:textSize="10sp"
         app:layout_constraintStart_toEndOf="@+id/lat_esquerdo6"
-        tools:layout_editor_absoluteY="373dp" />
+        app:layout_constraintTop_toBottomOf="@+id/desarma" />
 
     <Button
         android:id="@+id/desarma"
@@ -973,22 +976,6 @@
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toEndOf="@+id/goleiro1"
         app:layout_constraintTop_toBottomOf="@+id/f3" />
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="395dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="3dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/goleiro1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/f1" />
 
 </android.support.constraint.ConstraintLayout>
 </ScrollView>

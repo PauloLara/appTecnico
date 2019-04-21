@@ -1,6 +1,5 @@
 package com.example.paulo.apptecnico;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -30,7 +29,7 @@ public class PartidaConfiguracao extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_partida_configuracao);
         CountryName = new ArrayList<>();
-        spinner = (Spinner) findViewById(R.id.spinnerTorneio);
+        spinner = (Spinner) findViewById(R.id.spinnerJogo);
         loadSpinnerData(URL);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

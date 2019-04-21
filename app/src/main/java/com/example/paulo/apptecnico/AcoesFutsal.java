@@ -6,7 +6,6 @@ import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -33,7 +32,6 @@ public class AcoesFutsal extends Activity {
 
     Button btnVerificaEquipe;
     AlertDialog.Builder alertDialog;
-    EditText editTextGoleiro;
     Spinner spinner;
     String URLsp = "http://192.168.15.17/busca_torneios.php";
     String URLtv = "http://192.168.15.17/busca_dados_equipe.php";
@@ -46,7 +44,6 @@ public class AcoesFutsal extends Activity {
     TextView textViewAlaDirAtleta, textViewAlaDirPasseErrado, textViewAlaDirChuteAgol, textViewAlaDirPerdida, textViewAlaDirInterceptacao;
     TextView textViewPivoAtleta, textViewPivoPasseErrado, textViewPivoChuteAgol, textViewPivoPerdida, textViewPivoInterceptacao;
     EditText editTextDate;
-    ArrayList<String> torneioName;
     int idTorneio;
     EditText date;
     DatePickerDialog datePickerDialog;
@@ -85,6 +82,8 @@ public class AcoesFutsal extends Activity {
         });
         requestQueue.add(stringRequest);
     }
+    // FIM - AQUI POPULA O SPINNER COM DADOS DO BANCO    *******************************************************************
+
 
     // Função que separa os números de dentro de uma String
     private int somenteDigitos(String palavra) {
@@ -97,7 +96,7 @@ public class AcoesFutsal extends Activity {
         }
         return Integer.parseInt(digitos);
     }
-    // FIM - AQUI POPULA O SPINNER COM DADOS DO BANCO    *******************************************************************
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -156,6 +155,101 @@ public class AcoesFutsal extends Activity {
         textViewPivoPerdida = findViewById(R.id.perdida_pivo);
         textViewPivoInterceptacao = findViewById(R.id.intercep_pivo);
         editTextDate = findViewById(R.id.date);
+        spinner = findViewById(R.id.spinnerJogo);
+        btnVerificaEquipe = findViewById(R.id.btnVerificaEquipe);
+
+        tvGoleiro = findViewById(R.id.fieldGoleiro);
+        tvFixo = findViewById(R.id.fieldFixo);
+        tvAlaEsq = findViewById(R.id.fieldAlaEsq);
+        tvAlaDir = findViewById(R.id.fieldAlaDir);
+        tvPivo = findViewById(R.id.fieldPivo);
+        tvGoleiroRes = findViewById(R.id.fieldGoleiroRes);
+        tvFixoRes = findViewById(R.id.fieldFixoRes);
+        tvAlaEsqRes = findViewById(R.id.fieldAlaEsqRes);
+        tvAlaDirRes = findViewById(R.id.fieldAlaDirRes);
+        tvPivoRes = findViewById(R.id.fieldPivoRes);
+        tvGoleiroResRes = findViewById(R.id.fieldGoleiroResRes);
+        tvJogadorExtra = findViewById(R.id.fieldJogadorExtra);
+
+
+        loadSpinnerData(URLsp);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String torneio = spinner.getItemAtPosition(spinner.getSelectedItemPosition()).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+        btnVerificaEquipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String stIDnomeTorneio = (String) spinner.getSelectedItem();
+                final String stIDTorneio =  String.valueOf(somenteDigitos(stIDnomeTorneio));
+                Toast.makeText(getApplicationContext(), stIDnomeTorneio, Toast.LENGTH_LONG).show();
+                RequestQueue queue = Volley.newRequestQueue(AcoesFutsal.this);
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, URLtv, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        alertDialog = new AlertDialog.Builder(AcoesFutsal.this);
+                        alertDialog.setMessage("Resposta: " + response);
+
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            JSONArray jsonArray = jsonObject.getJSONArray("dados");
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject jsonObjPosicoes = jsonArray.getJSONObject(i);
+                                tvGoleiro.setText(jsonObjPosicoes.getString("goleiro"));
+                                tvFixo.setText(jsonObjPosicoes.getString("fixo"));
+                                tvAlaEsq.setText(jsonObjPosicoes.getString("alaEsq"));
+                                tvAlaDir.setText(jsonObjPosicoes.getString("alaDir"));
+                                tvPivo.setText(jsonObjPosicoes.getString("pivo"));
+                                tvGoleiroRes.setText(jsonObjPosicoes.getString("goleiroRes"));
+                                tvFixoRes.setText(jsonObjPosicoes.getString("fixoRes"));
+                                tvAlaEsqRes.setText(jsonObjPosicoes.getString("alaEsqRes"));
+                                tvAlaDirRes.setText(jsonObjPosicoes.getString("alaDirRes"));
+                                tvPivoRes.setText(jsonObjPosicoes.getString("pivoRes"));
+                                tvGoleiroResRes.setText(jsonObjPosicoes.getString("goleiroResRes"));
+                                tvJogadorExtra.setText(jsonObjPosicoes.getString("jogadorExtra"));
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        textAtletaGoleiro.setText(tvGoleiro.getText());
+                        textViewFixoAtleta.setText(tvFixo.getText());
+                        textViewAlaEsqAtleta.setText(tvAlaEsq.getText());
+                        textViewAlaDirAtleta.setText(tvAlaDir.getText());
+                        textViewPivoAtleta.setText(tvPivo.getText());
+                        alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                        AlertDialog alertDialog2 = alertDialog.create();
+                        alertDialog2.show();
+                    }
+                },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(AcoesFutsal.this, "Erro no servidor", Toast.LENGTH_SHORT).show();
+                                error.printStackTrace();
+                            }
+                        }){
+                    @Override
+                    protected Map<String, String> getParams() {
+                        Map<String, String> params = new HashMap<String, String>();
+                        params.put("IDtorneio", stIDTorneio);
+                        return params;
+                    }
+                };
+                queue.add(stringRequest);
+            }
+        });
 
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -310,109 +404,7 @@ public class AcoesFutsal extends Activity {
         });
 
 
-        editTextGoleiro = findViewById(R.id.txtGoleiro);
-        torneioName = new ArrayList<>();
-        spinner = findViewById(R.id.spinnerTorneio);
-        btnVerificaEquipe = findViewById(R.id.btnVerificaEquipe);
 
-        tvGoleiro = findViewById(R.id.fieldGoleiro);
-        tvFixo = findViewById(R.id.fieldFixo);
-        tvAlaEsq = findViewById(R.id.fieldAlaEsq);
-        tvAlaDir = findViewById(R.id.fieldAlaDir);
-        tvPivo = findViewById(R.id.fieldPivo);
-        tvGoleiroRes = findViewById(R.id.fieldGoleiroRes);
-        tvFixoRes = findViewById(R.id.fieldFixoRes);
-        tvAlaEsqRes = findViewById(R.id.fieldAlaEsqRes);
-        tvAlaDirRes = findViewById(R.id.fieldAlaDirRes);
-        tvPivoRes = findViewById(R.id.fieldPivoRes);
-        tvGoleiroResRes = findViewById(R.id.fieldGoleiroResRes);
-        tvJogadorExtra = findViewById(R.id.fieldJogadorExtra);
-
-
-
-
-
-        loadSpinnerData(URLsp);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String torneio = spinner.getItemAtPosition(spinner.getSelectedItemPosition()).toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-            }
-        });
-
-
-
-        btnVerificaEquipe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                final String stIDnomeTorneio = (String) spinner.getSelectedItem();
-                final String stIDTorneio =  String.valueOf(somenteDigitos(stIDnomeTorneio));
-                Toast.makeText(getApplicationContext(), stIDnomeTorneio, Toast.LENGTH_LONG).show();
-                RequestQueue queue = Volley.newRequestQueue(AcoesFutsal.this);
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, URLtv, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        alertDialog = new AlertDialog.Builder(AcoesFutsal.this);
-                        alertDialog.setMessage("Resposta: " + response);
-
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            JSONArray jsonArray = jsonObject.getJSONArray("dados");
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObjPosicoes = jsonArray.getJSONObject(i);
-                                tvGoleiro.setText(jsonObjPosicoes.getString("goleiro"));
-                                tvFixo.setText(jsonObjPosicoes.getString("fixo"));
-                                tvAlaEsq.setText(jsonObjPosicoes.getString("alaEsq"));
-                                tvAlaDir.setText(jsonObjPosicoes.getString("alaDir"));
-                                tvPivo.setText(jsonObjPosicoes.getString("pivo"));
-                                tvGoleiroRes.setText(jsonObjPosicoes.getString("goleiroRes"));
-                                tvFixoRes.setText(jsonObjPosicoes.getString("fixoRes"));
-                                tvAlaEsqRes.setText(jsonObjPosicoes.getString("alaEsqRes"));
-                                tvAlaDirRes.setText(jsonObjPosicoes.getString("alaDirRes"));
-                                tvPivoRes.setText(jsonObjPosicoes.getString("pivoRes"));
-                                tvGoleiroResRes.setText(jsonObjPosicoes.getString("goleiroResRes"));
-                                tvJogadorExtra.setText(jsonObjPosicoes.getString("jogadorExtra"));
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        textAtletaGoleiro.setText(tvGoleiro.getText());
-                        textViewFixoAtleta.setText(tvFixo.getText());
-                        textViewAlaEsqAtleta.setText(tvAlaEsq.getText());
-                        textViewAlaDirAtleta.setText(tvAlaDir.getText());
-                        textViewPivoAtleta.setText(tvPivo.getText());
-                        alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
-                        AlertDialog alertDialog2 = alertDialog.create();
-                        alertDialog2.show();
-                    }
-                },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(AcoesFutsal.this, "Erro no servidor", Toast.LENGTH_SHORT).show();
-                                error.printStackTrace();
-                            }
-                        }){
-                    @Override
-                    protected Map<String, String> getParams() {
-                        Map<String, String> params = new HashMap<String, String>();
-                        params.put("IDtorneio", stIDTorneio);
-                        return params;
-                    }
-                };
-                queue.add(stringRequest);
-            }
-        });
     }
     // INÍCIO CONTAGEM DE CLICKS  COMEÇA AQUI   *******************************************************************
     int passErrGoleiro = 0;

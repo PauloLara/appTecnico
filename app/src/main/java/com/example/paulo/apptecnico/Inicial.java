@@ -33,10 +33,28 @@ public class Inicial extends AppCompatActivity {
         it = new Intent(Inicial.this, EscolheModalidade.class);
         startActivity(it);
     }
+
+    public void clickBtnIrEstatisticas(View view){
+        Intent it;
+        it = new Intent(Inicial.this, Estatisticas.class);
+        startActivity(it);
+    }
     //cadastra um novo torneio
     public void clickBtnIrTorneioCadastro(View view){
         Intent it;
-        it = new Intent(Inicial.this, TorneioCadastro.class);
+        it = new Intent(Inicial.this, Graficos.class);
+        startActivity(it);
+    }
+
+    public void clickBtnIrGraficos(View view){
+        Intent it;
+        it = new Intent(Inicial.this, Graficos.class);
+        startActivity(it);
+    }
+
+    public void clickBtnIrEquipeConfig(View view){
+        Intent it;
+        it = new Intent(Inicial.this, EquipeConfig.class);
         startActivity(it);
     }
 
@@ -46,11 +64,5 @@ public class Inicial extends AppCompatActivity {
         Intent intent;
         intent = new Intent(Inicial.this, Login.class);
         startActivity(intent);
-    }
-
-    public void clickBtnIrEquipeConfig(View view){
-        Intent it;
-        it = new Intent(Inicial.this, EquipeConfig.class);
-        startActivity(it);
     }
 }

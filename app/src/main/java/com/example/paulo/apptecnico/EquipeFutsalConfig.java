@@ -57,7 +57,7 @@ public class EquipeFutsalConfig extends AppCompatActivity {
 
         TorneioName = new ArrayList<>();
         TorneioID = new ArrayList<String>();
-        spinner = findViewById(R.id.spinnerTorneio);
+        spinner = findViewById(R.id.spinnerJogo);
         loadSpinnerData(URL);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

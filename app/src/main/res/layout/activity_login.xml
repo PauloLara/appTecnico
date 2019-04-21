@@ -43,9 +43,16 @@
         android:id="@+id/entrar"
         android:layout_width="333dp"
         android:layout_height="47dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="219dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="269dp"
         android:background="@android:color/holo_blue_dark"
         android:onClick="clickBtnIrInicial"
         android:text="@string/entrar"
@@ -54,16 +61,19 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="OnClick" />
 
     <TextView
         android:id="@+id/esqueci"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/entrar"
-        android:layout_marginEnd="29dp"
-        android:layout_marginTop="-219dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="359dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginRight="41dp"
         android:text="@string/esqueci_minha_senha"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -71,9 +81,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/entrar"
-        app:layout_constraintVertical_bias="1.0"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="29dp" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/ou"

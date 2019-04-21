@@ -32,8 +32,9 @@
         <activity android:name=".EscolheModalidade"/>
         <activity android:name=".AcoesFutsal"/>
         <activity android:name=".EquipeConfig"/>
-        <activity android:name=".EquipeFutsalConfig"/>
-
+        <activity android:name=".EquipeFutsalConfig" />
+        <activity android:name=".Estatisticas"/>
+        <activity android:name=".Graficos"/>
 
     </application>
 
