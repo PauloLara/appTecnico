@@ -1,6 +1,6 @@
 package com.example.paulo.apptecnico;
 
-import android.app.ProgressDialog;
+//import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,7 +25,7 @@ public class Login extends AppCompatActivity {
     RequestQueue requestQueue;
     String email_Text, senha_Text;
 
-    ProgressDialog progressDialog;
+//    ProgressDialog progressDialog;
     String HttpUrl = "http://192.168.15.17/user_login.php";
     Boolean CheckEditText;
 
@@ -33,12 +33,13 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         Email = findViewById(R.id.email);
         Password = findViewById(R.id.senha);
         LoginButton = findViewById(R.id.entrar);
 
         requestQueue = Volley.newRequestQueue(Login.this);
-        progressDialog = new ProgressDialog(Login.this);
+        //progressDialog = new ProgressDialog(Login.this);
 
         Email.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -76,12 +77,12 @@ public class Login extends AppCompatActivity {
     }
 
     public void UserLogin() {
-        progressDialog.setMessage("Please Wait");
-        progressDialog.show();
+       /// progressDialog.setMessage("Please Wait");
+       /// progressDialog.show();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, HttpUrl, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
-                        progressDialog.dismiss();
+                        //progressDialog.dismiss();
                         if(ServerResponse.equalsIgnoreCase("ok")) {
                             //Toast.makeText(Login.this, "Logado com sucesso!", Toast.LENGTH_LONG).show();
                             finish();
@@ -98,7 +99,7 @@ public class Login extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-                        progressDialog.dismiss();
+                        //progressDialog.dismiss();
                         Toast.makeText(Login.this, volleyError.toString(), Toast.LENGTH_LONG).show();
                     }
                 }) {

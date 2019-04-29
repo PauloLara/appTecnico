@@ -29,7 +29,7 @@ public class PartidaConfiguracao extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_partida_configuracao);
         CountryName = new ArrayList<>();
-        spinner = (Spinner) findViewById(R.id.spinnerJogo);
+        spinner = (Spinner) findViewById(R.id.spinnerData);
         loadSpinnerData(URL);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

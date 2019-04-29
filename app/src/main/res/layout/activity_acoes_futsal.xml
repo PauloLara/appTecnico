@@ -19,17 +19,26 @@
         android:layout_centerHorizontal="true"
         android:background="#ffffff"
         android:hint="Selecione a Data do Jogo"
-        android:padding="15dp"
+        android:padding="8dp"
         android:textColor="#897"
         android:textColorHint="#090"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <Spinner
+        android:id="@+id/spinnerData"
         android:layout_width="match_parent"
-        android:layout_marginTop="30dp"
         android:layout_height="wrap_content"
-        android:id="@+id/spinnerJogo"/>
+        android:layout_marginTop="0dp" />
+
+    <Spinner
+        android:id="@+id/spinnerAdversario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp" />
+
+
     <Button
         android:id="@+id/btnVerificaEquipe"
         android:layout_margin="1dp"

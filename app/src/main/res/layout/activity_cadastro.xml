@@ -4,39 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cadastro"
-    android:background="@drawable/c">
+    android:background="@drawable/c"
+    tools:context=".Cadastro">
 
     <EditText
         android:id="@+id/name"
-        android:layout_width="333dp"
+        android:layout_width="0dp"
         android:layout_height="47dp"
-        android:layout_marginEnd="58dp"
-        android:layout_marginLeft="62dp"
-        android:layout_marginRight="58dp"
         android:layout_marginStart="62dp"
-        android:layout_marginTop="135dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginRight="58dp"
         android:ems="10"
-        android:hint="@string/nome"
+        android:hint="Nome completo"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/mail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.51" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/mail"
-        android:layout_width="333dp"
+        android:layout_width="0dp"
         android:layout_height="47dp"
-        android:layout_marginEnd="58dp"
-        android:layout_marginLeft="62dp"
-        android:layout_marginRight="58dp"
         android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginRight="58dp"
         android:ems="10"
         android:hint="@string/e_mail"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/key"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,23 +41,20 @@
 
     <EditText
         android:id="@+id/key"
-        android:layout_width="333dp"
+        android:layout_width="0dp"
         android:layout_height="47dp"
-        android:layout_marginBottom="3dp"
-        android:layout_marginEnd="58dp"
-        android:layout_marginLeft="62dp"
-        android:layout_marginRight="58dp"
         android:layout_marginStart="62dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginRight="58dp"
         android:ems="10"
         android:hint="@string/senha"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/key_again"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mail" />
 
-    <EditText
+    <!--<EditText
         android:id="@+id/key_again"
         android:layout_width="333dp"
         android:layout_height="47dp"
@@ -76,70 +70,69 @@
         app:layout_constraintBottom_toTopOf="@+id/contrato"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/key" />
+        app:layout_constraintTop_toBottomOf="@+id/key" />-->
 
-    <TextView
-        android:id="@+id/contrato"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="27dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="22dp"
-        android:text="@string/voc_aceita_o_contrato_de_usu_rio"
-        android:textColor="@android:color/black"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/cadastrar"
+    <EditText
+        android:id="@+id/nomeClube"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginRight="58dp"
+        android:ems="10"
+        android:hint="Nome do clube"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/key_again" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/cadastrar"
-        android:layout_width="333dp"
+        android:layout_width="0dp"
         android:layout_height="47dp"
-        android:layout_marginBottom="37dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:background="@color/colorPrimaryDark"
-        android:text="@string/cadastrar"
+        android:text="testar"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/ou"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contrato" />
+        app:layout_constraintTop_toBottomOf="@+id/nomeClube" />
 
     <TextView
         android:id="@+id/ou"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="124dp"
-        android:layout_marginLeft="132dp"
-        android:layout_marginRight="124dp"
         android:layout_marginStart="132dp"
+        android:layout_marginLeft="132dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginRight="124dp"
+        android:layout_marginBottom="24dp"
         android:text="@string/ou2"
         app:layout_constraintBottom_toTopOf="@+id/jasou"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cadastrar" />
 
     <Button
         android:id="@+id/jasou"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="115dp"
-        android:layout_marginLeft="105dp"
-        android:layout_marginRight="115dp"
         android:layout_marginStart="105dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="115dp"
+        android:layout_marginRight="115dp"
         android:background="@android:color/transparent"
         android:onClick="clickBtnJaTenho"
         android:text="@string/j_sou_cadastrado"
@@ -149,6 +142,22 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ou" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginLeft="58dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        android:text="A senha deve ter pelo menos 1 maiúscula, 1 minúscula, 1 número, 1 caracter especial"
+        android:textAllCaps="false"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/key" />
 
 
 </android.support.constraint.ConstraintLayout>

@@ -1,9 +1,10 @@
 package com.example.paulo.apptecnico;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
+//import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -30,18 +31,35 @@ public class EquipeFutsalConfig extends AppCompatActivity {
 
     EditText editTextGoleiro, editTextFixo, editTextAlaEsq, editTextAlaDir, editTextPivo, editTextGoleiroRes,
              editTextFixoRes, editTextAlaEsqRes, editTextAlaDirRes, editTextPivoRes, editTextGoleiroResRes, editTextJogadorExtra;
+
+    /*EditText numGoleiro, numFixo, numAlaEsq, numAlaDir, numPivo, numGoleiroRes,
+            numFixoRes, numAlaEsqRes, numAlaDirRes, numPivoRes, numGoleiroResRes, numJogadorExtra;*/
+
+    String stNomeGoleiro, stNomeFixo, stNomeAlaEsq, stNomeAlaDir, stNomePivo, stNomeGoleiroRes, stNomeFixoRes, stNomeAlaEsqRes, stNomeAlaDirRes,
+            stNomePivoRes, stNomeGoleiroResRes, stNomeJogadorExtra;
+
+    /*String stNumGoleiro, stNumFixo, stNumAlaEsq, stNumAlaDir, stNumPivo, stNumGoleiroRes,
+            stNumFixoRes, stNumAlaEsqRes, stNumAlaDirRes, stNumPivoRes, stNumGoleiroResRes, stNumJogadorExtra;*/
+
+    Boolean CheckEditText;
     Button buttonCadastrarEquipe;
     AlertDialog.Builder alertDialog;
+    //ProgressDialog progressDialog;
+    RequestQueue requestQueue;
+
 
     Spinner spinner;
     String URL = "http://192.168.15.17/busca_torneios.php";
+    String url = "http://192.168.15.17/cadastro_equipe.php";
     ArrayList<String> TorneioName;
     ArrayList<String> TorneioID;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_equipe_futsal_config);
-        editTextGoleiro = findViewById(R.id.txtGoleiro);
+
+        editTextGoleiro = findViewById(R.id.txtNomeJogador);
         editTextFixo = findViewById(R.id.txtFixo);
         editTextAlaEsq = findViewById(R.id.txtAlaEsq);
         editTextAlaDir = findViewById(R.id.txtAlaDir);
@@ -53,11 +71,26 @@ public class EquipeFutsalConfig extends AppCompatActivity {
         editTextPivoRes = findViewById(R.id.txtPivoRes);
         editTextGoleiroResRes = findViewById(R.id.txtGoleiroResRes);
         editTextJogadorExtra = findViewById(R.id.txtJogadorExtra);
-        buttonCadastrarEquipe = findViewById(R.id.btnCadEquipeFutsal);
+        buttonCadastrarEquipe = findViewById(R.id.btnCadJogador);
 
+        /*numGoleiro = findViewById(R.id.numGoleiro);
+        numFixo = findViewById(R.id.numFixo);
+        stNomeAlaEsq = findViewById(R.id.);
+        stNomeAlaDir = findViewById(R.id.);
+        stNomePivo = findViewById(R.id.);
+        stNomeGoleiroRes = findViewById(R.id.);
+        stNomeFixoRes = findViewById(R.id.);
+        stNomeAlaEsqRes = findViewById(R.id.);
+        stNomeAlaDirRes = findViewById(R.id.);
+        stNomePivoRes = findViewById(R.id.);
+        stNomeGoleiroResRes = findViewById(R.id.);
+        stNomeJogadorExtra = findViewById(R.id.);*/
+
+        requestQueue = Volley.newRequestQueue(EquipeFutsalConfig.this);
+        //progressDialog = new ProgressDialog(EquipeFutsalConfig.this);
         TorneioName = new ArrayList<>();
         TorneioID = new ArrayList<String>();
-        spinner = findViewById(R.id.spinnerJogo);
+        spinner = findViewById(R.id.spinnerData);
         loadSpinnerData(URL);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -72,9 +105,29 @@ public class EquipeFutsalConfig extends AppCompatActivity {
             }
         });
 
+
+
         buttonCadastrarEquipe.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View v) {
+                VerificaCamposVazios();
+                if (CheckEditText) {
+                    UserLogin();
+                } else {
+                    Toast.makeText(EquipeFutsalConfig.this, "Favor, preencha todos os campos.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+           /*
+            buttonCadastrarEquipe.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+
                 final String stIDnomeTorneio = (String) spinner.getSelectedItem();
                 final String[] separaNomeTorneio = stIDnomeTorneio.split("-");
                 final String stNomeTorneio = separaNomeTorneio[1];
@@ -96,8 +149,15 @@ public class EquipeFutsalConfig extends AppCompatActivity {
                 stnomeGoleiroResRes  = editTextGoleiroResRes.getText().toString();
                 stnomeJogadorExtra  = editTextJogadorExtra.getText().toString();
 
+                VerificaCamposVazios();
+
+                if (!CheckEditText) {
+                    UserLogin();
+                } else {
+                    Toast.makeText(Login.this, "Favor, preencha todos os campos.", Toast.LENGTH_LONG).show();
+                }
+
                 RequestQueue queue = Volley.newRequestQueue(EquipeFutsalConfig.this);
-                String url = "http://192.168.15.17/cadastroEquipe.php";
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -152,10 +212,77 @@ public class EquipeFutsalConfig extends AppCompatActivity {
                         return params;
                     }
                 };
-                queue.add(stringRequest);
-            }
-        });
+                queue.add(stringRequest);*/
+         //   }
+        //});
     }
+    String stNomeTorneio;
+    String stIDTorneio;
+    public void UserLogin() {
+        String stIDnomeTorneio = (String) spinner.getSelectedItem();
+        String[] separaNomeTorneio = stIDnomeTorneio.split("-");
+        stNomeTorneio = separaNomeTorneio[1];
+        stIDTorneio =  String.valueOf(somenteDigitos(stIDnomeTorneio));
+        //progressDialog.setMessage("Please Wait");
+        //progressDialog.show();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String ServerResponse) {
+                //progressDialog.dismiss();
+                if(ServerResponse.equalsIgnoreCase("ok")) {
+                    Toast.makeText(EquipeFutsalConfig.this, "Equipe cadastrada com sucesso!", Toast.LENGTH_LONG).show();
+                    editTextGoleiro.setText(null);
+                    editTextFixo.setText(null);
+                    editTextAlaEsq.setText(null);
+                    editTextAlaDir.setText(null);
+                    editTextPivo.setText(null);
+                    editTextGoleiroRes.setText(null);
+                    editTextFixoRes.setText(null);
+                    editTextAlaEsqRes.setText(null);
+                    editTextAlaDirRes.setText(null);
+                    editTextPivoRes.setText(null);
+                    editTextGoleiroResRes.setText(null);
+                    editTextJogadorExtra.setText(null);
+                    buttonCadastrarEquipe.setText(null);
+
+                }
+                else {
+                    Toast.makeText(EquipeFutsalConfig.this, ServerResponse, Toast.LENGTH_LONG).show();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        //progressDialog.dismiss();
+                        Toast.makeText(EquipeFutsalConfig.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<>();
+                params.put("nomeTorneio", stNomeTorneio);
+                params.put("IDtorneio", stIDTorneio);
+                params.put("nomeGoleiro", stNomeGoleiro);
+                params.put("nomeFixo", stNomeFixo);
+                params.put("nomeAlaEsq", stNomeAlaEsq);
+                params.put("nomeAlaDir", stNomeAlaDir);
+                params.put("nomePivo", stNomePivo);
+                params.put("nomeGoleiroRes", stNomeGoleiroRes);
+                params.put("nomeFixoRes", stNomeFixoRes);
+                params.put("nomeAlaEsqRes", stNomeAlaEsqRes);
+                params.put("nomeAlaDirRes", stNomeAlaDirRes);
+                params.put("nomePivoRes", stNomePivoRes);
+                params.put("nomeGoleiroResRes", stNomeGoleiroResRes);
+                params.put("nomeJogadorExtra", stNomeJogadorExtra);
+                return params;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(EquipeFutsalConfig.this);
+        requestQueue.add(stringRequest);
+    }
+
+
     int idTorneio;
     String nomeTorneio;
     private void loadSpinnerData(String url) {
@@ -167,6 +294,7 @@ public class EquipeFutsalConfig extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray jsonArray = jsonObject.getJSONArray("torneios");
+                    listaTorneios.add("Selecione o torneio:");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObject1 = jsonArray.getJSONObject(i);
                         idTorneio = jsonObject1.getInt("ID_torneio");
@@ -199,5 +327,25 @@ public class EquipeFutsalConfig extends AppCompatActivity {
             }
         }
         return Integer.parseInt(digitos);
+    }
+
+    public void VerificaCamposVazios() {
+        stNomeGoleiro  = editTextGoleiro.getText().toString().trim();
+        stNomeFixo  = editTextFixo.getText().toString().trim();
+        stNomeAlaEsq  = editTextAlaEsq.getText().toString().trim();
+        stNomeAlaDir  = editTextAlaDir.getText().toString().trim();
+        stNomePivo  = editTextPivo.getText().toString().trim();
+        stNomeGoleiroRes  = editTextGoleiroRes.getText().toString().trim();
+        stNomeFixoRes  = editTextFixoRes.getText().toString().trim();
+        stNomeAlaEsqRes  = editTextAlaEsqRes.getText().toString().trim();
+        stNomeAlaDirRes  = editTextAlaDirRes.getText().toString().trim();
+        stNomePivoRes  = editTextPivoRes.getText().toString().trim();
+        stNomeGoleiroResRes  = editTextGoleiroResRes.getText().toString().trim();
+        stNomeJogadorExtra = editTextJogadorExtra.getText().toString().trim();
+
+        CheckEditText = !TextUtils.isEmpty(stNomeGoleiro) && !TextUtils.isEmpty(stNomeFixo) && !TextUtils.isEmpty(stNomeAlaEsq)
+                && !TextUtils.isEmpty(stNomeAlaDir) && !TextUtils.isEmpty(stNomePivo) && !TextUtils.isEmpty(stNomeGoleiroRes)
+                && !TextUtils.isEmpty(stNomeFixoRes) && !TextUtils.isEmpty(stNomeAlaEsqRes) && !TextUtils.isEmpty(stNomeAlaDirRes)
+                && !TextUtils.isEmpty(stNomePivoRes) && !TextUtils.isEmpty(stNomeGoleiroResRes) && !TextUtils.isEmpty(stNomeJogadorExtra);
     }
 }

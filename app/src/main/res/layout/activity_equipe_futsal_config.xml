@@ -7,24 +7,22 @@
     tools:context=".EquipeFutsalConfig">
 
     <Spinner
-        android:id="@+id/spinnerJogo"
+        android:id="@+id/spinnerData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:layout_marginLeft="35dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="13dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtGoleiro"
+        app:layout_constraintBottom_toTopOf="@+id/txtNomeJogador"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/txtGoleiro"
+        android:id="@+id/txtNomeJogador"
         android:layout_width="240dp"
         android:layout_height="36dp"
         android:layout_marginStart="35dp"
@@ -60,7 +58,7 @@
         app:layout_constraintBottom_toTopOf="@+id/txtAlaEsq"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtGoleiro" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeJogador" />
 
     <EditText
         android:id="@+id/txtAlaEsq"
@@ -246,13 +244,13 @@
         android:hint="Jogador Extra"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnCadEquipeFutsal"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadJogador"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtGoleiroResRes" />
 
     <Button
-        android:id="@+id/btnCadEquipeFutsal"
+        android:id="@+id/btnCadJogador"
         android:layout_width="300dp"
         android:layout_height="36dp"
         android:layout_marginStart="35dp"
@@ -266,38 +264,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtJogadorExtra" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="225dp"
-        android:layout_marginRight="225dp"
-        android:layout_marginBottom="10dp"
-        android:text="Escolha o Campeonato:"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerJogo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
-        android:id="@+id/numGoleiro"
+        android:id="@+id/numJogador"
         android:layout_width="60dp"
         android:layout_height="36dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="82dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
         android:ems="10"
         android:hint="N°"
         android:inputType="numberDecimal"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/numFixo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtGoleiro"
+        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -316,8 +298,8 @@
         app:layout_constraintBottom_toTopOf="@+id/numAlaEsq"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtGoleiro"
-        app:layout_constraintTop_toBottomOf="@+id/numGoleiro" />
+        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
+        app:layout_constraintTop_toBottomOf="@+id/numJogador" />
 
     <EditText
         android:id="@+id/numAlaEsq"
@@ -335,7 +317,7 @@
         app:layout_constraintBottom_toTopOf="@+id/numAlaDir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtGoleiro"
+        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
         app:layout_constraintTop_toBottomOf="@+id/numFixo"
         app:layout_constraintVertical_bias="0.6" />
 
@@ -355,7 +337,7 @@
         app:layout_constraintBottom_toTopOf="@+id/numPivo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtGoleiro"
+        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
         app:layout_constraintTop_toBottomOf="@+id/numAlaEsq" />
 
     <EditText
@@ -374,7 +356,7 @@
         app:layout_constraintBottom_toTopOf="@+id/numGoleiroRes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtGoleiro"
+        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
         app:layout_constraintTop_toBottomOf="@+id/numAlaDir" />
 
     <EditText
@@ -393,7 +375,7 @@
         app:layout_constraintBottom_toTopOf="@+id/numFixoRes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtGoleiro"
+        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
         app:layout_constraintTop_toBottomOf="@+id/numPivo" />
 
     <EditText
@@ -412,7 +394,7 @@
         app:layout_constraintBottom_toTopOf="@+id/numAlaEsqRes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtGoleiro"
+        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
         app:layout_constraintTop_toBottomOf="@+id/numGoleiroRes" />
 
     <EditText
@@ -431,7 +413,7 @@
         app:layout_constraintBottom_toTopOf="@+id/numAlaDirRes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtGoleiro"
+        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
         app:layout_constraintTop_toBottomOf="@+id/numFixoRes" />
 
     <EditText
@@ -450,7 +432,7 @@
         app:layout_constraintBottom_toTopOf="@+id/numPivoRes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtGoleiro"
+        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
         app:layout_constraintTop_toBottomOf="@+id/numAlaEsqRes" />
 
     <EditText
@@ -469,7 +451,7 @@
         app:layout_constraintBottom_toTopOf="@+id/numGoleiroResRes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtGoleiro"
+        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
         app:layout_constraintTop_toBottomOf="@+id/numAlaDirRes" />
 
     <EditText
@@ -488,7 +470,7 @@
         app:layout_constraintBottom_toTopOf="@+id/numJogadorExtra"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtGoleiro"
+        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
         app:layout_constraintTop_toBottomOf="@+id/numPivoRes" />
 
     <EditText
@@ -504,10 +486,10 @@
         android:hint="N°"
         android:inputType="numberDecimal"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnCadEquipeFutsal"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadJogador"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtGoleiro"
+        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
         app:layout_constraintTop_toBottomOf="@+id/numGoleiroResRes" />
 
 </android.support.constraint.ConstraintLayout>

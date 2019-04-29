@@ -11,8 +11,9 @@ public class Graficos extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graficos);
         myWebView = findViewById(R.id.webview);
-        myWebView.loadUrl("http://192.168.15.17/googlechart.php");
+        myWebView.loadUrl("http://192.168.15.17/webview.php");
         WebSettings webSettings = myWebView.getSettings();
+        //myWebView.getSettings().setDefaultZoom(WebSettings.ZoomDensity.FAR);
         //Habilitando o JavaScript
         webSettings.setJavaScriptEnabled(true);
     }

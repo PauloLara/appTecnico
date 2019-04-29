@@ -32,8 +32,9 @@ public class AcoesFutsal extends Activity {
 
     Button btnVerificaEquipe;
     AlertDialog.Builder alertDialog;
-    Spinner spinner;
+    Spinner spinnerTorneio, spinnerAdversario;
     String URLsp = "http://192.168.15.17/busca_torneios.php";
+    String URLspcl = "http://192.168.15.17/busca_adversarios.php";
     String URLtv = "http://192.168.15.17/busca_dados_equipe.php";
     String URLev = "http://192.168.15.17/insere_eventos.php";
     TextView tvGoleiro, tvFixo, tvAlaEsq, tvAlaDir, tvPivo, tvGoleiroRes, tvFixoRes, tvAlaEsqRes, tvAlaDirRes, tvPivoRes, tvGoleiroResRes, tvJogadorExtra;
@@ -44,14 +45,14 @@ public class AcoesFutsal extends Activity {
     TextView textViewAlaDirAtleta, textViewAlaDirPasseErrado, textViewAlaDirChuteAgol, textViewAlaDirPerdida, textViewAlaDirInterceptacao;
     TextView textViewPivoAtleta, textViewPivoPasseErrado, textViewPivoChuteAgol, textViewPivoPerdida, textViewPivoInterceptacao;
     EditText editTextDate;
-    int idTorneio;
+    int idTorneio, idAdversario;
     EditText date;
     DatePickerDialog datePickerDialog;
 
 
 
-    //INÍCIO - AQUI POPULA O SPINNER COM DADOS DO BANCO *******************************************************************
-    private void loadSpinnerData(String urlSpin) {
+    //INÍCIO - AQUI POPULA O SPINNER DE TORNEIOS COM DADOS DO BANCO *******************************************************************
+    private void loadSpinnerTorneios(String urlSpin) {
         final ArrayList<String> listaTorneios = new ArrayList<>();
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         StringRequest stringRequest = new StringRequest(Request.Method.GET, urlSpin, new Response.Listener<String>() {
@@ -68,7 +69,42 @@ public class AcoesFutsal extends Activity {
                         String var = String.valueOf(idTorneio);
                         listaTorneios.add(var+" "+nomeTorneio);
                     }
-                    spinner.setAdapter(new ArrayAdapter<String>(AcoesFutsal.this, android.R.layout.simple_spinner_dropdown_item, listaTorneios));
+                    spinnerTorneio.setAdapter(new ArrayAdapter<String>(AcoesFutsal.this, android.R.layout.simple_spinner_dropdown_item, listaTorneios));
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+        requestQueue.add(stringRequest);
+    }
+    // FIM - AQUI POPULA O SPINNER COM DADOS DO BANCO    *******************************************************************
+
+
+    //INÍCIO - AQUI POPULA O SPINNER DE TORNEIOS COM DADOS DO BANCO *******************************************************************
+    private void loadSpinnerAdversarios(String urlSpin) {
+        final ArrayList<String> listaAdversarios = new ArrayList<>();
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, urlSpin, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    JSONArray jsonArray = jsonObject.getJSONArray("adversarios");
+                    listaAdversarios.add("Selecione o adversário:");
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+                        idAdversario = jsonObject1.getInt("ID_adversario");
+                        String nomeAdversario = jsonObject1.getString("nomeAdversario");
+                        String var = String.valueOf(idAdversario);
+                        listaAdversarios.add(var+" "+nomeAdversario);
+                    }
+                    spinnerAdversario.setAdapter(new ArrayAdapter<String>(AcoesFutsal.this, android.R.layout.simple_spinner_dropdown_item, listaAdversarios));
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -155,7 +191,8 @@ public class AcoesFutsal extends Activity {
         textViewPivoPerdida = findViewById(R.id.perdida_pivo);
         textViewPivoInterceptacao = findViewById(R.id.intercep_pivo);
         editTextDate = findViewById(R.id.date);
-        spinner = findViewById(R.id.spinnerJogo);
+        spinnerTorneio = findViewById(R.id.spinnerData);
+        spinnerAdversario = findViewById(R.id.spinnerAdversario);
         btnVerificaEquipe = findViewById(R.id.btnVerificaEquipe);
 
         tvGoleiro = findViewById(R.id.fieldGoleiro);
@@ -172,11 +209,23 @@ public class AcoesFutsal extends Activity {
         tvJogadorExtra = findViewById(R.id.fieldJogadorExtra);
 
 
-        loadSpinnerData(URLsp);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        loadSpinnerTorneios(URLsp);
+        spinnerTorneio.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String torneio = spinner.getItemAtPosition(spinner.getSelectedItemPosition()).toString();
+                String torneio = spinnerTorneio.getItemAtPosition(spinnerTorneio.getSelectedItemPosition()).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+        loadSpinnerAdversarios(URLspcl);
+        spinnerAdversario.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String adversario = spinnerAdversario.getItemAtPosition(spinnerAdversario.getSelectedItemPosition()).toString();
             }
 
             @Override
@@ -187,9 +236,13 @@ public class AcoesFutsal extends Activity {
         btnVerificaEquipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String stIDnomeTorneio = (String) spinner.getSelectedItem();
+                final String stIDnomeTorneio = (String) spinnerTorneio.getSelectedItem();
                 final String stIDTorneio =  String.valueOf(somenteDigitos(stIDnomeTorneio));
-                Toast.makeText(getApplicationContext(), stIDnomeTorneio, Toast.LENGTH_LONG).show();
+
+                //final String stIDnomeAdversario = (String) spinnerAdversario.getSelectedItem();
+                //final String stIDAdversario =  String.valueOf(somenteDigitos(stIDnomeAdversario));
+
+                //Toast.makeText(getApplicationContext(), stIDnomeTorneio, Toast.LENGTH_LONG).show();
                 RequestQueue queue = Volley.newRequestQueue(AcoesFutsal.this);
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, URLtv, new Response.Listener<String>() {
                     @Override
@@ -223,14 +276,6 @@ public class AcoesFutsal extends Activity {
                         textViewAlaEsqAtleta.setText(tvAlaEsq.getText());
                         textViewAlaDirAtleta.setText(tvAlaDir.getText());
                         textViewPivoAtleta.setText(tvPivo.getText());
-                        alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
-                        AlertDialog alertDialog2 = alertDialog.create();
-                        alertDialog2.show();
                     }
                 },
                         new Response.ErrorListener() {
@@ -255,11 +300,14 @@ public class AcoesFutsal extends Activity {
             @Override
             public void onClick(View v) {
                 final String strDataJogo = String.valueOf(editTextDate.getText());
-                final String  strDataJogo1 = strDataJogo;
-                final String  strDataJogo2 = strDataJogo;
-                final String  strDataJogo3 = strDataJogo;
-                final String  strDataJogo4 = strDataJogo;
-                final String  strDataJogo5 = strDataJogo;
+
+                final String stIDnomeTorneio = (String) spinnerTorneio.getSelectedItem();
+                final String strIDTorneio =  String.valueOf(somenteDigitos(stIDnomeTorneio));
+                final String strNomeTorneio = stIDnomeTorneio.replace(strIDTorneio,"");
+
+                final String stIDnomeAdversario = (String) spinnerAdversario.getSelectedItem();
+                final String strIDAdversario =  String.valueOf(somenteDigitos(stIDnomeAdversario));
+                final String strNomeAdversario = stIDnomeAdversario.replace(strIDAdversario,"");
 
                 final String strGoleiroAtleta= (String) textViewGoleiroAtleta.getText();
                 final String strGoleiroPasseErrado = (String) textViewGoleiroPasseErrado.getText();
@@ -291,13 +339,12 @@ public class AcoesFutsal extends Activity {
                 final String strPivoPerdida = (String) textViewPivoPerdida.getText();
                 final String strPivoInterceptacao = (String) textViewPivoInterceptacao.getText();
 
-                Toast.makeText(getApplicationContext(), strGoleiroPasseErrado, Toast.LENGTH_LONG).show();
                 RequestQueue queue = Volley.newRequestQueue(AcoesFutsal.this);
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, URLev, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         alertDialog = new AlertDialog.Builder(AcoesFutsal.this);
-                        alertDialog.setMessage("Resposta: " + response);
+                        alertDialog.setMessage(response);
                         alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -318,35 +365,43 @@ public class AcoesFutsal extends Activity {
                     @Override
                     protected Map<String, String> getParams() {
                         Map<String, String> params = new HashMap<String, String>();
-                        params.put("dataJogo1", strDataJogo1);
+                        params.put("dataJogo", strDataJogo);
+
+                        params.put("ID_torneio", strIDTorneio);
+                        params.put("nomeTorneio", strNomeTorneio);
+
+                        params.put("ID_adversario", strIDAdversario);
+                        params.put("nomeAdversario", strNomeAdversario);
+
+                        //params.put("dataJogo1", strDataJogo1);
                         params.put("atleta1", strGoleiroAtleta);
                         params.put("passeErrado1", strGoleiroPasseErrado);
                         params.put("chuteAgol1", strGoleiroChuteAgol);
                         params.put("perdida1", strGoleiroPerdida);
                         params.put("interceptacao1", strGoleiroInterceptacao);
 
-                        params.put("dataJogo2", strDataJogo2);
+                        //params.put("dataJogo2", strDataJogo2);
                         params.put("atleta2", strFixoAtleta);
                         params.put("passeErrado2", strFixoPasseErrado);
                         params.put("chuteAgol2", strFixoChuteAgol);
                         params.put("perdida2", strFixoPerdida);
                         params.put("interceptacao2", strFixoInterceptacao);
 
-                        params.put("dataJogo3", strDataJogo3);
+                        //params.put("dataJogo3", strDataJogo3);
                         params.put("atleta3", strAlaEsqAtleta);
                         params.put("passeErrado3", strAlaEsqPasseErrado);
                         params.put("chuteAgol3", strAlaEsqChuteAgol);
                         params.put("perdida3", strAlaEsqPerdida);
                         params.put("interceptacao3", strAlaEsqInterceptacao);
 
-                        params.put("dataJogo4", strDataJogo4);
+                        //params.put("dataJogo4", strDataJogo4);
                         params.put("atleta4", strAlaDirAtleta);
                         params.put("passeErrado4", strAlaDirPasseErrado);
                         params.put("chuteAgol4", strAlaDirChuteAgol);
                         params.put("perdida4", strAlaDirPerdida);
                         params.put("interceptacao4", strAlaDirInterceptacao);
 
-                        params.put("dataJogo5", strDataJogo5);
+                        //params.put("dataJogo5", strDataJogo5);
                         params.put("atleta5", strPivoAtleta);
                         params.put("passeErrado5", strPivoPasseErrado);
                         params.put("chuteAgol5", strPivoChuteAgol);

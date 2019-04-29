@@ -49,6 +49,25 @@
     <string name="mais">+</string>
     <string name="campo">Campo</string>
     <string name="iniciar">Iniciar</string>
+    <string name="passes_errados">Passes Errados</string>
+    <string name="gr_ficos_detalhados">Gráficos detalhados</string>
+    <string name="atleta">ATLETA</string>
+    <string name="chutes_a_gol">Chutes a gol</string>
+    <string name="perdidas">Perdidas</string>
+    <string name="pesquisar">pesquisar</string>
+    <string name="verificar">Verificar</string>
+    <string name="bolas_perdidas">Bolas perdidas</string>
+    <string name="passes_errado">Passes errados</string>
+    <string name="intercepta_es">Interceptações</string>
 
 
+    <item name="spinnerJogador" type="id"></item>
+    <item name="spinnerTorneio" type="id"></item>
+    <item name="spinnerBloco" type="id"></item>
+    <item name="spinnerJogo" type="id"></item>
+
+    <item name="checkBoxPasses" type="id"></item>
+    <item name="checkChutes" type="id"></item>
+    <item name="checkBoxPerdidas" type="id"></item>
+    <item name="checkBoxIntercepts" type="id"></item>
 </resources>

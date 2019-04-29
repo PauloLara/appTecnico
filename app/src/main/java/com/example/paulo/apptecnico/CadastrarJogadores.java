@@ -8,8 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -19,10 +22,60 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
+public class CadastrarJogadores extends AppCompatActivity{
+    private Spinner spinnerPosicoes;
+    private List<String> nomesPosicoes = new ArrayList<String>();
+    private String posicao;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cadastrar_jogadores);
+        //Adicionando Nomes no ArrayList
+        nomesPosicoes.add("Selecione a posição:");
+        nomesPosicoes.add("goleiro");
+        nomesPosicoes.add("fixo");
+        nomesPosicoes.add("ala");
+        nomesPosicoes.add("pivo");
+        nomesPosicoes.add("fixo / ala");
+        nomesPosicoes.add("ala / pivo");
+
+        //Identifica o Spinner no layout
+        spinnerPosicoes = (Spinner) findViewById(R.id.spinnerPosicao);
+        //Cria um ArrayAdapter usando um padrão de layout da classe R do android, passando o ArrayList nomes
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, nomesPosicoes);
+        ArrayAdapter<String> spinnerArrayAdapter = arrayAdapter;
+        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinnerPosicoes.setAdapter(spinnerArrayAdapter);
+
+
+        //Método do Spinner para capturar o item selecionado
+        spinnerPosicoes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+                //pega nome pela posição
+                posicao = parent.getItemAtPosition(position).toString();
+                //imprime um Toast na tela com o nome que foi selecionado
+                Toast.makeText(CadastrarJogadores.this, "Nome Selecionado: " + posicao, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+    }
+
+}
+
+/*
 public class TorneioCadastro extends AppCompatActivity {
     EditText editTextNomeTorneio;
     Button buttonCadastrarTorneio, buttonFutsal, buttonCampo;
@@ -81,7 +134,8 @@ public class TorneioCadastro extends AppCompatActivity {
             }
         });
 
-       /* LoginButton.setOnClickListener(new View.OnClickListener() {
+       */
+/* LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 VerificaCamposVazios();
@@ -91,14 +145,17 @@ public class TorneioCadastro extends AppCompatActivity {
                     Toast.makeText(Login.this, "Favor, preencha todos os campos.", Toast.LENGTH_LONG).show();
                 }
             }
-        });*/
+        });*//*
+
     }
 
-   /* public void VerificaCamposVazios() {
+   */
+/* public void VerificaCamposVazios() {
         email_Text = Email.getText().toString().trim();
         senha_Text = Password.getText().toString().trim();
         CheckEditText = !TextUtils.isEmpty(email_Text) && !TextUtils.isEmpty(senha_Text);
-    }*/
+    }*//*
+
 
 
     public void CadastraTorneio(){
@@ -144,4 +201,4 @@ public class TorneioCadastro extends AppCompatActivity {
         CheckEditText = !TextUtils.isEmpty(nomeTorneio_text);
     }
 
-}
+}*/

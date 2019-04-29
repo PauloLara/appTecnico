@@ -24,7 +24,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFutebol" />
+        app:layout_constraintTop_toBottomOf="@+id/btnConfigJogadores" />
 
     <Button
         android:id="@+id/buttonTorneioCadastro"
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTorneioCadastro" />
 
     <Button
-        android:id="@+id/btnFutsal"
+        android:id="@+id/btnConfigClube"
         android:layout_width="0dp"
         android:layout_height="168dp"
         android:layout_marginStart="1dp"
@@ -55,13 +55,13 @@
         android:layout_marginRight="1dp"
         android:background="@drawable/meio_futsal"
         android:text="futsal"
-        app:layout_constraintBottom_toTopOf="@+id/btnFutebol"
+        app:layout_constraintBottom_toTopOf="@+id/btnConfigJogadores"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnFutebol"
+        android:id="@+id/btnConfigJogadores"
         android:layout_width="0dp"
         android:layout_height="168dp"
         android:layout_marginStart="1dp"
@@ -73,7 +73,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFutsal"
+        app:layout_constraintTop_toBottomOf="@+id/btnConfigClube"
         tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>

@@ -14,6 +14,7 @@ public class Inicial extends AppCompatActivity {
     Button logout;
     ViewPager viewPager;
     TextView textView;
+    String URL_nomeClube = "http://192.168.15.17/user_clube.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +35,20 @@ public class Inicial extends AppCompatActivity {
         startActivity(it);
     }
 
-    public void clickBtnIrEstatisticas(View view){
+    /*public void clickBtnIrEstatisticas(View view){
         Intent it;
         it = new Intent(Inicial.this, Estatisticas.class);
+        startActivity(it);
+    }*/
+    public void clickBtnIrEstatisticas(View view){
+        Intent it;
+        it = new Intent(Inicial.this, CadastrarJogadores.class);
         startActivity(it);
     }
     //cadastra um novo torneio
     public void clickBtnIrTorneioCadastro(View view){
         Intent it;
-        it = new Intent(Inicial.this, Graficos.class);
+        it = new Intent(Inicial.this, TorneioCadastro.class);
         startActivity(it);
     }
 
@@ -55,6 +61,12 @@ public class Inicial extends AppCompatActivity {
     public void clickBtnIrEquipeConfig(View view){
         Intent it;
         it = new Intent(Inicial.this, EquipeConfig.class);
+        startActivity(it);
+    }
+
+    public void clickBtnIrSistema(View view){
+        Intent it;
+        it = new Intent(Inicial.this, Sistema.class);
         startActivity(it);
     }
 
