@@ -1,495 +1,731 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<ScrollView android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".EquipeFutsalConfig">
 
-    <Spinner
-        android:id="@+id/spinnerData"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="13dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtNomeJogador"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+    <TableLayout
 
-    <EditText
-        android:id="@+id/txtNomeJogador"
-        android:layout_width="240dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="82dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
-        android:layout_marginBottom="0dp"
-        android:ems="10"
-        android:hint="Goleiro"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtFixo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="spread_inside" />
+        android:layout_width="370dp"
+        android:layout_height="match_parent"
+        android:shrinkColumns="*"
+        android:gravity="center">
 
-    <EditText
-        android:id="@+id/txtFixo"
-        android:layout_width="240dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
-        android:layout_marginBottom="0dp"
-        android:ems="10"
-        android:hint="Fixo"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtAlaEsq"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomeJogador" />
+        <Spinner
+            android:id="@+id/spTorneio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/txtAlaEsq"
-        android:layout_width="240dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
-        android:layout_marginBottom="0dp"
-        android:ems="10"
-        android:hint="Ala Esquerda"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtAlaDir"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtFixo" />
+        <TextView
+            android:id="@+id/line"
+            style="?android:attr/listSeparatorTextViewStyle"
+            android:paddingTop="5dip"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/connect_help"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000" />
 
-    <EditText
-        android:id="@+id/txtAlaDir"
-        android:layout_width="240dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
-        android:layout_marginBottom="0dp"
-        android:ems="10"
-        android:hint="Ala Direita"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtPivo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAlaEsq" />
+        <EditText
+            android:id="@+id/apelidoEquipe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@color/colorAccent"
+            android:ems="10"
+            android:hint="Digite o apelido da equipe"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spTorneio" />
 
-    <EditText
-        android:id="@+id/txtPivo"
-        android:layout_width="240dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
-        android:layout_marginBottom="0dp"
-        android:ems="10"
-        android:hint="Pivô"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtGoleiroRes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAlaDir" />
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
 
-    <EditText
-        android:id="@+id/txtGoleiroRes"
-        android:layout_width="240dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
-        android:layout_marginBottom="0dp"
-        android:ems="10"
-        android:hint="Goleiro Reserva"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtFixoRes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPivo" />
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:text="ESCOLHA O ATLETA"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/txtFixoRes"
-        android:layout_width="240dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
-        android:layout_marginBottom="0dp"
-        android:ems="10"
-        android:hint="Fixo Reserva"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtAlaEsqRes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtGoleiroRes" />
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:text="POSIÇÃO"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/txtAlaEsqRes"
-        android:layout_width="240dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
-        android:layout_marginBottom="0dp"
-        android:ems="10"
-        android:hint="Ala Esquerda Reserva"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtAlaDirRes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtFixoRes" />
+            <TextView
+                android:layout_width="44dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:text="NUM"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/txtAlaDirRes"
-        android:layout_width="240dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
-        android:layout_marginBottom="0dp"
-        android:ems="10"
-        android:hint="Ala Direita Reserva"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtPivoRes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAlaEsqRes" />
+        </TableRow>
 
-    <EditText
-        android:id="@+id/txtPivoRes"
-        android:layout_width="240dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
-        android:layout_marginBottom="0dp"
-        android:ems="10"
-        android:hint="Pivô Reserva"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtGoleiroResRes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAlaDirRes" />
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
 
-    <EditText
-        android:id="@+id/txtGoleiroResRes"
-        android:layout_width="240dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
-        android:layout_marginBottom="0dp"
-        android:ems="10"
-        android:hint="Terceiro Goleiro"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtJogadorExtra"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPivoRes" />
+            <Spinner
+                android:id="@+id/spJog1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-    <EditText
-        android:id="@+id/txtJogadorExtra"
-        android:layout_width="240dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
-        android:layout_marginBottom="4dp"
-        android:ems="10"
-        android:hint="Jogador Extra"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnCadJogador"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtGoleiroResRes" />
+            <TextView
+                android:id="@+id/posJog1"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnCadJogador"
-        android:layout_width="300dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="50dp"
-        android:text="cadastrar equipe"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtJogadorExtra" />
+            <TextView
+                android:id="@+id/numJog1"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/numJogador"
-        android:layout_width="60dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="82dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:ems="10"
-        android:hint="N°"
-        android:inputType="numberDecimal"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/numFixo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
-        app:layout_constraintTop_toTopOf="parent" />
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
 
-    <EditText
-        android:id="@+id/numFixo"
-        android:layout_width="60dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:ems="10"
-        android:hint="N°"
-        android:inputType="numberDecimal"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/numAlaEsq"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
-        app:layout_constraintTop_toBottomOf="@+id/numJogador" />
+            <Spinner
+                android:id="@+id/spJog2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-    <EditText
-        android:id="@+id/numAlaEsq"
-        android:layout_width="60dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:ems="10"
-        android:hint="N°"
-        android:inputType="numberDecimal"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/numAlaDir"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
-        app:layout_constraintTop_toBottomOf="@+id/numFixo"
-        app:layout_constraintVertical_bias="0.6" />
+            <TextView
+                android:id="@+id/posJog2"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/numAlaDir"
-        android:layout_width="60dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:ems="10"
-        android:hint="N°"
-        android:inputType="numberDecimal"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/numPivo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
-        app:layout_constraintTop_toBottomOf="@+id/numAlaEsq" />
+            <TextView
+                android:id="@+id/numJog2"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/numPivo"
-        android:layout_width="60dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:ems="10"
-        android:hint="N°"
-        android:inputType="numberDecimal"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/numGoleiroRes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
-        app:layout_constraintTop_toBottomOf="@+id/numAlaDir" />
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
 
-    <EditText
-        android:id="@+id/numGoleiroRes"
-        android:layout_width="60dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:ems="10"
-        android:hint="N°"
-        android:inputType="numberDecimal"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/numFixoRes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
-        app:layout_constraintTop_toBottomOf="@+id/numPivo" />
+            <Spinner
+                android:id="@+id/spJog3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-    <EditText
-        android:id="@+id/numFixoRes"
-        android:layout_width="60dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:ems="10"
-        android:hint="N°"
-        android:inputType="numberDecimal"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/numAlaEsqRes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
-        app:layout_constraintTop_toBottomOf="@+id/numGoleiroRes" />
+            <TextView
+                android:id="@+id/posJog3"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/numAlaEsqRes"
-        android:layout_width="60dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:ems="10"
-        android:hint="N°"
-        android:inputType="numberDecimal"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/numAlaDirRes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
-        app:layout_constraintTop_toBottomOf="@+id/numFixoRes" />
+            <TextView
+                android:id="@+id/numJog3"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/numAlaDirRes"
-        android:layout_width="60dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:ems="10"
-        android:hint="N°"
-        android:inputType="numberDecimal"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/numPivoRes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
-        app:layout_constraintTop_toBottomOf="@+id/numAlaEsqRes" />
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
 
-    <EditText
-        android:id="@+id/numPivoRes"
-        android:layout_width="60dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:ems="10"
-        android:hint="N°"
-        android:inputType="numberDecimal"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/numGoleiroResRes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
-        app:layout_constraintTop_toBottomOf="@+id/numAlaDirRes" />
+            <Spinner
+                android:id="@+id/spJog4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-    <EditText
-        android:id="@+id/numGoleiroResRes"
-        android:layout_width="60dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:ems="10"
-        android:hint="N°"
-        android:inputType="numberDecimal"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/numJogadorExtra"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
-        app:layout_constraintTop_toBottomOf="@+id/numPivoRes" />
+            <TextView
+                android:id="@+id/posJog4"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/numJogadorExtra"
-        android:layout_width="60dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:layout_marginBottom="4dp"
-        android:ems="10"
-        android:hint="N°"
-        android:inputType="numberDecimal"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnCadJogador"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
-        app:layout_constraintTop_toBottomOf="@+id/numGoleiroResRes" />
+            <TextView
+                android:id="@+id/numJog4"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
 
-</android.support.constraint.ConstraintLayout>
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
+
+            <Spinner
+                android:id="@+id/spJog5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/posJog5"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numJog5"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
+
+            <Spinner
+                android:id="@+id/spJog6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/posJog6"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numJog6"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
+
+            <Spinner
+                android:id="@+id/spJog7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/posJog7"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numJog7"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
+
+            <Spinner
+                android:id="@+id/spJog8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/posJog8"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numJog8"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
+
+            <Spinner
+                android:id="@+id/spJog9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/posJog9"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numJog9"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
+
+            <Spinner
+                android:id="@+id/spJog10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/posJog10"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numJog10"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
+
+            <Spinner
+                android:id="@+id/spJog11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/posJog11"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numJog11"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
+
+            <Spinner
+                android:id="@+id/spJog12"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/posJog12"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numJog12"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
+
+            <Spinner
+                android:id="@+id/spJog13"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/posJog13"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numJog13"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
+
+            <Spinner
+                android:id="@+id/spJog14"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/posJog14"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numJog14"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
+
+            <Spinner
+                android:id="@+id/spJog15"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/posJog15"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numJog15"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
+
+            <Spinner
+                android:id="@+id/spJog16"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/posJog16"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numJog16"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
+
+            <Spinner
+                android:id="@+id/spJog17"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/posJog17"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numJog17"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
+
+            <Spinner
+                android:id="@+id/spJog18"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/posJog18"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numJog18"
+                android:layout_width="34dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="8sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+
+        <Button
+            android:id="@+id/buttonCadastrarEquipe"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginRight="44dp"
+            android:layout_marginBottom="103dp"
+            android:text="cadastrar equipe"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+    </TableLayout>
+
+</ScrollView>

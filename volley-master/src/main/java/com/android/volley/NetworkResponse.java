@@ -160,7 +160,7 @@ public class NetworkResponse {
 
     /** Network roundtrip time in milliseconds. */
     public final long networkTimeMs;
-
+    @SuppressWarnings("MixedMutabilityReturnType")
     private static Map<String, String> toHeaderMap(List<Header> allHeaders) {
         if (allHeaders == null) {
             return null;

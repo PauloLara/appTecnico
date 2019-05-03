@@ -80,25 +80,7 @@ public class TorneioCadastro extends AppCompatActivity {
                 }
             }
         });
-
-       /* LoginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                VerificaCamposVazios();
-                if (CheckEditText) {
-                    UserLogin();
-                } else {
-                    Toast.makeText(Login.this, "Favor, preencha todos os campos.", Toast.LENGTH_LONG).show();
-                }
-            }
-        });*/
     }
-
-   /* public void VerificaCamposVazios() {
-        email_Text = Email.getText().toString().trim();
-        senha_Text = Password.getText().toString().trim();
-        CheckEditText = !TextUtils.isEmpty(email_Text) && !TextUtils.isEmpty(senha_Text);
-    }*/
 
 
     public void CadastraTorneio(){

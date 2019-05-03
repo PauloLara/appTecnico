@@ -12,10 +12,21 @@ public class Sistema extends AppCompatActivity {
 
     }
 
+    public void clickBtnCadastrarTorneios(View view){
+        Intent it;
+        it = new Intent(Sistema.this, TorneioCadastro.class);
+        startActivity(it);
+    }
 
     public void clickBtnCadastrarJogadores(View view){
         Intent it;
         it = new Intent(Sistema.this, CadastrarJogadores.class);
+        startActivity(it);
+    }
+
+    public void clickBtnDeletar(View view){
+        Intent it;
+        it = new Intent(Sistema.this, DeletarDados.class);
         startActivity(it);
     }
 }

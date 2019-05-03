@@ -26,7 +26,7 @@
         android:textStyle="bold" />
 
     <Spinner
-        android:id="@+id/spinnerData"
+        android:id="@+id/spTorneio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp" />
@@ -1748,7 +1748,7 @@
         >
 
         <TextView
-            android:id="@+id/atleta_pivo"
+            android:id="@+id/posicao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
@@ -1756,7 +1756,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/passer_pivo"
+            android:id="@+id/nomeJogador"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
@@ -1764,7 +1764,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/chuteg_pivo"
+            android:id="@+id/numeroJogador"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
@@ -1795,19 +1795,3 @@
 
 </TableLayout>
 </ScrollView>
-
-<!--
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".AcoesFutsal" >
-
-    <ListView
-        android:id="@+id/atleta_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
-
-</LinearLayout>-->

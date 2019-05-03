@@ -57,7 +57,7 @@
 
 
     <Button
-        android:id="@+id/btnCadJogador"
+        android:id="@+id/buttonCadastrarEquipe"
         android:layout_width="0dp"
         android:layout_height="72dp"
         android:layout_marginStart="8dp"
@@ -70,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ImageCarregarFoto" />
+        app:layout_constraintTop_toBottomOf="@+id/imgFoto" />
 
     <TableRow
         android:layout_width="0dp"
@@ -84,11 +84,11 @@
         android:background="#f0f5f5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCadJogador"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCadastrarEquipe"
         tools:ignore="MissingConstraints">
 
         <TextView
-            android:id="@+id/atleta_pivo"
+            android:id="@+id/posicao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
@@ -96,7 +96,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/passer_pivo"
+            android:id="@+id/nomeJogador"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
@@ -104,7 +104,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/chuteg_pivo"
+            android:id="@+id/numeroJogador"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
@@ -130,7 +130,7 @@
     </TableRow>
 
     <ImageView
-        android:id="@+id/ImageCarregarFoto"
+        android:id="@+id/imgFoto"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginStart="140dp"

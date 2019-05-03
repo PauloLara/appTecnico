@@ -18,9 +18,9 @@
         android:layout_marginRight="1dp"
         android:background="@drawable/futsalescolhe"
         android:onClick="clickBtnIrEquipeConfig"
-        android:text="@string/futsal"
+        android:text="nova equipe"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/equipeCampo"
+        app:layout_constraintBottom_toTopOf="@+id/jaCadastradas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,7 @@
         tools:ignore="MissingConstraints,OnClick" />
 
     <Button
-        android:id="@+id/equipeCampo"
+        android:id="@+id/jaCadastradas"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="1dp"
@@ -38,7 +38,8 @@
         android:layout_marginRight="1dp"
         android:layout_marginBottom="1dp"
         android:background="@drawable/futebolescolhe"
-        android:text="@string/campo"
+        android:text="Já cadastradas"
+        android:onClick="btnIrCadastradas"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

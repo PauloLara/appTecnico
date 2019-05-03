@@ -13,14 +13,16 @@
         android:layout_height="128dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
-        android:background="@drawable/meio_futsal"
+        android:background="@color/colorAccent"
+        android:onClick="clickBtnCadastrarTorneios"
         android:text="cadastrar torneios"
-        app:layout_constraintBottom_toTopOf="@+id/btnConfigJogadores"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -29,33 +31,45 @@
         android:layout_height="128dp"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
-        android:background="@drawable/meio_futsal"
+        android:background="@color/colorPrimary"
+        android:onClick="clickBtnCadastrarJogadores"
         android:text="cadastrar jogadores"
         app:layout_constraintEnd_toEndOf="parent"
-        android:onClick="clickBtnCadastrarJogadores"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnConfigTorneios"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnDeletarDados"
+        android:layout_width="0dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="clickBtnDeletar"
+        android:text="deletar dados"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConfigJogadores"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textViewInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginLeft="33dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginEnd="294dp"
-        android:layout_marginRight="294dp"
-        android:layout_marginBottom="298dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="110dp"
         android:text="Informações:"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnConfigJogadores"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/btnDeletarDados" />
 
 </android.support.constraint.ConstraintLayout>

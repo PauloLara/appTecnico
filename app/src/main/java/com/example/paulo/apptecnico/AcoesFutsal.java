@@ -86,7 +86,7 @@ public class AcoesFutsal extends Activity {
     // FIM - AQUI POPULA O SPINNER COM DADOS DO BANCO    *******************************************************************
 
 
-    //INÍCIO - AQUI POPULA O SPINNER DE TORNEIOS COM DADOS DO BANCO *******************************************************************
+    //INÍCIO - AQUI POPULA O SPINNER DE ADVERSARIOS COM DADOS DO BANCO *******************************************************************
     private void loadSpinnerAdversarios(String urlSpin) {
         final ArrayList<String> listaAdversarios = new ArrayList<>();
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -185,13 +185,13 @@ public class AcoesFutsal extends Activity {
         textViewAlaDirPerdida = findViewById(R.id.perdida_aladir);
         textViewAlaDirInterceptacao = findViewById(R.id.intercep_aladir);
 
-        textViewPivoAtleta = findViewById(R.id.atleta_pivo);
-        textViewPivoPasseErrado = findViewById(R.id.passer_pivo);
-        textViewPivoChuteAgol = findViewById(R.id.chuteg_pivo);
+        textViewPivoAtleta = findViewById(R.id.posicao);
+        textViewPivoPasseErrado = findViewById(R.id.nomeJogador);
+        textViewPivoChuteAgol = findViewById(R.id.numeroJogador);
         textViewPivoPerdida = findViewById(R.id.perdida_pivo);
         textViewPivoInterceptacao = findViewById(R.id.intercep_pivo);
         editTextDate = findViewById(R.id.date);
-        spinnerTorneio = findViewById(R.id.spinnerData);
+        spinnerTorneio = findViewById(R.id.spTorneio);
         spinnerAdversario = findViewById(R.id.spinnerAdversario);
         btnVerificaEquipe = findViewById(R.id.btnVerificaEquipe);
 
@@ -238,11 +238,6 @@ public class AcoesFutsal extends Activity {
             public void onClick(View v) {
                 final String stIDnomeTorneio = (String) spinnerTorneio.getSelectedItem();
                 final String stIDTorneio =  String.valueOf(somenteDigitos(stIDnomeTorneio));
-
-                //final String stIDnomeAdversario = (String) spinnerAdversario.getSelectedItem();
-                //final String stIDAdversario =  String.valueOf(somenteDigitos(stIDnomeAdversario));
-
-                //Toast.makeText(getApplicationContext(), stIDnomeTorneio, Toast.LENGTH_LONG).show();
                 RequestQueue queue = Volley.newRequestQueue(AcoesFutsal.this);
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, URLtv, new Response.Listener<String>() {
                     @Override
@@ -887,7 +882,7 @@ public class AcoesFutsal extends Activity {
     }
 
     private void totalPasserPivo(int number) {
-        TextView displayInteger = (TextView) findViewById(R.id.passer_pivo);
+        TextView displayInteger = (TextView) findViewById(R.id.nomeJogador);
         displayInteger.setText("" + number);
     }
 
@@ -910,7 +905,7 @@ public class AcoesFutsal extends Activity {
     }
 
     private void totalChutesPivo(int number) {
-        TextView displayInteger = (TextView) findViewById(R.id.chuteg_pivo);
+        TextView displayInteger = (TextView) findViewById(R.id.numeroJogador);
         displayInteger.setText("" + number);
     }
 

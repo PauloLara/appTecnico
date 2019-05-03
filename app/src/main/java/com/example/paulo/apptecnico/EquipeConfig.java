@@ -19,4 +19,9 @@ public class EquipeConfig extends AppCompatActivity {
         startActivity(it);
     }
 
+    public void btnIrCadastradas(View view){
+        Intent it;
+        it = new Intent(EquipeConfig.this, EquipesCadastradas.class);
+        startActivity(it);
+    }
 }

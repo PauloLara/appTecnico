@@ -59,6 +59,7 @@
     <string name="bolas_perdidas">Bolas perdidas</string>
     <string name="passes_errado">Passes errados</string>
     <string name="intercepta_es">Interceptações</string>
+    <string name="ver">ver</string>
 
 
     <item name="spinnerJogador" type="id"></item>

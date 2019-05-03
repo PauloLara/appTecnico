@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DeletarDados">
+
+    <ImageButton
+        android:id="@+id/imgBtExcluirSelect1"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/x"
+        app:layout_constraintStart_toEndOf="@+id/selecionado1"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerJogador" />
+
+    <ImageButton
+        android:id="@+id/imgBtExcluirSelect3"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/x"
+        app:layout_constraintStart_toEndOf="@+id/selecionado4"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtExcluirSelect2" />
+
+    <ImageButton
+        android:id="@+id/imgBtExcluirSelect2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/x"
+        app:layout_constraintStart_toEndOf="@+id/selecionado2"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtExcluirSelect1" />
+
+    <Button
+        android:id="@+id/btnEscolheTorneio"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorAccent"
+        android:text="escolher torneio"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/spinnerTorneio"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnEscolheEquipe"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorPrimary"
+        android:text="escolher Equipe"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spinnerEquipe"
+        app:layout_constraintTop_toBottomOf="@+id/btnEscolheTorneio" />
+
+    <Button
+        android:id="@+id/btnEscolheJogador"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="escolher jogador"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spinnerJogador"
+        app:layout_constraintTop_toBottomOf="@+id/btnEscolheEquipe" />
+
+    <Spinner
+        android:id="@+id/spinnerTorneio"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerJogador"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerEquJog" />
+
+    <Spinner
+        android:id="@+id/spinnerEquJog"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerEquipe" />
+
+    <Spinner
+        android:id="@+id/spinnerEquipe"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerTorneio" />
+
+    <Button
+        android:id="@+id/btnDeletar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/darker_gray"
+        android:text="deletar selecionados"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selecionado3" />
+
+    <TextView
+        android:id="@+id/selecionado2"
+        android:layout_width="130dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selecionado1" />
+
+    <TextView
+        android:id="@+id/selecionado1"
+        android:layout_width="130dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="9dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtItens" />
+
+    <TextView
+        android:id="@+id/selecionado3"
+        android:layout_width="130dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selecionado2" />
+
+    <TextView
+        android:id="@+id/txtItens"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="52dp"
+        android:text="Itens selecionados:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerJogador" />
+
+    <TextView
+        android:id="@+id/selecionado4"
+        android:layout_width="110dp"
+        android:layout_height="25dp"
+        app:layout_constraintStart_toEndOf="@+id/selecionado3"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtExcluirSelect2" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/design_default_color_primary_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerEquipe" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/design_default_color_primary_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerTorneio" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/design_default_color_primary_dark"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerJogador"
+        tools:layout_editor_absoluteX="1dp" />
+</android.support.constraint.ConstraintLayout>

@@ -8,13 +8,12 @@
 
     <Spinner
         android:id="@+id/spinnerPosicao"
-        android:layout_width="0dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_width="286dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNomeJogador"
@@ -24,13 +23,13 @@
         android:id="@+id/txtNomeJogador"
         android:layout_width="240dp"
         android:layout_height="46dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="Nome do jogador"
         android:inputType="textPersonName"
-        android:textSize="14sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/txtFixo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -48,20 +47,57 @@
         android:ems="10"
         android:hint="N°"
         android:inputType="numberDecimal"
-        android:textSize="14sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/numFixo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imgFoto"
+        android:layout_width="126dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:srcCompat="@drawable/user"
+        tools:ignore="OnClick" />
 
-    <Button
-        android:id="@+id/btnCadJogador"
-        android:layout_width="0dp"
-        android:layout_height="72dp"
+    <TextView
+        android:id="@+id/selecioneFoto"
+        android:layout_width="186dp"
+        android:layout_height="14dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:text="Selecione uma imagem ou tire uma foto"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.659"
+        app:layout_constraintStart_toEndOf="@+id/imgFoto"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <Button
+        android:id="@+id/btnUpload"
+        android:layout_width="57dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/upload"
+        app:layout_constraintStart_toEndOf="@+id/imgFoto"
+        app:layout_constraintTop_toBottomOf="@+id/selecioneFoto" />
+
+
+    <Button
+        android:id="@+id/buttonCadastrarEquipe"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@color/design_default_color_primary"
@@ -69,9 +105,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ImageCarregarFoto" />
+        app:layout_constraintTop_toBottomOf="@+id/imgFoto" />
 
-    <TableRow
+<!--    <TableRow
         android:layout_width="0dp"
         android:layout_height="36dp"
         android:layout_margin="1dp"
@@ -80,81 +116,69 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:background="#f0f5f5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCadJogador"
         tools:ignore="MissingConstraints">
 
         <TextView
-            android:id="@+id/atleta_pivo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/posicao"
+            android:layout_width="110dp"
+            android:layout_height="36dp"
             android:text=""
             android:textSize="14sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/passer_pivo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/nomeJogador"
+            android:layout_width="210dp"
+            android:layout_height="36dp"
             android:text=""
             android:textSize="14sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/chuteg_pivo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/numeroJogador"
+            android:layout_width="36dp"
+            android:layout_height="40dp"
             android:text=""
             android:textSize="14sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/perdida_pivo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="14sp"
-            android:textStyle="bold" />
+    </TableRow>-->
 
-        <TextView
-            android:id="@+id/intercep_pivo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="14sp"
-            android:textStyle="bold" />
 
-    </TableRow>
-
-    <ImageView
-        android:id="@+id/ImageCarregarFoto"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginEnd="181dp"
-        android:layout_marginRight="181dp"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selecioneFoto"
-        app:srcCompat="@drawable/user" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/selecioneFoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginLeft="96dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginRight="96dp"
-        android:text="Selecione uma foto para o jogador"
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="JOGADORES JÁ CADASTRADOS:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerPosicao" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonCadastrarEquipe" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerPosicao"
+        tools:layout_editor_absoluteX="0dp" />
 
 
 </android.support.constraint.ConstraintLayout>

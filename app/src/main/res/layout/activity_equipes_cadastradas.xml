@@ -1,0 +1,1955 @@
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".EquipesCadastradas"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <TableLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:shrinkColumns="*"
+        android:gravity="center">
+
+        <Spinner
+            android:id="@+id/spTorneio"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="22dp"
+            android:background="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/linha"
+            style="?android:attr/listSeparatorTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@+id/connect_help"
+            android:background="#fff"
+            android:gravity="center_horizontal"
+            android:paddingTop="5dip" />
+
+        <Button
+            android:id="@+id/btnVerificaEquipe"
+            android:layout_width="207dp"
+            android:layout_height="36dp"
+            android:layout_centerHorizontal="false"
+            android:layout_margin="1dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="#f5f5f0"
+            android:text=" Verificar por Equipe "
+            android:textColor="@android:color/background_dark"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/spTorneio"
+            tools:ignore="DuplicateIds" />
+
+        <TextView
+            android:id="@+id/line"
+            style="?android:attr/listSeparatorTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@+id/connect_help"
+            android:background="@android:color/background_light"
+            android:gravity="center_horizontal"
+            android:paddingTop="5dip" />
+
+        <Button
+            android:id="@+id/btnVerificaCadastrados"
+            android:layout_width="30dp"
+            android:layout_height="36dp"
+            android:layout_alignParentBottom="false"
+            android:layout_centerHorizontal="false"
+            android:layout_margin="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#f5f5f0"
+            android:text=" Ver atletas cadastrados"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/line"
+            tools:ignore="DuplicateIds" />
+
+        <TextView
+            android:id="@+id/linhas"
+            style="?android:attr/listSeparatorTextViewStyle"
+            android:paddingTop="5dip"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/connect_help"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#000" />
+
+        <TextView
+            android:id="@+id/apelidoEquipes"
+            android:layout_width="200dp"
+            android:layout_height="16dp"
+            android:layout_column="0"
+            android:layout_margin="1dp"
+            android:text="Nome Equipe:"
+            android:background="#FFFFFF"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/apelidoEquipe"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_column="0"
+            android:layout_margin="1dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:text="ATLETA"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:text="POSIÇÃO"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="38dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:text="N°"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:text="EQUIPE CAD"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:text="GRAF"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            android:background="#ffffff">
+
+        <TextView
+            android:id="@+id/fieldGoleiro"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_margin="1dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/goleiroPosicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/goleiroNumero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/goleiroEquipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnGoleiroGraf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldFixo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/fixoPosicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fixoNumero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fixoEquipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnFixoGraf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldAlaEsq"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/alaEsqPosicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/alaEsqNumero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/alaEsqEquipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnAlaEsqGraf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="80dp"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            android:background="#ffffff">
+
+            <TextView
+                android:id="@+id/fieldAlaDir"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/alaDirPosicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/alaDirNumero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/alaDirEquipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnAlaDirGraf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldPivo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/pivoPosicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pivoNumero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pivoEquipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnPivoGraf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldGoleiroRes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/goleiroResPosicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/goleiroResNumero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/goleiroResEquipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnGoleiroResGraf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+            
+        </TableRow>
+
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldFixoRes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/fixoResPosicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fixoResNumero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fixoResEquipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnFixoResGraf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+
+        <!-- ************  LINHA DO ALA ESQUERDA RESERVA DA TABELA DE CIMA ******************************************************************-->
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldAlaEsqRes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/alaEsqResPosicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/alaEsqResNumero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/alaEsqResEquipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnAlaEsqResGraf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+            
+            </TableRow>
+
+        <!-- ************  LINHA DO ALA DIREITA RESERVA DA TABELA DE CIMA ******************************************************************-->
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldAlaDirRes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/alaDirResPosicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/alaDirResNumero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/alaDirResEquipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnAlaDirResGraf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <!-- ************  LINHA DO PIVO RESERVA TABELA DE CIMA ******************************************************************-->
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldPivoRes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/pivoResPosicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pivoResNumero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pivoResEquipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnPivoResGraf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+
+        <!-- ************  LINHA DO RESERVA DO RESERVA DO GOLEIRO TABELA DE CIMA ******************************************************************-->
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldGoleiroResRes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/goleiroResResPosicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/goleiroResResNumero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/goleiroResResEquipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnGoleiroResResGraf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+
+        <!-- ************  LINHA DO JOGADOR EXTRA TABELA DE CIMA ******************************************************************-->
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra0Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra0Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra0Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra0Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra1Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/jogadorExtra1Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra1Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra1Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra2Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            
+            <TextView
+                android:id="@+id/jogadorExtra2Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra2Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra2Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra3Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra3Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra3Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra3Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra4Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra4Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra4Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra4Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra5Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra5Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra5Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra5Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra6Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra6Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra6Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra6Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="@string/ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra7Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra7Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra7Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra7Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra8Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra8Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra8Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra8Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra9Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra9Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra9Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra9Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra10Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra10Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra10Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra10Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra11Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra11Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra11Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra11Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra12"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra12Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra12Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra12Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra12Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra13"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra13Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra13Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra13Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra13Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra14"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra14Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra14Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra14Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra14Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra15"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra15Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra15Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra15Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra15Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra16"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra16Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra16Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra16Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra16Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra17"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra17Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra17Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra17Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra17Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="@string/ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:background="#ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra18"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/jogadorExtra18Posicao"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra18Numero"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/jogadorExtra18Equipes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:layout_margin="1dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnJogadorExtra18Graf"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:padding="1dp"
+                android:text="ver"
+                android:textSize="10dp" />
+        </TableRow>
+
+
+
+
+    </TableLayout>
+</ScrollView>
