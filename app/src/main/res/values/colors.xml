@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#CDD9C5</color>
-    <color name="colorPrimaryDark">#FFF6EF</color>
+    <color name="colorPrimary">#CADDBD</color>
+    <color name="colorPrimaryDark">#C88A5B</color>
     <color name="colorAccent">#E3E7FF</color>
+
+    <!-- Base application theme.
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>-->
 </resources>

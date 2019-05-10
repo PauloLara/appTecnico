@@ -12,19 +12,23 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
-import java.util.Calendar;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.text.Normalizer;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,9 +39,13 @@ public class AcoesFutsal extends Activity {
     Spinner spinnerTorneio, spinnerAdversario;
     String URLsp = "http://192.168.15.17/busca_torneios.php";
     String URLspcl = "http://192.168.15.17/busca_adversarios.php";
-    String URLtv = "http://192.168.15.17/busca_dados_equipe.php";
+    //String URLtv = "http://192.168.15.17/busca_dados_equipe.php";
+    String stNomeTorneio, stIDTorneio;
+    String URLtv = "http://192.168.15.17/busca_equipe_por_torneio.php";
+    String URLbuscaPorTorneio = "http://192.168.15.17/busca_equipe_por_torneio.php";
     String URLev = "http://192.168.15.17/insere_eventos.php";
-    TextView tvGoleiro, tvFixo, tvAlaEsq, tvAlaDir, tvPivo, tvGoleiroRes, tvFixoRes, tvAlaEsqRes, tvAlaDirRes, tvPivoRes, tvGoleiroResRes, tvJogadorExtra;
+    TextView tvGoleiro, tvFixo, tvAlaEsq, tvAlaDir, tvPivo, tvGoleiroRes, tvFixoRes, tvAlaEsqRes, tvAlaDirRes, tvPivoRes, tvGoleiroResRes,
+            tvJogadorExtra, tvJogadorExtra1, tvJogadorExtra2, tvJogadorExtra3, tvJogadorExtra4, tvJogadorExtra5, tvJogadorExtra6;
     Button btnFinalizar;
     TextView textViewGoleiroAtleta, textAtletaGoleiro, textViewGoleiroPasseErrado, textViewGoleiroChuteAgol, textViewGoleiroPerdida, textViewGoleiroInterceptacao;
     TextView textViewFixoAtleta, textViewFixoPasseErrado, textViewFixoChuteAgol, textViewFixoPerdida, textViewFixoInterceptacao;
@@ -51,87 +59,7 @@ public class AcoesFutsal extends Activity {
 
 
 
-    //INÍCIO - AQUI POPULA O SPINNER DE TORNEIOS COM DADOS DO BANCO *******************************************************************
-    private void loadSpinnerTorneios(String urlSpin) {
-        final ArrayList<String> listaTorneios = new ArrayList<>();
-        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, urlSpin, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    JSONArray jsonArray = jsonObject.getJSONArray("torneios");
-                    listaTorneios.add("Selecione o torneio:");
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                        idTorneio = jsonObject1.getInt("ID_torneio");
-                        String nomeTorneio = jsonObject1.getString("nomeTorneio");
-                        String var = String.valueOf(idTorneio);
-                        listaTorneios.add(var+" "+nomeTorneio);
-                    }
-                    spinnerTorneio.setAdapter(new ArrayAdapter<String>(AcoesFutsal.this, android.R.layout.simple_spinner_dropdown_item, listaTorneios));
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        });
-        requestQueue.add(stringRequest);
-    }
-    // FIM - AQUI POPULA O SPINNER COM DADOS DO BANCO    *******************************************************************
-
-
-    //INÍCIO - AQUI POPULA O SPINNER DE ADVERSARIOS COM DADOS DO BANCO *******************************************************************
-    private void loadSpinnerAdversarios(String urlSpin) {
-        final ArrayList<String> listaAdversarios = new ArrayList<>();
-        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, urlSpin, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    JSONArray jsonArray = jsonObject.getJSONArray("adversarios");
-                    listaAdversarios.add("Selecione o adversário:");
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                        idAdversario = jsonObject1.getInt("ID_adversario");
-                        String nomeAdversario = jsonObject1.getString("nomeAdversario");
-                        String var = String.valueOf(idAdversario);
-                        listaAdversarios.add(var+" "+nomeAdversario);
-                    }
-                    spinnerAdversario.setAdapter(new ArrayAdapter<String>(AcoesFutsal.this, android.R.layout.simple_spinner_dropdown_item, listaAdversarios));
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        });
-        requestQueue.add(stringRequest);
-    }
-    // FIM - AQUI POPULA O SPINNER COM DADOS DO BANCO    *******************************************************************
-
-
-    // Função que separa os números de dentro de uma String
-    private int somenteDigitos(String palavra) {
-        String digitos = "";
-        char[] letras  = palavra.toCharArray();
-        for (char letra : letras) {
-            if(Character.isDigit(letra)) {
-                digitos += letra;
-            }
-        }
-        return Integer.parseInt(digitos);
-    }
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -207,6 +135,12 @@ public class AcoesFutsal extends Activity {
         tvPivoRes = findViewById(R.id.fieldPivoRes);
         tvGoleiroResRes = findViewById(R.id.fieldGoleiroResRes);
         tvJogadorExtra = findViewById(R.id.fieldJogadorExtra);
+        tvJogadorExtra1 = findViewById(R.id.fieldJogadorExtra1);
+        tvJogadorExtra2 = findViewById(R.id.fieldJogadorExtra2);
+        tvJogadorExtra3 = findViewById(R.id.fieldJogadorExtra3);
+        tvJogadorExtra4 = findViewById(R.id.fieldJogadorExtra4);
+        tvJogadorExtra5 = findViewById(R.id.fieldJogadorExtra5);
+        tvJogadorExtra6 = findViewById(R.id.fieldJogadorExtra6);
 
 
         loadSpinnerTorneios(URLsp);
@@ -214,6 +148,7 @@ public class AcoesFutsal extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String torneio = spinnerTorneio.getItemAtPosition(spinnerTorneio.getSelectedItemPosition()).toString();
+                buscaEquipePorTorneio(torneio);
             }
 
             @Override
@@ -230,64 +165,6 @@ public class AcoesFutsal extends Activity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-            }
-        });
-
-        btnVerificaEquipe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final String stIDnomeTorneio = (String) spinnerTorneio.getSelectedItem();
-                final String stIDTorneio =  String.valueOf(somenteDigitos(stIDnomeTorneio));
-                RequestQueue queue = Volley.newRequestQueue(AcoesFutsal.this);
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, URLtv, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        alertDialog = new AlertDialog.Builder(AcoesFutsal.this);
-                        alertDialog.setMessage("Resposta: " + response);
-
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            JSONArray jsonArray = jsonObject.getJSONArray("dados");
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObjPosicoes = jsonArray.getJSONObject(i);
-                                tvGoleiro.setText(jsonObjPosicoes.getString("goleiro"));
-                                tvFixo.setText(jsonObjPosicoes.getString("fixo"));
-                                tvAlaEsq.setText(jsonObjPosicoes.getString("alaEsq"));
-                                tvAlaDir.setText(jsonObjPosicoes.getString("alaDir"));
-                                tvPivo.setText(jsonObjPosicoes.getString("pivo"));
-                                tvGoleiroRes.setText(jsonObjPosicoes.getString("goleiroRes"));
-                                tvFixoRes.setText(jsonObjPosicoes.getString("fixoRes"));
-                                tvAlaEsqRes.setText(jsonObjPosicoes.getString("alaEsqRes"));
-                                tvAlaDirRes.setText(jsonObjPosicoes.getString("alaDirRes"));
-                                tvPivoRes.setText(jsonObjPosicoes.getString("pivoRes"));
-                                tvGoleiroResRes.setText(jsonObjPosicoes.getString("goleiroResRes"));
-                                tvJogadorExtra.setText(jsonObjPosicoes.getString("jogadorExtra"));
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        textAtletaGoleiro.setText(tvGoleiro.getText());
-                        textViewFixoAtleta.setText(tvFixo.getText());
-                        textViewAlaEsqAtleta.setText(tvAlaEsq.getText());
-                        textViewAlaDirAtleta.setText(tvAlaDir.getText());
-                        textViewPivoAtleta.setText(tvPivo.getText());
-                    }
-                },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(AcoesFutsal.this, "Erro no servidor", Toast.LENGTH_SHORT).show();
-                                error.printStackTrace();
-                            }
-                        }){
-                    @Override
-                    protected Map<String, String> getParams() {
-                        Map<String, String> params = new HashMap<String, String>();
-                        params.put("IDtorneio", stIDTorneio);
-                        return params;
-                    }
-                };
-                queue.add(stringRequest);
             }
         });
 
@@ -452,10 +329,147 @@ public class AcoesFutsal extends Activity {
                 editTextDate.setText(null);
             }
         });
-
-
-
     }
+
+    //INÍCIO - AQUI POPULA O SPINNER DE TORNEIOS COM DADOS DO BANCO *******************************************************************
+    private void loadSpinnerTorneios(String urlSpin) {
+        final ArrayList<String> listaTorneios = new ArrayList<>();
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, urlSpin, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    JSONArray jsonArray = jsonObject.getJSONArray("torneios");
+                    listaTorneios.add("Selecione o torneio:");
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+                        idTorneio = jsonObject1.getInt("ID_torneio");
+                        String nomeTorneio = jsonObject1.getString("nomeTorneio");
+                        String var = String.valueOf(idTorneio);
+                        listaTorneios.add(var+" "+nomeTorneio);
+                    }
+                    spinnerTorneio.setAdapter(new ArrayAdapter<String>(AcoesFutsal.this, android.R.layout.simple_spinner_dropdown_item, listaTorneios));
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+        requestQueue.add(stringRequest);
+    }
+    // FIM - AQUI POPULA O SPINNER COM DADOS DO BANCO    *******************************************************************
+
+
+    //INÍCIO - AQUI POPULA O SPINNER DE ADVERSARIOS COM DADOS DO BANCO *******************************************************************
+    private void loadSpinnerAdversarios(String urlSpin) {
+        final ArrayList<String> listaAdversarios = new ArrayList<>();
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, urlSpin, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    JSONArray jsonArray = jsonObject.getJSONArray("adversarios");
+                    listaAdversarios.add("Selecione o adversário:");
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+                        idAdversario = jsonObject1.getInt("ID_adversario");
+                        String nomeAdversario = jsonObject1.getString("nomeAdversario");
+                        String var = String.valueOf(idAdversario);
+                        listaAdversarios.add(var+" "+nomeAdversario);
+                    }
+                    spinnerAdversario.setAdapter(new ArrayAdapter<String>(AcoesFutsal.this, android.R.layout.simple_spinner_dropdown_item, listaAdversarios));
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+        requestQueue.add(stringRequest);
+    }
+    // FIM - AQUI POPULA O SPINNER COM DADOS DO BANCO    *******************************************************************
+
+
+    // Função que separa os números de dentro de uma String
+    private int somenteDigitos(String palavra) {
+        String digitos = "";
+        char[] letras  = palavra.toCharArray();
+        for (char letra : letras) {
+            if(Character.isDigit(letra)) {
+                digitos += letra;
+            }
+        }
+        return Integer.parseInt(digitos);
+    }
+
+
+    public void buscaEquipePorTorneio(String torneio){
+        String stIDnomeTorneio = torneio;
+        String retiraCaracter = removerCaracteresEspeciais(stIDnomeTorneio);
+        String stNomeTorneios = retiraCaracter.replaceAll("[^a-zA-Z\\s]", "");
+        stNomeTorneio = stNomeTorneios.trim();
+        Toast.makeText(AcoesFutsal.this, stNomeTorneio, Toast.LENGTH_LONG).show();
+
+        RequestQueue queue = Volley.newRequestQueue(AcoesFutsal.this);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLbuscaPorTorneio, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String resposta) {
+                Toast.makeText(AcoesFutsal.this, resposta, Toast.LENGTH_LONG).show();
+                try {
+                    JSONObject objetoJson = new JSONObject(resposta);
+                    JSONArray jsonArray = objetoJson.getJSONArray("dados");
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject jogadorj = jsonArray.getJSONObject(i);
+                        tvGoleiro.setText(jogadorj.getString("goleiro"));
+                        tvFixo.setText(jogadorj.getString("fixo"));
+                        tvAlaEsq.setText(jogadorj.getString("alaEsq"));
+                        tvAlaDir.setText(jogadorj.getString("alaDir"));
+                        tvPivo.setText(jogadorj.getString("pivo"));
+                        tvGoleiroRes.setText(jogadorj.getString("goleiroRes"));
+                        tvFixoRes.setText(jogadorj.getString("fixoRes"));
+                        tvAlaEsqRes.setText(jogadorj.getString("alaEsqRes"));
+                        tvAlaDirRes.setText(jogadorj.getString("alaDirRes"));
+                        tvPivoRes.setText(jogadorj.getString("pivoRes"));
+                        tvGoleiroResRes.setText(jogadorj.getString("goleiroResRes"));
+                        tvJogadorExtra.setText(jogadorj.getString("jogadorExtra"));
+                    }
+                }
+                catch(JSONException e){
+                    e.printStackTrace();
+                }
+            }
+        },new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse (VolleyError error){
+                Toast.makeText(AcoesFutsal.this, "Erro no servidor", Toast.LENGTH_SHORT).show();
+                error.printStackTrace();
+            }
+        })
+        {
+            @Override
+            protected Map<String, String> getParams () {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("nomeTorneio", stNomeTorneio);
+                return params;
+            }
+        };
+        queue.add(stringRequest);
+    }
+
+
+
+
     // INÍCIO CONTAGEM DE CLICKS  COMEÇA AQUI   *******************************************************************
     int passErrGoleiro = 0;
     int chutGoleiro = 0;
@@ -954,6 +968,20 @@ public class AcoesFutsal extends Activity {
         TextView displayInteger = (TextView) findViewById(R.id.intercep_pivo);
         displayInteger.setText("" + number);
     }
+
+
+
+    public String removerCaracteresEspeciais(String string) {
+        string = Normalizer.normalize(string, Normalizer.Form.NFD);
+        string = string.replaceAll("[^\\p{ASCII}]", "");
+        return string;
+    }
+
+    /*public void clickBtnIrEventos(View view){
+        Intent it;
+        it = new Intent(AcoesFutsal.this, ClicarEventosFutsal.class);
+        startActivity(it);
+    }*/
 
     //FIM CONTAGEM DE CLICKS TERMINA AQUI! *******************************************************************
 

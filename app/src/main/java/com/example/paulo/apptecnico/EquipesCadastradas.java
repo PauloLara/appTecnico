@@ -1,22 +1,26 @@
 package com.example.paulo.apptecnico;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,6 +31,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class EquipesCadastradas extends AppCompatActivity {
+    ImageView imgView;
     TextView apelidoEquipe, goleiro, goleiroRes, goleiroResRes, fixo, fixoRes, alaEsq, alaEsqRes, alaDir, alaDirRes, pivo, pivoRes,
             jogadorExtra0, jogadorExtra1, jogadorExtra2, jogadorExtra3, jogadorExtra4, jogadorExtra5, jogadorExtra6, jogadorExtra7,
             jogadorExtra8, jogadorExtra9, jogadorExtra10, jogadorExtra11, jogadorExtra12, jogadorExtra13,
@@ -54,7 +59,7 @@ public class EquipesCadastradas extends AppCompatActivity {
     String stNomeTorneio, stIDTorneio;
     Spinner spTorneio;
     AlertDialog.Builder alertDialog;
-    Button btnVerificarEquipe, btnJogadoresCadastrados;
+    Button btnJogadoresCadastrados;
     Button btnGoleiroGraf, btngoleiroResGraf, btnfixoGraf, btnfixoResGraf,
             btnalaEsqGraf, btnalaEsqResGraf, btnalaDirGraf, btnalaDirResGraf, btnpivoGraf, btnjogadorExtra18Graf,
             btnpivoResGraf, btnjogadorExtra0Graf, btnjogadorExtra1Graf, btngoleiroResResGraf, btnjogadorExtra2Graf,
@@ -69,8 +74,8 @@ public class EquipesCadastradas extends AppCompatActivity {
         setContentView(R.layout.activity_equipes_cadastradas);
         spTorneio = findViewById(R.id.spTorneio);
         apelidoEquipe = findViewById(R.id.apelidoEquipe);
-        btnVerificarEquipe = findViewById(R.id.btnVerificaEquipe);
         btnJogadoresCadastrados = findViewById(R.id.btnVerificaCadastrados);
+        imgView = findViewById(R.id.dialog_imageview);
 
         goleiro = findViewById(R.id.fieldGoleiro);
         goleiroRes = findViewById(R.id.fieldGoleiroRes);
@@ -264,7 +269,33 @@ public class EquipesCadastradas extends AppCompatActivity {
                 montarDados();
             }
         });
+
+        btnGoleiroGraf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCustomDialog();
+
+
+            }
+        });
     }
+    //FIM DO ON CREATE
+    //*******************************ALERT DIALOG**********************************************************************
+    private void showCustomDialog() {
+        AlertDialog.Builder ad = new AlertDialog.Builder(EquipesCadastradas.this);
+        LayoutInflater factory = LayoutInflater.from(EquipesCadastradas.this);
+        final View view = factory.inflate(R.layout.activity_alert_dialog, null);
+        ad.setView(view);
+        ad.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        ad.show();
+    }
+    //FIM DO ALERT DIALOG *********************************************************************
+
+
 
     public String removerCaracteresEspeciais(String string) {
         string = Normalizer.normalize(string, Normalizer.Form.NFD);
@@ -394,180 +425,218 @@ public class EquipesCadastradas extends AppCompatActivity {
                             goleiroPosicao.setText(goleiroj.getString("posicao"));
                             goleiroNumero.setText(goleiroj.getString("numeroJogador"));
                             goleiroEquipes.setText(goleiroj.getString("apelidoEquipe"));
+                            String strIMGgoleiroj = goleiroj.getString("foto");
+
 
                             JSONObject fixoj = jsonArray.getJSONObject(1);
                             fixo.setText(fixoj.getString("nomeJogador"));
                             fixoPosicao.setText(fixoj.getString("posicao"));
                             fixoNumero.setText(fixoj.getString("numeroJogador"));
                             fixoEquipes.setText(fixoj.getString("apelidoEquipe"));
+                            String strIMGfixoj = goleiroj.getString("foto");
 
                             JSONObject alaEsqj = jsonArray.getJSONObject(2);
                             alaEsq.setText(alaEsqj.getString("nomeJogador"));
                             alaEsqPosicao.setText(alaEsqj.getString("posicao"));
                             alaEsqNumero.setText(alaEsqj.getString("numeroJogador"));
                             alaEsqEquipes.setText(alaEsqj.getString("apelidoEquipe"));
+                            String strIMGalaEsqj = goleiroj.getString("foto");
 
                             JSONObject alaDirj = jsonArray.getJSONObject(3);
                             alaDir.setText(alaDirj.getString("nomeJogador"));
                             alaDirPosicao.setText(alaDirj.getString("posicao"));
                             alaDirNumero.setText(alaDirj.getString("numeroJogador"));
                             alaDirEquipes.setText(alaDirj.getString("apelidoEquipe"));
+                            String strIMGalaDirj = goleiroj.getString("foto");
 
                             JSONObject pivoj = jsonArray.getJSONObject(4);
                             pivo.setText(pivoj.getString("nomeJogador"));
                             pivoPosicao.setText(pivoj.getString("posicao"));
                             pivoNumero.setText(pivoj.getString("numeroJogador"));
                             pivoEquipes.setText(pivoj.getString("apelidoEquipe"));
+                            String strIMGpivoj = goleiroj.getString("foto");
 
                             JSONObject goleiroResj = jsonArray.getJSONObject(5);
                             goleiroRes.setText(goleiroResj.getString("nomeJogador"));
                             goleiroResPosicao.setText(goleiroResj.getString("posicao"));
                             goleiroResNumero.setText(goleiroResj.getString("numeroJogador"));
                             goleiroResEquipes.setText(goleiroResj.getString("apelidoEquipe"));
+                            String strIMGgoleiroResj = goleiroj.getString("foto");
 
                             JSONObject fixoResj = jsonArray.getJSONObject(6);
                             fixoRes.setText(fixoResj.getString("nomeJogador"));
                             fixoResPosicao.setText(fixoResj.getString("posicao"));
                             fixoResNumero.setText(fixoResj.getString("numeroJogador"));
                             fixoResEquipes.setText(fixoResj.getString("apelidoEquipe"));
+                            String strIMGfixoResj = goleiroj.getString("foto");
 
                             JSONObject alaEsqResj = jsonArray.getJSONObject(7);
                             alaEsqRes.setText(alaEsqResj.getString("nomeJogador"));
                             alaEsqResPosicao.setText(alaEsqResj.getString("posicao"));
                             alaEsqResNumero.setText(alaEsqResj.getString("numeroJogador"));
                             alaEsqResEquipes.setText(alaEsqResj.getString("apelidoEquipe"));
+                            String strIMGalaEsqResj = goleiroj.getString("foto");
 
                             JSONObject alaDirResj = jsonArray.getJSONObject(8);
                             alaDirRes.setText(alaDirResj.getString("nomeJogador"));
                             alaDirResPosicao.setText(alaDirResj.getString("posicao"));
                             alaDirResNumero.setText(alaDirResj.getString("numeroJogador"));
                             alaDirResEquipes.setText(alaDirResj.getString("apelidoEquipe"));
+                            String strIMGalaDirResj = goleiroj.getString("foto");
 
                             JSONObject pivoResj = jsonArray.getJSONObject(9);
                             pivoRes.setText(pivoResj.getString("nomeJogador"));
                             pivoResPosicao.setText(pivoResj.getString("posicao"));
                             pivoResNumero.setText(pivoResj.getString("numeroJogador"));
                             pivoResEquipes.setText(pivoResj.getString("apelidoEquipe"));
+                            String strIMGpivoResj = goleiroj.getString("foto");
 
                             JSONObject goleiroResResj = jsonArray.getJSONObject(10);
                             goleiroResRes.setText(goleiroResResj.getString("nomeJogador"));
                             goleiroResResPosicao.setText(goleiroResResj.getString("posicao"));
                             goleiroResResNumero.setText(goleiroResResj.getString("numeroJogador"));
                             goleiroResResEquipes.setText(goleiroResResj.getString("apelidoEquipe"));
+                            String strIMGgoleiroResResj = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra0j = jsonArray.getJSONObject(11);
                             jogadorExtra0.setText(jogadorExtra0j.getString("nomeJogador"));
                             jogadorExtra0Posicao.setText(jogadorExtra0j.getString("posicao"));
                             jogadorExtra0Numero.setText(jogadorExtra0j.getString("numeroJogador"));
                             jogadorExtra0Equipes.setText(jogadorExtra0j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra0j = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra1j = jsonArray.getJSONObject(12);
                             jogadorExtra1.setText(jogadorExtra1j.getString("nomeJogador"));
                             jogadorExtra1Posicao.setText(jogadorExtra1j.getString("posicao"));
                             jogadorExtra1Numero.setText(jogadorExtra1j.getString("numeroJogador"));
                             jogadorExtra1Equipes.setText(jogadorExtra1j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra1j = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra2j = jsonArray.getJSONObject(13);
                             jogadorExtra2.setText(jogadorExtra2j.getString("nomeJogador"));
                             jogadorExtra2Posicao.setText(jogadorExtra2j.getString("posicao"));
                             jogadorExtra2Numero.setText(jogadorExtra2j.getString("numeroJogador"));
                             jogadorExtra2Equipes.setText(jogadorExtra2j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra2j = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra3j = jsonArray.getJSONObject(14);
                             jogadorExtra3.setText(jogadorExtra3j.getString("nomeJogador"));
                             jogadorExtra3Posicao.setText(jogadorExtra3j.getString("posicao"));
                             jogadorExtra3Numero.setText(jogadorExtra3j.getString("numeroJogador"));
                             jogadorExtra3Equipes.setText(jogadorExtra3j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra3j = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra4j = jsonArray.getJSONObject(15);
                             jogadorExtra4.setText(jogadorExtra4j.getString("nomeJogador"));
                             jogadorExtra4Posicao.setText(jogadorExtra4j.getString("posicao"));
                             jogadorExtra4Numero.setText(jogadorExtra4j.getString("numeroJogador"));
                             jogadorExtra4Equipes.setText(jogadorExtra4j.getString("apelidoEquipe"));
+                            String strIMG = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra5j = jsonArray.getJSONObject(16);
                             jogadorExtra5.setText(jogadorExtra5j.getString("nomeJogador"));
                             jogadorExtra5Posicao.setText(jogadorExtra5j.getString("posicao"));
                             jogadorExtra5Numero.setText(jogadorExtra5j.getString("numeroJogador"));
                             jogadorExtra5Equipes.setText(jogadorExtra5j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra5j = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra6j = jsonArray.getJSONObject(17);
                             jogadorExtra6.setText(jogadorExtra6j.getString("nomeJogador"));
                             jogadorExtra6Posicao.setText(jogadorExtra6j.getString("posicao"));
                             jogadorExtra6Numero.setText(jogadorExtra6j.getString("numeroJogador"));
                             jogadorExtra6Equipes.setText(jogadorExtra6j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra6j = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra7j = jsonArray.getJSONObject(18);
                             jogadorExtra7.setText(jogadorExtra7j.getString("nomeJogador"));
                             jogadorExtra7Posicao.setText(jogadorExtra7j.getString("posicao"));
                             jogadorExtra7Numero.setText(jogadorExtra7j.getString("numeroJogador"));
                             jogadorExtra7Equipes.setText(jogadorExtra7j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra7j = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra8j = jsonArray.getJSONObject(19);
                             jogadorExtra8.setText(jogadorExtra8j.getString("nomeJogador"));
                             jogadorExtra8Posicao.setText(jogadorExtra8j.getString("posicao"));
                             jogadorExtra8Numero.setText(jogadorExtra8j.getString("numeroJogador"));
                             jogadorExtra8Equipes.setText(jogadorExtra8j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra8j = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra9j = jsonArray.getJSONObject(20);
                             jogadorExtra9.setText(jogadorExtra9j.getString("nomeJogador"));
                             jogadorExtra9Posicao.setText(jogadorExtra9j.getString("posicao"));
                             jogadorExtra9Numero.setText(jogadorExtra9j.getString("numeroJogador"));
                             jogadorExtra9Equipes.setText(jogadorExtra9j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra9j = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra10j = jsonArray.getJSONObject(21);
                             jogadorExtra10.setText(jogadorExtra10j.getString("nomeJogador"));
                             jogadorExtra10Posicao.setText(jogadorExtra10j.getString("posicao"));
                             jogadorExtra10Numero.setText(jogadorExtra10j.getString("numeroJogador"));
                             jogadorExtra10Equipes.setText(jogadorExtra10j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra10j = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra11j = jsonArray.getJSONObject(22);
                             jogadorExtra11.setText(jogadorExtra11j.getString("nomeJogador"));
                             jogadorExtra11Posicao.setText(jogadorExtra11j.getString("posicao"));
                             jogadorExtra11Numero.setText(jogadorExtra11j.getString("numeroJogador"));
                             jogadorExtra11Equipes.setText(jogadorExtra11j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra11j = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra12j = jsonArray.getJSONObject(23);
                             jogadorExtra12.setText(jogadorExtra12j.getString("nomeJogador"));
                             jogadorExtra12Posicao.setText(jogadorExtra12j.getString("posicao"));
                             jogadorExtra12Numero.setText(jogadorExtra12j.getString("numeroJogador"));
                             jogadorExtra12Equipes.setText(jogadorExtra12j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra12j = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra13j = jsonArray.getJSONObject(24);
                             jogadorExtra13.setText(jogadorExtra13j.getString("nomeJogador"));
                             jogadorExtra13Posicao.setText(jogadorExtra13j.getString("posicao"));
                             jogadorExtra13Numero.setText(jogadorExtra13j.getString("numeroJogador"));
                             jogadorExtra13Equipes.setText(jogadorExtra13j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra13j = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra14j = jsonArray.getJSONObject(25);
                             jogadorExtra14.setText(jogadorExtra14j.getString("nomeJogador"));
                             jogadorExtra14Posicao.setText(jogadorExtra14j.getString("posicao"));
                             jogadorExtra14Numero.setText(jogadorExtra14j.getString("numeroJogador"));
                             jogadorExtra14Equipes.setText(jogadorExtra14j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra14j = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra15j = jsonArray.getJSONObject(26);
                             jogadorExtra15.setText(jogadorExtra15j.getString("nomeJogador"));
                             jogadorExtra15Posicao.setText(jogadorExtra15j.getString("posicao"));
                             jogadorExtra15Numero.setText(jogadorExtra15j.getString("numeroJogador"));
                             jogadorExtra15Equipes.setText(jogadorExtra15j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra15j = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra16j = jsonArray.getJSONObject(27);
                             jogadorExtra16.setText(jogadorExtra16j.getString("nomeJogador"));
                             jogadorExtra16Posicao.setText(jogadorExtra16j.getString("posicao"));
                             jogadorExtra16Numero.setText(jogadorExtra16j.getString("numeroJogador"));
                             jogadorExtra16Equipes.setText(jogadorExtra16j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra16j = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra17j = jsonArray.getJSONObject(28);
                             jogadorExtra17.setText(jogadorExtra17j.getString("nomeJogador"));
                             jogadorExtra17Posicao.setText(jogadorExtra17j.getString("posicao"));
                             jogadorExtra17Numero.setText(jogadorExtra17j.getString("numeroJogador"));
                             jogadorExtra17Equipes.setText(jogadorExtra17j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra17j = goleiroj.getString("foto");
 
                             JSONObject jogadorExtra18j = jsonArray.getJSONObject(29);
                             jogadorExtra18.setText(jogadorExtra18j.getString("nomeJogador"));
                             jogadorExtra18Posicao.setText(jogadorExtra18j.getString("posicao"));
                             jogadorExtra18Numero.setText(jogadorExtra18j.getString("numeroJogador"));
                             jogadorExtra18Equipes.setText(jogadorExtra18j.getString("apelidoEquipe"));
+                            String strIMGjogadorExtra18j = goleiroj.getString("foto");
+
+
+                            //byte[] decodedString = Base64.decode(strImage, Base64.DEFAULT);
+                            //Bitmap imgBitMap = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                            //imgView.setImageBitmap(imgBitMap);
+
+
                         }
 
                     } catch (JSONException e) {
@@ -584,4 +653,6 @@ public class EquipesCadastradas extends AppCompatActivity {
                     });
             queue.add(stringRequest);
     }
+
+
 }

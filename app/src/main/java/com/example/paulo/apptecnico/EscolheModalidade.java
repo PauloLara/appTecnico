@@ -12,9 +12,15 @@ public class EscolheModalidade extends AppCompatActivity {
         setContentView(R.layout.activity_escolhe_modalidade);
     }
 
-    public void clickBtnFutsal(View view) {
+    /*public void clickBtnFutsal(View view) {
         Intent it;
         it = new Intent(EscolheModalidade.this, AcoesFutsal.class);
+        startActivity(it);
+    }*/
+
+    public void clickBtnFutsal(View view) {
+        Intent it;
+        it = new Intent(EscolheModalidade.this, MeioEventos.class);
         startActivity(it);
     }
 

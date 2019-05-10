@@ -959,59 +959,149 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
-        <Button
-            android:id="@+id/cadastre"
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
-            android:background="#f5f5f0"
-            android:text="@string/mais"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais61"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
 
-        <Button
-            android:id="@+id/cadastre"
-            android:layout_margin="1dp"
-            android:layout_width="30dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="#f5f5f0"
-            android:text=" - "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            <Button
+                android:id="@+id/menos61"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
 
-        <Button
-            android:id="@+id/cadastre"
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
-            android:background="#f5f5f0"
-            android:text=" + "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais62"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
 
-        <Button
-            android:id="@+id/cadastre"
+            <Button
+                android:id="@+id/menos62"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="30dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="#f5f5f0"
-            android:text=" - "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais63"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/menos63"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais64"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/menos64"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
 
     </TableRow>
 
@@ -1034,59 +1124,149 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
-        <Button
-            android:id="@+id/cadastre"
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
-            android:background="#f5f5f0"
-            android:text="@string/mais"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais71"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
 
-        <Button
-            android:id="@+id/cadastre"
-            android:layout_margin="1dp"
-            android:layout_width="30dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="#f5f5f0"
-            android:text=" - "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            <Button
+                android:id="@+id/menos71"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
 
-        <Button
-            android:id="@+id/cadastre"
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
-            android:background="#f5f5f0"
-            android:text=" + "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais72"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
 
-        <Button
-            android:id="@+id/cadastre"
+            <Button
+                android:id="@+id/menos72"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="30dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="#f5f5f0"
-            android:text=" - "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais73"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/menos73"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais74"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/menos74"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
 
     </TableRow>
 
@@ -1110,59 +1290,149 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
-        <Button
-            android:id="@+id/cadastre"
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
-            android:background="#f5f5f0"
-            android:text="@string/mais"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais81"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
 
-        <Button
-            android:id="@+id/cadastre"
-            android:layout_margin="1dp"
-            android:layout_width="30dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="#f5f5f0"
-            android:text=" - "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            <Button
+                android:id="@+id/menos81"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
 
-        <Button
-            android:id="@+id/cadastre"
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
-            android:background="#f5f5f0"
-            android:text=" + "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais82"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
 
-        <Button
-            android:id="@+id/cadastre"
+            <Button
+                android:id="@+id/menos82"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="30dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="#f5f5f0"
-            android:text=" - "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais83"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/menos83"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais84"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/menos84"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
 
     </TableRow>
 
@@ -1185,59 +1455,149 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
-        <Button
-            android:id="@+id/cadastre"
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
-            android:background="#f5f5f0"
-            android:text="@string/mais"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais91"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
 
-        <Button
-            android:id="@+id/cadastre"
-            android:layout_margin="1dp"
-            android:layout_width="30dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="#f5f5f0"
-            android:text=" - "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            <Button
+                android:id="@+id/menos91"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
 
-        <Button
-            android:id="@+id/cadastre"
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
-            android:background="#f5f5f0"
-            android:text=" + "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais92"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
 
-        <Button
-            android:id="@+id/cadastre"
+            <Button
+                android:id="@+id/menos92"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="30dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="#f5f5f0"
-            android:text=" - "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais93"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/menos93"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais94"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/menos94"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
 
     </TableRow>
 
@@ -1260,59 +1620,149 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
-        <Button
-            android:id="@+id/cadastre"
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
-            android:background="#f5f5f0"
-            android:text="@string/mais"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais101"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
 
-        <Button
-            android:id="@+id/cadastre"
-            android:layout_margin="1dp"
-            android:layout_width="30dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="#f5f5f0"
-            android:text=" - "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            <Button
+                android:id="@+id/menos101"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
 
-        <Button
-            android:id="@+id/cadastre"
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
-            android:background="#f5f5f0"
-            android:text=" + "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais102"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
 
-        <Button
-            android:id="@+id/cadastre"
+            <Button
+                android:id="@+id/menos102"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="30dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="#f5f5f0"
-            android:text=" - "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais103"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/menos103"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais104"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/menos104"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
 
     </TableRow>
 
@@ -1336,59 +1786,149 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
-        <Button
-            android:id="@+id/cadastre"
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
-            android:background="#f5f5f0"
-            android:text="@string/mais"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mai111"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
 
-        <Button
-            android:id="@+id/cadastre"
-            android:layout_margin="1dp"
-            android:layout_width="30dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="#f5f5f0"
-            android:text=" - "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            <Button
+                android:id="@+id/menos111"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
 
-        <Button
-            android:id="@+id/cadastre"
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
-            android:background="#f5f5f0"
-            android:text=" + "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais112"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
 
-        <Button
-            android:id="@+id/cadastre"
+            <Button
+                android:id="@+id/menos112"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="30dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="#f5f5f0"
-            android:text=" - "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais113"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/menos113"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais114"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/menos114"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
 
     </TableRow>
 
@@ -1412,59 +1952,149 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="13dp" />
 
-        <Button
-            android:id="@+id/cadastre"
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
-            android:background="#f5f5f0"
-            android:text="@string/mais"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais121"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
 
-        <Button
-            android:id="@+id/cadastre"
-            android:layout_margin="1dp"
-            android:layout_width="30dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="#f5f5f0"
-            android:text=" - "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            <Button
+                android:id="@+id/menos121"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
 
-        <Button
-            android:id="@+id/cadastre"
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="25dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
-            android:background="#f5f5f0"
-            android:text=" + "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais122"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
 
-        <Button
-            android:id="@+id/cadastre"
+            <Button
+                android:id="@+id/menos122"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
             android:layout_margin="1dp"
-            android:layout_width="30dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="#f5f5f0"
-            android:text=" - "
-            android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            tools:ignore="DuplicateIds" />
+            >
+            <Button
+                android:id="@+id/mais123"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/menos123"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais124"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+
+            <Button
+                android:id="@+id/menos124"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptPivo"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
+        </TableRow>
 
     </TableRow>
 

@@ -1,0 +1,2754 @@
+
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".AcoesFutsal"
+xmlns:android="http://schemas.android.com/apk/res/android">
+
+<TableLayout
+
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/txtNomeEquipe"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_column="0"
+        android:layout_margin="1dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:textStyle="bold" />
+
+
+    <TableRow
+        android:background="#000000"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Atleta"
+            android:layout_margin="1dp"
+            android:layout_column="0"
+            android:background="#FFFFFF"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="13dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="PASSE ERR"
+            android:layout_margin="1dp"
+            android:layout_column="1"
+            android:background="#ff9999"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="11dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="CH A GOL"
+            android:layout_margin="1dp"
+            android:background="#009900"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_column="2"
+            android:textSize="11dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="PERDIDA"
+            android:layout_margin="1dp"
+            android:background="#3366ff"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_column="2"
+            android:textSize="11dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="INTERCEPT"
+            android:layout_margin="1dp"
+            android:background="#009900"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_column="2"
+            android:textSize="11dp"           />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        android:background="#009900">
+
+        <TextView
+            android:id="@+id/fieldsGoleiro"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_margin="1dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais11"
+                android:layout_margin="1dp"
+                android:layout_width="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserGoleiro"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos11"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserGoleiro"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais12"
+                android:layout_margin="1dp"
+                android:layout_width="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesGoleiro"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos12"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesGoleiro"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais13"
+                android:layout_margin="1dp"
+                android:layout_width="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasGoleiro"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos13"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasGoleiro"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais14"
+                android:layout_margin="1dp"
+                android:layout_width="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptGoleiro"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos14"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptGoleiro"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+    </TableRow>
+
+
+
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/fieldsFixo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_margin="1dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais21"
+                android:layout_margin="1dp"
+                android:layout_width="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserFixo"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos21"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserFixo"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais22"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesFixo"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos22"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesFixo"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais23"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasFixo"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos23"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasFixo"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais24"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptFixo"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos24"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptFixo"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+    </TableRow>
+
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/fieldsAlaEsq"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_margin="1dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais31"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserAlaEsq"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos31"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserAlaEsq"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais32"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesAlaEsq"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos32"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesAlaEsq"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais33"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasAlaEsq"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos33"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasAlaEsq"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais34"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptAlaEsq"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos34"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptAlaEsq"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+    </TableRow>
+
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/fieldsAlaDir"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_margin="1dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais41"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserAlaDir"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos41"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserAlaDir"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais42"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesAlaDir"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos42"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesAlaDir"
+                android:textColor="#CC0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais43"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasAlaDir"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos43"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasAlaDir"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais44"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptAlaDir"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos44"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptAlaDir"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+    </TableRow>
+
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/fieldsPivo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_margin="1dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais51"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserPivo"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos51"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserPivo"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais52"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesPivo"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos52"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesPivo"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais53"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasPivo"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos53"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasPivo"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais54"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptPivo"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos54"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptPivo"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+    </TableRow>
+
+    <TableRow
+        android:background="#000000"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/fieldsGoleiroRes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_margin="1dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais61"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserGoleiroRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos61"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserGoleiroRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais62"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesGoleiroRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos62"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesGoleiroRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais63"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasGoleiroRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos63"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasGoleiroRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais64"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptGoleiroRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos64"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptGoleiroRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+    </TableRow>
+
+
+    <TableRow
+        android:background="#000000"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/fieldsFixoRes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_margin="1dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais71"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserFixoRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos71"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserFixoRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais72"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesFixoRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos72"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesFixoRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais73"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasFixoRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos73"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasFixoRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais74"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptFixoRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos74"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptFixoRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+    </TableRow>
+
+
+    <!-- ************  LINHA DO ALA ESQUERDA RESERVA DA TABELA DE CIMA ******************************************************************-->
+    <TableRow
+        android:background="#000000"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/fieldsAlaEsqRes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_margin="1dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais81"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserAlaEsqRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos81"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserAlaEsqRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais82"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesAlaEsqRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos82"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesAlaEsqRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais83"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasAlaEsqRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos83"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasAlaEsqRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais84"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptAlaEsqRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos84"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptAlaEsqRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+    </TableRow>
+
+    <!-- ************  LINHA DO ALA DIREITA RESERVA DA TABELA DE CIMA ******************************************************************-->
+    <TableRow
+        android:background="#000000"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/fieldsAlaDirRes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_margin="1dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais91"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserAlaDirRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos91"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserAlaDirRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais92"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesAlaDirRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos92"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesAlaDirRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais93"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasAlaDirRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos93"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasAlaDirRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais94"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptAlaDirRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos94"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptAlaDirRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+    </TableRow>
+
+    <!-- ************  LINHA DO PivoRes RESERVA TABELA DE CIMA ******************************************************************-->
+    <TableRow
+        android:background="#000000"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/fieldsPivoRes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_margin="1dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais101"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserPivoRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos101"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserPivoRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais102"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesPivoRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos102"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesPivoRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais103"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasPivoRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos103"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasPivoRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais104"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptPivoRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos104"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptPivoRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+    </TableRow>
+
+
+    <!-- ************  LINHA DO RESERVA DO RESERVA DO GOLEIRO TABELA DE CIMA ******************************************************************-->
+    <TableRow
+        android:background="#000000"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/fieldsGoleiroResRes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_margin="1dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mai111"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserGoleiroResRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos111"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserGoleiroResRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais112"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesGoleiroResRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos112"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesGoleiroResRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais113"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasGoleiroResRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos113"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasGoleiroResRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais114"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptGoleiroResRes"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos114"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptGoleiroResRes"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+    </TableRow>
+
+
+    <!-- ************  LINHA DO JOGADOR EXTRA TABELA DE CIMA ******************************************************************-->
+    <TableRow
+        android:background="#000000"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/fieldsJogadorExtra"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_margin="1dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="13dp" />
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais121"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPasserJogadorExtra"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos121"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPasserJogadorExtra"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais122"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisChutesJogadorExtra"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos122"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosChutesJogadorExtra"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais123"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisPerdidasJogadorExtra"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos123"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosPerdidasJogadorExtra"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+        <TableRow
+            android:background="#000000"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_margin="1dp"
+            >
+            <Button
+                android:id="@+id/mais124"
+                android:layout_margin="1dp"
+                android:layout_width="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="#c6ecd9"
+                android:text=" + "
+                android:onClick="maisInterceptJogadorExtra"
+                android:textColor="#008000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+            <Button
+                android:id="@+id/menos124"
+                android:layout_margin="1dp"
+                android:layout_width="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#f5f5f0"
+                android:text=" - "
+                android:onClick="menosInterceptJogadorExtra"
+                android:textColor="#cc0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+
+    </TableRow>
+
+    <!-- ************  BOTÃO FINALIZAR ******************************************************************-->
+
+    <Button
+        android:id="@+id/finalizar"
+        android:layout_width="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="1dp"
+        android:background="#f5f5f0"
+        android:text=" Finalizar "
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        tools:ignore="DuplicateIds,OnClick" />
+
+
+    <!-- ************  CABEÇALHO DA TABELA DE BAIXO ******************************************************************-->
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/mostra_atleta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Atl "
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/mostra_passer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pass Err"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/mostra_chutegol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chut Gol"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/mostra_perdida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Perdidas"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/mostra_intercept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Intercepts"
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+
+    <!-- ************  LINHA DAS AÇÕES DO GOLEIRO DA TABELA DE BAIXO ******************************************************************-->
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/atleta_goleiro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/passer_goleiro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chuteg_goleiro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/perdida_goleiro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/intercep_goleiro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+
+    <!-- ************  LINHA DAS AÇÕES DO FIXO DA TABELA DE BAIXO ******************************************************************-->
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/atleta_fixo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/passer_fixo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chuteg_fixo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/perdida_fixo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/intercep_fixo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+
+    <!-- ************  LINHA DAS AÇÕES DO ALA ESQUERDO DA TABELA DE BAIXO ******************************************************************-->
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/atleta_alaesq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/passer_alaesq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chuteg_alaesq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/perdida_alaesq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/intercep_alaesq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+
+    <!-- ************  LINHA DAS AÇÕES DO ALA DIREITO DA TABELA DE BAIXO ******************************************************************-->
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/atleta_aladir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/passer_aladir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chuteg_aladir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/perdida_aladir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/intercep_aladir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+
+    <!-- ************  LINHA DAS AÇÕES DO PIVÔ DA TABELA DE BAIXO ******************************************************************-->
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/atleta_pivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/passer_pivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chuteg_pivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/perdida_pivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/intercep_pivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+
+    <!-- ************  LINHA DAS AÇÕES DO GOLEIRO RESERVA DA TABELA DE BAIXO ******************************************************************-->
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/atleta_goleiroRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/passer_goleiroRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chuteg_goleiroRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/perdida_goleiroRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/intercep_goleiroRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+
+    <!-- ************  LINHA DAS AÇÕES DO FIXO DA TABELA DE BAIXO ******************************************************************-->
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/atleta_fixoRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp"
+            tools:ignore="DuplicateIds,OnClick" />
+
+        <TextView
+            android:id="@+id/passer_fixoRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chuteg_fixoRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/perdida_fixoRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/intercep_fixoRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+
+    <!-- ************  LINHA DAS AÇÕES DO ALA ESQUERDO RESERVA DA TABELA DE BAIXO ******************************************************************-->
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/atleta_alaesqRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/passer_alaesqRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chuteg_alaesqRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/perdida_alaesqRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/intercep_alaesqRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+
+    <!-- ************  LINHA DAS AÇÕES DO ALA DIREITO RESERVA DA TABELA DE BAIXO ******************************************************************-->
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/atleta_aladirRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/passer_aladirRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chuteg_aladirRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/perdida_aladirRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/intercep_aladirRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+
+    <!-- ************  LINHA DAS AÇÕES DO PIVÔ RESERVA DA TABELA DE BAIXO ******************************************************************-->
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/atleta_pivoRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/passer_pivoRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chuteg_pivoRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/perdida_pivoRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/intercep_pivoRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+    <!-- ************  LINHA DAS AÇÕES DO GOLEIRO RESERVA DO RESERVA DA TABELA DE BAIXO ******************************************************************-->
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/atleta_goleiroResRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/passer_goleiroResRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chuteg_goleiroResRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/perdida_goleiroResRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/intercep_goleiroResRes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+
+    <!-- ************  LINHA DAS AÇÕES DO JOGADOR EXTRA DA TABELA DE BAIXO ******************************************************************-->
+    <TableRow
+        android:background="#009900"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="1dp"
+        >
+
+        <TextView
+            android:id="@+id/atleta_jogadorExtra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/passer_jogadorExtra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/chuteg_jogadorExtra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/perdida_jogadorExtra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/intercep_jogadorExtra"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+
+
+
+
+</TableLayout>
+</ScrollView>
+

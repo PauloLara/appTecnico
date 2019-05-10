@@ -32,7 +32,6 @@
         android:hint="Nome do jogador"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtFixo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread_inside" />
@@ -50,7 +49,6 @@
         android:hint="N°"
         android:inputType="numberDecimal"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/numFixo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
         app:layout_constraintTop_toTopOf="parent" />

@@ -1,0 +1,785 @@
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MeioEventos"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <TableLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:shrinkColumns="*"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/date"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:hint="Selecione a Data do Jogo"
+            android:padding="8dp"
+            android:textColor="#897"
+            android:textColorHint="#090"
+            android:textIsSelectable="false"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spTorneio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp" />
+
+        <TextView
+            android:id="@+id/txtNomeEquipe"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_column="0"
+            android:layout_margin="1dp"
+            android:background="#FFFFFF"
+            android:gravity="center|left"
+            android:hint="    Nome da equipe cadastrada no torneio:"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/spinnerAdversario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp" />
+
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="162dp"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:text="   ATLETA   "
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/selecione"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:text="    SELECIONAR   "
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mediaJogos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:text="MÉDIA ≤ 10 JOGOS"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            android:background="#009900">
+
+            <TextView
+                android:id="@+id/fieldGoleiro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/chkGoleiro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+            <TextView
+                android:id="@+id/mediaJogosGoleiro"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:id="@+id/fieldFixo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/chkFixo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/mediaJogosFixo"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:background="#009900"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldAlaEsq"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/chkAlaEsq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/mediaJogosAlaEsq"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:id="@+id/fieldAlaDir"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+
+            <CheckBox
+                android:id="@+id/chkAlaDir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/mediaJogosAlaDir"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:background="#009900"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldPivo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/chkPivo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/mediaJogosPivo"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:id="@+id/fieldGoleiroRes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/chkGoleiroRes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/mediaJogosGoleiroRes"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            android:background="#009900">
+
+            <TextView
+                android:id="@+id/fieldFixoRes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/chkFixoRes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/mediaJogosFixoRes"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+
+        <!-- ************  LINHA DO ALA ESQUERDA RESERVA DA TABELA DE CIMA ******************************************************************-->
+        <TableRow
+            android:background="@color/colorPrimary"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldAlaEsqRes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/chkAlaEsqRes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/mediaJogosAlaEsqRes"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <!-- ************  LINHA DO ALA DIREITA RESERVA DA TABELA DE CIMA ******************************************************************-->
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            android:background="#009900">
+
+            <TextView
+                android:id="@+id/fieldAlaDirRes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/chkAlaDirRes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/mediaJogosAlaDirRes"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <!-- ************  LINHA DO PIVO RESERVA TABELA DE CIMA ******************************************************************-->
+        <TableRow
+            android:background="@color/colorPrimary"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldPivoRes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/chkPivoRes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/mediaJogosPivoRes"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+
+        <!-- ************  LINHA DO RESERVA DO RESERVA DO GOLEIRO TABELA DE CIMA ******************************************************************-->
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            android:background="#009900">
+
+            <TextView
+                android:id="@+id/fieldGoleiroResRes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/chkGoleiroResRes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/mediaJogosGoleiroResRes"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+
+        <!-- ************  LINHA DO JOGADOR EXTRA TABELA DE CIMA ******************************************************************-->
+        <TableRow
+            android:background="@color/colorPrimary"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/chkJogadorExtra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+
+            <TextView
+                android:id="@+id/mediaJogosJogadorExtra"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <!-- ************  LINHA DO JOGADOR EXTRA TABELA DE CIMA ******************************************************************-->
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            android:background="#009900">
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/chkJogadorExtra1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+
+            <TextView
+                android:id="@+id/mediaJogosJogadorExtra1"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <!-- ************  LINHA DO JOGADOR EXTRA TABELA DE CIMA ******************************************************************-->
+        <TableRow
+            android:background="@color/colorPrimary"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/chkJogadorExtra2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+
+            <TextView
+                android:id="@+id/mediaJogosJogadorExtra2"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <!-- ************  LINHA DO JOGADOR EXTRA TABELA DE CIMA ******************************************************************-->
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            android:background="#009900">
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/chkJogadorExtra3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+
+            <TextView
+                android:id="@+id/mediaJogosJogadorExtra3"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <!-- ************  LINHA DO JOGADOR EXTRA TABELA DE CIMA ******************************************************************-->
+        <TableRow
+            android:background="@color/colorPrimary"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/chkJogadorExtra4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+
+            <TextView
+                android:id="@+id/mediaJogosJogadorExtra4"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <!-- ************  LINHA DO JOGADOR EXTRA TABELA DE CIMA ******************************************************************-->
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            android:background="#009900">
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/chkJogadorExtra5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+
+            <TextView
+                android:id="@+id/mediaJogosJogadorExtra5"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <!-- ************  LINHA DO JOGADOR EXTRA TABELA DE CIMA ******************************************************************-->
+        <TableRow
+            android:background="@color/colorPrimary"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:id="@+id/fieldJogadorExtra6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_margin="1dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="16dp" />
+
+            <CheckBox
+                android:id="@+id/chkJogadorExtra6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+
+            <TextView
+                android:id="@+id/mediaJogosJogadorExtra6"
+                android:layout_width="155dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <!-- ************  BOTÃO FINALIZAR ******************************************************************-->
+
+        <Button
+            android:id="@+id/começar"
+            android:layout_margin="1dp"
+            android:layout_width="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="#f5f5f0"
+            android:onClick="clickBtnIrEventos"
+            android:text=" começar "
+            android:textColor="@color/colorPrimary"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            tools:ignore="DuplicateIds,OnClick" />
+
+
+    </TableLayout>
+</ScrollView>

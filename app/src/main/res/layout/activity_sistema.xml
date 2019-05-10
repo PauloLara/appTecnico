@@ -18,7 +18,7 @@
         android:layout_marginRight="1dp"
         android:background="@color/colorAccent"
         android:onClick="clickBtnCadastrarTorneios"
-        android:text="cadastrar torneios"
+        android:text="cadastrar torneios a disputar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +26,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/btnConfigJogadores"
+        android:id="@+id/btnDragDrop"
         android:layout_width="0dp"
         android:layout_height="128dp"
         android:layout_marginStart="1dp"
@@ -36,7 +36,7 @@
         android:layout_marginRight="1dp"
         android:background="@color/colorPrimary"
         android:onClick="clickBtnCadastrarJogadores"
-        android:text="cadastrar jogadores"
+        android:text="cadastrar jogadores do clube"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,23 +53,30 @@
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
         android:background="@color/colorPrimaryDark"
-        android:onClick="clickBtnDeletar"
-        android:text="deletar dados"
+        android:onClick="clickBtnIrEquipeConfig"
+        android:text="cadastrar equipe por torneio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnConfigJogadores"
+        app:layout_constraintTop_toBottomOf="@+id/btnDragDrop"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textViewInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="110dp"
-        android:text="Informações:"
+    <Button
+        android:id="@+id/btnDeletarDados2"
+        android:layout_width="0dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:background="@android:color/darker_gray"
+        android:onClick="btnIrCadastradas"
+        android:text="Ver equipes cadastradas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDeletarDados" />
+        app:layout_constraintTop_toBottomOf="@+id/btnDeletarDados"
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>

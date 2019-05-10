@@ -30,7 +30,6 @@
         android:hint="Nome do jogador"
         android:inputType="textPersonName"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtFixo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread_inside" />
@@ -48,7 +47,6 @@
         android:hint="N°"
         android:inputType="numberDecimal"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/numFixo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtNomeJogador"
         app:layout_constraintTop_toTopOf="parent" />
@@ -106,46 +104,6 @@
         app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgFoto" />
-
-<!--    <TableRow
-        android:layout_width="0dp"
-        android:layout_height="36dp"
-        android:layout_margin="1dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCadJogador"
-        tools:ignore="MissingConstraints">
-
-        <TextView
-            android:id="@+id/posicao"
-            android:layout_width="110dp"
-            android:layout_height="36dp"
-            android:text=""
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/nomeJogador"
-            android:layout_width="210dp"
-            android:layout_height="36dp"
-            android:text=""
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/numeroJogador"
-            android:layout_width="36dp"
-            android:layout_height="40dp"
-            android:text=""
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
-    </TableRow>-->
 
 
     <android.support.v7.widget.RecyclerView

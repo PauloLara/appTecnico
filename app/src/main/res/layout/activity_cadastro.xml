@@ -82,11 +82,11 @@
         android:layout_marginRight="58dp"
         android:ems="10"
         android:hint="Nome do clube"
-        android:inputType="textPassword"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tvdados" />
 
     <Button
         android:id="@+id/cadastrar"
@@ -144,7 +144,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ou" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvdados"
         android:layout_width="0dp"
         android:layout_height="20dp"
         android:layout_marginStart="58dp"

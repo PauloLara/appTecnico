@@ -40,6 +40,11 @@
         <activity android:name=".Sistema"/>
         <activity android:name=".DeletarDados"/>
         <activity android:name=".EquipesCadastradas"/>
+        <activity android:name=".UserListActivity"/>
+        <activity android:name=".GridActivity"/>
+        <activity android:name=".TestLayouts"/>
+        <activity android:name=".MeioEventos"/>
+        <activity android:name=".ClicarEventosFutsal"/>
 
     </application>
 

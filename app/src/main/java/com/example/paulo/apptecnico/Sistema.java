@@ -24,9 +24,15 @@ public class Sistema extends AppCompatActivity {
         startActivity(it);
     }
 
-    public void clickBtnDeletar(View view){
+    public void clickBtnIrEquipeConfig(View view){
         Intent it;
-        it = new Intent(Sistema.this, DeletarDados.class);
+        it = new Intent(Sistema.this, EquipeFutsalConfig.class);
+        startActivity(it);
+    }
+
+    public void btnIrCadastradas(View view){
+        Intent it;
+        it = new Intent(Sistema.this, EquipesCadastradas.class);
         startActivity(it);
     }
 }

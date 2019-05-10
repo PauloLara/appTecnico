@@ -29,11 +29,11 @@ public class Cadastro extends AppCompatActivity {
     AlertDialog.Builder alertDialog;
     Boolean CheckEditText;
 
-    private void sendEmail() {
+    /*private void sendEmail() {
         String email = txtEmail.getText().toString().trim();
         SendMail sm = new SendMail(Cadastro.this, email, "Teste", "Quero ver ser chegou");
         sm.execute();
-    }
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,7 +105,7 @@ public class Cadastro extends AppCompatActivity {
                 VerificaCamposVazios();
                 if (CheckEditText) {
                     UserLogin();
-                    sendEmail();
+                  //  sendEmail();
                 } else {
                     Toast.makeText(Cadastro.this, "Favor, preencha todos os campos.", Toast.LENGTH_LONG).show();
                 }
@@ -123,6 +123,8 @@ public class Cadastro extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(Cadastro.this);
 
         String url = "http://192.168.15.17/cadastro.php";
+        //String url = "https://appscout.000webhostapp.com/cadastro.php";
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(final String response) {

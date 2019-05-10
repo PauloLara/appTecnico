@@ -29,11 +29,18 @@ public class Inicial extends AppCompatActivity {
         textView.setText(textView.getText() + TempHolder);
     }
 
-    public void clickBtnIrPartidaConfig(View view){
+    /*public void clickBtnIrPartidaConfig(View view){
         Intent it;
         it = new Intent(Inicial.this, EscolheModalidade.class);
         startActivity(it);
+    }*/
+
+    public void clickBtnIrPartidaConfig(View view){
+        Intent it;
+        it = new Intent(Inicial.this, MeioEventos.class);
+        startActivity(it);
     }
+
 
     /*public void clickBtnIrEstatisticas(View view){
         Intent it;
@@ -45,10 +52,11 @@ public class Inicial extends AppCompatActivity {
         it = new Intent(Inicial.this, CadastrarJogadores.class);
         startActivity(it);
     }
-    //cadastra um novo torneio
-    public void clickBtnIrTorneioCadastro(View view){
+
+
+    public void clickBtnIrTestLayouts(View view){
         Intent it;
-        it = new Intent(Inicial.this, TorneioCadastro.class);
+        it = new Intent(Inicial.this, TestLayouts.class);
         startActivity(it);
     }
 
@@ -58,15 +66,21 @@ public class Inicial extends AppCompatActivity {
         startActivity(it);
     }
 
-    public void clickBtnIrEquipeConfig(View view){
+    /*public void clickBtnIrEquipeConfig(View view){
         Intent it;
         it = new Intent(Inicial.this, EquipeConfig.class);
         startActivity(it);
-    }
+    }*/
 
     public void clickBtnIrSistema(View view){
         Intent it;
         it = new Intent(Inicial.this, Sistema.class);
+        startActivity(it);
+    }
+
+    public void clickBtnDeletar(View view){
+        Intent it;
+        it = new Intent(Inicial.this, DeletarDados.class);
         startActivity(it);
     }
 

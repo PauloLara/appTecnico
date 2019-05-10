@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -15,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,6 +38,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -65,16 +68,21 @@ public class CadastrarJogadores extends AppCompatActivity{
     private static final int MY_CAMERA_PERMISSION_CODE = 100;
     ImageView img;
     Button upload;
-    private Bitmap jogadorBitmap;
+    private Bitmap bitmap;
+    ByteArrayOutputStream saida;
+    String encodedImage;
     private RequestQueue mRequestQueue;
     RecyclerView recyclerView;
     String url = "http://192.168.15.17/cadastro_jogador.php";
     String url_busca = "http://192.168.15.17/busca_jogadores.php";
 
+    @SuppressLint("WrongThread")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar_jogadores);
         img = findViewById(R.id.imgFoto);
+
+
         upload = findViewById(R.id.btnUpload);
 
         editTextNomeJogador = findViewById(R.id.txtNomeJogador);
@@ -109,6 +117,8 @@ public class CadastrarJogadores extends AppCompatActivity{
             }
         });
 
+
+
         spinnerPosicoes = (Spinner) findViewById(R.id.spinnerPosicao);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, nomesPosicoes);
         ArrayAdapter<String> spinnerArrayAdapter = arrayAdapter;
@@ -138,6 +148,7 @@ public class CadastrarJogadores extends AppCompatActivity{
 
 
     }//AQUI TERMINA O ONCREATE()
+
 
 
     public void carregaCadastrados(){
@@ -183,6 +194,14 @@ public class CadastrarJogadores extends AppCompatActivity{
         nomeJogador = editTextNomeJogador.getText().toString();
         numeroJogador = editTextNumeroJogador.getText().toString();
 
+        //Código….
+        bitmap = ((BitmapDrawable)img.getDrawable()).getBitmap();
+        saida = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG,100,saida);
+        byte[] imageBytes = saida.toByteArray();
+        encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        //Mais código..
+
         RequestQueue queue = Volley.newRequestQueue(CadastrarJogadores.this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -218,6 +237,7 @@ public class CadastrarJogadores extends AppCompatActivity{
                 params.put("posicao", stPosicao);
                 params.put("nomeJogador", nomeJogador);
                 params.put("numeroJogador", numeroJogador);
+                params.put("foto", encodedImage);
                 return params;
             }
         };

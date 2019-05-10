@@ -1,7 +1,6 @@
 package com.example.paulo.apptecnico;
 
 import android.content.DialogInterface;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -25,7 +24,7 @@ import java.util.Map;
 
 public class TorneioCadastro extends AppCompatActivity {
     EditText editTextNomeTorneio;
-    Button buttonCadastrarTorneio, buttonFutsal, buttonCampo;
+    Button buttonCadastrarTorneio;//, buttonFutsal, buttonCampo;
     AlertDialog.Builder alertDialog;
     String nomeTorneio_text;
     Boolean CheckEditText;
@@ -36,10 +35,10 @@ public class TorneioCadastro extends AppCompatActivity {
         setContentView(R.layout.activity_torneio_cadastro);
         editTextNomeTorneio = findViewById(R.id.editTextTorneioCadastro);
         buttonCadastrarTorneio = findViewById(R.id.buttonTorneioCadastro);
-        buttonFutsal = findViewById(R.id.btnConfigClube);
-        buttonCampo = findViewById(R.id.btnConfigJogadores);
+       // buttonFutsal = findViewById(R.id.btnDelList);
+       // buttonCampo = findViewById(R.id.btnDragDrop);
         int color = 0x8ffffff;
-        buttonFutsal.setOnClickListener(new View.OnClickListener() {
+        /*buttonFutsal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int color1 = 0x80fc731e; // 50% verde
@@ -47,9 +46,9 @@ public class TorneioCadastro extends AppCompatActivity {
                 buttonCampo.getBackground().setColorFilter(null);
                 editTextNomeTorneio.setHint("Nome do torneio de futsal");
             }
-        });
+        });*/
 
-        buttonCampo.setOnClickListener(new View.OnClickListener() {
+        /*buttonCampo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int color2 = 0x8000FF00; // 50% verde
@@ -57,7 +56,7 @@ public class TorneioCadastro extends AppCompatActivity {
                 buttonFutsal.getBackground().setColorFilter(null);
                 editTextNomeTorneio.setHint("Nome do torneio de campo");
             }
-        });
+        });*/
 
         editTextNomeTorneio.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -88,6 +87,8 @@ public class TorneioCadastro extends AppCompatActivity {
         nomeTorneio = editTextNomeTorneio.getText().toString();
         RequestQueue queue = Volley.newRequestQueue(TorneioCadastro.this);
         String url = "http://192.168.15.17/cadastro_torneio.php";
+
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
