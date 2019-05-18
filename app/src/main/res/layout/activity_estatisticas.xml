@@ -1,9 +1,364 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Estatisticas">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtTitulo"
+                    android:layout_width="276dp"
+                    android:layout_height="38dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="VERIFIQUE AS MÉDIAS"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/btnSair"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="1dp"
+                    android:background="#f5f5f0"
+                    android:onClick="clickBtnSair"
+                    android:text=" Sair "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds,OnClick" />
+            </TableRow>
+        </TableLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/txtSelecione"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Selecione o que deseja analisar:" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/radio_group_quem">
+
+            <RadioButton
+                android:id="@+id/radio_equipe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Torneio" />
+
+            <RadioButton
+                android:id="@+id/radio_jogador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jogador" />
+
+            <TextView
+                android:id="@+id/txtGuarda"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textSize="6sp" />
+
+            <TextView
+                android:id="@+id/txtReservaJog"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:textSize="6sp" />
+
+            <TextView
+                android:id="@+id/txtReservaTorn"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textSize="6sp" />
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/spinnerEquipeOuJogador"
+            android:layout_width="match_parent"
+            android:layout_height="42dp" />
+
+        <TextView
+            android:id="@+id/txtSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Escolha o(s) jogo(s) que deseja analisar:" />
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="bottom"
+                android:paddingRight="20dp">
+
+                <RadioGroup
+                    android:id="@+id/radio_group_jogos"
+                    android:layout_width="165dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/radio_ultimo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Último jogo" />
+
+                    <RadioButton
+                        android:id="@+id/radio_tres"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Últimos 3 jogos" />
+
+                    <RadioButton
+                        android:id="@+id/radio_cinco"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Últimos 5 jogos" />
+
+                    <RadioButton
+                        android:id="@+id/radio_dez"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Últimos 10 jogos" />
+
+                    <RadioButton
+                        android:id="@+id/radio_todos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Todos jogos" />
+
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/verifica"
+                    android:layout_width="181dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginBottom="0dp"
+                    android:background="@color/colorPrimary"
+                    android:text="verificar" />
+
+            </TableRow>
+        </TableLayout>
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@android:color/darker_gray" />
+
+
+        <!--CABEÇALHO DA TABELA DE BAIXO-->
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <TextView
+                    android:id="@+id/txtcabecalho00"
+                    android:layout_width="94dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp" />
+
+                <TextView
+                    android:id="@+id/txtcabecalho01"
+                    android:layout_width="259dp"
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+        </TableLayout>
+        <!--TABELA DE BAIXO-->
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <TextView
+                    android:id="@+id/txttitulo00"
+                    android:layout_width="94dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="Intervalo:" />
+
+                <TextView
+                    android:id="@+id/txttitulo01"
+                    android:layout_width="144dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:text="Ação:" />
+
+                <TextView
+                    android:id="@+id/txttitulo02"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:text="Média por partida:" />
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <TextView
+                    android:id="@+id/txtlinha00"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="10dp" />
+
+                <TextView
+                    android:id="@+id/txtlinha01"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="20dp"
+                    android:text="Passes Errados" />
+
+                <TextView
+                    android:id="@+id/txtlinha02"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="18sp" />
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <TextView
+                    android:id="@+id/txtlinha10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="10dp" />
+
+                <TextView
+                    android:id="@+id/txtlinha11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="20dp"
+                    android:text="Chutes a gol" />
+
+                <TextView
+                    android:id="@+id/txtlinha12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="18sp" />
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <TextView
+                    android:id="@+id/txtlinha20"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="10dp" />
+
+                <TextView
+                    android:id="@+id/txtlinha21"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="20dp"
+                    android:text="Bolas perdidas" />
+
+                <TextView
+                    android:id="@+id/txtlinha22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="18sp" />
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="45dp">
+
+                <TextView
+                    android:id="@+id/txtlinha30"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="10dp" />
+
+                <TextView
+                    android:id="@+id/txtlinha31"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="20dp"
+                    android:text="Interceptações" />
+
+                <TextView
+                    android:id="@+id/txtlinha32"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="18sp" />
+
+            </TableRow>
+        </TableLayout>
+        <View
+            android:id="@+id/divider6"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginBottom="30dp"
+            android:background="@android:color/darker_gray" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <!--<org.eazegraph.lib.charts.PieChart
+                android:id="@+id/myPiechart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:padding="8dp"
+                app:egLegendTextSize="24sp"
+                app:egUsePieRotation="true"
+                app:egValueTextSize="36sp" />-->
+
+            <org.eazegraph.lib.charts.BarChart
+                android:id="@+id/barchart"
+                android:layout_width="match_parent"
+                android:layout_height="256dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:rotation="90"
+                app:egBarWidth="35dp"
+                app:egFixedBarWidth="true"
+                app:egLegendHeight="40dp" />
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+</ScrollView>

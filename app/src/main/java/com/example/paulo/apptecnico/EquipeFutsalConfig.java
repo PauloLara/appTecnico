@@ -1,19 +1,20 @@
 package com.example.paulo.apptecnico;
 
-import android.annotation.SuppressLint;
-import android.app.AlertDialog;
-//import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -29,10 +30,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+//import android.app.ProgressDialog;
+
 public class EquipeFutsalConfig extends AppCompatActivity {
 
     Boolean CheckEditText;
-    Button buttonCadastrarEquipe;
+    Button buttonCadastrarEquipe, btnSair;
     int idTorneio;
     String nomeTorneio;
     RequestQueue requestQueue;
@@ -51,17 +54,25 @@ public class EquipeFutsalConfig extends AppCompatActivity {
 
     String URL = "http://192.168.15.17/busca_torneios.php";
     String url = "http://192.168.15.17/cadastro_equipe.php";
+    String URLbusca = "http://192.168.15.17/busca_dados_jogador.php";
+    String URLbuscaPorNome = "http://192.168.15.17/busca_dados_por_nome_jogador.php";
+
+    //String URL = "https://appscout.000webhostapp.com/appscout/busca_torneios.php";
+    //String url = "https://appscout.000webhostapp.com/appscout/cadastro_equipe.php";
+    //String URLbusca = "https://appscout.000webhostapp.com/appscout/busca_dados_jogador.php";
+    //String URLbuscaPorNome = "https://appscout.000webhostapp.com/appscout/busca_dados_por_nome_jogador.php";
+
     ArrayList<String> TorneioName;
     ArrayList<String> TorneioID;
     ArrayAdapter<String> adapter;
-    String URLbusca = "http://192.168.15.17/busca_dados_jogador.php";
-    String URLbuscaPorNome = "http://192.168.15.17/busca_dados_por_nome_jogador.php";
 
 
     protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_equipe_futsal_config);
          buttonCadastrarEquipe = findViewById(R.id.buttonCadastrarEquipe);
+         btnSair = findViewById(R.id.btnSair);
+
          spTorneio = findViewById(R.id.spTorneio);
          eTapelidoEquipe = findViewById(R.id.apelidoEquipe);
          spJog1 = findViewById(R.id.spJog1);
@@ -366,6 +377,21 @@ public class EquipeFutsalConfig extends AppCompatActivity {
                 }
             }
         });
+
+        ScrollView scrollView = (ScrollView) findViewById(R.id.scrollView1);
+        scrollView.setOnTouchListener(new View.OnTouchListener() {
+            // to solve foocus problem on scrolling
+            public boolean onTouch(View v, MotionEvent event) {
+                if (eTapelidoEquipe.hasFocus()) {
+                    eTapelidoEquipe.clearFocus();
+                }
+                if (eTapelidoEquipe.hasFocus()) {
+                    eTapelidoEquipe.clearFocus();
+                }
+
+                return false;
+            }
+        });
     }
 
     String stIDTorneio;
@@ -403,6 +429,7 @@ public class EquipeFutsalConfig extends AppCompatActivity {
             public void onResponse(String ServerResponse) {
                 if(ServerResponse.equalsIgnoreCase("ok")) {
                     Toast.makeText(EquipeFutsalConfig.this, "Equipe cadastrada com sucesso!", Toast.LENGTH_LONG).show();
+                    limpadados();
                 }
                 else {
                     Toast.makeText(EquipeFutsalConfig.this, ServerResponse, Toast.LENGTH_LONG).show();
@@ -445,6 +472,47 @@ public class EquipeFutsalConfig extends AppCompatActivity {
         };
         RequestQueue requestQueue = Volley.newRequestQueue(EquipeFutsalConfig.this);
         requestQueue.add(stringRequest);
+
+
+    }
+
+    public void limpadados(){
+        posJog1.setText("");
+        numJog1.setText("");
+        posJog2.setText("");
+        numJog2.setText("");
+        posJog3.setText("");
+        numJog3.setText("");
+        posJog4.setText("");
+        numJog4.setText("");
+        posJog5.setText("");
+        numJog5.setText("");
+        posJog6.setText("");
+        numJog6.setText("");
+        posJog7.setText("");
+        numJog7.setText("");
+        posJog8.setText("");
+        numJog8.setText("");
+        posJog9.setText("");
+        numJog9.setText("");
+        posJog10.setText("");
+        numJog10.setText("");
+        posJog11.setText("");
+        numJog11.setText("");
+        posJog12.setText("");
+        numJog12.setText("");
+        posJog13.setText("");
+        numJog13.setText("");
+        posJog14.setText("");
+        numJog14.setText("");
+        posJog15.setText("");
+        numJog15.setText("");
+        posJog16.setText("");
+        numJog16.setText("");
+        posJog17.setText("");
+        numJog17.setText("");
+        posJog18.setText("");
+        numJog18.setText("");
     }
 
     private void loadSpinnerTorneios(String url) {
@@ -1849,5 +1917,11 @@ public class EquipeFutsalConfig extends AppCompatActivity {
             }
         }
         else {}
+    }
+
+    public void clickBtnSair(View view){
+        Intent it;
+        it = new Intent(EquipeFutsalConfig.this, Sistema.class);
+        startActivity(it);
     }
 }

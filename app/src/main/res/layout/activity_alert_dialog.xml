@@ -14,107 +14,101 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="120dp">
+            android:layout_height="150dp">
 
             <ImageView
-                android:id="@+id/dialog_imageview"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:id="@+id/imgView"
+                android:layout_width="110dp"
+                android:layout_height="149dp"
                 android:src="@drawable/ic_launcher" />
-                <TableLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="120dp"
-                    android:gravity="center"
-                    android:shrinkColumns="*">
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp">
+            <TableLayout
+                android:layout_width="220dp"
+                android:layout_height="150dp"
+                android:gravity="center"
+                android:shrinkColumns="*">
 
-                        <TextView
-                            android:id="@+id/tv1"
-                            android:layout_width="40dp"
-                            android:layout_height="30dp"
-                            android:layout_weight="1"
-                            android:text="TextView" />
-                        <TextView
-                            android:id="@+id/tv10"
-                            android:layout_width="80dp"
-                            android:layout_height="30dp"
-                            android:layout_weight="1"
-                            android:text="TextView" />
-                    </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp">
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp">
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight="1"
+                        android:text="Nome:"
+                        android:textSize="18sp" />
 
-                        <TextView
-                            android:id="@+id/tv2"
-                            android:layout_width="40dp"
-                            android:layout_height="30dp"
-                            android:layout_weight="1"
-                            android:text="TextView" />
-                        <TextView
-                            android:id="@+id/tv20"
-                            android:layout_width="80dp"
-                            android:layout_height="30dp"
-                            android:layout_weight="1"
-                            android:text="TextView" />
-                    </TableRow>
+                    <TextView
+                        android:id="@+id/tv10"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:textColor="@android:color/black" />
+                </TableRow>
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp">
 
-                        <TextView
-                            android:id="@+id/tv3"
-                            android:layout_width="40dp"
-                            android:layout_height="30dp"
-                            android:layout_weight="1"
-                            android:text="TextView" />
-                        <TextView
-                            android:id="@+id/tv30"
-                            android:layout_width="80dp"
-                            android:layout_height="30dp"
-                            android:layout_weight="1"
-                            android:text="TextView" />
-                    </TableRow>
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight="1"
+                        android:text="Posição:"
+                        android:textSize="18sp" />
 
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp">
+                    <TextView
+                        android:id="@+id/tv20"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:textColor="@android:color/black" />
+                </TableRow>
 
-                        <TextView
-                            android:id="@+id/tv4"
-                            android:layout_width="40dp"
-                            android:layout_height="30dp"
-                            android:layout_weight="1"
-                            android:text="TextView" />
-                        <TextView
-                            android:id="@+id/tv40"
-                            android:layout_width="80dp"
-                            android:layout_height="30dp"
-                            android:layout_weight="1"
-                            android:text="TextView" />
-                    </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp">
+
+                    <TextView
+                        android:id="@+id/tv3"
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight="1"
+                        android:text="Número:"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv30"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:textColor="@android:color/black" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp" />
             </TableLayout>
 
         </TableRow>
 
+        <TableLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="314dp">
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="TextView" />
+            android:layout_height="match_parent">
 
             <org.eazegraph.lib.charts.PieChart
-                android:id="@+id/piechart"
-                android:layout_width="290dp"
+                android:id="@+id/myPiechart"
+                android:layout_width="313dp"
                 android:layout_height="match_parent"
                 android:padding="8dp"
                 app:egLegendTextSize="24sp"
@@ -122,6 +116,7 @@
                 app:egValueTextSize="36sp" />
 
         </TableRow>
+        </TableLayout>
 
     </TableLayout>
 

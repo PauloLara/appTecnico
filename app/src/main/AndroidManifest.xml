@@ -45,6 +45,7 @@
         <activity android:name=".TestLayouts"/>
         <activity android:name=".MeioEventos"/>
         <activity android:name=".ClicarEventosFutsal"/>
+        <activity android:name=".Estatisticas"/>
 
     </application>
 

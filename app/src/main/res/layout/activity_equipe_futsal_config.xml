@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_height="wrap_content"
+<ScrollView
+    android:id="@+id/scrollView1"
+    android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
+    android:descendantFocusability="beforeDescendants"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".EquipeFutsalConfig">
@@ -12,6 +15,39 @@
         android:layout_height="match_parent"
         android:shrinkColumns="*"
         android:gravity="center">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtTitulo"
+                    android:layout_width="276dp"
+                    android:layout_height="38dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="Cadastro Equipe por Torneio"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/btnSair"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="1dp"
+                    android:background="#f5f5f0"
+                    android:onClick="clickBtnSair"
+                    android:text=" Sair "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds,OnClick" />
+            </TableRow>
+        </TableLayout>
 
         <Spinner
             android:id="@+id/spTorneio"
@@ -104,7 +140,7 @@
             <Spinner
                 android:id="@+id/spJog1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog1"
@@ -138,7 +174,7 @@
             <Spinner
                 android:id="@+id/spJog2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog2"
@@ -172,7 +208,7 @@
             <Spinner
                 android:id="@+id/spJog3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog3"
@@ -206,7 +242,7 @@
             <Spinner
                 android:id="@+id/spJog4"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog4"
@@ -240,7 +276,7 @@
             <Spinner
                 android:id="@+id/spJog5"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog5"
@@ -274,7 +310,7 @@
             <Spinner
                 android:id="@+id/spJog6"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog6"
@@ -308,7 +344,7 @@
             <Spinner
                 android:id="@+id/spJog7"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog7"
@@ -342,7 +378,7 @@
             <Spinner
                 android:id="@+id/spJog8"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog8"
@@ -376,7 +412,7 @@
             <Spinner
                 android:id="@+id/spJog9"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog9"
@@ -410,7 +446,7 @@
             <Spinner
                 android:id="@+id/spJog10"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog10"
@@ -444,7 +480,7 @@
             <Spinner
                 android:id="@+id/spJog11"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog11"
@@ -478,7 +514,7 @@
             <Spinner
                 android:id="@+id/spJog12"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog12"
@@ -512,7 +548,7 @@
             <Spinner
                 android:id="@+id/spJog13"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog13"
@@ -546,7 +582,7 @@
             <Spinner
                 android:id="@+id/spJog14"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog14"
@@ -580,7 +616,7 @@
             <Spinner
                 android:id="@+id/spJog15"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog15"
@@ -614,7 +650,7 @@
             <Spinner
                 android:id="@+id/spJog16"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog16"
@@ -648,7 +684,7 @@
             <Spinner
                 android:id="@+id/spJog17"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog17"
@@ -682,7 +718,7 @@
             <Spinner
                 android:id="@+id/spJog18"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="35dp" />
 
             <TextView
                 android:id="@+id/posJog18"

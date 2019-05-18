@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#CADDBD</color>
+    <color name="colorPrimary">#B5CBA7</color>
     <color name="colorPrimaryDark">#C88A5B</color>
     <color name="colorAccent">#E3E7FF</color>
+    <color name="colorBtn">#E0BFBF</color>
 
     <!-- Base application theme.
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">

@@ -1,6 +1,7 @@
 package com.example.paulo.apptecnico;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -24,10 +25,15 @@ import java.util.Map;
 
 public class TorneioCadastro extends AppCompatActivity {
     EditText editTextNomeTorneio;
-    Button buttonCadastrarTorneio;//, buttonFutsal, buttonCampo;
+    Button buttonCadastrarTorneio, btnSair;//, buttonFutsal, buttonCampo;
     AlertDialog.Builder alertDialog;
     String nomeTorneio_text;
     Boolean CheckEditText;
+
+    String url = "http://192.168.15.17/cadastro_torneio.php";
+
+    //String url = "https://appscout.000webhostapp.com/appscout/cadastro_torneio.php";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,7 @@ public class TorneioCadastro extends AppCompatActivity {
         setContentView(R.layout.activity_torneio_cadastro);
         editTextNomeTorneio = findViewById(R.id.editTextTorneioCadastro);
         buttonCadastrarTorneio = findViewById(R.id.buttonTorneioCadastro);
+        btnSair = findViewById(R.id.btnSair);
        // buttonFutsal = findViewById(R.id.btnDelList);
        // buttonCampo = findViewById(R.id.btnDragDrop);
         int color = 0x8ffffff;
@@ -86,7 +93,7 @@ public class TorneioCadastro extends AppCompatActivity {
         final String nomeTorneio;
         nomeTorneio = editTextNomeTorneio.getText().toString();
         RequestQueue queue = Volley.newRequestQueue(TorneioCadastro.this);
-        String url = "http://192.168.15.17/cadastro_torneio.php";
+
 
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
@@ -125,6 +132,12 @@ public class TorneioCadastro extends AppCompatActivity {
     public void VerificaCamposVazios() {
         nomeTorneio_text = editTextNomeTorneio.getText().toString().trim();
         CheckEditText = !TextUtils.isEmpty(nomeTorneio_text);
+    }
+
+    public void clickBtnSair(View view){
+        Intent it;
+        it = new Intent(TorneioCadastro.this, Sistema.class);
+        startActivity(it);
     }
 
 }

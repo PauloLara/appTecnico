@@ -2378,7 +2378,7 @@
         >
 
         <TextView
-            android:id="@+id/posicao"
+            android:id="@+id/atleta_pivo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
@@ -2386,7 +2386,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/nomeJogador"
+            android:id="@+id/passer_pivo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
@@ -2394,7 +2394,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/numeroJogador"
+            android:id="@+id/chuteg_pivo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""

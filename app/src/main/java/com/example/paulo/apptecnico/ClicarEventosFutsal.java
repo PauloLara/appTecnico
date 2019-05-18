@@ -25,10 +25,11 @@ import java.util.Map;
 
 public class ClicarEventosFutsal extends AppCompatActivity {
 
-    Button btnVerificaEquipe;
+    Button btnVerificaEquipe, btnSair;
     AlertDialog.Builder alertDialog;
     Spinner spinnerTorneio, spinnerAdversario;
     String URLev = "http://192.168.15.17/insere_eventos.php";
+    //String URLev = "https://appscout.000webhostapp.com/appscout/insere_eventos.php";
     TextView tvGoleiro, tvFixo, tvAlaEsq, tvAlaDir, tvPivo, tvGoleiroRes, tvFixoRes, tvAlaEsqRes, tvAlaDirRes, tvPivoRes, tvGoleiroResRes,
             tvJogadorExtra, tvNomeEquipe;
     Button btnFinalizar;
@@ -51,6 +52,7 @@ public class ClicarEventosFutsal extends AppCompatActivity {
         setContentView(R.layout.activity_clicar_eventos_futsal);
 
         btnFinalizar = findViewById(R.id.finalizar);
+        btnSair = findViewById(R.id.btnSair);
 
         tvGoleiroAtleta = findViewById(R.id.atleta_goleiro);
         tvGoleiroPasseErrado = findViewById(R.id.passer_goleiro);
@@ -454,6 +456,7 @@ public class ClicarEventosFutsal extends AppCompatActivity {
                 tvGoleiroInterceptacaoResRes.setText(null);
 
                 tvJogadorExtra.setText(null);
+                tvJogExtraAtleta.setText(null);
                 tvJogExtraPasseErrado.setText(null);
                 tvJogExtraChuteAgol.setText(null);
                 tvJogExtraPerdida.setText(null);
@@ -1704,4 +1707,10 @@ public class ClicarEventosFutsal extends AppCompatActivity {
 
 
     //FIM CONTAGEM DE CLICKS TERMINA AQUI! *******************************************************************
+
+    public void clickBtnVoltar(View view){
+        Intent it;
+        it = new Intent(ClicarEventosFutsal.this, Inicial.class);
+        startActivity(it);
+    }
 }

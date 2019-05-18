@@ -6,6 +6,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".CadastrarJogadores">
 
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtTitulo"
+                android:layout_width="276dp"
+                android:layout_height="38dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Cadastro de jogadores"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btnSair"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="1dp"
+                android:background="#f5f5f0"
+                android:onClick="clickBtnSair"
+                android:text=" Sair "
+                android:textColor="@color/colorPrimary"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+        </TableRow>
+    </TableLayout>
+
     <Spinner
         android:id="@+id/spinnerPosicao"
         android:layout_width="286dp"

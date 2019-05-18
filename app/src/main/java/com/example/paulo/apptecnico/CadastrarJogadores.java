@@ -57,7 +57,7 @@ public class CadastrarJogadores extends AppCompatActivity{
     AdapterRecycler adapterRecycler;
     EditText editTextNomeJogador;  //EditText editTextNomeTorneio;
     EditText editTextNumeroJogador;
-    Button buttonCadastrarJogador;  //Button buttonCadastrarTorneio;
+    Button buttonCadastrarJogador, btnSair;  //Button buttonCadastrarTorneio;
     AlertDialog.Builder alertDialog;
     String nomeJogador_text;  //String nomeTorneio_text;
     String numeroJogador;
@@ -73,8 +73,12 @@ public class CadastrarJogadores extends AppCompatActivity{
     String encodedImage;
     private RequestQueue mRequestQueue;
     RecyclerView recyclerView;
+
     String url = "http://192.168.15.17/cadastro_jogador.php";
     String url_busca = "http://192.168.15.17/busca_jogadores.php";
+
+    //String url = "https://appscout.000webhostapp.com/appscout/cadastro_jogador.php";
+    //String url_busca = "https://appscout.000webhostapp.com/appscout/busca_jogadores.php";
 
     @SuppressLint("WrongThread")
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +92,8 @@ public class CadastrarJogadores extends AppCompatActivity{
         editTextNomeJogador = findViewById(R.id.txtNomeJogador);
         editTextNumeroJogador = findViewById(R.id.numJogador);
         buttonCadastrarJogador = findViewById(R.id.buttonCadastrarEquipe);
+        btnSair = findViewById(R.id.btnSair);
+
         recyclerView = findViewById(R.id.recycler);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -363,6 +369,12 @@ public class CadastrarJogadores extends AppCompatActivity{
         nomeJogador_text = editTextNomeJogador.getText().toString().trim();
         numeroJogador = editTextNumeroJogador.getText().toString().trim();
         CheckEditText = !TextUtils.isEmpty(nomeJogador_text)&& !TextUtils.isEmpty(numeroJogador);
+    }
+
+    public void clickBtnSair(View view){
+        Intent it;
+        it = new Intent(CadastrarJogadores.this, Sistema.class);
+        startActivity(it);
     }
 }//AQUI TERMINA A CLASSE
 

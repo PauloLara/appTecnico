@@ -11,29 +11,29 @@ public class UsersData {
 
     private List<User> listaJogadores = new ArrayList<User>() {
         {
-            add(new User(0, "", "", "Developers"));
-            add(new User(1, "Frederick Hoffman", "https://randomuser.me/api/portraits/men/52.jpg", "Developers"));
-            add(new User(2, "Calvin Young", "https://randomuser.me/api/portraits/men/78.jpg", "Developers"));
-            add(new User(3, "Jeanette Reid", "https://randomuser.me/api/portraits/women/37.jpg", "Developers"));
-            add(new User(4, "Flenn Wilson", "https://randomuser.me/api/portraits/men/40.jpg", "Developers"));
-            add(new User(5, "Martin Holland", "https://randomuser.me/api/portraits/men/0.jpg", "Developers"));
-            add(new User(6, "", "", "Designers"));
-            add(new User(7, "Jeanette Simmmons", "https://randomuser.me/api/portraits/women/3.jpg", "Designers"));
-            add(new User(8, "Wallace Lambert", "https://randomuser.me/api/portraits/men/53.jpg", "Designers"));
-            add(new User(9, "Andy Clark", "https://randomuser.me/api/portraits/men/68.jpg", "Designers"));
-            add(new User(10, "olivia obrien", "https://randomuser.me/api/portraits/women/93.jpg", "Designers"));
-            add(new User(11, "Debbie Bennett", "https://randomuser.me/api/portraits/women/34.jpg", "Designers"));
-            add(new User(12, "", "", "Team Leads"));
-            add(new User(13, "Bernice Lawson", "https://randomuser.me/api/portraits/women/20.jpg", "Team Leads"));
-            add(new User(14, "Camila Elliott", "https://randomuser.me/api/portraits/women/60.jpg", "Team Leads"));
-            add(new User(15, "Gerald Webb", "https://randomuser.me/api/portraits/men/55.jpg", "Team Leads"));
-            add(new User(16, "Russell Hart", "https://randomuser.me/api/portraits/men/18.jpg", "Team Leads"));
-            add(new User(17, "Joyce Mccoy", "https://randomuser.me/api/portraits/women/82.jpg", "Team Leads"));
-            add(new User(18, "", "", "Team Managers"));
-            add(new User(19, "Daryl Banks", "https://randomuser.me/api/portraits/men/4.jpg", "Team Managers"));
-            add(new User(20, "Veronica Vargas", "https://randomuser.me/api/portraits/women/14.jpg", "Team Managers"));
-            add(new User(21, "Natalie Jacobs", "https://randomuser.me/api/portraits/women/0.jpg", "Team Managers"));
-            add(new User(22, "Beverly Kennedy", "https://randomuser.me/api/portraits/women/30.jpg", "Team Managers"));
+            add(new User(0, "", "", "Liga Nacional de Futsal"));
+            add(new User(1, "ACBF", "http://www.acbf.com.br/images/default//escudo_acbf.png", "Liga Nacional de Futsal"));
+            add(new User(2, "Pato", "https://patofutsal.com.br/wp-content/uploads/2019/02/Logo-2019-1.png", "Liga Nacional de Futsal"));
+            add(new User(3, "Atlantico", "http://ligafutsal.com.br/wp-content/uploads/2016/06/Escudo-Atl%C3%A2ntico-1.png", "Liga Nacional de Futsal"));
+            add(new User(4, "Magnus", "https://upload.wikimedia.org/wikipedia/pt/thumb/b/b7/MagnusFutsal.png/180px-MagnusFutsal.png", "Liga Nacional de Futsal"));
+            add(new User(5, "JEC/Krona", "https://upload.wikimedia.org/wikipedia/pt/thumb/3/31/Joinville-SC.png/175px-Joinville-SC.png", "Liga Nacional de Futsal"));
+            add(new User(6, "", "", "Campeonato Gaúcho de Futsal"));
+            add(new User(7, "Assoeva", "https://ligafutsal.com.br/wp-content/uploads/2016/06/Escudo-Assoeva.png", "Campeonato Gaúcho de Futsal"));
+            add(new User(8, "Foz Cataratas", "https://upload.wikimedia.org/wikipedia/pt/3/30/Foz_Cataratas_Futsal.png", "Campeonato Gaúcho de Futsal"));
+            add(new User(9, "Corinthians", "https://upload.wikimedia.org/wikipedia/pt/thumb/b/b4/Corinthians_simbolo.png/200px-Corinthians_simbolo.png", "Campeonato Gaúcho de Futsal"));
+            add(new User(10, "Copagril", "https://upload.wikimedia.org/wikipedia/pt/thumb/3/35/EscudoCopagrilFutsal.png/185px-EscudoCopagrilFutsal.png", "Campeonato Gaúcho de Futsal"));
+            add(new User(11, "ADC Intelli", "https://upload.wikimedia.org/wikipedia/pt/b/b9/EscudoADCIntelli.png", "Campeonato Gaúcho de Futsal"));
+            add(new User(12, "", "", "Copa Intercontinental de Futsal"));
+            add(new User(13, "Barcelona", "https://upload.wikimedia.org/wikipedia/pt/thumb/4/43/FCBarcelona.svg/1200px-FCBarcelona.svg.png", "Copa Intercontinental de Futsal"));
+            add(new User(14, "Montesilvano", "https://upload.wikimedia.org/wikipedia/en/b/b4/Montesilvano_C5.png", "Copa Intercontinental de Futsal"));
+            add(new User(15, "Dinamo", "https://upload.wikimedia.org/wikipedia/pt/1/11/Dinamo_Moscow.png", "Copa Intercontinental de Futsal"));
+            add(new User(16, "Horizontina", "http://www.blogdosandro.com/uploads/equipes/0000042_zoom_whatsapp-image-2018-01-08-at-17.08.06.jpeg", "Copa Intercontinental de Futsal"));
+            add(new User(17, "UCS", "https://www.radiocaxias.com.br/portal/imagens/novidade/associa-o-desportiva-23791.gif", "Copa Intercontinental de Futsal"));
+            add(new User(18, "", "", "Sul-Americano de Clubes de Futsal"));
+            add(new User(19, "UPF", "https://secure.upf.br/html/img/upf50.png", "Sul-Americano de Clubes de Futsal"));
+            add(new User(20, "Ypiranga", "https://3.bp.blogspot.com/-Jse3zx9LU8g/WLdBLFhXoLI/AAAAAAABK1Q/W_1oH1C29XMDPg0iOGv2gXDyiMfHPBwoACLcB/s1600/YPIRANGA%2BFC%2Bnovo.png", "Sul-Americano de Clubes de Futsal"));
+            add(new User(21, "Ulbra", "https://upload.wikimedia.org/wikipedia/pt/thumb/a/af/SCUlbra.png/150px-SCUlbra.png", "Sul-Americano de Clubes de Futsal"));
+            add(new User(22, "Internacional", "https://upload.wikimedia.org/wikipedia/commons/f/f1/Escudo_do_Sport_Club_Internacional.svg", "Sul-Americano de Clubes de Futsal"));
         }
     };
 

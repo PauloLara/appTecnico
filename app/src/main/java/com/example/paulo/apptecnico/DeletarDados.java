@@ -2,6 +2,7 @@ package com.example.paulo.apptecnico;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -31,11 +32,18 @@ import java.util.Map;
 public class DeletarDados extends AppCompatActivity {
     Spinner spinnerTorneio, spinnerEquipe, spinnerJogador, spinnerEquJog;
     int idTorneio;
+
     String URLspT = "http://192.168.15.17/busca_torneios.php";
     String URLspE = "http://192.168.15.17/busca_apelido_equipe.php";
     String URLspJ = "http://192.168.15.17/busca_jogadores_spinner.php";
     String URLdel = "http://192.168.15.17/deletar_dados.php";
-    Button btnEscolheTorneio, btnEscolheEquipe, btnEscolheJogador, btnDeletar;
+
+    //String URLspT = "https://appscout.000webhostapp.com/appscout/busca_torneios.php";
+    //String URLspE = "https://appscout.000webhostapp.com/appscout/busca_apelido_equipe.php";
+    //String URLspJ = "https://appscout.000webhostapp.com/appscout/busca_jogadores_spinner.php";
+    //String URLdel = "https://appscout.000webhostapp.com/appscout/deletar_dados.php";
+
+    Button btnEscolheTorneio, btnEscolheEquipe, btnEscolheJogador, btnDeletar, btnSair;
     ImageButton imgbtnExcluirSelecao1, imgbtnExcluirSelecao2, imgbtnExcluirSelecao3;
     TextView selecionado1, selecionado2, selecionado3, selecionado4, txtitens;
     AlertDialog.Builder alertDialog;
@@ -54,6 +62,7 @@ public class DeletarDados extends AppCompatActivity {
         btnEscolheEquipe = findViewById(R.id.btnEscolheEquipe);
         btnEscolheJogador = findViewById(R.id.btnEscolheJogador);
         btnDeletar = findViewById(R.id.btnDeletar);
+        btnSair = findViewById(R.id.btnSair);
 
         imgbtnExcluirSelecao1 = findViewById(R.id.imgBtExcluirSelect1);
         imgbtnExcluirSelecao1.setVisibility(View.INVISIBLE);
@@ -95,6 +104,9 @@ public class DeletarDados extends AppCompatActivity {
                 final String strNomeEquJog = (String) spinnerEquJog.getSelectedItem();
                 final String strNomejogador = (String) spinnerJogador.getSelectedItem();
                 selecionado3.setText(strNomejogador);
+                if(selecionado4.getText().equals(null)){
+                    Toast.makeText(DeletarDados.this, "Selecione o jogador:", Toast.LENGTH_SHORT).show();
+                }
                 selecionado4.setText(strNomeEquJog);
                 txtitens.setVisibility(View.VISIBLE);
                 imgbtnExcluirSelecao3.setVisibility(View.VISIBLE);
@@ -121,14 +133,16 @@ public class DeletarDados extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 selecionado3.setText(null);
+                selecionado4.setText(null);
                 imgbtnExcluirSelecao3.setVisibility(View.INVISIBLE);
+
             }
         });
         carregarSpinners();
         btnDeletar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!(imgbtnExcluirSelecao1 ==null)||!(imgbtnExcluirSelecao2 ==null)||!(imgbtnExcluirSelecao3 ==null)){
+                if(!(selecionado1 ==null)||!(selecionado2 ==null)||!(selecionado4 ==null)){
                     deletarDados();
                 }
                 txtitens.setVisibility(View.INVISIBLE);
@@ -235,6 +249,7 @@ public class DeletarDados extends AppCompatActivity {
             imgbtnExcluirSelecao2.setVisibility(View.INVISIBLE);
             selecionado3.setText(null);
             imgbtnExcluirSelecao3.setVisibility(View.INVISIBLE);
+            selecionado4.setText(null);
         }
 
 
@@ -348,6 +363,11 @@ public class DeletarDados extends AppCompatActivity {
             }
         }
         return Integer.parseInt(digitos);
+    }
+    public void clickBtnSair(View view){
+        Intent it;
+        it = new Intent(DeletarDados.this, Inicial.class);
+        startActivity(it);
     }
 
 }

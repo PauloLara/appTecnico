@@ -38,9 +38,8 @@ public class Login extends AppCompatActivity {
     RequestQueue requestQueue;
     String email_Text, senha_Text;
 
-//    ProgressDialog progressDialog;
-    String HttpUrl = "http://192.168.15.17/user_login.php";
-    //String HttpUrl = "https://appscout.000webhostapp.com/user_login.php";
+    //String HttpUrl = "https://appscout.000webhostapp.com/appscout/user_login.php";
+    String HttpUrl = "https://192.168.15.17/user_login.php";
 
     Boolean CheckEditText;
 
@@ -56,7 +55,6 @@ public class Login extends AppCompatActivity {
         handleSSLHandshake();
 
         requestQueue = Volley.newRequestQueue(Login.this);
-        //progressDialog = new ProgressDialog(Login.this);
 
         Email.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -124,18 +122,14 @@ public class Login extends AppCompatActivity {
     }
 
     public void UserLogin() {
-       /// progressDialog.setMessage("Please Wait");
-       /// progressDialog.show();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, HttpUrl, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
-                        //progressDialog.dismiss();
                         if(ServerResponse.equalsIgnoreCase("ok")) {
-                            //Toast.makeText(Login.this, "Logado com sucesso!", Toast.LENGTH_LONG).show();
                             finish();
                             Intent intent;
                             intent = new Intent(Login.this, Inicial.class);
-                            intent.putExtra("UserEmailTAG", email_Text);
+                            intent.putExtra("email", email_Text);
                             startActivity(intent);
                         }
                         else {
@@ -146,7 +140,6 @@ public class Login extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-                        //progressDialog.dismiss();
                         Toast.makeText(Login.this, volleyError.toString(), Toast.LENGTH_LONG).show();
                     }
                 }) {
@@ -161,6 +154,8 @@ public class Login extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(Login.this);
         requestQueue.add(stringRequest);
     }
+
+
 
     public void VerificaCamposVazios() {
         email_Text = Email.getText().toString().trim();

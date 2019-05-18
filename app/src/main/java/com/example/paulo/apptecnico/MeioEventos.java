@@ -39,17 +39,24 @@ public class MeioEventos extends Activity {
     Button btnVerificaEquipe;
     AlertDialog.Builder alertDialog;
     Spinner spinnerTorneio, spinnerAdversario;
+    String stNomeTorneio, stIDTorneio;
+
     String URLsp = "http://192.168.15.17/busca_torneios.php";
     String URLspcl = "http://192.168.15.17/busca_adversarios.php";
-    //String URLtv = "http://192.168.15.17/busca_dados_equipe.php";
-    String stNomeTorneio, stIDTorneio;
     String URLtv = "http://192.168.15.17/busca_equipe_por_torneio.php";
     String URLbuscaPorTorneio = "http://192.168.15.17/busca_equipe_por_torneio.php";
     String URLev = "http://192.168.15.17/insere_eventos.php";
+
+    //String URLsp = "https://appscout.000webhostapp.com/appscout/busca_torneios.php";
+    //String URLspcl = "https://appscout.000webhostapp.com/appscout/busca_adversarios.php";
+    //String URLtv = "https://appscout.000webhostapp.com/appscout/busca_equipe_por_torneio.php";
+    //String URLbuscaPorTorneio = "https://appscout.000webhostapp.com/appscout/busca_equipe_por_torneio.php";
+    //String URLev = "https://appscout.000webhostapp.com/appscout/insere_eventos.php";
+
     TextView tvGoleiro, tvFixo, tvAlaEsq, tvAlaDir, tvPivo, tvGoleiroRes, tvFixoRes, tvAlaEsqRes, tvAlaDirRes, tvPivoRes, tvGoleiroResRes,
             tvJogadorExtra, tvJogadorExtra1, tvJogadorExtra2, tvJogadorExtra3, tvJogadorExtra4, tvJogadorExtra5, tvJogadorExtra6,
             tvApelidoEquipe;
-    Button btnComecar;
+    Button btnComecar, btnVoltar;
     TextView textViewGoleiroAtleta, textAtletaGoleiro, textViewGoleiroPasseErrado, textViewGoleiroChuteAgol, textViewGoleiroPerdida, textViewGoleiroInterceptacao;
     TextView textViewFixoAtleta, textViewFixoPasseErrado, textViewFixoChuteAgol, textViewFixoPerdida, textViewFixoInterceptacao;
     TextView textViewAlaEsqAtleta, textViewAlaEsqPasseErrado, textViewAlaEsqChuteAgol, textViewAlaEsqPerdida, textViewAlaEsqInterceptacao;
@@ -159,6 +166,7 @@ public class MeioEventos extends Activity {
         spinnerTorneio = findViewById(R.id.spTorneio);
         spinnerAdversario = findViewById(R.id.spinnerAdversario);
         btnVerificaEquipe = findViewById(R.id.btnVerificaEquipe);
+        btnVoltar = findViewById(R.id.btnVoltar);
 
         tvApelidoEquipe = findViewById(R.id.txtNomeEquipe);
         tvGoleiro = findViewById(R.id.fieldGoleiro);
@@ -720,30 +728,11 @@ public class MeioEventos extends Activity {
         return string;
     }
 
-     /*
-    //METODO QUE SUBSTITUI TODOS OS "checkBox.setOnCheckedChangeListener" ACIMA
-
-    public void testaCheckBoxes(final CheckBox checkBox, final TextView textView){
-        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked && numberOfCheckboxesChecked >=12) {
-                    checkBox.setChecked(false);
-                } else {
-                    if (isChecked) {
-                        numberOfCheckboxesChecked++;
-                        listaTexts.add(textView.getText().toString());
-                        int res = total - numberOfCheckboxesChecked;
-                        Toast.makeText(MeioEventos.this, "Restam "+String.valueOf(res)+" escolhas", Toast.LENGTH_SHORT).show();
-                    } else {
-                        numberOfCheckboxesChecked--;
-                        listaTexts.remove(textView.getText().toString());
-                    }
-                }
-            }
-        });
-
-    }*/
+    public void clickBtnVoltar(View view){
+        Intent it;
+        it = new Intent(MeioEventos.this, Inicial.class);
+        startActivity(it);
+    }
 
 }
 

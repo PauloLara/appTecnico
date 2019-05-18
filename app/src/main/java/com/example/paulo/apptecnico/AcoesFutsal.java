@@ -37,13 +37,20 @@ public class AcoesFutsal extends Activity {
     Button btnVerificaEquipe;
     AlertDialog.Builder alertDialog;
     Spinner spinnerTorneio, spinnerAdversario;
+
     String URLsp = "http://192.168.15.17/busca_torneios.php";
     String URLspcl = "http://192.168.15.17/busca_adversarios.php";
-    //String URLtv = "http://192.168.15.17/busca_dados_equipe.php";
-    String stNomeTorneio, stIDTorneio;
     String URLtv = "http://192.168.15.17/busca_equipe_por_torneio.php";
     String URLbuscaPorTorneio = "http://192.168.15.17/busca_equipe_por_torneio.php";
     String URLev = "http://192.168.15.17/insere_eventos.php";
+
+    //String URLsp = "https://appscout.000webhostapp.com/appscout/busca_torneios.php";
+    //String URLspcl = "https://appscout.000webhostapp.com/appscout/busca_adversarios.php";
+    //String URLtv = "https://appscout.000webhostapp.com/appscout/busca_equipe_por_torneio.php";
+    //String URLbuscaPorTorneio = "https://appscout.000webhostapp.com/appscout/busca_equipe_por_torneio.php";
+    //String URLev = "https://appscout.000webhostapp.com/appscout/insere_eventos.php";
+
+    String stNomeTorneio, stIDTorneio;
     TextView tvGoleiro, tvFixo, tvAlaEsq, tvAlaDir, tvPivo, tvGoleiroRes, tvFixoRes, tvAlaEsqRes, tvAlaDirRes, tvPivoRes, tvGoleiroResRes,
             tvJogadorExtra, tvJogadorExtra1, tvJogadorExtra2, tvJogadorExtra3, tvJogadorExtra4, tvJogadorExtra5, tvJogadorExtra6;
     Button btnFinalizar;
@@ -56,11 +63,6 @@ public class AcoesFutsal extends Activity {
     int idTorneio, idAdversario;
     EditText date;
     DatePickerDialog datePickerDialog;
-
-
-
-
-
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,168 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Inicial">
 
-    <Button
-        android:id="@+id/logout"
-        android:layout_width="80dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="6dp"
-        android:layout_marginRight="6dp"
-        android:background="@drawable/logout"
-        android:onClick="clickBtnLogout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="OnClick" />
 
-    <TextView
-        android:id="@+id/TextViewUserEmail"
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/carrossel"
-        app:layout_constraintEnd_toStartOf="@+id/logout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/carrossel"
+    <TableLayout
+        android:id="@+id/table"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintTop_toTopOf="parent"></android.support.v4.view.ViewPager>
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnnovojogo"
-        android:layout_width="190dp"
-        android:layout_height="110dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="1dp"
-        android:background="#b8d8ba"
-        android:onClick="clickBtnIrPartidaConfig"
-        android:text="@string/novo_jogo"
-        app:layout_constraintBottom_toTopOf="@+id/btncadastros"
-        app:layout_constraintEnd_toStartOf="@+id/btnestatisticas"
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="left">
+
+                <TextView
+                    android:id="@+id/TextViewUserEmail"
+                    android:layout_width="200dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginRight="40dp" />
+
+                <Button
+                    android:id="@+id/logout"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/logout"
+                    android:onClick="clickBtnLogout"
+                    tools:ignore="OnClick" />
+            </TableRow>
+        </TableLayout>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnnovojogo"
+                android:layout_width="180dp"
+                android:layout_height="120dp"
+                android:background="#b8d8ba"
+                android:onClick="clickBtnIrPartidaConfig"
+                android:text="@string/novo_jogo"
+                tools:ignore="OnClick" />
+
+            <Button
+                android:id="@+id/btnestatisticas"
+                android:layout_width="180dp"
+                android:layout_height="120dp"
+                android:layout_alignParentBottom="false"
+                android:layout_centerHorizontal="false"
+                android:background="@color/colorPrimary"
+                android:onClick="clickBtnIrEstatisticas"
+                android:text="@string/estatisticas" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btncadastros"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_alignParentBottom="false"
+                android:layout_centerHorizontal="false"
+                android:background="@android:color/darker_gray"
+                android:onClick="clickBtnIrSistema"
+                android:text="cadastrar" />
+
+            <Button
+                android:id="@+id/btngraficos"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_alignParentBottom="false"
+                android:layout_centerHorizontal="false"
+                android:background="#C2B78D"
+                android:onClick="clickBtnIrGraficos"
+                android:text="@string/graficos" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnexcluir"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_alignParentBottom="false"
+                android:layout_centerHorizontal="false"
+                android:background="@color/colorPrimaryDark"
+                android:onClick="clickBtnDeletar"
+                android:text="excluir" />
+
+            <Button
+                android:id="@+id/btntestes"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_alignParentBottom="false"
+                android:layout_centerHorizontal="false"
+                android:background="#5d6cbd"
+                android:onClick="clickBtnIrTestLayouts"
+                android:text="TESTES"
+                tools:ignore="OnClick" />
+
+        </TableRow>
+    </TableLayout>
+
+    <!--<android.support.v4.view.ViewPager
+        android:id="@+id/carrossel"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="OnClick" />
-
-    <Button
-        android:id="@+id/btnestatisticas"
-        android:layout_width="191dp"
-        android:layout_height="110dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="1dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/estatisticas"
-        android:onClick="clickBtnIrEstatisticas"
-        app:layout_constraintBottom_toTopOf="@+id/btngraficos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnnovojogo"
-        tools:ignore="OnClick" />
-
-    <Button
-        android:id="@+id/btncadastros"
-        android:layout_width="191dp"
-        android:layout_height="110dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="1dp"
-        android:background="@android:color/darker_gray"
-        android:onClick="clickBtnIrSistema"
-        android:text="cadastrar"
-        app:layout_constraintBottom_toTopOf="@+id/btnequipes"
-        app:layout_constraintEnd_toStartOf="@+id/btngraficos"
-        app:layout_constraintStart_toEndOf="@+id/btnequipes"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-
-    <Button
-        android:id="@+id/btngraficos"
-        android:layout_width="191dp"
-        android:layout_height="110dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="1dp"
-        android:background="#642d2d"
-        android:onClick="clickBtnIrGraficos"
-        android:text="@string/graficos"
-        app:layout_constraintBottom_toTopOf="@+id/btntestes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btncadastros" />
-
-
-    <Button
-        android:id="@+id/btnequipes"
-        android:layout_width="190dp"
-        android:layout_height="110dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="1dp"
-        android:background="@color/colorPrimaryDark"
-        android:onClick="clickBtnDeletar"
-        android:text="excluir"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btntestes"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btntestes"
-        android:layout_width="190dp"
-        android:layout_height="110dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="1dp"
-        android:background="#5d6cbd"
-        android:onClick="clickBtnIrTestLayouts"
-        android:text="TESTES"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnequipes"
-        tools:ignore="OnClick" />
-
-
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/table">
+    </android.support.v4.view.ViewPager>-->
 
 </android.support.constraint.ConstraintLayout>
+</ScrollView>
