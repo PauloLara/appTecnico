@@ -32,14 +32,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Estatisticas extends AppCompatActivity {
+
     TextView titulo, selecione, select;
     RadioGroup quem, jogos;
     RadioButton rdjogador, rdequipe, rdultimo, rdtres, rdcinco, rddez, rdtodos;
-    Spinner spequipeOuJogador;
+    //Spinner spequipeOuJogador;
+    Spinner spinnerJogador, spinnerEquipe;
     Button btnverifica, btnSair;
     ArrayAdapter<String> adapter;
-    TextView txtGuarda, txtReservaTorn, txtReservaJog, txtcabecalho00, txtcabecalho01, txttitulo00, txttitulo01, txttitulo02,
-             txtlinha00, txtlinha01, txtlinha02, txtlinha10, txtlinha11, txtlinha12, txtlinha20, txtlinha21, txtlinha22, txtlinha30,
+    TextView txtTorneioOUJogador, txtRangeJogo, txtcabecalho00, txtcabecalho01, txttitulo00, txttitulo01, txttitulo02,
+            txtlinha00, txtlinha01, txtlinha02, txtlinha10, txtlinha11, txtlinha12, txtlinha20, txtlinha21, txtlinha22, txtlinha30,
             txtlinha31, txtlinha32;
     String url_busca_jogadores = "http://192.168.15.17/busca_jogadores.php";
     String url_busca_torneios = "http://192.168.15.17/busca_torneios.php";
@@ -51,33 +53,42 @@ public class Estatisticas extends AppCompatActivity {
     //String url_busca_torneiojog = "https://appscout.000webhostapp.com/appscout/busca_torneiojog.php";
     //String url_busca_jogadorjog = "https://appscout.000webhostapp.com/appscout/busca_jogadorjog.php";
 
-   // PieChart pieChart;
+    // PieChart pieChart;
     BarChart mBarChart;
-
+    String rdjogadorText, rdequipeText, rdultimoText, rdtresText, rdcincoText, rddezText, rdtodosText, spequipeOuJogadorText;
+    Boolean CheckSpinner, CheckRadios;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estatisticas);
+
         titulo = findViewById(R.id.txtTitulo);
         selecione = findViewById(R.id.txtSelecione);
         select = findViewById(R.id.txtSelect);
-        quem = findViewById(R.id.radio_group_quem);
         jogos = findViewById(R.id.radio_group_jogos);
-        rdjogador = findViewById(R.id.radio_jogador);
-        rdequipe = findViewById(R.id.radio_equipe);
+
+        //rdjogador = findViewById(R.id.radio_jogador);
+        //rdequipe = findViewById(R.id.radio_equipe);
+        //quem = findViewById(R.id.radio_group_quem);
+        //spequipeOuJogador = findViewById(R.id.spinnerEquipeOuJogador);
+        //txtGuarda = findViewById(R.id.txtGuarda);
+        //txtReservaTorn = findViewById(R.id.txtReservaTorn);
+        //txtReservaJog = findViewById(R.id.txtReservaJog);
+        txtTorneioOUJogador = findViewById(R.id.txtTorneioOUJogador);
+        txtRangeJogo = findViewById(R.id.txtRangeJogo);
         rdultimo = findViewById(R.id.radio_ultimo);
         rdtres = findViewById(R.id.radio_tres);
         rdcinco = findViewById(R.id.radio_cinco);
         rddez = findViewById(R.id.radio_dez);
         rdtodos = findViewById(R.id.radio_todos);
-        spequipeOuJogador = findViewById(R.id.spinnerEquipeOuJogador);
+        //spequipeOuJogador.setEnabled(false);
+        spinnerJogador = findViewById(R.id.spinnerJogador);
+        spinnerEquipe = findViewById(R.id.spinnerEquipe);
+
         btnverifica = findViewById(R.id.verifica);
-        txtGuarda = findViewById(R.id.txtGuarda);
-        txtGuarda.setVisibility(View.INVISIBLE);
-        txtReservaTorn = findViewById(R.id.txtReservaTorn);
-        txtReservaTorn.setVisibility(View.INVISIBLE);
-        txtReservaJog = findViewById(R.id.txtReservaJog);
-        txtReservaJog.setVisibility(View.INVISIBLE);
+//        txtGuarda.setVisibility(View.INVISIBLE);
+     //   txtReservaTorn.setVisibility(View.INVISIBLE);
+   //     txtReservaJog.setVisibility(View.INVISIBLE);
         btnSair = findViewById(R.id.btnSair);
 
         txtcabecalho00 = findViewById(R.id.txtcabecalho00);
@@ -114,30 +125,91 @@ public class Estatisticas extends AppCompatActivity {
         txtlinha31.setVisibility(View.INVISIBLE);
         txtlinha32 = findViewById(R.id.txtlinha32);
         txtlinha32.setVisibility(View.INVISIBLE);
-
         //pieChart = findViewById(R.id.myPiechart);
         //pieChart.setVisibility(View.INVISIBLE);
         mBarChart = findViewById(R.id.barchart);
         mBarChart.setVisibility(View.INVISIBLE);
 
-        elementoSelecionado();
+        //elementoSelecionado();
+
+        loadSpinnerTorneios(url_busca_torneios);
+        spinnerEquipe.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (parent.getItemAtPosition(position).equals("Torneio:")) {
+                    spinnerJogador.setEnabled(true);
+                }else{
+                    spinnerJogador.setEnabled(false);
+                    String stTorneioSelecionado = spinnerEquipe.getSelectedItem().toString();
+                    txtTorneioOUJogador.setText(stTorneioSelecionado);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+        loadSpinnerJogadores(url_busca_jogadores);
+        spinnerJogador.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (parent.getItemAtPosition(position).equals("Jogador:")) {
+                    spinnerEquipe.setEnabled(true);
+                }else {
+                    spinnerEquipe.setEnabled(false);
+                    String stJogadorSelecionado = spinnerJogador.getSelectedItem().toString();
+                    txtTorneioOUJogador.setText(stJogadorSelecionado);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
         jogosSelecionado();
 
         btnverifica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String escolhaData = txtGuarda.getText().toString();
-                String jogoTorn = txtReservaTorn.getText().toString();
-                String jogoJog = txtReservaJog.getText().toString();
-                if(rdequipe.isChecked()){
-                    verificarTorn(jogoTorn, escolhaData);
-                    txtcabecalho00.setText(rdequipe.getText().toString());
-                }
-                if(rdjogador.isChecked()){
-                    verificarJog(jogoJog, escolhaData);
-                    txtcabecalho00.setText(rdjogador.getText().toString());
+                String escolhaTorneioOuJogador = txtTorneioOUJogador.getText().toString();
+                String escolheRangeJogo = txtRangeJogo.getText().toString();
+
+                if(escolheRangeJogo.equals(null)){
+                    escolheRangeJogo = "todos";
+                    Toast.makeText(Estatisticas.this, "Escolha o que deseja analisar", Toast.LENGTH_LONG).show();
                 }
 
+                if(!spinnerEquipe.getSelectedItem().toString().equals("Torneio:")){
+                    verificarTorn(escolhaTorneioOuJogador, escolheRangeJogo);
+                }
+                if(!spinnerJogador.getSelectedItem().toString().equals("Jogador:")){
+                    verificarJog(escolhaTorneioOuJogador, escolheRangeJogo);
+                }
+
+                /*String escolhaData = txtGuarda.getText().toString();
+                String jogoTorn = txtReservaTorn.getText().toString();
+                String jogoJog = txtReservaJog.getText().toString();
+
+                if (!TextUtils.isEmpty(spequipeOuJogador.getSelectedItem().toString())) {
+                    Toast.makeText(Estatisticas.this, "Preencha todos os campos", Toast.LENGTH_LONG).show();
+                }
+                if(escolhaData==null&&jogoTorn==null&&jogoJog==null){
+                    Toast.makeText(Estatisticas.this, "Preencha todos os campos", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    if (rdequipe.isChecked()) {
+                        verificarTorn(jogoTorn, escolhaData);
+                        txtcabecalho00.setText(rdequipe.getText().toString());
+                    }
+                    if (rdjogador.isChecked()) {
+                        verificarJog(jogoJog, escolhaData);
+                        txtcabecalho00.setText(rdjogador.getText().toString());
+                    }
+                }*/
                 txtcabecalho00.setVisibility(View.VISIBLE);
                 txtcabecalho01.setVisibility(View.VISIBLE);
                 txttitulo00.setVisibility(View.VISIBLE);
@@ -155,13 +227,17 @@ public class Estatisticas extends AppCompatActivity {
                 txtlinha30.setVisibility(View.VISIBLE);
                 txtlinha31.setVisibility(View.VISIBLE);
                 txtlinha32.setVisibility(View.VISIBLE);
-                txtcabecalho01.setText(spequipeOuJogador.getSelectedItem().toString());
+                //txtcabecalho01.setText(spequipeOuJogador.getSelectedItem().toString());
 
+                txtlinha02.setBackgroundColor(Color.parseColor("#d2ff4d"));
+                txtlinha12.setBackgroundColor(Color.parseColor("#56B7F1"));
+                txtlinha22.setBackgroundColor(Color.parseColor("#CDA67F"));
+                txtlinha32.setBackgroundColor(Color.parseColor("#FED70E"));
             }
         });
     }
 
-    public void elementoSelecionado(){
+   /* public void elementoSelecionado(){
         final String[] opcao = new String[1];
         quem.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -206,7 +282,7 @@ public class Estatisticas extends AppCompatActivity {
                 }
             }
         });
-    }
+    }*/
 
     public void jogosSelecionado(){
         final String[] opcao = new String[1];
@@ -215,7 +291,7 @@ public class Estatisticas extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (rdultimo.isChecked()) {
                     opcao[0] = "ultimo";
-                    txtGuarda.setText(opcao[0]);
+                    txtRangeJogo.setText(opcao[0]);
                     txtlinha00.setText(opcao[0]+" jogo");
                     txtlinha10.setText(opcao[0]+" jogo");
                     txtlinha20.setText(opcao[0]+" jogo");
@@ -223,7 +299,7 @@ public class Estatisticas extends AppCompatActivity {
                 }
                 if (rdtres.isChecked()) {
                     opcao[0] = "tres";
-                    txtGuarda.setText(opcao[0]);
+                    txtRangeJogo.setText(opcao[0]);
                     txtlinha00.setText(opcao[0]+" jogos");
                     txtlinha10.setText(opcao[0]+" jogos");
                     txtlinha20.setText(opcao[0]+" jogos");
@@ -231,7 +307,7 @@ public class Estatisticas extends AppCompatActivity {
                 }
                 if (rdcinco.isChecked()) {
                     opcao[0] = "cinco";
-                    txtGuarda.setText(opcao[0]);
+                    txtRangeJogo.setText(opcao[0]);
                     txtlinha00.setText(opcao[0]+" jogos");
                     txtlinha10.setText(opcao[0]+" jogos");
                     txtlinha20.setText(opcao[0]+" jogos");
@@ -239,7 +315,7 @@ public class Estatisticas extends AppCompatActivity {
                 }
                 if (rddez.isChecked()) {
                     opcao[0] = "dez";
-                    txtGuarda.setText(opcao[0]);
+                    txtRangeJogo.setText(opcao[0]);
                     txtlinha00.setText(opcao[0]+" jogos");
                     txtlinha10.setText(opcao[0]+" jogos");
                     txtlinha20.setText(opcao[0]+" jogos");
@@ -247,7 +323,7 @@ public class Estatisticas extends AppCompatActivity {
                 }
                 if (rdtodos.isChecked()) {
                     opcao[0] = "todos";
-                    txtGuarda.setText(opcao[0]);
+                    txtRangeJogo.setText(opcao[0]);
                     txtlinha00.setText(opcao[0]+" jogos");
                     txtlinha10.setText(opcao[0]+" jogos");
                     txtlinha20.setText(opcao[0]+" jogos");
@@ -278,20 +354,7 @@ public class Estatisticas extends AppCompatActivity {
                         txtlinha12.setText(chuteAgol);
                         txtlinha22.setText(perdida);
                         txtlinha32.setText(interceptacao);
-
-                        /*pieChart.addPieSlice(new PieModel("Passes errados", Float.parseFloat(passeErrado), Color.parseColor("#FE6DA8")));
-                        pieChart.addPieSlice(new PieModel("Chutes a gol", Float.parseFloat(chuteAgol), Color.parseColor("#56B7F1")));
-                        pieChart.addPieSlice(new PieModel("Bolas Perdidas", Float.parseFloat(perdida), Color.parseColor("#CDA67F")));
-                        pieChart.addPieSlice(new PieModel("Interceptações", Float.parseFloat(interceptacao), Color.parseColor("#FED70E")));
-                        pieChart.setVisibility(View.VISIBLE);
-                        pieChart.startAnimation();*/
-
-                        mBarChart.addBar(new BarModel("Passes errados", Float.parseFloat(passeErrado), Color.parseColor("#FE6DA8")));
-                        mBarChart.addBar(new BarModel("Chutes a gol", Float.parseFloat(chuteAgol), Color.parseColor("#56B7F1")));
-                        mBarChart.addBar(new BarModel("Bolas Perdidas", Float.parseFloat(perdida), Color.parseColor("#CDA67F")));
-                        mBarChart.addBar(new BarModel("Interceptações", Float.parseFloat(interceptacao), Color.parseColor("#FED70E")));
-                        mBarChart.setVisibility(View.VISIBLE);
-                        mBarChart.startAnimation();
+                        carregaBarChart(passeErrado, chuteAgol, perdida, interceptacao);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -314,6 +377,16 @@ public class Estatisticas extends AppCompatActivity {
         };
         queue.add(stringRequest);
     }
+    //CARREGAR GRÁFICOS -----------------------------------------------------------------------------------------------------------
+    public void carregaBarChart(String passeErrado, String chuteAgol, String perdida, String interceptacao){
+        mBarChart.addBar(new BarModel("Passes", Float.parseFloat(passeErrado), Color.parseColor("#d2ff4d")));
+        mBarChart.addBar(new BarModel("Chut Gol", Float.parseFloat(chuteAgol), Color.parseColor("#56B7F1")));
+        mBarChart.addBar(new BarModel("Perdidas", Float.parseFloat(perdida), Color.parseColor("#CDA67F")));
+        mBarChart.addBar(new BarModel("Intercept", Float.parseFloat(interceptacao), Color.parseColor("#FED70E")));
+        mBarChart.setVisibility(View.VISIBLE);
+        mBarChart.startAnimation();
+    }
+//FIM CARREGAR GRÁFICOS -----------------------------------------------------------------------------------------------------------
 
     public void verificarTorn(final String escolhaTorn, final String jogoTorn){
         RequestQueue queue = Volley.newRequestQueue(Estatisticas.this);
@@ -334,6 +407,7 @@ public class Estatisticas extends AppCompatActivity {
                         txtlinha12.setText(chuteAgol);
                         txtlinha22.setText(perdida);
                         txtlinha32.setText(interceptacao);
+                        carregaBarChart(passeErrado, chuteAgol, perdida, interceptacao);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -357,7 +431,6 @@ public class Estatisticas extends AppCompatActivity {
         queue.add(stringRequest);
     }
 
-
     private void loadSpinnerTorneios(String urlSpin) {
         final ArrayList<String> listaTorneios = new ArrayList<>();
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -367,14 +440,15 @@ public class Estatisticas extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray jsonArray = jsonObject.getJSONArray("torneios");
-                    listaTorneios.add("Escolha o torneio:");
+                    listaTorneios.add("Torneio:");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jobj = jsonArray.getJSONObject(i);
                         String nomeTorneio = jobj.getString("nomeTorneio");
                         listaTorneios.add(nomeTorneio);
                     }
                     adapter = new ArrayAdapter<String>(Estatisticas.this, android.R.layout.simple_spinner_dropdown_item, listaTorneios);
-                    spequipeOuJogador.setAdapter(adapter);
+                    //spequipeOuJogador.setAdapter(adapter);
+                    spinnerEquipe.setAdapter(adapter);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -396,15 +470,16 @@ public class Estatisticas extends AppCompatActivity {
             public void onResponse(String response) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
-                    JSONArray jsonArray = jsonObject.getJSONArray("jogadores");
-                    listaJogador.add("Escolha o jogador:");
+                    JSONArray jsonArray = jsonObject.getJSONArray("dados");
+                    listaJogador.add("Jogador:");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jobj = jsonArray.getJSONObject(i);
                         String nomeJogador = jobj.getString("nomeJogador");
                         listaJogador.add(nomeJogador);
                     }
-                    adapter = new ArrayAdapter<String>(Estatisticas.this, android.R.layout.simple_spinner_dropdown_item, listaJogador);
-                    spequipeOuJogador.setAdapter(adapter);
+                    adapter = new ArrayAdapter<>(Estatisticas.this, android.R.layout.simple_spinner_dropdown_item, listaJogador);
+                    //spequipeOuJogador.setAdapter(adapter);
+                    spinnerJogador.setAdapter(adapter);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -424,4 +499,3 @@ public class Estatisticas extends AppCompatActivity {
         startActivity(it);
     }
 }
-

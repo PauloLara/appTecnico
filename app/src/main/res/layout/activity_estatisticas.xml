@@ -41,10 +41,52 @@
                     android:textStyle="bold"
                     tools:ignore="DuplicateIds,OnClick" />
             </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtSelecione"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Selecione o que deseja analisar:" />
+
+            </TableRow>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Spinner
+                            android:id="@+id/spinnerEquipe"
+                            android:layout_width="150dp"
+                            android:layout_height="42dp" />
+
+                        <TextView
+                            android:id="@+id/ou"
+                            android:layout_width="36dp"
+                            android:layout_height="42dp"
+                            android:layout_marginRight="10dp"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="OU" />
+
+                        <Spinner
+                            android:id="@+id/spinnerJogador"
+                            android:layout_width="150dp"
+                            android:layout_height="42dp" />
+
+                    </TableRow>
+            </TableLayout>
         </TableLayout>
 
 
-        <TextView
+        <!--<TextView
             android:id="@+id/txtSelecione"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -95,7 +137,7 @@
         <Spinner
             android:id="@+id/spinnerEquipeOuJogador"
             android:layout_width="match_parent"
-            android:layout_height="42dp" />
+            android:layout_height="42dp" />-->
 
         <TextView
             android:id="@+id/txtSelect"
@@ -326,11 +368,12 @@
 
             </TableRow>
         </TableLayout>
+
         <View
             android:id="@+id/divider6"
             android:layout_width="match_parent"
             android:layout_height="4dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="10dp"
             android:background="@android:color/darker_gray" />
 
         <FrameLayout
@@ -349,15 +392,29 @@
             <org.eazegraph.lib.charts.BarChart
                 android:id="@+id/barchart"
                 android:layout_width="match_parent"
-                android:layout_height="256dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:rotation="90"
+                android:layout_height="237dp"
+                android:paddingLeft="42dp"
+                android:paddingRight="40dp"
                 app:egBarWidth="35dp"
                 app:egFixedBarWidth="true"
                 app:egLegendHeight="40dp" />
 
         </FrameLayout>
+
+        <TextView
+            android:id="@+id/txtTorneioOUJogador"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="6sp" />
+
+        <TextView
+            android:id="@+id/txtRangeJogo"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:textSize="6sp" />
 
 
     </LinearLayout>

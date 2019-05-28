@@ -55,7 +55,7 @@
                 android:id="@+id/btnnovojogo"
                 android:layout_width="180dp"
                 android:layout_height="120dp"
-                android:background="#b8d8ba"
+                android:background="#CEF1CF"
                 android:onClick="clickBtnIrPartidaConfig"
                 android:text="@string/novo_jogo"
                 tools:ignore="OnClick" />
@@ -66,7 +66,7 @@
                 android:layout_height="120dp"
                 android:layout_alignParentBottom="false"
                 android:layout_centerHorizontal="false"
-                android:background="@color/colorPrimary"
+                android:background="#81A36B"
                 android:onClick="clickBtnIrEstatisticas"
                 android:text="@string/estatisticas" />
         </TableRow>
@@ -119,6 +119,33 @@
                 android:background="#5d6cbd"
                 android:onClick="clickBtnIrTestLayouts"
                 android:text="TESTES"
+                tools:ignore="OnClick" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btncronometro"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_alignParentBottom="false"
+                android:layout_centerHorizontal="false"
+                android:background="#67CA51"
+                android:onClick="clickBtnCronometro"
+                android:text="cronômetro" />
+
+            <Button
+                android:id="@+id/btntatica"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_alignParentBottom="false"
+                android:layout_centerHorizontal="false"
+                android:background="#E7B54B"
+                android:onClick="clickBtnIrTestLayouts"
+                android:text="táticas"
                 tools:ignore="OnClick" />
 
         </TableRow>

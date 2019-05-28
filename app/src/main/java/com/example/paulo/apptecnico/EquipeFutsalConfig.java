@@ -49,13 +49,16 @@ public class EquipeFutsalConfig extends AppCompatActivity {
 
     TextView posJog1, numJog1, posJog2, numJog2, posJog3, numJog3, posJog4, numJog4, posJog5, numJog5, posJog6, numJog6,
              posJog7, numJog7, posJog8, numJog8, posJog9, numJog9, posJog10, numJog10, posJog11, numJog11, posJog12, numJog12,
-             posJog13, numJog13, posJog14, numJog14, posJog15, numJog15, posJog16, numJog16, posJog17, numJog17, posJog18, numJog18;
+             posJog13, numJog13, posJog14, numJog14, posJog15, numJog15, posJog16, numJog16, posJog17, numJog17, posJog18,
+             numJog18, guardaCategoria;
     EditText eTapelidoEquipe;
 
     String URL = "http://192.168.15.17/busca_torneios.php";
     String url = "http://192.168.15.17/cadastro_equipe.php";
     String URLbusca = "http://192.168.15.17/busca_dados_jogador.php";
+    String URLbuscaCategoria = "http://192.168.15.17/busca_dados_jogadores.php";
     String URLbuscaPorNome = "http://192.168.15.17/busca_dados_por_nome_jogador.php";
+    String  url_busca_categoria = "http://192.168.15.17/busca_dados_torneio.php";
 
     //String URL = "https://appscout.000webhostapp.com/appscout/busca_torneios.php";
     //String url = "https://appscout.000webhostapp.com/appscout/cadastro_equipe.php";
@@ -129,6 +132,7 @@ public class EquipeFutsalConfig extends AppCompatActivity {
          numJog17 = findViewById(R.id.numJog17);
          posJog18 = findViewById(R.id.posJog18);
          numJog18 = findViewById(R.id.numJog18);
+         guardaCategoria = findViewById(R.id.guardaCategoria);
 
 
         requestQueue = Volley.newRequestQueue(EquipeFutsalConfig.this);
@@ -138,18 +142,75 @@ public class EquipeFutsalConfig extends AppCompatActivity {
         loadSpinnerTorneios(URL);
         spTorneio.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                //String torneio = spTorneio.getItemAtPosition(spTorneio.getSelectedItemPosition()).toString();
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (parent.getItemAtPosition(position).equals("Selecione o jogo:")||spTorneio.getSelectedItemPosition()==0) {
+                    //faz nada
+                } else {
+                    String strNomeTorneio = spTorneio.getItemAtPosition(spTorneio.getSelectedItemPosition()).toString();
+                    String[] segundaVariavel = strNomeTorneio.split("-");
+                    String nomeTorn = segundaVariavel[1].trim();
+                    //Toast.makeText(EquipeFutsalConfig.this, "Nome torneio "+nomeTorn, Toast.LENGTH_LONG).show();
+                    pegaCategoria(nomeTorn); //busca a categoria pelo nome do torneio que foi escolhido e bota no tv guardaCategoria
+
+                    carregarSpinnersJogadores();
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
+
+        spJog1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String jogador = spJog1.getItemAtPosition(spJog1.getSelectedItemPosition()).toString();
+                verificarDuplicadas1(jogador);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
         //AQUI POPULA AS SPINNERS DOS JOGADORES
-        loadSpinnerJogadores(URLbusca);
+        //loadSpinnerJogadores(URLbusca);
 
         //AQUI COMEÇA A POPULAR CADA TEXT VIEW DE POSIÇÃO E NUMERO DE ACORDO COM O JOGADOR ESCOLHIDO, USANDO O MÉTODO loadPosicoes(x)()
+
+
+        buttonCadastrarEquipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                VerificaCamposVazios();
+                if (CheckEditText) {
+                    cadastrarEquipe();
+                    limpadados();
+
+                } else {
+                    Toast.makeText(EquipeFutsalConfig.this, "Favor, preencha todos os campos.", Toast.LENGTH_LONG).show();
+                   // Toast.makeText(TuaClasse.this, response, Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        ScrollView scrollView = (ScrollView) findViewById(R.id.scrollView1);
+        scrollView.setOnTouchListener(new View.OnTouchListener() {
+            // to solve foocus problem on scrolling
+            public boolean onTouch(View v, MotionEvent event) {
+                if (eTapelidoEquipe.hasFocus()) {
+                    eTapelidoEquipe.clearFocus();
+                }
+                if (eTapelidoEquipe.hasFocus()) {
+                    eTapelidoEquipe.clearFocus();
+                }
+
+                return false;
+            }
+        });
+    }
+
+    public void carregarSpinnersJogadores(){
         spJog1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -365,37 +426,48 @@ public class EquipeFutsalConfig extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
-
-        buttonCadastrarEquipe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                VerificaCamposVazios();
-                if (CheckEditText) {
-                    cadastrarEquipe();
-                } else {
-                    Toast.makeText(EquipeFutsalConfig.this, "Favor, preencha todos os campos.", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-
-        ScrollView scrollView = (ScrollView) findViewById(R.id.scrollView1);
-        scrollView.setOnTouchListener(new View.OnTouchListener() {
-            // to solve foocus problem on scrolling
-            public boolean onTouch(View v, MotionEvent event) {
-                if (eTapelidoEquipe.hasFocus()) {
-                    eTapelidoEquipe.clearFocus();
-                }
-                if (eTapelidoEquipe.hasFocus()) {
-                    eTapelidoEquipe.clearFocus();
-                }
-
-                return false;
-            }
-        });
     }
+
+
+    public void pegaCategoria(final String nomeTorn){
+        RequestQueue queue = Volley.newRequestQueue(EquipeFutsalConfig.this);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url_busca_categoria, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    JSONArray jsonArray = jsonObject.getJSONArray("dados");
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject jobj = jsonArray.getJSONObject(i);
+                        String categorias = jobj.getString("categoria");
+                        guardaCategoria.setText(categorias);
+                        loadSpinnerJogadores(categorias);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(EquipeFutsalConfig.this, "Erro no servidor", Toast.LENGTH_LONG).show();
+                error.printStackTrace();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("nomeTorneio", nomeTorn);
+                return params;
+            }
+        };
+        queue.add(stringRequest);
+    }
+
 
     String stIDTorneio;
     public void cadastrarEquipe() {
+        final String categoria = guardaCategoria.getText().toString();
         String stIDnomeTorneio = (String) spTorneio.getSelectedItem();
         String[] separaNomeTorneio = stIDnomeTorneio.split("-");
         stNomeTorneio = separaNomeTorneio[1];
@@ -467,6 +539,7 @@ public class EquipeFutsalConfig extends AppCompatActivity {
                 params.put("nomeJogadorExtra4", strJog16);
                 params.put("nomeJogadorExtra5", strJog17);
                 params.put("nomeJogadorExtra6", strJog18);
+                params.put("categoria", categoria);
                 return params;
             }
         };
@@ -477,6 +550,7 @@ public class EquipeFutsalConfig extends AppCompatActivity {
     }
 
     public void limpadados(){
+        eTapelidoEquipe.setText(null);
         posJog1.setText("");
         numJog1.setText("");
         posJog2.setText("");
@@ -513,6 +587,25 @@ public class EquipeFutsalConfig extends AppCompatActivity {
         numJog17.setText("");
         posJog18.setText("");
         numJog18.setText("");
+        spTorneio.setSelection(0);
+        spJog1.setSelection(0);
+        spJog2.setSelection(0);
+        spJog3.setSelection(0);
+        spJog4.setSelection(0);
+        spJog5.setSelection(0);
+        spJog6.setSelection(0);
+        spJog7.setSelection(0);
+        spJog8.setSelection(0);
+        spJog9.setSelection(0);
+        spJog10.setSelection(0);
+        spJog11.setSelection(0);
+        spJog12.setSelection(0);
+        spJog13.setSelection(0);
+        spJog14.setSelection(0);
+        spJog15.setSelection(0);
+        spJog16.setSelection(0);
+        spJog17.setSelection(0);
+        spJog18.setSelection(0);
     }
 
     private void loadSpinnerTorneios(String url) {
@@ -557,11 +650,10 @@ public class EquipeFutsalConfig extends AppCompatActivity {
         return Integer.parseInt(digitos);
     }
 
-    //INÍCIO - AQUI POPULA O SPINNER DE JOGADORES COM DADOS DO BANCO *******************************************************************
-    private void loadSpinnerJogadores(String urlSpin) {
+    private void loadSpinnerJogadores(final String categoria) {
         final ArrayList<String> listaJogadores = new ArrayList<>();
-        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, urlSpin, new Response.Listener<String>() {
+        RequestQueue queue = Volley.newRequestQueue(EquipeFutsalConfig.this);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLbuscaCategoria, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -596,14 +688,23 @@ public class EquipeFutsalConfig extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        }, new Response.ErrorListener() {
+        },new Response.ErrorListener(){
             @Override
-            public void onErrorResponse(VolleyError error) {
+            public void onErrorResponse (VolleyError error){
+                Toast.makeText(EquipeFutsalConfig.this, "Erro no servidor", Toast.LENGTH_LONG).show();
                 error.printStackTrace();
             }
-        });
-        requestQueue.add(stringRequest);
+        }){
+            @Override
+            protected Map<String, String> getParams () {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("categoria", categoria);
+                return params;
+            }
+        };
+        queue.add(stringRequest);
     }
+
     //INÍCIO - AQUI POPULA O SPINNER DE JOGADORES COM DADOS DO BANCO *******************************************************************
 
 
@@ -700,17 +801,13 @@ public class EquipeFutsalConfig extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        },new Response.ErrorListener()
-
-        {
+        },new Response.ErrorListener() {
             @Override
             public void onErrorResponse (VolleyError error){
                 Toast.makeText(EquipeFutsalConfig.this, "Erro no servidor", Toast.LENGTH_SHORT).show();
                 error.printStackTrace();
             }
-        })
-
-        {
+        }){
             @Override
             protected Map<String, String> getParams () {
                 Map<String, String> params = new HashMap<String, String>();

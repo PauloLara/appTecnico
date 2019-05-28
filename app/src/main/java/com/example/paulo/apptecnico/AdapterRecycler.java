@@ -28,13 +28,15 @@ public class AdapterRecycler extends RecyclerView.Adapter<AdapterRecycler.Exampl
     public void onBindViewHolder(ExampleViewHolder holder, int position) {
         DadosJogadores blocoDados = lista.get(position);
 
-        String posicao = blocoDados.getPosJ();
         String nomeJogador = blocoDados.getNomeJ();
+        String posicao = blocoDados.getPosJ();
         String numeroJogador = blocoDados.getNumJ();
+        String categoriaJogador = blocoDados.getCatJ();
 
-        holder.posicao.setText(posicao);
         holder.nomeJogador.setText(nomeJogador);
+        holder.posicao.setText(posicao);
         holder.numeroJogador.setText(numeroJogador);
+        holder.categoriaJogador.setText(categoriaJogador);
     }
 
     @Override
@@ -43,15 +45,17 @@ public class AdapterRecycler extends RecyclerView.Adapter<AdapterRecycler.Exampl
     }
 
     public class ExampleViewHolder extends RecyclerView.ViewHolder {
-        public TextView posicao;
         public TextView nomeJogador;
+        public TextView posicao;
         public TextView numeroJogador;
+        public TextView categoriaJogador;
 
         public ExampleViewHolder(View itemView) {
             super(itemView);
-            posicao = itemView.findViewById(R.id.posicaoJog);
             nomeJogador = itemView.findViewById(R.id.nomeJog);
+            posicao = itemView.findViewById(R.id.posicaoJog);
             numeroJogador = itemView.findViewById(R.id.numeroJog);
+            categoriaJogador = itemView.findViewById(R.id.categoriaJog);
         }
     }
 }

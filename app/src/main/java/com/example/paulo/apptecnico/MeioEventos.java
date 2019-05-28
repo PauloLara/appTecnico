@@ -43,7 +43,7 @@ public class MeioEventos extends Activity {
 
     String URLsp = "http://192.168.15.17/busca_torneios.php";
     String URLspcl = "http://192.168.15.17/busca_adversarios.php";
-    String URLtv = "http://192.168.15.17/busca_equipe_por_torneio.php";
+    //String URLtv = "http://192.168.15.17/busca_equipe_por_torneio.php";
     String URLbuscaPorTorneio = "http://192.168.15.17/busca_equipe_por_torneio.php";
     String URLev = "http://192.168.15.17/insere_eventos.php";
 
@@ -210,9 +210,14 @@ public class MeioEventos extends Activity {
         loadSpinnerTorneios(URLsp);
         spinnerTorneio.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String torneio = spinnerTorneio.getItemAtPosition(spinnerTorneio.getSelectedItemPosition()).toString();
-                buscaEquipePorTorneio(torneio);
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (parent.getItemAtPosition(position).equals("Selecione o torneio:")) {
+                    //faz nada
+                } else {
+                    String torneio = spinnerTorneio.getItemAtPosition(spinnerTorneio.getSelectedItemPosition()).toString();
+
+                    buscaEquipePorTorneio(torneio);
+                }
             }
 
             @Override
@@ -669,35 +674,75 @@ public class MeioEventos extends Activity {
         String IDTorneio = retiraCaracter.replaceAll("[^0-9]", "");
         stIDTorneio = IDTorneio.trim();
         stNomeTorneio = stNomeTorneios.trim();
+        Toast.makeText(MeioEventos.this, stNomeTorneio, Toast.LENGTH_LONG).show();
 
         RequestQueue queue = Volley.newRequestQueue(MeioEventos.this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URLbuscaPorTorneio, new Response.Listener<String>() {
             @Override
             public void onResponse(String resposta) {
+                Toast.makeText(MeioEventos.this, resposta, Toast.LENGTH_SHORT).show();
                 try {
                     JSONObject objetoJson = new JSONObject(resposta);
                     JSONArray jsonArray = objetoJson.getJSONArray("dados");
                     for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject jogadorj = jsonArray.getJSONObject(i);
-                        tvApelidoEquipe.setText(jogadorj.getString("apelidoEquipe"));
-                        tvGoleiro.setText(jogadorj.getString("goleiro"));
-                        tvFixo.setText(jogadorj.getString("fixo"));
-                        tvAlaEsq.setText(jogadorj.getString("alaEsq"));
-                        tvAlaDir.setText(jogadorj.getString("alaDir"));
-                        tvPivo.setText(jogadorj.getString("pivo"));
-                        tvGoleiroRes.setText(jogadorj.getString("goleiroRes"));
-                        tvFixoRes.setText(jogadorj.getString("fixoRes"));
-                        tvAlaEsqRes.setText(jogadorj.getString("alaEsqRes"));
-                        tvAlaDirRes.setText(jogadorj.getString("alaDirRes"));
-                        tvPivoRes.setText(jogadorj.getString("pivoRes"));
-                        tvGoleiroResRes.setText(jogadorj.getString("goleiroResRes"));
-                        tvJogadorExtra.setText(jogadorj.getString("jogadorExtra"));
-                        tvJogadorExtra1.setText(jogadorj.getString("jogadorExtra1"));
-                        tvJogadorExtra2.setText(jogadorj.getString("jogadorExtra2"));
-                        tvJogadorExtra3.setText(jogadorj.getString("jogadorExtra3"));
-                        tvJogadorExtra4.setText(jogadorj.getString("jogadorExtra4"));
-                        tvJogadorExtra5.setText(jogadorj.getString("jogadorExtra5"));
-                        tvJogadorExtra6.setText(jogadorj.getString("jogadorExtra6"));
+                        //JSONObject jogadorj = jsonArray.getJSONObject(i);
+
+                        JSONObject jogador0 = jsonArray.getJSONObject(0);
+                        tvGoleiro.setText(jogador0.getString("nomeJogador"));
+
+                        JSONObject jogador1 = jsonArray.getJSONObject(1);
+                        tvFixo.setText(jogador1.getString("nomeJogador"));
+
+                        JSONObject jogador2 = jsonArray.getJSONObject(2);
+                        tvAlaEsq.setText(jogador2.getString("nomeJogador"));
+
+                        JSONObject jogador3 = jsonArray.getJSONObject(3);
+                        tvAlaDir.setText(jogador3.getString("nomeJogador"));
+
+                        JSONObject jogador4 = jsonArray.getJSONObject(4);
+                        tvPivo.setText(jogador4.getString("nomeJogador"));
+
+                        JSONObject jogador5 = jsonArray.getJSONObject(5);
+                        tvGoleiroRes.setText(jogador5.getString("nomeJogador"));
+
+                        JSONObject jogador6 = jsonArray.getJSONObject(6);
+                        tvFixoRes.setText(jogador6.getString("nomeJogador"));
+
+                        JSONObject jogador7 = jsonArray.getJSONObject(7);
+                        tvAlaEsqRes.setText(jogador7.getString("nomeJogador"));
+
+                        JSONObject jogador8 = jsonArray.getJSONObject(8);
+                        tvAlaDirRes.setText(jogador8.getString("nomeJogador"));
+
+                        JSONObject jogador9 = jsonArray.getJSONObject(9);
+                        tvPivoRes.setText(jogador9.getString("nomeJogador"));
+
+                        JSONObject jogador10 = jsonArray.getJSONObject(10);
+                        tvGoleiroResRes.setText(jogador10.getString("nomeJogador"));
+
+                        JSONObject jogador11 = jsonArray.getJSONObject(11);
+                        tvJogadorExtra.setText(jogador11.getString("nomeJogador"));
+
+                        JSONObject jogador12 = jsonArray.getJSONObject(12);
+                        tvJogadorExtra1.setText(jogador12.getString("nomeJogador"));
+
+                        JSONObject jogador13 = jsonArray.getJSONObject(13);
+                        tvJogadorExtra2.setText(jogador13.getString("nomeJogador"));
+
+                        JSONObject jogador14 = jsonArray.getJSONObject(14);
+                        tvJogadorExtra3.setText(jogador14.getString("nomeJogador"));
+
+                        JSONObject jogador15 = jsonArray.getJSONObject(15);
+                        tvJogadorExtra4.setText(jogador15.getString("nomeJogador"));
+
+                        JSONObject jogador16 = jsonArray.getJSONObject(16);
+                        tvJogadorExtra5.setText(jogador16.getString("nomeJogador"));
+
+                        JSONObject jogador17 = jsonArray.getJSONObject(17);
+                        tvJogadorExtra6.setText(jogador17.getString("nomeJogador"));
+
+                        JSONObject apelidoEquipe = jsonArray.getJSONObject(18);
+                        tvApelidoEquipe.setText(apelidoEquipe.getString("apelidoEquipe"));
                     }
                 }
                 catch(JSONException e){

@@ -45,8 +45,12 @@
         <activity android:name=".TestLayouts"/>
         <activity android:name=".MeioEventos"/>
         <activity android:name=".ClicarEventosFutsal"/>
+        <activity android:name=".DesenharQuadra"/>
+        <activity android:name=".FormationsActivity"/>
+        <activity android:name=".StatisticsActivity"/>
+        <activity android:name=".DirectoryActivity"/>
         <activity android:name=".Estatisticas"/>
-
+        <activity android:name=".Cronometro"/>
     </application>
 
 </manifest>

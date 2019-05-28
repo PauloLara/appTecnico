@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayout01"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#FFCCCCCC"
+        android:orientation="vertical" >
+
+        <ImageButton
+            android:id="@+id/drawerBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:src="@drawable/ic_drawer" />
+
+        <FrameLayout
+            android:id="@+id/FrameHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="61dp"
+            android:layout_marginRight="61dp"
+            android:layout_marginTop="0dp" >
+
+            <RelativeLayout
+                android:id="@+id/DrawingHeader01"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:id="@+id/bPlayer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="0dp"
+                    android:background="@null"
+                    android:contentDescription="@string/b_player"
+                    android:src="@drawable/b_player" />
+
+                <ImageButton
+                    android:id="@+id/ball"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginRight="390dp"
+                    android:layout_toLeftOf="@+id/refresh"
+                    android:background="@null"
+                    android:contentDescription="@string/ball"
+                    android:src="@drawable/ball" />
+
+                <ImageButton
+                    android:id="@+id/rPlayer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/ball"
+                    android:layout_toRightOf="@+id/bPlayer"
+                    android:background="@null"
+                    android:contentDescription="@string/r_player"
+                    android:src="@drawable/r_player" />
+
+                <ImageView
+                    android:id="@+id/removeIcon"
+                    android:layout_width= "wrap_content"
+                    android:layout_height= "fill_parent"
+                    android:layout_toLeftOf="@+id/refresh"
+                    android:layout_marginRight="175dp"
+                    android:scaleType="center"
+                    android:background="@null"
+                    android:contentDescription="@string/remove_icon"
+                    android:src="@drawable/remove"
+                    android:visibility="invisible" />
+
+                <ImageButton
+                    android:id="@+id/refresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_toLeftOf="@+id/draw"
+                    android:contentDescription="@string/refresh"
+                    android:src="@drawable/ic_action_discard" />
+
+                <ImageButton
+                    android:id="@+id/draw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_toLeftOf="@+id/erase"
+                    android:contentDescription="@string/brush"
+                    android:src="@drawable/marker" />
+
+                <ImageButton
+                    android:id="@+id/erase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_toLeftOf="@+id/save"
+                    android:contentDescription="@string/erase"
+                    android:src="@drawable/eraser" />
+
+                <ImageButton
+                    android:id="@+id/save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentRight="true"
+                    android:contentDescription="@string/save"
+                    android:src="@drawable/save" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/SaveHeader01"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal"
+                android:visibility="invisible" >
+
+                <Button
+                    android:id="@+id/drawingReturnBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="0dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/back" />
+
+                <TextView
+                    android:id="@+id/nameHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/removeBtn"
+                    android:layout_alignTop="@+id/removeBtn"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@+id/removeBtn"
+                    android:layout_toRightOf="@+id/drawingReturnBtn"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textSize="35sp"
+                    android:typeface="monospace" />
+
+                <ImageButton
+                    android:id="@+id/removeBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_action_discard"
+                    />
+            </RelativeLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/FrameLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="66dp"
+            android:layout_marginRight="61dp"
+            android:padding="0dp" >
+
+            <ImageView
+                android:id="@+id/drawing_field"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/field" />
+
+            <com.example.paulo.apptecnico.DrawingView
+                android:id="@+id/drawing"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="5dp"
+                android:padding="0dp" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/right_drawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="#f3f3f4"
+        android:choiceMode="singleChoice"
+        android:divider="#50000000"
+        android:dividerHeight="1dp" />
+
+</android.support.v4.widget.DrawerLayout>

@@ -20,10 +20,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.github.mikephil.charting.charts.HorizontalBarChart;
 
+import org.eazegraph.lib.charts.BarChart;
 import org.eazegraph.lib.charts.PieChart;
+import org.eazegraph.lib.charts.StackedBarChart;
+import org.eazegraph.lib.models.BarModel;
 import org.eazegraph.lib.models.PieModel;
+import org.eazegraph.lib.models.StackedBarModel;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,18 +40,19 @@ public class Graficos extends Activity {
     WebView myWebView;
     Spinner spinnerAcoes, spinnerJogadores, spinnerTorneios, spinnerJogos;
 
-    String url_busca_acoes =  "http://192.168.15.17/busca_acoes.php";
+    String url_busca_acoes =  "http://192.168.15.17/busca_acoes_pizza.php";
     String url_busca_jogadores =  "http://192.168.15.17/busca_jogadores.php";
     String url_busca_torneios =  "http://192.168.15.17/busca_torneios.php";
     String url_busca_jogo =  "http://192.168.15.17/select_jogo_por_torneio_escolhido.php";
     String url_monta_graficos =  "http://192.168.15.17/monta_graficos.php";
     String url_acao_jogador =  "http://192.168.15.17/acao_jogador.php";
     String url_busca_ac_jog_torn =  "http://192.168.15.17/ac_jog_torn.php";
+
     String url_todas_acoes =  "http://192.168.15.17/pizza_todas_acoes.php";
-    String url_passes_errados =  "http://192.168.15.17/pizza_passes_errados.php";
-    String url_chutes_gol =  "http://192.168.15.17/pizza_chutes_gol.php";
-    String url_perdidas =  "http://192.168.15.17/pizza_bolas_perdidas.php";
-    String url_interceptacoes = "http://192.168.15.17/pizza_interceptacoes.php";
+    String url_passes_errados =  "http://192.168.15.17/busca_passes.php";
+    String url_chutes_gol =  "http://192.168.15.17/busca_chutes.php";
+    String url_perdidas =  "http://192.168.15.17/busca_perdidas.php";
+    String url_interceptacoes = "http://192.168.15.17/busca_interceptacoes.php";
 
     //String url_busca_acoes = "https://appscout.000webhostapp.com/appscout/busca_acoes.php";
    // String url_busca_jogadores = "https://appscout.000webhostapp.com/appscout/busca_jogadores.php"; //popula spinner jogadores
@@ -68,7 +72,10 @@ public class Graficos extends Activity {
     TextView tvdados1, tvdados2, tvdados3, tvdados4, tvdados01, tvdados02, tvdados03, tvdados04, tvRes, tvResTxt, tv1, tv2, tv3, tv4;
     Button btnVerificar, btnLimpar, btnAct, btnJog, btnTorn, btnDat, btnSair;
     PieChart pieChart;
-    HorizontalBarChart hBarChart;
+    BarChart mBarChart;
+    StackedBarChart mStackedBarChart;
+
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,8 +120,14 @@ public class Graficos extends Activity {
         btnJog.setVisibility(View.INVISIBLE);
         btnTorn.setVisibility(View.INVISIBLE);
         btnDat.setVisibility(View.INVISIBLE);
+
         pieChart = findViewById(R.id.myPiechart);
         pieChart.setVisibility(View.INVISIBLE);
+        mBarChart = findViewById(R.id.barchart);
+        mBarChart.setVisibility(View.INVISIBLE);
+        mStackedBarChart = findViewById(R.id.stackedbarchart);
+        mStackedBarChart.setVisibility(View.INVISIBLE);
+
         tv1 = findViewById(R.id.tv1);
         tv2 = findViewById(R.id.tv2);
         tv3 = findViewById(R.id.tv3);
@@ -320,9 +333,27 @@ public class Graficos extends Activity {
         myWebView.clearView();
     }
 
+    public void carregaBarChart(String passeErrado, String chuteAgol, String perdida, String interceptacao){
+        mBarChart.addBar(new BarModel("Passes", Float.parseFloat(passeErrado), Color.parseColor("#d2ff4d")));
+        mBarChart.addBar(new BarModel("Chut Gol", Float.parseFloat(chuteAgol), Color.parseColor("#56B7F1")));
+        mBarChart.addBar(new BarModel("Perdidas", Float.parseFloat(perdida), Color.parseColor("#CDA67F")));
+        mBarChart.addBar(new BarModel("Intercept", Float.parseFloat(interceptacao), Color.parseColor("#FED70E")));
+        mBarChart.setVisibility(View.VISIBLE);
+        mBarChart.startAnimation();
+    }
+
+    public void carregaPieChart(String passeErrado, String chuteAgol, String perdida, String interceptacao){
+        pieChart.addPieSlice(new PieModel("Passes errados", Integer.parseInt(passeErrado), Color.parseColor("#FE6DA8")));
+        pieChart.addPieSlice(new PieModel("Chutes a gol", Integer.parseInt(chuteAgol), Color.parseColor("#56B7F1")));
+        pieChart.addPieSlice(new PieModel("Bolas Perdidas", Integer.parseInt(perdida), Color.parseColor("#CDA67F")));
+        pieChart.addPieSlice(new PieModel("Interceptações", Integer.parseInt(interceptacao), Color.parseColor("#FED70E")));
+        pieChart.setVisibility(View.VISIBLE);
+        pieChart.startAnimation();
+    }
+
     //COM QUATRO PARÂMETROS 4444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444
     public void escolherTodos(final String nomeAcao, final String nomeJogador, final String nomeTorneio, final String dataJogo){
-
+        mBarChart.clearChart();
         RequestQueue queue = Volley.newRequestQueue(Graficos.this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url_monta_graficos, new Response.Listener<String>() {
             @Override
@@ -343,12 +374,7 @@ public class Graficos extends Activity {
                             interceptacao = jo.getString("interceptacao");
                             if(interceptacao=="") interceptacao = "0";
 
-                            pieChart.addPieSlice(new PieModel("Passes errados", Integer.parseInt(passeErrado), Color.parseColor("#FE6DA8")));
-                            pieChart.addPieSlice(new PieModel("Chutes a gol", Integer.parseInt(chuteAgol), Color.parseColor("#56B7F1")));
-                            pieChart.addPieSlice(new PieModel("Bolas Perdidas", Integer.parseInt(perdida), Color.parseColor("#CDA67F")));
-                            pieChart.addPieSlice(new PieModel("Interceptações", Integer.parseInt(interceptacao), Color.parseColor("#FED70E")));
-                            pieChart.setVisibility(View.VISIBLE);
-                            pieChart.startAnimation();
+                            carregaPieChart(passeErrado, chuteAgol, perdida, interceptacao);
                         }
                     } catch(JSONException e){
                         e.printStackTrace();
@@ -467,12 +493,7 @@ public class Graficos extends Activity {
                             if(perdida=="") perdida = "0";
                             interceptacao = jo.getString("interceptacao");
                             if(interceptacao=="") interceptacao = "0";
-                            pieChart.addPieSlice(new PieModel("Passes errados", Integer.parseInt(passeErrado), Color.parseColor("#FE6DA8")));
-                            pieChart.addPieSlice(new PieModel("Chutes a gol", Integer.parseInt(chuteAgol), Color.parseColor("#56B7F1")));
-                            pieChart.addPieSlice(new PieModel("Bolas Perdidas", Integer.parseInt(perdida), Color.parseColor("#CDA67F")));
-                            pieChart.addPieSlice(new PieModel("Interceptações", Integer.parseInt(interceptacao), Color.parseColor("#FED70E")));
-                            pieChart.setVisibility(View.VISIBLE);
-                            pieChart.startAnimation();
+                            carregaPieChart(passeErrado, chuteAgol, perdida, interceptacao);
                         }
                     } catch(JSONException e){
                         e.printStackTrace();
@@ -588,12 +609,7 @@ public class Graficos extends Activity {
                             if(perdida=="") perdida = "0";
                             interceptacao = jo.getString("interceptacao");
                             if(interceptacao=="") interceptacao = "0";
-                            pieChart.addPieSlice(new PieModel("Passes errados", Integer.parseInt(passeErrado), Color.parseColor("#FE6DA8")));
-                            pieChart.addPieSlice(new PieModel("Chutes a gol", Integer.parseInt(chuteAgol), Color.parseColor("#56B7F1")));
-                            pieChart.addPieSlice(new PieModel("Bolas Perdidas", Integer.parseInt(perdida), Color.parseColor("#CDA67F")));
-                            pieChart.addPieSlice(new PieModel("Interceptações", Integer.parseInt(interceptacao), Color.parseColor("#FED70E")));
-                            pieChart.setVisibility(View.VISIBLE);
-                            pieChart.startAnimation();
+                            carregaPieChart(passeErrado, chuteAgol, perdida, interceptacao);
                         }
                     } catch(JSONException e){
                         e.printStackTrace();
@@ -692,7 +708,112 @@ public class Graficos extends Activity {
         RequestQueue queue = Volley.newRequestQueue(Graficos.this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url_busca_acoes, new Response.Listener<String>() {
             @Override
-            public void onResponse(String resposta) {
+            public void onResponse(String response) {
+                if(spinnerAcoes.getSelectedItem().toString().equals("Todos os dados")){
+                    pieChart.clearChart();
+                    mStackedBarChart.clearChart();
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+                        JSONArray jsonArray = jsonObject.getJSONArray("dados");
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject jo = jsonArray.getJSONObject(i);
+                            passeErrado = jo.getString("passeErrado");
+                            if(passeErrado=="") passeErrado = "0";
+                            chuteAgol = jo.getString("chuteAgol");
+                            if(chuteAgol=="") chuteAgol = "0";
+                            perdida = jo.getString("perdida");
+                            if(perdida=="") perdida = "0";
+                            interceptacao = jo.getString("interceptacao");
+                            if(interceptacao=="") interceptacao = "0";
+                            String atleta = jo.getString("atleta");
+                            StackedBarModel s1 = new StackedBarModel(atleta);
+                            s1.addBar(new BarModel(Math.round(Integer.parseInt(passeErrado)), 0xFF63CBB0));
+                            s1.addBar(new BarModel(Math.round(Integer.parseInt(chuteAgol)), 0xFF56B7F1));
+                            s1.addBar(new BarModel(Math.round(Integer.parseInt(perdida)), 0xFFCDA67F));
+                            s1.addBar(new BarModel(Math.round(Integer.parseInt(interceptacao)), Color.parseColor("#990000")));
+                            mStackedBarChart.addBar(s1);
+                            mStackedBarChart.setVisibility(View.VISIBLE);
+                            mStackedBarChart.startAnimation();
+
+                        }
+                    } catch(JSONException e){
+                        e.printStackTrace();
+                    }
+                }
+
+                if(spinnerAcoes.getSelectedItem().toString().equals("Passes errados")){
+                    pieChart.clearChart();
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+                        JSONArray jsonArray = jsonObject.getJSONArray("dados");
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject jo = jsonArray.getJSONObject(i);
+                            passeErrado = jo.getString("passeErrado");
+                            if(passeErrado=="") passeErrado = "0";
+                            String atleta = jo.getString("atleta");
+                            pieChart.addPieSlice(new PieModel(atleta, Integer.parseInt(passeErrado), Color.parseColor("#990000")));
+                            pieChart.setVisibility(View.VISIBLE);
+                            pieChart.startAnimation();
+                        }
+                    } catch(JSONException e){
+                        e.printStackTrace();
+                    }
+                }
+                if(spinnerAcoes.getSelectedItem().toString().equals("Chutes a gol")){
+                    pieChart.clearChart();
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+                        JSONArray jsonArray = jsonObject.getJSONArray("dados");
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject jo = jsonArray.getJSONObject(i);
+                            chuteAgol = jo.getString("chuteAgol");
+                            if(chuteAgol=="") chuteAgol = "0";
+                            String atleta = jo.getString("atleta");
+                            pieChart.addPieSlice(new PieModel(atleta, Integer.parseInt(chuteAgol), Color.parseColor("#56B7F1")));
+                            pieChart.setVisibility(View.VISIBLE);
+                            pieChart.startAnimation();
+                        }
+                    } catch(JSONException e){
+                        e.printStackTrace();
+                    }
+                }
+                if(spinnerAcoes.getSelectedItem().toString().equals("Bolas perdidas")){
+                    pieChart.clearChart();
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+                        JSONArray jsonArray = jsonObject.getJSONArray("dados");
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject jo = jsonArray.getJSONObject(i);
+                            perdida = jo.getString("perdida");
+                            if(perdida=="") perdida = "0";
+                            String atleta = jo.getString("atleta");
+                            pieChart.addPieSlice(new PieModel(atleta, Integer.parseInt(perdida), Color.parseColor("#CDA67F")));
+                            pieChart.setVisibility(View.VISIBLE);
+                            pieChart.startAnimation();
+                        }
+                    } catch(JSONException e){
+                        e.printStackTrace();
+                    }
+                }
+                if(spinnerAcoes.getSelectedItem().toString().equals("Interceptações")){
+                    pieChart.clearChart();
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+                        JSONArray jsonArray = jsonObject.getJSONArray("dados");
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject jo = jsonArray.getJSONObject(i);
+                            interceptacao = jo.getString("interceptacao");
+                            if(interceptacao=="") interceptacao = "0";
+                            String atleta = jo.getString("atleta");
+                            pieChart.addPieSlice(new PieModel(atleta, Integer.parseInt(interceptacao), Color.parseColor("#FED70E")));
+                            pieChart.setVisibility(View.VISIBLE);
+                            pieChart.startAnimation();
+                        }
+                    } catch(JSONException e){
+                        e.printStackTrace();
+                    }
+                }
+
             }
         },new Response.ErrorListener(){
             @Override
@@ -720,7 +841,7 @@ public class Graficos extends Activity {
             public void onResponse(String response) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
-                    JSONArray jsonArray = jsonObject.getJSONArray("jogadores");
+                    JSONArray jsonArray = jsonObject.getJSONArray("dados");
                     listaJogadores.add("Escolha o jogador:");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject goleiroj = jsonArray.getJSONObject(i);
@@ -741,6 +862,7 @@ public class Graficos extends Activity {
         });
         requestQueue.add(stringRequest);
     }
+
     //FIM - AQUI POPULA O SPINNER DE JOGADORES COM DADOS DO BANCO *******************************************************************
 
     //INÍCIO- AQUI POPULA O SPINNER DE TORNEIOS COM DADOS DO BANCO *******************************************************************

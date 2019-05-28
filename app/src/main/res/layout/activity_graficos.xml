@@ -196,10 +196,6 @@
         android:paddingLeft="5dp"
         android:textSize="20sp" />
 
-    <WebView
-        android:id="@+id/webview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -214,10 +210,25 @@
             app:egUsePieRotation="true"
             app:egValueTextSize="36sp" />
 
-        <!--<com.github.mikephil.charting.charts.HorizontalBarChart
-            android:id="@+id/barChart"
+        <org.eazegraph.lib.charts.BarChart
+            android:id="@+id/barchart"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />-->
+            android:layout_height="237dp"
+            android:paddingLeft="42dp"
+            android:paddingRight="40dp"
+            app:egBarWidth="35dp"
+            app:egFixedBarWidth="true"
+            app:egLegendHeight="40dp" />
+
+        <org.eazegraph.lib.charts.StackedBarChart
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/stackedbarchart"
+            android:layout_width="match_parent"
+            android:layout_height="256dp"
+            android:padding="10dp"
+            app:egFixedBarWidth="true"
+            app:egBarWidth="26dp"
+            app:egLegendHeight="40dp"/>
     </FrameLayout>
 
     <TableRow
@@ -253,6 +264,11 @@
             android:textColor="@color/design_default_color_primary_dark" />
 
     </TableRow>
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <!--<org.eazegraph.lib.charts.BarChart
         xmlns:app="http://schemas.android.com/apk/res-auto"

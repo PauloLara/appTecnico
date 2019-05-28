@@ -71,4 +71,44 @@
     <item name="checkChutes" type="id"></item>
     <item name="checkBoxPerdidas" type="id"></item>
     <item name="checkBoxIntercepts" type="id"></item>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title">Coach Me</string>
+    <string name="main_formations">Formations</string>
+    <string name="main_directory">Player Directory</string>
+    <string name="main_statistics">Game Statistics</string>
+    <string name="action_setting">Settings</string>
+    <string name="title_activity_display_formations">DisplayFormationsActivity</string>
+    <string name="title_activity_main2">MainActivity</string>
+
+
+    <string name="refresh">Refresh</string>
+    <string name="brush">Brush</string>
+    <string name="erase">Erase</string>
+    <string name="save">Save</string>
+    <string name="paint">Paint</string>
+    <string name="b_player">Black Player</string>
+    <string name="r_player">Red Player</string>
+    <string name="ball">Ball</string>
+    <string name="back">Back</string>
+    <string name="remove_icon">Remove Icon</string>
+
+
+    <string name="stats_newGame">New Game</string>
+    <string name="stats_home">Home</string>
+    <string name="stats_home_percent">0%</string>
+    <string name="stats_away">Away</string>
+    <string name="stats_away_percent">0%</string>
+    <string name="stats_timer">Timer</string>
+    <string name="stats_posession">Possession</string>
+    <string name="stats_shots">Shots</string>
+    <string name="stats_goals">Goals</string>
+    <string name="stats_penalties">Penalties</string>
+    <string name="stats_pause">Pause</string>
+    <string name="stats_play">Play</string>
+    <string name="stats_zeroed">0</string>
+    <string name="stats_plus">+</string>
+    <string name="stats_minus">-</string>
+    <string name="stats_awayrefresh">Away Refresh</string>
+    <string name="stats_homerefresh">Home Refresh</string>
 </resources>

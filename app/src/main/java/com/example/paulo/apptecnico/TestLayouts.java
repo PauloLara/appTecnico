@@ -32,4 +32,10 @@ public class TestLayouts extends AppCompatActivity {
         startActivity(it);
     }
 
+    public void btnIrDesenhoQuadra(View view){
+        Intent it;
+        it = new Intent(TestLayouts.this, DesenharQuadra.class);
+        startActivity(it);
+    }
+
 }

@@ -2,26 +2,32 @@ package com.example.paulo.apptecnico;
 
 
 public class DadosJogadores {
-    private String posicaoJogador;
     private String nomeJogador;
+    private String posicaoJogador;
     private String numeroJogador;
+    private String categoriaJogador;
 
-    public DadosJogadores(String posicao, String nome, String numero) {
+    public DadosJogadores(String posicao, String nome, String numero, String categoria) {
 
-        posicaoJogador = posicao;
         nomeJogador = nome;
+        posicaoJogador = posicao;
         numeroJogador = numero;
-    }
-
-    public String getPosJ() {
-        return posicaoJogador;
+        categoriaJogador = categoria;
     }
 
     public String getNomeJ() {
         return nomeJogador;
     }
 
+    public String getPosJ() {
+        return posicaoJogador;
+    }
+
     public String getNumJ() {
         return numeroJogador;
+    }
+
+    public String getCatJ() {
+        return categoriaJogador;
     }
 }

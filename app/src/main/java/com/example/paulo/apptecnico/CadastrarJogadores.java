@@ -52,8 +52,10 @@ import java.util.Map;
 
 public class CadastrarJogadores extends AppCompatActivity{
     private Spinner spinnerPosicoes;
+    private Spinner spinnerCategoria;
     private List<String> nomesPosicoes = new ArrayList<String>();
-    private String posicao;
+    private List<String> nomesCategorias = new ArrayList<String>();
+    private String posicao, categoria;
     AdapterRecycler adapterRecycler;
     EditText editTextNomeJogador;  //EditText editTextNomeTorneio;
     EditText editTextNumeroJogador;
@@ -63,15 +65,15 @@ public class CadastrarJogadores extends AppCompatActivity{
     String numeroJogador;
     Boolean CheckEditText;
     ArrayList<DadosJogadores> listaJogadores;
-    private static final int CAMERA_REQUEST = 1888;
+    //private static final int CAMERA_REQUEST = 1888;
     private ImageView imageView;
-    private static final int MY_CAMERA_PERMISSION_CODE = 100;
+    //private static final int MY_CAMERA_PERMISSION_CODE = 100;
     ImageView img;
     Button upload;
     private Bitmap bitmap;
     ByteArrayOutputStream saida;
     String encodedImage;
-    private RequestQueue mRequestQueue;
+    //private RequestQueue mRequestQueue;
     RecyclerView recyclerView;
 
     String url = "http://192.168.15.17/cadastro_jogador.php";
@@ -85,21 +87,17 @@ public class CadastrarJogadores extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar_jogadores);
         img = findViewById(R.id.imgFoto);
-
-
         upload = findViewById(R.id.btnUpload);
 
         editTextNomeJogador = findViewById(R.id.txtNomeJogador);
         editTextNumeroJogador = findViewById(R.id.numJogador);
         buttonCadastrarJogador = findViewById(R.id.buttonCadastrarEquipe);
         btnSair = findViewById(R.id.btnSair);
-
         recyclerView = findViewById(R.id.recycler);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        listaJogadores = new ArrayList<DadosJogadores>();
-        mRequestQueue = Volley.newRequestQueue(this);
+        //mRequestQueue = Volley.newRequestQueue(this);
+        listaJogadores = new ArrayList<>();
 
         nomesPosicoes.add("Selecione a posição:");
         nomesPosicoes.add("goleiro");
@@ -108,6 +106,16 @@ public class CadastrarJogadores extends AppCompatActivity{
         nomesPosicoes.add("pivo");
         nomesPosicoes.add("fixo / ala");
         nomesPosicoes.add("ala / pivo");
+
+        nomesCategorias.add("Selecione a categoria:");
+        nomesCategorias.add("Sub 10");
+        nomesCategorias.add("Sub 12");
+        nomesCategorias.add("Sub 14");
+        nomesCategorias.add("Sub 16");
+        nomesCategorias.add("Sub 18");
+        nomesCategorias.add("Sub 20");
+        nomesCategorias.add("Principal");
+        nomesCategorias.add("Veteranos");
 
 
         buttonCadastrarJogador.setOnClickListener(new View.OnClickListener() {
@@ -123,14 +131,11 @@ public class CadastrarJogadores extends AppCompatActivity{
             }
         });
 
-
-
-        spinnerPosicoes = (Spinner) findViewById(R.id.spinnerPosicao);
+        spinnerPosicoes = findViewById(R.id.spinnerPosicao);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, nomesPosicoes);
         ArrayAdapter<String> spinnerArrayAdapter = arrayAdapter;
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         spinnerPosicoes.setAdapter(spinnerArrayAdapter);
-
         spinnerPosicoes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
@@ -142,6 +147,25 @@ public class CadastrarJogadores extends AppCompatActivity{
 
             }
         });
+
+
+        spinnerCategoria = findViewById(R.id.spinnerCategoria);
+        ArrayAdapter<String> arrayAdapt = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, nomesCategorias);
+        ArrayAdapter<String> spinnerArrayAdapt = arrayAdapt;
+        spinnerArrayAdapt.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinnerCategoria.setAdapter(spinnerArrayAdapt);
+        spinnerCategoria.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+                categoria = parent.getItemAtPosition(position).toString();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
 
         upload.setOnClickListener(new View.OnClickListener()
         {
@@ -173,8 +197,9 @@ public class CadastrarJogadores extends AppCompatActivity{
                         String posicaoJ = jsonObjPosicoes.getString("posicao");
                         String nomeJ = jsonObjPosicoes.getString("nomeJogador");
                         String numeroJ = jsonObjPosicoes.getString("numeroJogador");
+                        String categoriaJ = jsonObjPosicoes.getString("categoria");
                         //listaJogadores.add(posicaoJ+" "+nomeJ+" "+numeroJ);
-                        listaJogadores.add(new DadosJogadores("Posição: "+posicaoJ, "Nome: "+nomeJ, "Número: "+numeroJ));
+                        listaJogadores.add(new DadosJogadores("Posição: "+posicaoJ, "Nome: "+nomeJ, "Número: "+numeroJ, "Categoria: "+categoriaJ));
                     }
                     adapterRecycler = new AdapterRecycler(CadastrarJogadores.this, listaJogadores);
                     recyclerView.setAdapter(adapterRecycler);
@@ -194,9 +219,10 @@ public class CadastrarJogadores extends AppCompatActivity{
     }
 
     public void CadastraJogador(){
-        final String nomeJogador, numeroJogador, stPosicao, imgFoto;
+        final String nomeJogador, numeroJogador, stPosicao, stCategoria;
 
         stPosicao = (String) spinnerPosicoes.getSelectedItem();
+        stCategoria = (String) spinnerCategoria.getSelectedItem();
         nomeJogador = editTextNomeJogador.getText().toString();
         numeroJogador = editTextNumeroJogador.getText().toString();
 
@@ -244,10 +270,16 @@ public class CadastrarJogadores extends AppCompatActivity{
                 params.put("nomeJogador", nomeJogador);
                 params.put("numeroJogador", numeroJogador);
                 params.put("foto", encodedImage);
+                params.put("categoria", stCategoria);
                 return params;
             }
         };
         queue.add(stringRequest);
+        editTextNomeJogador.setText(null);
+        editTextNumeroJogador.setText(null);
+        spinnerCategoria.setSelection(0);
+        spinnerPosicoes.setSelection(0);
+        img.setImageResource(R.drawable.user);
     }
 
 

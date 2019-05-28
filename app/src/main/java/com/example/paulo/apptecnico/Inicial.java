@@ -72,4 +72,10 @@ public class Inicial extends AppCompatActivity {
         startActivity(it);
     }
 
+    public void clickBtnCronometro(View view){
+        Intent it;
+        it = new Intent(Inicial.this, Cronometro.class);
+        startActivity(it);
+    }
+
 }
