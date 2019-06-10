@@ -36,7 +36,6 @@ public class Estatisticas extends AppCompatActivity {
     TextView titulo, selecione, select;
     RadioGroup quem, jogos;
     RadioButton rdjogador, rdequipe, rdultimo, rdtres, rdcinco, rddez, rdtodos;
-    //Spinner spequipeOuJogador;
     Spinner spinnerJogador, spinnerEquipe;
     Button btnverifica, btnSair;
     ArrayAdapter<String> adapter;
@@ -53,10 +52,7 @@ public class Estatisticas extends AppCompatActivity {
     //String url_busca_torneiojog = "https://appscout.000webhostapp.com/appscout/busca_torneiojog.php";
     //String url_busca_jogadorjog = "https://appscout.000webhostapp.com/appscout/busca_jogadorjog.php";
 
-    // PieChart pieChart;
     BarChart mBarChart;
-    String rdjogadorText, rdequipeText, rdultimoText, rdtresText, rdcincoText, rddezText, rdtodosText, spequipeOuJogadorText;
-    Boolean CheckSpinner, CheckRadios;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,14 +62,6 @@ public class Estatisticas extends AppCompatActivity {
         selecione = findViewById(R.id.txtSelecione);
         select = findViewById(R.id.txtSelect);
         jogos = findViewById(R.id.radio_group_jogos);
-
-        //rdjogador = findViewById(R.id.radio_jogador);
-        //rdequipe = findViewById(R.id.radio_equipe);
-        //quem = findViewById(R.id.radio_group_quem);
-        //spequipeOuJogador = findViewById(R.id.spinnerEquipeOuJogador);
-        //txtGuarda = findViewById(R.id.txtGuarda);
-        //txtReservaTorn = findViewById(R.id.txtReservaTorn);
-        //txtReservaJog = findViewById(R.id.txtReservaJog);
         txtTorneioOUJogador = findViewById(R.id.txtTorneioOUJogador);
         txtRangeJogo = findViewById(R.id.txtRangeJogo);
         rdultimo = findViewById(R.id.radio_ultimo);
@@ -81,14 +69,10 @@ public class Estatisticas extends AppCompatActivity {
         rdcinco = findViewById(R.id.radio_cinco);
         rddez = findViewById(R.id.radio_dez);
         rdtodos = findViewById(R.id.radio_todos);
-        //spequipeOuJogador.setEnabled(false);
         spinnerJogador = findViewById(R.id.spinnerJogador);
         spinnerEquipe = findViewById(R.id.spinnerEquipe);
 
         btnverifica = findViewById(R.id.verifica);
-//        txtGuarda.setVisibility(View.INVISIBLE);
-     //   txtReservaTorn.setVisibility(View.INVISIBLE);
-   //     txtReservaJog.setVisibility(View.INVISIBLE);
         btnSair = findViewById(R.id.btnSair);
 
         txtcabecalho00 = findViewById(R.id.txtcabecalho00);
@@ -125,8 +109,6 @@ public class Estatisticas extends AppCompatActivity {
         txtlinha31.setVisibility(View.INVISIBLE);
         txtlinha32 = findViewById(R.id.txtlinha32);
         txtlinha32.setVisibility(View.INVISIBLE);
-        //pieChart = findViewById(R.id.myPiechart);
-        //pieChart.setVisibility(View.INVISIBLE);
         mBarChart = findViewById(R.id.barchart);
         mBarChart.setVisibility(View.INVISIBLE);
 
@@ -190,26 +172,6 @@ public class Estatisticas extends AppCompatActivity {
                     verificarJog(escolhaTorneioOuJogador, escolheRangeJogo);
                 }
 
-                /*String escolhaData = txtGuarda.getText().toString();
-                String jogoTorn = txtReservaTorn.getText().toString();
-                String jogoJog = txtReservaJog.getText().toString();
-
-                if (!TextUtils.isEmpty(spequipeOuJogador.getSelectedItem().toString())) {
-                    Toast.makeText(Estatisticas.this, "Preencha todos os campos", Toast.LENGTH_LONG).show();
-                }
-                if(escolhaData==null&&jogoTorn==null&&jogoJog==null){
-                    Toast.makeText(Estatisticas.this, "Preencha todos os campos", Toast.LENGTH_LONG).show();
-                }
-                else {
-                    if (rdequipe.isChecked()) {
-                        verificarTorn(jogoTorn, escolhaData);
-                        txtcabecalho00.setText(rdequipe.getText().toString());
-                    }
-                    if (rdjogador.isChecked()) {
-                        verificarJog(jogoJog, escolhaData);
-                        txtcabecalho00.setText(rdjogador.getText().toString());
-                    }
-                }*/
                 txtcabecalho00.setVisibility(View.VISIBLE);
                 txtcabecalho01.setVisibility(View.VISIBLE);
                 txttitulo00.setVisibility(View.VISIBLE);
@@ -237,52 +199,6 @@ public class Estatisticas extends AppCompatActivity {
         });
     }
 
-   /* public void elementoSelecionado(){
-        final String[] opcao = new String[1];
-        quem.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (rdequipe.isChecked()) {
-                    loadSpinnerTorneios(url_busca_torneios);
-                    spequipeOuJogador.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                            if (parent.getItemAtPosition(position).equals("Escolha o torneio:")) {
-                                //faz nada
-                            }else{
-                                opcao[0] = spequipeOuJogador.getItemAtPosition(spequipeOuJogador.getSelectedItemPosition()).toString();
-                                txtReservaTorn.setText(opcao[0]);
-                            }
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> parent) {
-
-                        }
-                    });
-                }
-                if (rdjogador.isChecked()) {
-                    loadSpinnerJogadores(url_busca_jogadores);
-                    spequipeOuJogador.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                            if (parent.getItemAtPosition(position).equals("Escolha o jogador:")) {
-                                //faz nada
-                            }else {
-                                opcao[0] = spequipeOuJogador.getItemAtPosition(spequipeOuJogador.getSelectedItemPosition()).toString();
-                                txtReservaJog.setText(opcao[0]);
-                            }
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> parent) {
-
-                        }
-                    });
-                }
-            }
-        });
-    }*/
 
     public void jogosSelecionado(){
         final String[] opcao = new String[1];

@@ -51,6 +51,7 @@
         <activity android:name=".DirectoryActivity"/>
         <activity android:name=".Estatisticas"/>
         <activity android:name=".Cronometro"/>
+        <activity android:name=".AcaoQuadra"/>
     </application>
 
 </manifest>

@@ -78,4 +78,16 @@ public class Inicial extends AppCompatActivity {
         startActivity(it);
     }
 
+    public void irAcaoQuadra(View view){
+        Intent it;
+        it = new Intent(Inicial.this, AcaoQuadra.class);
+        startActivity(it);
+    }
+
+    public void irDesenharQuadra(View view){
+        Intent it;
+        it = new Intent(Inicial.this, DesenharQuadra.class);
+        startActivity(it);
+    }
+
 }

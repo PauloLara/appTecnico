@@ -674,13 +674,13 @@ public class MeioEventos extends Activity {
         String IDTorneio = retiraCaracter.replaceAll("[^0-9]", "");
         stIDTorneio = IDTorneio.trim();
         stNomeTorneio = stNomeTorneios.trim();
-        Toast.makeText(MeioEventos.this, stNomeTorneio, Toast.LENGTH_LONG).show();
+        //Toast.makeText(MeioEventos.this, stNomeTorneio, Toast.LENGTH_LONG).show();
 
         RequestQueue queue = Volley.newRequestQueue(MeioEventos.this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URLbuscaPorTorneio, new Response.Listener<String>() {
             @Override
             public void onResponse(String resposta) {
-                Toast.makeText(MeioEventos.this, resposta, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(MeioEventos.this, resposta, Toast.LENGTH_SHORT).show();
                 try {
                     JSONObject objetoJson = new JSONObject(resposta);
                     JSONArray jsonArray = objetoJson.getJSONArray("dados");

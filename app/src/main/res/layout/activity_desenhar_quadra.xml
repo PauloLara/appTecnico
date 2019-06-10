@@ -20,27 +20,27 @@
         <TableRow
             android:id="@+id/tableRow1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="63dp">
 
             <ImageButton
                 android:id="@+id/settings"
-                android:tag="image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity ="left"
-                android:background="@null"
-                android:gravity="center"
-                android:src="@drawable/ic_action_settings" />
-
-            <ImageButton
-                android:id="@+id/help"
-                android:tag="image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="70dp"
+                android:layout_height="71dp"
                 android:layout_gravity="left"
                 android:background="@null"
                 android:gravity="center"
-                android:src="@drawable/ic_action_help" />
+                android:src="@drawable/ic_action_settings"
+                android:tag="image" />
+
+            <ImageButton
+                android:id="@+id/help"
+                android:layout_width="66dp"
+                android:layout_height="73dp"
+                android:layout_gravity="left"
+                android:background="@null"
+                android:gravity="center"
+                android:src="@drawable/ic_action_help"
+                android:tag="image" />
         </TableRow>
 
         <TableRow
@@ -48,19 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-5dp"
-            android:gravity="center_horizontal" >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_span="2"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/title_big" />
-        </TableRow>
+            android:gravity="center_horizontal" />
 
         <TableRow
             android:id="@+id/tableRow3"
@@ -74,16 +62,16 @@
             <Button
                 android:id="@+id/formations"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 android:layout_marginLeft="70dp"
-                android:layout_marginRight="70dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/rounded_corner_btn"
-                android:gravity="center"
+                android:layout_marginRight="70dp"
                 android:layout_span="2"
-                android:text="@string/main_formations"
-                android:textSize="30sp"
-                android:textAllCaps="true"/>
+                android:background="@drawable/meio_futsal"
+                android:gravity="center"
+                android:text="formações"
+                android:textAllCaps="true"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
@@ -97,16 +85,16 @@
             <Button
                 android:id="@+id/player_directory"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="90dp"
                 android:layout_marginLeft="70dp"
-                android:layout_marginRight="70dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginRight="70dp"
                 android:layout_span="2"
-                android:background="@drawable/rounded_corner_btn"
+                android:background="@drawable/meio_futsal"
                 android:gravity="center"
-                android:text="@string/main_directory"
-                android:textSize="30sp"
-                android:textAllCaps="true"/>
+                android:text="jogadores"
+                android:textAllCaps="true"
+                android:textSize="30sp" />
         </TableRow>
 
         <TableRow
@@ -120,16 +108,16 @@
             <Button
                 android:id="@+id/game_statistics"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="88dp"
                 android:layout_marginLeft="70dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="70dp"
                 android:layout_span="2"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/rounded_corner_btn"
+                android:background="@drawable/meio_futsal"
                 android:gravity="center"
-                android:text="@string/main_statistics"
-                android:textSize="30sp"
-                android:textAllCaps="true"/>
+                android:text="estatísitcas"
+                android:textAllCaps="true"
+                android:textSize="30sp" />
         </TableRow>
     </TableLayout>
 

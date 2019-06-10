@@ -11,12 +11,13 @@
     tools:context=".Acoes">
 
 <!--BOTÕES do campo A1 ATÉ A8 -->
+
     <Button
         android:id="@+id/a1"
         android:layout_width="46dp"
         android:layout_height="30dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/a1"
         app:layout_constraintStart_toStartOf="parent"

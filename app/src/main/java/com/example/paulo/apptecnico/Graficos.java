@@ -330,6 +330,8 @@ public class Graficos extends Activity {
 
         pieChart.clearChart();
         pieChart.setVisibility(View.INVISIBLE);
+        mStackedBarChart.clearChart();
+        mStackedBarChart.setVisibility(View.INVISIBLE);
         myWebView.clearView();
     }
 

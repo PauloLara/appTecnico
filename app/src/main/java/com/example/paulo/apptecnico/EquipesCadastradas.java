@@ -62,7 +62,7 @@ public class EquipesCadastradas extends AppCompatActivity {
 
     String URLbusca = "http://192.168.15.17/busca_dados_jogador.php";
     //String URLbusca = "http://192.168.15.17/busca_jogadores.php";
-    String URL = "http://192.168.15.17/busca_torneios.php";
+    String URL_spinnerTorneios = "http://192.168.15.17/busca_torneios.php";
     String URLbuscaPorTorneio = "http://192.168.15.17/busca_equipe_por_torneio.php";
     String url_acao_jogador = "http://192.168.15.17/acao_jogador.php";
 
@@ -268,11 +268,11 @@ public class EquipesCadastradas extends AppCompatActivity {
 
          todosInvisiveis();
 
-        loadSpinnerTorneios(URL);
+        loadSpinnerTorneios(URL_spinnerTorneios);
         spTorneio.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (spTorneio.getSelectedItem().equals("Selecione o jogo:")||spTorneio.getSelectedItemPosition()==0) {
+                if (spTorneio.getSelectedItem().equals("Selecione o torneio:")||spTorneio.getSelectedItemPosition()==0) {
                     //faz nada
                 } else {
                     String torneio = spTorneio.getItemAtPosition(spTorneio.getSelectedItemPosition()).toString();
@@ -782,22 +782,25 @@ public class EquipesCadastradas extends AppCompatActivity {
          queue.add(stringRequest);
     }
 
-
+//"http://192.168.15.17/busca_torneios.php"
     private void loadSpinnerTorneios(String url) {
         final ArrayList<String> listaTorneios = new ArrayList<>();
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                //Toast.makeText(EquipesCadastradas.this, response, Toast.LENGTH_SHORT).show();
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray jsonArray = jsonObject.getJSONArray("torneios");
                     listaTorneios.add("Selecione o torneio:");
-                    for (int i = 1; i < jsonArray.length(); i++) {
+                    for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObject1 = jsonArray.getJSONObject(i);
                         int idTorneio = jsonObject1.getInt("ID_torneio");
+                        //String idTorneio = jsonObject1.getString("ID_torneio");
                         String nomeTorneio = jsonObject1.getString("nomeTorneio");
                         String var = String.valueOf(idTorneio);
+                        //Toast.makeText(EquipesCadastradas.this, var+"-"+nomeTorneio, Toast.LENGTH_SHORT).show();
                         listaTorneios.add(var+"-"+nomeTorneio);
                     }
                     spTorneio.setAdapter(new ArrayAdapter<String>(EquipesCadastradas.this, android.R.layout.simple_spinner_dropdown_item, listaTorneios));

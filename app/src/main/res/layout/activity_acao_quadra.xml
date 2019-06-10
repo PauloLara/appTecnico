@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnddd"
+        android:layout_width="160dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/ddd"
+        android:text="4"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btneee" />
+
+    <Button
+        android:id="@+id/btnaaa"
+        android:layout_width="160dp"
+        android:layout_height="150dp"
+        android:background="@drawable/aaa"
+        android:text="1"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnddd"
+        app:layout_constraintEnd_toStartOf="@+id/btnbbb" />
+
+    <Button
+        android:id="@+id/btnccc"
+        android:layout_width="160dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@drawable/ccc"
+        android:text="3"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnfff"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnfff"
+        android:layout_width="160dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/fff"
+        android:text="6"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btneee"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/eee"
+        android:text="5   "
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnfff" />
+
+    <Button
+        android:id="@+id/btnbbb"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:background="@drawable/bbb"
+        android:text="   2"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/btneee"
+        app:layout_constraintEnd_toStartOf="@+id/btnccc" />
+
+    <Button
+        android:id="@+id/btnInterceptacao"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/colorPrimary"
+        android:text="roubamos bola"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnFaltaCometida"
+        app:layout_constraintEnd_toStartOf="@+id/btnaaa"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnFaltaCometida"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="@android:color/holo_orange_light"
+        android:text="perdemos bola"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnBolaPerdida"
+        app:layout_constraintEnd_toStartOf="@+id/btnaaa"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnBolaPerdida"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="?attr/colorError"
+        android:text="fizemos falta"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnChuteFora"
+        app:layout_constraintEnd_toStartOf="@+id/btnddd"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnChuteFora"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="chute fora"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnChuteGol"
+        app:layout_constraintEnd_toStartOf="@+id/btnddd"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnChuteGol"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/holo_green_dark"
+        android:text="chute a gol"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnddd"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnPasseErrado"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="@android:color/holo_orange_dark"
+        android:text="passe errado"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnInterceptacao"
+        app:layout_constraintEnd_toStartOf="@+id/btnaaa"
+        app:layout_constraintStart_toStartOf="parent" />
+</android.support.constraint.ConstraintLayout>

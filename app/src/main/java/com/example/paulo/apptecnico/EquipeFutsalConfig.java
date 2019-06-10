@@ -133,6 +133,7 @@ public class EquipeFutsalConfig extends AppCompatActivity {
          posJog18 = findViewById(R.id.posJog18);
          numJog18 = findViewById(R.id.numJog18);
          guardaCategoria = findViewById(R.id.guardaCategoria);
+        guardaCategoria.setVisibility(View.INVISIBLE);
 
 
         requestQueue = Volley.newRequestQueue(EquipeFutsalConfig.this);
@@ -441,6 +442,7 @@ public class EquipeFutsalConfig extends AppCompatActivity {
                         JSONObject jobj = jsonArray.getJSONObject(i);
                         String categorias = jobj.getString("categoria");
                         guardaCategoria.setText(categorias);
+
                         loadSpinnerJogadores(categorias);
                     }
                 } catch (JSONException e) {
@@ -1520,7 +1522,7 @@ public class EquipeFutsalConfig extends AppCompatActivity {
                 loadPosicoes1(jogador);
             }
         }
-        else Toast.makeText(EquipeFutsalConfig.this, "preencha os campos", Toast.LENGTH_LONG).show();
+        else Toast.makeText(EquipeFutsalConfig.this, "Ok", Toast.LENGTH_LONG).show();
     }
 
     public void verificarDuplicadas2(String jogador){
