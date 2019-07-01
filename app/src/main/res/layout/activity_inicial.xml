@@ -55,7 +55,7 @@
                 android:id="@+id/btnnovojogo"
                 android:layout_width="178dp"
                 android:layout_height="110dp"
-                android:background="@drawable/btn_nova_partidas"
+                android:background="@drawable/btn_nova_partida"
                 android:onClick="clickBtnIrPartidaConfig"
                 tools:ignore="OnClick" />
 

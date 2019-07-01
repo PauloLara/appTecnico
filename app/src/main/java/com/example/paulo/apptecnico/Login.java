@@ -39,7 +39,7 @@ public class Login extends AppCompatActivity {
     String email_Text, senha_Text;
 
     //String HttpUrl = "https://appscout.000webhostapp.com/appscout/user_login.php";
-    String HttpUrl = "https://192.168.15.17/user_login.php";
+    //String HttpUrl = "https://192.168.15.17/user_login.php";
 
     Boolean CheckEditText;
 
@@ -121,6 +121,7 @@ public class Login extends AppCompatActivity {
         }
     }
 
+    String HttpUrl = "https://192.168.15.17/user_login.php";
     public void UserLogin() {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, HttpUrl, new Response.Listener<String>() {
                     @Override

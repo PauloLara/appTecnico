@@ -626,7 +626,9 @@ public class Graficos extends Activity {
                             JSONObject jo = jsonArray.getJSONObject(i);
                             passeErrado = jo.getString("passeErrado");
                             if(passeErrado=="") passeErrado = "0";
-                            pieChart.addPieSlice(new PieModel("Passes errados", Integer.parseInt(passeErrado), Color.parseColor("#FE6DA8")));
+                            pieChart.addPieSlice(new PieModel("Passes errados",
+                                                    Integer.parseInt(passeErrado),
+                                                    Color.parseColor("#FE6DA8")));
                             pieChart.setVisibility(View.VISIBLE);
                             pieChart.startAnimation();
                         }
